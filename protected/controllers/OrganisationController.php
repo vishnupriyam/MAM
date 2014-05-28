@@ -68,7 +68,7 @@ class OrganisationController extends Controller
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Organisation']))
-		{$to="abhiruchigupta16@gmail.com";
+		{$to="mvpno1994@gmail.com";
 		$from="selvarani@iitb.ac.in";
 		$subject="asasdas";
 		$message="asasasassas";

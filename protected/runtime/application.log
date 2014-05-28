@@ -237,3 +237,1309 @@ Stack trace:
 REQUEST_URI=/final/index.php/site/login
 HTTP_REFERER=http://localhost:8090/final/index.php/site/login
 ---
+2014/05/27 10:03:15 [error] [exception.CException] exception 'CException' with message 'Alias "yiiwheels.widgets.fileupload.WhFileUpload" is invalid. Make sure it points to an existing directory or file.' in C:\xampp\htdocs\yii\framework\YiiBase.php:347
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('yiiwheels.widge...', true)
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'yiiwheels.widge...', Array)
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 C:\xampp\htdocs\final\protected\views\site\index.php(64): CBaseController->widget('yiiwheels.widge...', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 C:\xampp\htdocs\final\protected\controllers\SiteController.php(32): CController->render('index')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/final/index.php
+---
+2014/05/27 10:29:19 [error] [exception.CException] exception 'CException' with message 'Alias "yiiwheels.YiiWheels" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('yiiwheels.YiiWh...', true)
+#1 C:\xampp\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(55): CModule->getComponent('yiiwheels')
+#3 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(43): WhPlugin->getYiiWheels()
+#4 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(29): WhPlugin->getApi()
+#5 [internal function]: WhPlugin->getAssetsUrl('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): CComponent->__call('getAssetsUrl', Array)
+#8 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): WhDatePicker->getAssetsUrl('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(54): WhDatePicker->registerClientScript()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): WhDatePicker->run()
+#11 C:\xampp\htdocs\final\protected\views\site\index.php(63): CBaseController->widget('yiiwheels.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#16 C:\xampp\htdocs\final\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/index.php/site/index
+HTTP_REFERER=http://localhost:8090/final/index.php
+---
+2014/05/27 10:31:43 [error] [exception.CException] exception 'CException' with message 'Alias "yiiwheels.YiiWheels" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('yiiwheels.YiiWh...', true)
+#1 C:\xampp\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(55): CModule->getComponent('yiiwheels')
+#3 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(43): WhPlugin->getYiiWheels()
+#4 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(29): WhPlugin->getApi()
+#5 [internal function]: WhPlugin->getAssetsUrl('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): CComponent->__call('getAssetsUrl', Array)
+#8 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): WhDatePicker->getAssetsUrl('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(54): WhDatePicker->registerClientScript()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): WhDatePicker->run()
+#11 C:\xampp\htdocs\final\protected\views\site\index.php(63): CBaseController->widget('yiiwheels.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#16 C:\xampp\htdocs\final\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/index.php/site/index
+HTTP_REFERER=http://localhost:8090/final/index.php
+---
+2014/05/27 10:31:45 [error] [exception.CException] exception 'CException' with message 'Alias "yiiwheels.YiiWheels" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('yiiwheels.YiiWh...', true)
+#1 C:\xampp\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(55): CModule->getComponent('yiiwheels')
+#3 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(43): WhPlugin->getYiiWheels()
+#4 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(29): WhPlugin->getApi()
+#5 [internal function]: WhPlugin->getAssetsUrl('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): CComponent->__call('getAssetsUrl', Array)
+#8 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): WhDatePicker->getAssetsUrl('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(54): WhDatePicker->registerClientScript()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): WhDatePicker->run()
+#11 C:\xampp\htdocs\final\protected\views\site\index.php(63): CBaseController->widget('yiiwheels.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#16 C:\xampp\htdocs\final\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/index.php/site/index
+HTTP_REFERER=http://localhost:8090/final/index.php
+---
+2014/05/27 10:32:54 [error] [exception.CException] exception 'CException' with message 'Alias "yiiwheels.YiiWheels" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('yiiwheels.YiiWh...', true)
+#1 C:\xampp\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(55): CModule->getComponent('yiiwheels')
+#3 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(43): WhPlugin->getYiiWheels()
+#4 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(29): WhPlugin->getApi()
+#5 [internal function]: WhPlugin->getAssetsUrl('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): CComponent->__call('getAssetsUrl', Array)
+#8 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): WhDatePicker->getAssetsUrl('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(54): WhDatePicker->registerClientScript()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): WhDatePicker->run()
+#11 C:\xampp\htdocs\final\protected\views\site\index.php(63): CBaseController->widget('yiiwheels.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#16 C:\xampp\htdocs\final\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/index.php/site/index
+HTTP_REFERER=http://localhost:8090/final/index.php
+---
+2014/05/27 13:00:33 [error] [exception.CException] exception 'CException' with message 'Alias "yiiwheels.YiiWheels" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('yiiwheels.YiiWh...', true)
+#1 C:\xampp\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(55): CModule->getComponent('yiiwheels')
+#3 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(43): WhPlugin->getYiiWheels()
+#4 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(29): WhPlugin->getApi()
+#5 [internal function]: WhPlugin->getAssetsUrl('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): CComponent->__call('getAssetsUrl', Array)
+#8 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): WhDatePicker->getAssetsUrl('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(54): WhDatePicker->registerClientScript()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): WhDatePicker->run()
+#11 C:\xampp\htdocs\final\protected\views\site\index.php(63): CBaseController->widget('yiiwheels.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#16 C:\xampp\htdocs\final\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/
+---
+2014/05/27 13:03:17 [error] [exception.CException] exception 'CException' with message 'Alias "yiiwheels.YiiWheels" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('yiiwheels.YiiWh...', true)
+#1 C:\xampp\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(55): CModule->getComponent('yiiwheels')
+#3 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(43): WhPlugin->getYiiWheels()
+#4 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(29): WhPlugin->getApi()
+#5 [internal function]: WhPlugin->getAssetsUrl('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): CComponent->__call('getAssetsUrl', Array)
+#8 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): WhDatePicker->getAssetsUrl('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(54): WhDatePicker->registerClientScript()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): WhDatePicker->run()
+#11 C:\xampp\htdocs\final\protected\views\site\index.php(63): CBaseController->widget('yiiwheels.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#16 C:\xampp\htdocs\final\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/
+---
+2014/05/27 13:03:19 [error] [exception.CException] exception 'CException' with message 'Alias "yiiwheels.YiiWheels" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('yiiwheels.YiiWh...', true)
+#1 C:\xampp\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(55): CModule->getComponent('yiiwheels')
+#3 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(43): WhPlugin->getYiiWheels()
+#4 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(29): WhPlugin->getApi()
+#5 [internal function]: WhPlugin->getAssetsUrl('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): CComponent->__call('getAssetsUrl', Array)
+#8 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): WhDatePicker->getAssetsUrl('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(54): WhDatePicker->registerClientScript()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): WhDatePicker->run()
+#11 C:\xampp\htdocs\final\protected\views\site\index.php(63): CBaseController->widget('yiiwheels.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#16 C:\xampp\htdocs\final\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/
+---
+2014/05/27 13:03:19 [error] [exception.CException] exception 'CException' with message 'Alias "yiiwheels.YiiWheels" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('yiiwheels.YiiWh...', true)
+#1 C:\xampp\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(55): CModule->getComponent('yiiwheels')
+#3 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(43): WhPlugin->getYiiWheels()
+#4 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(29): WhPlugin->getApi()
+#5 [internal function]: WhPlugin->getAssetsUrl('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): CComponent->__call('getAssetsUrl', Array)
+#8 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): WhDatePicker->getAssetsUrl('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(54): WhDatePicker->registerClientScript()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): WhDatePicker->run()
+#11 C:\xampp\htdocs\final\protected\views\site\index.php(63): CBaseController->widget('yiiwheels.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#16 C:\xampp\htdocs\final\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/
+---
+2014/05/27 13:03:19 [error] [exception.CException] exception 'CException' with message 'Alias "yiiwheels.YiiWheels" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('yiiwheels.YiiWh...', true)
+#1 C:\xampp\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(55): CModule->getComponent('yiiwheels')
+#3 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(43): WhPlugin->getYiiWheels()
+#4 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(29): WhPlugin->getApi()
+#5 [internal function]: WhPlugin->getAssetsUrl('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): CComponent->__call('getAssetsUrl', Array)
+#8 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): WhDatePicker->getAssetsUrl('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(54): WhDatePicker->registerClientScript()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): WhDatePicker->run()
+#11 C:\xampp\htdocs\final\protected\views\site\index.php(63): CBaseController->widget('yiiwheels.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#16 C:\xampp\htdocs\final\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/
+---
+2014/05/27 13:03:21 [error] [exception.CException] exception 'CException' with message 'Alias "yiiwheels.YiiWheels" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('yiiwheels.YiiWh...', true)
+#1 C:\xampp\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(55): CModule->getComponent('yiiwheels')
+#3 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(43): WhPlugin->getYiiWheels()
+#4 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(29): WhPlugin->getApi()
+#5 [internal function]: WhPlugin->getAssetsUrl('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): CComponent->__call('getAssetsUrl', Array)
+#8 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): WhDatePicker->getAssetsUrl('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(54): WhDatePicker->registerClientScript()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): WhDatePicker->run()
+#11 C:\xampp\htdocs\final\protected\views\site\index.php(63): CBaseController->widget('yiiwheels.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#16 C:\xampp\htdocs\final\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/
+---
+2014/05/27 13:03:29 [error] [exception.CException] exception 'CException' with message 'Alias "yiiwheels.YiiWheels" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('yiiwheels.YiiWh...', true)
+#1 C:\xampp\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(55): CModule->getComponent('yiiwheels')
+#3 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(43): WhPlugin->getYiiWheels()
+#4 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(29): WhPlugin->getApi()
+#5 [internal function]: WhPlugin->getAssetsUrl('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): CComponent->__call('getAssetsUrl', Array)
+#8 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): WhDatePicker->getAssetsUrl('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(54): WhDatePicker->registerClientScript()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): WhDatePicker->run()
+#11 C:\xampp\htdocs\final\protected\views\site\index.php(63): CBaseController->widget('yiiwheels.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#16 C:\xampp\htdocs\final\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/
+---
+2014/05/27 13:03:30 [error] [exception.CException] exception 'CException' with message 'Alias "yiiwheels.YiiWheels" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('yiiwheels.YiiWh...', true)
+#1 C:\xampp\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(55): CModule->getComponent('yiiwheels')
+#3 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(43): WhPlugin->getYiiWheels()
+#4 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(29): WhPlugin->getApi()
+#5 [internal function]: WhPlugin->getAssetsUrl('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): CComponent->__call('getAssetsUrl', Array)
+#8 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): WhDatePicker->getAssetsUrl('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(54): WhDatePicker->registerClientScript()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): WhDatePicker->run()
+#11 C:\xampp\htdocs\final\protected\views\site\index.php(63): CBaseController->widget('yiiwheels.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#16 C:\xampp\htdocs\final\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/
+---
+2014/05/27 13:05:29 [error] [exception.CException] exception 'CException' with message 'Alias "yiiwheels.YiiWheels" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('yiiwheels.YiiWh...', true)
+#1 C:\xampp\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(55): CModule->getComponent('yiiwheels')
+#3 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(43): WhPlugin->getYiiWheels()
+#4 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(29): WhPlugin->getApi()
+#5 [internal function]: WhPlugin->getAssetsUrl('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): CComponent->__call('getAssetsUrl', Array)
+#8 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): WhDatePicker->getAssetsUrl('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(54): WhDatePicker->registerClientScript()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): WhDatePicker->run()
+#11 C:\xampp\htdocs\final\protected\views\site\index.php(63): CBaseController->widget('yiiwheels.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#16 C:\xampp\htdocs\final\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/
+---
+2014/05/27 13:13:12 [error] [exception.CException] exception 'CException' with message 'Alias "yiiwheels.YiiWheels" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('yiiwheels.YiiWh...', true)
+#1 C:\xampp\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(55): CModule->getComponent('yiiwheels')
+#3 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(43): WhPlugin->getYiiWheels()
+#4 C:\xampp\htdocs\final\protected\extensions\yiiwheels\behaviors\WhPlugin.php(29): WhPlugin->getApi()
+#5 [internal function]: WhPlugin->getAssetsUrl('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): CComponent->__call('getAssetsUrl', Array)
+#8 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(82): WhDatePicker->getAssetsUrl('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\final\protected\extensions\yiiwheels\widgets\datepicker\WhDatePicker.php(54): WhDatePicker->registerClientScript()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): WhDatePicker->run()
+#11 C:\xampp\htdocs\final\protected\views\site\index.php(63): CBaseController->widget('yiiwheels.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#16 C:\xampp\htdocs\final\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/index.php
+---
+2014/05/27 13:18:20 [error] [exception.CException] exception 'CException' with message 'Property "Users.username" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('username')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('username')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Users), 'username')
+#3 C:\xampp\htdocs\final\protected\extensions\bootstrap\helpers\TbHtml.php(2248): CHtml::activeInputField('text', Object(Users), 'username', Array)
+#4 C:\xampp\htdocs\final\protected\extensions\bootstrap\helpers\TbHtml.php(1494): TbHtml::activeTextInputField('text', Object(Users), 'username', Array)
+#5 C:\xampp\htdocs\final\protected\extensions\bootstrap\helpers\TbHtml.php(2141): TbHtml::activeTextField(Object(Users), 'username', Array)
+#6 C:\xampp\htdocs\final\protected\extensions\bootstrap\helpers\TbHtml.php(2097): TbHtml::createActiveInput('textField', Object(Users), 'username', Array, Array)
+#7 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbActiveForm.php(704): TbHtml::activeControlGroup('textField', Object(Users), 'username', Array, Array)
+#8 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbActiveForm.php(446): TbActiveForm->createControlGroup('textField', Object(Users), 'username', Array)
+#9 C:\xampp\htdocs\final\protected\views\users\_form.php(33): TbActiveForm->textFieldControlGroup(Object(Users), 'username', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\final\protected\views\users\create.php(18): CController->renderPartial('_form', Array)
+#14 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#15 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#18 C:\xampp\htdocs\final\protected\controllers\UsersController.php(80): CController->render('create', Array)
+#19 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsersController->actionCreate()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#29 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/create')
+#30 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/final/index.php/users/create
+HTTP_REFERER=http://localhost:8090/final/index.php/users
+---
+2014/05/27 13:23:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(480): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\final\protected\views\users\_form.php(103): CDbConnection->createCommand('SELECT username...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\final\protected\views\users\create.php(18): CController->renderPartial('_form', Array)
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#11 C:\xampp\htdocs\final\protected\controllers\UsersController.php(80): CController->render('create', Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsersController->actionCreate()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/create')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/index.php/users/create
+HTTP_REFERER=http://localhost:8090/final/index.php/users
+---
+2014/05/27 13:24:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(480): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\final\protected\views\users\_form.php(103): CDbConnection->createCommand('SELECT username...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\final\protected\views\users\create.php(18): CController->renderPartial('_form', Array)
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#11 C:\xampp\htdocs\final\protected\controllers\UsersController.php(80): CController->render('create', Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsersController->actionCreate()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/create')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/index.php/users/create
+---
+2014/05/27 13:25:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "creste".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('creste')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('creste')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/creste')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/users/creste
+---
+2014/05/27 13:25:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(480): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\final\protected\views\users\_form.php(103): CDbConnection->createCommand('SELECT username...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\final\protected\views\users\create.php(18): CController->renderPartial('_form', Array)
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#11 C:\xampp\htdocs\final\protected\controllers\UsersController.php(80): CController->render('create', Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsersController->actionCreate()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/create')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/index.php/users/create
+---
+2014/05/27 13:33:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(480): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\final\protected\views\users\_form.php(103): CDbConnection->createCommand('SELECT username...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\final\protected\views\users\create.php(18): CController->renderPartial('_form', Array)
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#11 C:\xampp\htdocs\final\protected\controllers\UsersController.php(80): CController->render('create', Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsersController->actionCreate()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/create')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/index.php/users/create
+---
+2014/05/27 13:37:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(480): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\final\protected\views\users\_form.php(103): CDbConnection->createCommand('SELECT username...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\final\protected\views\users\create.php(18): CController->renderPartial('_form', Array)
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#11 C:\xampp\htdocs\final\protected\controllers\UsersController.php(80): CController->render('create', Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsersController->actionCreate()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/create')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/index.php/users/create
+---
+2014/05/27 13:37:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(480): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\final\protected\views\users\_form.php(103): CDbConnection->createCommand('SELECT username...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\final\protected\views\users\create.php(18): CController->renderPartial('_form', Array)
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#11 C:\xampp\htdocs\final\protected\controllers\UsersController.php(80): CController->render('create', Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsersController->actionCreate()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/create')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/index.php/users/create
+---
+2014/05/27 13:41:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(450): CModule->getComponent('db')
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(634): CApplication->getDb()
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(2361): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Users))
+#7 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#8 C:\xampp\htdocs\final\protected\controllers\UsersController.php(65): CActiveRecord->__construct()
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsersController->actionCreate()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/create')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/final/index.php/users/create
+---
+2014/05/27 13:44:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(480): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\final\protected\views\users\_form.php(103): CDbConnection->createCommand('SELECT username...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\final\protected\views\users\create.php(18): CController->renderPartial('_form', Array)
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#11 C:\xampp\htdocs\final\protected\controllers\UsersController.php(80): CController->render('create', Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsersController->actionCreate()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/create')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/index.php/users/create
+---
+2014/05/27 13:46:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'org_cdeep'' in C:\xampp\htdocs\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(480): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\final\protected\views\users\_form.php(103): CDbConnection->createCommand('SELECT username...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\final\protected\views\users\create.php(18): CController->renderPartial('_form', Array)
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#11 C:\xampp\htdocs\final\protected\controllers\UsersController.php(80): CController->render('create', Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsersController->actionCreate()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/create')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/final/index.php/users/create
+---
+2014/05/27 14:23:38 [error] [exception.CException] exception 'CException' with message 'Property "Tags.uneditableField" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('uneditableField')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('uneditableField')
+#2 C:\xampp\htdocs\final\protected\extensions\bootstrap\helpers\TbHtml.php(1773): CHtml::resolveValue(Object(Tags), 'uneditableField')
+#3 C:\xampp\htdocs\final\protected\extensions\bootstrap\helpers\TbHtml.php(2175): TbHtml::activeUneditableField(Object(Tags), 'uneditableField', Array)
+#4 C:\xampp\htdocs\final\protected\extensions\bootstrap\helpers\TbHtml.php(2097): TbHtml::createActiveInput('uneditableField', Object(Tags), 'uneditableField', Array, Array)
+#5 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbActiveForm.php(704): TbHtml::activeControlGroup('uneditableField', Object(Tags), 'uneditableField', Array, Array)
+#6 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbActiveForm.php(675): TbActiveForm->createControlGroup('uneditableField', Object(Tags), 'uneditableField', Array)
+#7 C:\xampp\htdocs\final\protected\views\tags\_form.php(26): TbActiveForm->uneditableFieldControlGroup(Object(Tags), 'uneditableField', Array)
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\final\protected\views\tags\create.php(20): CController->renderPartial('_form', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#16 C:\xampp\htdocs\final\protected\controllers\TagsController.php(79): CController->render('create', Array)
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): TagsController->actionCreate()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tags/create')
+#28 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#29 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/final/index.php/tags/create
+HTTP_REFERER=http://localhost:8090/final/index.php/tags
+---
+2014/05/27 14:37:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "creste".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('creste')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('creste')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tags/creste')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/tags/creste
+---
+2014/05/27 14:57:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/create
+---
+2014/05/27 15:33:20 [error] [exception.CException] exception 'CException' with message 'Property "TbGridView.itemView" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('itemView', '_view')
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(RoleController), 'bootstrap.widge...', Array)
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 C:\xampp\htdocs\final\protected\views\role\index.php(23): CBaseController->widget('bootstrap.widge...', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#8 C:\xampp\htdocs\final\protected\controllers\RoleController.php(134): CController->render('index', Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): RoleController->actionIndex()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('role/index')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/final/index.php/role/index
+HTTP_REFERER=http://localhost:8090/final/index.php/role/admin
+---
+2014/05/27 15:34:00 [error] [exception.CException] exception 'CException' with message 'Property "TbGridView.itemView" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('itemView', '_view')
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(RoleController), 'bootstrap.widge...', Array)
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 C:\xampp\htdocs\final\protected\views\role\index.php(23): CBaseController->widget('bootstrap.widge...', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#8 C:\xampp\htdocs\final\protected\controllers\RoleController.php(134): CController->render('index', Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): RoleController->actionIndex()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('role/index')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/final/index.php/role/index
+HTTP_REFERER=http://localhost:8090/final/index.php/role/admin
+---
+2014/05/27 15:39:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "roles/index".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('roles/index')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/roles/index
+---
+2014/05/27 18:45:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/create
+---
+2014/05/27 18:46:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "sites/asset".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sites/asset')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/sites/asset
+---
+2014/05/27 19:04:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/final/index.php/users/admin
+HTTP_REFERER=http://localhost/final/index.php/users/
+---
+2014/05/27 19:04:57 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/final/index.php/users/admin
+HTTP_REFERER=http://localhost/final/index.php/users/1
+---
+2014/05/27 19:09:39 [error] [exception.CException] exception 'CException' with message 'Alias "zii.widgets.CGridView" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('zii.widgets.CGr...', true)
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(UsersController), 'zii.widgets.CGr...', Array)
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.CGr...', Array)
+#3 C:\xampp\htdocs\final\protected\views\users\index.php(20): CBaseController->widget('zii.widgets.CGr...', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#8 C:\xampp\htdocs\final\protected\controllers\UsersController.php(129): CController->render('index', Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/final/index.php/users/
+---
+2014/05/27 19:16:17 [error] [exception.CException] exception 'CException' with message 'Property "Role.ip" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('ip')
+#1 C:\xampp\htdocs\yii\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('ip')
+#2 C:\xampp\htdocs\yii\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CDataColumn.php(137): CComponent->evaluateExpression('CHtml::link("$d...', Array)
+#4 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridColumn.php(151): CDataColumn->renderDataCellContent(0, Object(Role))
+#5 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#6 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#9 [internal function]: CBaseListView->renderSection(Array)
+#10 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{items}?<div cl...')
+#11 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): CBaseListView->run()
+#13 C:\xampp\htdocs\final\protected\views\role\index.php(32): CBaseController->widget('bootstrap.widge...', Array)
+#14 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#15 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#18 C:\xampp\htdocs\final\protected\controllers\RoleController.php(134): CController->render('index', Array)
+#19 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): RoleController->actionIndex()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#29 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('role')
+#30 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/final/index.php/role
+---
+2014/05/27 19:16:49 [error] [exception.CException] exception 'CException' with message 'Property "Role.ip" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('ip')
+#1 C:\xampp\htdocs\yii\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('ip')
+#2 C:\xampp\htdocs\yii\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CDataColumn.php(137): CComponent->evaluateExpression('CHtml::link("$d...', Array)
+#4 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridColumn.php(151): CDataColumn->renderDataCellContent(0, Object(Role))
+#5 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#6 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#9 [internal function]: CBaseListView->renderSection(Array)
+#10 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{items}?<div cl...')
+#11 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): CBaseListView->run()
+#13 C:\xampp\htdocs\final\protected\views\role\index.php(32): CBaseController->widget('bootstrap.widge...', Array)
+#14 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#15 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#18 C:\xampp\htdocs\final\protected\controllers\RoleController.php(134): CController->render('index', Array)
+#19 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): RoleController->actionIndex()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#29 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('role')
+#30 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/final/index.php/role
+---
+2014/05/27 19:16:51 [error] [exception.CException] exception 'CException' with message 'Property "Role.ip" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('ip')
+#1 C:\xampp\htdocs\yii\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('ip')
+#2 C:\xampp\htdocs\yii\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CDataColumn.php(137): CComponent->evaluateExpression('CHtml::link("$d...', Array)
+#4 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridColumn.php(151): CDataColumn->renderDataCellContent(0, Object(Role))
+#5 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#6 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#9 [internal function]: CBaseListView->renderSection(Array)
+#10 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{items}?<div cl...')
+#11 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): CBaseListView->run()
+#13 C:\xampp\htdocs\final\protected\views\role\index.php(32): CBaseController->widget('bootstrap.widge...', Array)
+#14 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#15 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#18 C:\xampp\htdocs\final\protected\controllers\RoleController.php(134): CController->render('index', Array)
+#19 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): RoleController->actionIndex()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#29 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('role')
+#30 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/final/index.php/role
+---
+2014/05/27 19:17:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "controller/action".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('controller/acti...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/controller/action?weight=0
+HTTP_REFERER=http://localhost/final/index.php/role
+---
+2014/05/27 19:37:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "controller/action".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('controller/acti...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/controller/action?weight=0
+HTTP_REFERER=http://localhost/final/index.php/role
+---
+2014/05/27 19:39:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "action".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('action')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('action')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('role/action')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/role/action?update=1
+HTTP_REFERER=http://localhost/final/index.php/role
+---
+2014/05/27 19:40:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "action".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('action')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('action')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('role/action')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/role/action?update=1
+HTTP_REFERER=http://localhost/final/index.php/role
+---
+2014/05/27 19:41:26 [error] [exception.CException] exception 'CException' with message 'Property "TbDataColumn.label" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\YiiBase.php(220): CComponent->__set('label', 'Permissions')
+#1 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(388): YiiBase::createComponent(Array, Object(TbGridView))
+#2 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php(79): CGridView->initColumns()
+#3 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#4 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php(48): CGridView->init()
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 C:\xampp\htdocs\final\protected\views\role\index.php(33): CBaseController->widget('bootstrap.widge...', Array)
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#12 C:\xampp\htdocs\final\protected\controllers\RoleController.php(134): CController->render('index', Array)
+#13 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): RoleController->actionIndex()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('role')
+#24 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/final/index.php/role
+---
+2014/05/27 19:43:00 [error] [exception.CException] exception 'CException' with message 'Alias "zii.widgets.CGridView" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('zii.widgets.CGr...', true)
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(UsersController), 'zii.widgets.CGr...', Array)
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.CGr...', Array)
+#3 C:\xampp\htdocs\final\protected\views\users\index.php(20): CBaseController->widget('zii.widgets.CGr...', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#8 C:\xampp\htdocs\final\protected\controllers\UsersController.php(129): CController->render('index', Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/final/index.php/users/
+---
+2014/05/27 19:43:09 [error] [exception.CException] exception 'CException' with message 'Alias "zii.widgets.CGridView" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('zii.widgets.CGr...', true)
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(UsersController), 'zii.widgets.CGr...', Array)
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.CGr...', Array)
+#3 C:\xampp\htdocs\final\protected\views\users\index.php(20): CBaseController->widget('zii.widgets.CGr...', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#8 C:\xampp\htdocs\final\protected\controllers\UsersController.php(129): CController->render('index', Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/final/index.php/users/
+---
+2014/05/27 19:43:26 [error] [exception.CException] exception 'CException' with message 'Alias "zii.widgets.CGridView" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('zii.widgets.CGr...', true)
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(UsersController), 'zii.widgets.CGr...', Array)
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.CGr...', Array)
+#3 C:\xampp\htdocs\final\protected\views\users\index.php(20): CBaseController->widget('zii.widgets.CGr...', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#8 C:\xampp\htdocs\final\protected\controllers\UsersController.php(129): CController->render('index', Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/final/index.php/users/
+---
+2014/05/27 19:43:48 [error] [exception.CException] exception 'CException' with message 'The property "itemView" cannot be empty.' in C:\xampp\htdocs\yii\framework\zii\widgets\CListView.php:210
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): CListView->init()
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#2 C:\xampp\htdocs\final\protected\views\users\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#7 C:\xampp\htdocs\final\protected\controllers\UsersController.php(129): CController->render('index', Array)
+#8 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users')
+#19 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/final/index.php/users/
+---
+2014/05/27 19:46:31 [error] [exception.CException] exception 'CException' with message 'Property "TbDataColumn.label" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\YiiBase.php(220): CComponent->__set('label', 'Edit Permission...')
+#1 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(388): YiiBase::createComponent(Array, Object(TbGridView))
+#2 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php(79): CGridView->initColumns()
+#3 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#4 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php(48): CGridView->init()
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 C:\xampp\htdocs\final\protected\views\role\index.php(33): CBaseController->widget('bootstrap.widge...', Array)
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#12 C:\xampp\htdocs\final\protected\controllers\RoleController.php(134): CController->render('index', Array)
+#13 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): RoleController->actionIndex()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('role')
+#24 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/final/index.php/role/
+---
+2014/05/27 20:09:00 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(158): renderAttributes()
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1351): tag()
+#2 C:\xampp\htdocs\final\protected\extensions\bootstrap\helpers\TbHtml.php(1477): inputField()
+#3 C:\xampp\htdocs\final\protected\extensions\bootstrap\helpers\TbHtml.php(723): textInputField()
+#4 C:\xampp\htdocs\final\protected\views\role\index.php(50): textField()
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): RoleController->renderInternal()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): RoleController->renderFile()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(782): RoleController->renderPartial()
+#9 C:\xampp\htdocs\final\protected\controllers\RoleController.php(134): RoleController->render()
+#10 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): RoleController->actionIndex()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): RoleController->runAction()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#15 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): RoleController->filterAccessControl()
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(265): RoleController->runActionWithFilters()
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): RoleController->run()
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\final\index.php(13): CWebApplication->run()
+REQUEST_URI=/final/index.php/role/
+in C:\xampp\htdocs\final\protected\extensions\bootstrap\helpers\TbHtml.php (1477)
+in C:\xampp\htdocs\final\protected\extensions\bootstrap\helpers\TbHtml.php (723)
+in C:\xampp\htdocs\final\protected\views\role\index.php (50)

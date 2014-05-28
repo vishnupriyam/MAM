@@ -15,7 +15,7 @@ return array(
 	//path alises
 	'aliases'=>array(
 	'bootstrap'=>realpath(__DIR__.'/../extensions/bootstrap'),
-'yiiwhweels'=>realpath(__DIR__.'/../extensions/yiiwheels'),
+     'yiiwheels'=>realpath(__DIR__.'/../extensions/yiiwheels'),
 	),
 
 	// autoloading model and component classes
@@ -27,8 +27,10 @@ return array(
 		'bootstrap.behaviors.TbWidget',
 		'bootstrap.widgets.TbDataColumn',
 		'bootstrap.widgets.TbActiveForm',
-		
-		
+		/*'yiiwheels.widgets.fileupload.WhFileUpload',*/
+	    'yiiwheels.widgets.datepicker.WhDatePicker',
+		'bootstrap.widgets.TbGridView',
+		'bootstrap.widgets.TbGridView1',
 	
 		
 	),
@@ -41,6 +43,7 @@ return array(
 			'password'=>'gii',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
+			
 		'generatorPaths'=>array('bootstrap.gii'),
 		),
 		
@@ -52,6 +55,16 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
+		
+		 // yiistrap configuration
+        'bootstrap' => array(
+            'class' => 'bootstrap.components.TbApi',
+        ),
+        // yiiwheels configuration
+        'yiiwheels' => array(
+            'class' => 'yiiwheels.YiiWheels',   
+        ),
+		
 		
 		//for mail configuration
 		'Smtpmail'=>array(
@@ -67,8 +80,7 @@ return array(
         ),
 		
 		
-		'bootstrap'=>array('class'=>'bootstrap.components.TbApi'),
-	 'yiiwheels'=>array('class'=>'yiiwheels.YiiWheels'),
+		
 		
 		
 		// uncomment the following to enable URLs in path-format

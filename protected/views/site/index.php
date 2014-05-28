@@ -13,7 +13,7 @@ $this->pageTitle=Yii::app()->name;
 
 
 <h1 id="heading1">
- <center>CENTER FOR DISTANCE ENGINEERING EDUCATION  </center>
+ <center>CENTER FOR DISTANCE ENGINEERING EDUCATION </center>
  </h1>
 
 <h5 style="margin-top:4em;"><i>Sharing knowledge, igniting minds</i></h5>
@@ -39,19 +39,34 @@ and the world will have access to IIT Bombay’s courseware.</p>
 		<li>Holidays in Spring 2014 semester</li>
 		<li>All IITB courses</li>
 		</ul>
-	</span>
+	
 	</div>
 	<div class="span3">
 <b>News and Updates</b>
   	
 
-    Recorded and current semester courses are available free through online registration.
+   <p> Recorded and current semester courses are available free through online registration.
     Now CDEEP Services can be requisioned online.
     Offline previously recorded courses are available with nominal service charges on any storage media. Contact : cdeep@iitb.ac.in
     Online</p>
 
     </div>
 </div>
+
+
+    <div class="input-append">
+    <?php $this->widget('yiiwheels.widgets.datepicker.WhDatePicker', array(
+    'name' => 'datepickertest',
+    'pluginOptions' => array(
+    'format' => 'mm/dd/yyyy'
+    )
+    ));
+    ?>
+    <span class="add-on"><icon class="icon-calendar"></icon></span>
+    </div>
+
+
+    
 
 <!--<p>Congratulations! You have successfully created your Yii application.</p>
 

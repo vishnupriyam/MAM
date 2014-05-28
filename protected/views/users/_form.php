@@ -4,10 +4,20 @@
 /* @var $form CActiveForm */
 ?>
 
+<style type="text/css">
+ 	 .checkbox.inline + .checkbox.inline{
+ 	 margin-left:0px;
+ 	 padding-right:10px !important;}
+ 	 .checkbox{
+ 	 padding-right: 10px !important;
+ 	 width: 35%;}
+</style>
+
 <div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
+<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'id'=>'users-form',
+	'layout'=>TbHtml::FORM_LAYOUT_HORIZONTAL,
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
@@ -19,76 +29,94 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'name'); ?>
+	
+	<?php echo $form->textFieldControlGroup($model, 'name',array('label'=>'Username','Placeholder'=>'Username')); ?>
+	
+	<?php echo $form->emailFieldControlGroup($model, 'email',array('label'=>'Email','Placeholder'=>'Valid email id',
+		'help'=>'Please enter a freuently used email id')); ?>
+	
+	<?php echo $form->passwordFieldControlGroup($model, 'password',array('label'=>'Password','Placeholder'=>'Password',
+		'help'=>'minimum 2 alphabets,2 numbers,a special character')); ?>
+	
+	<?php echo TbHtml::passwordFieldControlGroup('cpassword','',array('label'=>'Confirm Password','Placeholder'=>'Password')); ?>
+	
+	<script type="text/javascript">
+	
+   		if($('#Users_password').val()!=$('#cpassword').val()){
+       	alert('Password not matches');
+       	return false;
+   		}
+   	return true;
+	</script>
+	
+	
+	
+	<?php echo $form->textFieldControlGroup($model,'mobile',array('label'=>'Phone','Placeholder'=>'Phone Number')); ?>
+	
+	<?php echo TbHtml::fileFieldControlGroup('picture','',array('label'=>'Photo'));?>
+	
+	<div class="span12">
+	<div class="" style="margin-left:-2em">
+		<?php echo TbHtml::inlinecheckBoxListControlGroup('roles','',array(
+	  	 '1'=> 'Permission 1',
+	  	  '2'=>'Permission 2',
+	  	  '3'=>'Permission 3',
+	  	  '4'=>'Permission 4',
+	  	  '5'=>'Permission 5',
+	  	  '6'=>'Permission 6',
+	  	  
+	  	  ), array('span'=>3,'label'=>'Roles','help' => '<strong>Note:</strong> Labels surround all the options for much larger click areas.')); ?>	 
+	 </div>	 
+	 </div>
+	  <?php echo $form->radioButtonListControlGroup($model, 'status', array(
+	  	  'Blocked',
+	  	  'Active',
+	  	  )); ?>
+
+	
+	    <?php
+	    /*$this->widget(
+	    	    'yiiwheels.widgets.fileupload.WhFileUpload',
+	    	    array(
+	    	    	    'name' => 'photo',
+	    	    	    'url' => $this->createUrl('site/upload', array('type' => 'file')),
+	    	    	    'multiple' => true,
+	    	    	    )
+	    	    );*/
+	    ?>
+	    <b></b><?php /*echo "Photo"?></b>
+	    <?php
+	        $this->widget('yiiwheels.widgets.fineuploader.WhFineUploader', array(
+	        	'name' => 'fineuploadtest',
+	        	'uploadAction' => $this->createUrl('site/upload', array()),
+	        	'pluginOptions' => array(
+	        		'validation'=>array(
+	        			'allowedExtensions' => array('jpeg', 'jpg')
+	        			)
+	        		)
+	        	));
+	       */ ?>
+	      
+	
+	
+	<div class="row buttons" id="">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('id'=>'B1')); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->textArea($model,'password',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'password'); ?>
-	</div>
+	
+	
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>60)); ?>
-		<?php echo $form->error($model,'email'); ?>
-	</div>
+	<?php $this->endWidget(); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'login'); ?>
-		<?php echo $form->textField($model,'login'); ?>
-		<?php echo $form->error($model,'login'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'logout'); ?>
-		<?php echo $form->textField($model,'logout'); ?>
-		<?php echo $form->error($model,'logout'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->textField($model,'status',array('size'=>60,'maxlength'=>60)); ?>
-		<?php echo $form->error($model,'status'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'picture'); ?>
-		<?php echo $form->textField($model,'picture'); ?>
-		<?php echo $form->error($model,'picture'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'mobile'); ?>
-		<?php echo $form->textField($model,'mobile',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'mobile'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'quota'); ?>
-		<?php echo $form->textField($model,'quota'); ?>
-		<?php echo $form->error($model,'quota'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'DateCreated'); ?>
-		<?php echo $form->textField($model,'DateCreated'); ?>
-		<?php echo $form->error($model,'DateCreated'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'LastUpdate'); ?>
-		<?php echo $form->textField($model,'LastUpdate'); ?>
-		<?php echo $form->error($model,'LastUpdate'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
-
-</div><!-- form -->
+	</div><!-- form -->
+	
+	</fieldset>
+	<script type="text/javascript">
+	/*$(input['B1']).on('submit',function(){
+   		if($('#Users_password').val()!=$('#cpassword').val()){
+       	alert('Password not matches');
+       	return false;
+   		}
+   	return true;
+		});*/
+	<script>

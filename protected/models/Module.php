@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'module':
  * @property integer $mid
  * @property string $name
+ * @property string $description
  *
  * The followings are the available model relations:
  * @property Permissions[] $permissions
@@ -30,9 +31,10 @@ class Module extends CActiveRecord
 		return array(
 			array('name', 'required'),
 			array('name', 'length', 'max'=>45),
+			array('description', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('mid, name', 'safe', 'on'=>'search'),
+			array('mid, name, description', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +58,7 @@ class Module extends CActiveRecord
 		return array(
 			'mid' => 'Mid',
 			'name' => 'Name',
+			'description' => 'Description',
 		);
 	}
 
@@ -79,6 +82,7 @@ class Module extends CActiveRecord
 
 		$criteria->compare('mid',$this->mid);
 		$criteria->compare('name',$this->name,true);
+		$criteria->compare('description',$this->description,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
