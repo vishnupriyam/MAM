@@ -10,4 +10,14 @@ defined('YII_DEBUG') or define('YII_DEBUG',true);
 defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 
 require_once($yii);
+
 Yii::createWebApplication($config)->run();
+
+//for log4php
+/*require_once($yii);
+$app = Yii::createWebApplication($config);
+spl_autoload_unregister(array('YiiBase','autoload'));
+require_once('log4php/Logger.php');//require register logger autoload
+spl_autoload_register(array('YiiBase','autoload'));
+$app->run();
+*/

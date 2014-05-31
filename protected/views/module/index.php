@@ -9,8 +9,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Module','url'=>array('create')),
-	array('label'=>'Manage Module','url'=>array('admin')),
+	array('label'=>'Add Module','url'=>array('create')),
+	//array('label'=>'Manage Module','url'=>array('admin')),
 );
 ?>
 

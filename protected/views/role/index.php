@@ -31,7 +31,7 @@ $this->menu=array(
 			/*array('name'=>'rid', 'header'=>'Role_id'),*/
 			array('name'=>'name', 'header'=>'ROLE'),
 			array('name'=>'weight','header'=>'PERMISSIONS','type'=>'raw', 
-			'value'=>'CHtml::link("Edit permissions", array("role/", "update"=>$data->rid))'),
+			'value'=>'CHtml::link("Edit permissions", array("role/permission_change2"))'),
 			array('name'=>'weight','header'=>'PERMISSIONS','type'=>'raw', 
 			'value'=>'CHtml::link("Edit Role", array("role/", "update"=>$data->rid))'),
 );?>

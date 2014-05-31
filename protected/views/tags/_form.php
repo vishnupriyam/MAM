@@ -19,19 +19,40 @@
     <p class="help-block">Fields with <span class="required">*</span> are required.</p>
 
     <?php echo $form->errorSummary($model); ?>
-
-            <?php echo $form->textfieldControlGroup($model,'tagName',array('span'=>2,'rows'=>1,'label'=>'Tag Name')); ?>
-
             
-            <?php echo $form->textfieldControlGroup($model, 'orgId',array('span'=>2,'disabled'=>true,'label'=>'Organisation Name','placeholder'=>'OrgId from database')); ?>
-
-			 <?php echo $form->textfieldControlGroup($model, 'unitCode',array('span'=>2,'disabled'=>true,'label'=>'Department Name','placeholder'=>'UnitCode from database')); ?>
-
+            <?php 
+			 $orgId= Yii::app()->user->getId();
+			 $connection = Yii::app()->db;
+			 $sql3 = "select id from org_ou where orgId = :orgId";
+			 $command = $connection->createCommand($sql3);
+			 $command->bindParam(":orgId",$orgId,PDO::PARAM_INT);
+			 $dataReader = $command->query();
+	         $row = $dataReader->read();
+	         $dataReader->close();
+	         $ans = $row['id'];
+	         
+			 $criteria=new CDbCriteria();
+			 $criteria->compare('root', $ans, true);
+			 echo  $form->dropDownListControlGroup($model, 'dept_id',
+			 CHtml::listData(ou_structure::model()->findAll($criteria), 'id', 'name'), 
+			 array('span'=>3,'label'=>'Add tag for'), array('label'=>'child')); ?>
+			
+            
+			<?php echo $form->textfieldControlGroup($model,'tagName',
+			array('span'=>2,'rows'=>1,'label'=>'Tag Name','help'=>'Add multiple tags with commas(,)')); ?>
+			
+			 
         <div class="form-actions">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
 		    
 		)); ?>
+		
+		<?php echo TbHtml::submitButton(Yii::t('Yii','Cancel'),array(
+ 			'name'=>'buttonCancel',
+			'color'=>TbHtml::BUTTON_COLOR_DANGER,
+		    ));?>
+		    
     </div>
 
     <?php $this->endWidget(); ?>

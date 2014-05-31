@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Organisation', 'url'=>array('index')),
-	array('label'=>'Create Organisation', 'url'=>array('create')),
+	
 	array('label'=>'View Organisation', 'url'=>array('view', 'id'=>$model->orgId)),
 	array('label'=>'Manage Organisation', 'url'=>array('admin')),
 );

@@ -54,7 +54,7 @@
 	<?php echo CHtml::encode($data->fax); ?>
 	<br />
 
-	<b><?php /*echo CHtml::encode($data->getAttributeLabel('Password')); ?>:</b>
+	<b></b><?php /*echo CHtml::encode($data->getAttributeLabel('Password')); ?>:</b>
 	<?php echo CHtml::encode($data->password); */?>
 	<br />
 

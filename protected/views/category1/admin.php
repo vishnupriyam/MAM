@@ -3,10 +3,6 @@
 /* @var $model Category1 */
 
 
-$this->breadcrumbs=array(
-	'Category1s'=>array('index'),
-	'Manage',
-);
 
 $this->menu=array(
 	array('label'=>'List Category1', 'url'=>array('index')),
@@ -47,12 +43,18 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'cat_id',
 		'Name',
-		'orgId',
-		'unitCode',
+		array('name'=>'orgName',
+		      'value'=>'$data->organisation->orgName'),
+		//'unitCode',
+		array('name'=>'name',
+		      'value'=>'$data->ou_structure->name'),
+		
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),
 	),
-)); ?>
+)); 
+
+ 
+?>

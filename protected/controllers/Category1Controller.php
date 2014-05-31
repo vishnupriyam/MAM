@@ -32,7 +32,7 @@ class Category1Controller extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -63,15 +63,32 @@ class Category1Controller extends Controller
 	public function actionCreate()
 	{
 		$model=new Category1;
-
+	
+		if(isset($_POST['buttonCancel']))
+        {
+         $this->redirect(Yii::app()->user->returnUrl);
+        }
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Category1'])) {
+			$connection = Yii::app()->db;
+			$orgId = Yii::app()->user->getId();
 			$model->attributes=$_POST['Category1'];
+			//$name = $model->Name;
+			$model->orgId = $orgId;
+			//$sql = "insert into category1 (Name, orgId) values(:name, :orgId)";
+			//$command = $connection->createCommand($sql);
+			//$command->bindParam(":name",$name,PDO::PARAM_STR);
+			//$command->bindParam(":orgId",$orgId,PDO::PARAM_INT);
+			//$command->execute(); 
+			//$this->redirect(array('view','id'=>$model->cat_id));
+			//$model->attributes=$_POST['Category1'];
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->cat_id));
 			}
+			
 		}
 
 		$this->render('create',array(
@@ -88,6 +105,12 @@ class Category1Controller extends Controller
 	{
 		$model=$this->loadModel($id);
 
+		if(isset($_POST['buttonCancel']))
+        {
+         $this->redirect(Yii::app()->user->returnUrl);
+        }
+		
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -128,7 +151,10 @@ class Category1Controller extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Category1');
+		//$dataProvider=new CActiveDataProvider('Category1');
+		$orgId = Yii::app()->user->getId();
+		$dataProvider=new CActiveDataProvider('Category1', array('criteria'=>array('condition'=>  'orgId = :orgId', 'params'=>array(':orgId'=>$orgId),
+		),));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

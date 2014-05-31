@@ -32,7 +32,7 @@ class ModuleController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -64,14 +64,33 @@ class ModuleController extends Controller
 	{
 		$model=new Module;
 
+		if(isset($_POST['buttonCancel']))
+        {
+         $this->redirect(Yii::app()->homeUrl);
+        }
+		
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Module'])) {
 			$model->attributes=$_POST['Module'];
-			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->mid));
-			}
+			//if ($model->save()) {
+				//$this->redirect(array('view','id'=>$model->mid));
+			//}
+			$orgId = Yii::app()->user->getId();
+			$name = $model->name;
+			$desc = $model->description;
+			
+			$connection = Yii::app()->db;
+			$sql = "insert into module (name, description, orgId) values(:name, :desc, :orgId)";
+			$command = $connection->createCommand($sql);
+			$command->bindParam(":name",$name,PDO::PARAM_STR);
+			$command->bindParam(":orgId",$orgId,PDO::PARAM_STR);
+			$command->bindParam(":desc",$desc,PDO::PARAM_STR);
+			$command->execute(); 
+				
+			$this->redirect(array('view','id'=>$model->mid));	
 		}
 
 		$this->render('create',array(
@@ -88,6 +107,12 @@ class ModuleController extends Controller
 	{
 		$model=$this->loadModel($id);
 
+		if(isset($_POST['buttonCancel']))
+        {
+         $this->redirect(Yii::app()->homeUrl);
+        }
+		
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -128,7 +153,13 @@ class ModuleController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Module');
+		/*$dataProvider=new CActiveDataProvider('Module');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));*/
+		$orgId = Yii::app()->user->getId();
+		$dataProvider=new CActiveDataProvider('Module', array('criteria'=>array('condition'=>  'orgId = :orgId', 'params'=>array(':orgId'=>$orgId),
+		),));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

@@ -25,11 +25,12 @@ If you have business inquiries or other questions, please fill out the following
 
 <div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
+<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'id'=>'contact-form',
+	'layout'=>TbHtml::FORM_LAYOUT_HORIZONTAL,
 	'enableClientValidation'=>true,
 	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
+		'validateOnSubmit'=>false,
 	),
 )); ?>
 
@@ -75,7 +76,13 @@ If you have business inquiries or other questions, please fill out the following
 	<?php endif; ?>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Submit'); ?>
+		<?php echo TbHtml::submitButton('Submit'); ?>
+		<?php echo TbHtml::submitButton(Yii::t('Yii','Cancel'),array(
+ 			'name'=>'buttonCancel',
+			'color'=>TbHtml::BUTTON_COLOR_DANGER,
+		     
+		    ));?>
+		
 	</div>
 
 <?php $this->endWidget(); ?>

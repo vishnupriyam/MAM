@@ -28,11 +28,11 @@ class RoleController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','permission_change'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin','permission_change2','permission_change','rfu'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -55,6 +55,18 @@ class RoleController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
+	
+	public function actionRfu($id)
+	{
+		$this->render('rfu');
+	}
+	
+	public function actionPermission_change($id)
+	{
+		$this->render('permission_change',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
 
 	/**
 	 * Creates a new model.
@@ -67,11 +79,29 @@ class RoleController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
+		if(isset($_POST['buttonCancel']))
+        {
+         $this->redirect(Yii::app()->user->returnUrl);
+        }
+		
+		
 		if (isset($_POST['Role'])) {
 			$model->attributes=$_POST['Role'];
-			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->rid));
-			}
+			
+			$connection = Yii::app()->db;
+			$id = Yii::app()->user->getId();
+			$name = $model->name;
+			$weight = $model->weight;
+			
+			$sql = "insert into role (name, weight, orgId) values (:name, :weight, :orgId)";
+			$command = $connection->createCommand($sql);
+			$command->bindParam(":name",$name,PDO::PARAM_STR);
+			$command->bindParam(":orgId",$id,PDO::PARAM_STR);
+			$command->bindParam(":weight",$weight,PDO::PARAM_STR);
+			$command->execute(); 
+			
+			$this->redirect(array('view','id'=>$model->rid));
+			
 		}
 
 		$this->render('create',array(
@@ -86,7 +116,7 @@ class RoleController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+		$model=	$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -128,8 +158,31 @@ class RoleController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Role');
+		$orgId = Yii::app()->user->getId();
+		$dataProvider=new CActiveDataProvider('Role', array('criteria'=>array('condition'=>  'orgId = :orgId', 'params'=>array(':orgId'=>$orgId),
+		),));
 		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+	
+	public function actionPermission_change2()
+	{
+		$dataProvider=new CActiveDataProvider('Permissions');
+		
+		if(isset($_POST['buttonCancel']))
+        {
+         $this->redirect(Yii::app()->homeUrl);
+        }
+        
+		if(isset($_POST['buttonSubmit']))
+        {
+         $this->redirect("/organisation");
+        }
+        
+        
+		
+		$this->render('permission_change2',array(
 			'dataProvider'=>$dataProvider,
 		));
 	}

@@ -5,7 +5,7 @@
 
 <div class="view">
 
-    	<b><?php echo CHtml::encode($data->getAttributeLabel('pid')); ?>:</b>
+    <b><?php echo CHtml::encode($data->getAttributeLabel('pid')); ?>:</b>
 	<?php echo CHtml::link(CHtml::encode($data->pid),array('view','id'=>$data->pid)); ?>
 	<br />
 
@@ -19,6 +19,10 @@
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('module_mid')); ?>:</b>
 	<?php echo CHtml::encode($data->module_mid); ?>
+	<br />
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('role_rid')); ?>:</b>
+	<?php echo CHtml::encode($data->role_rid); ?>
 	<br />
 
 

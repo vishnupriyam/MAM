@@ -22,6 +22,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		/*'application.vendors.*',*/
 		'bootstrap.helpers.TbHtml',
 		'bootstrap.helpers.TbArray',
 		'bootstrap.behaviors.TbWidget',
@@ -55,7 +56,18 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
-		
+		// Handling Session
+	//	'session' => array (
+		//'sessionName' => 'Site Session',
+		//'class'=>'CDbHttpSession',
+		//'useTransparentSessionID'   =>($_POST['PHPSESSID']) ? true : false,
+		//'autoStart' => false,
+		//'cookieMode' => 'only',
+		//'timeout' => 300,
+		//'autoCreateSessionTable'=> false,
+		//'connectionID' => 'db', 
+		//'sessionTableName' => 'Session', 
+		//),
 		 // yiistrap configuration
         'bootstrap' => array(
             'class' => 'bootstrap.components.TbApi',
@@ -101,10 +113,10 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=mypasswordmanager',
+			'connectionString' => 'mysql:host=localhost;dbname=final_28',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => 'root',
 			'charset' => 'utf8',
 		),
 		

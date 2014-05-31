@@ -12,6 +12,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'List Role', 'url'=>array('index')),
 	array('label'=>'Manage Role', 'url'=>array('admin')),
+	array('label'=>'Assign role to users', 'url'=>array('rfu')),
 );
 ?>
 

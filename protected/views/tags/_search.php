@@ -17,7 +17,7 @@
 
                     <?php echo $form->textFieldControlGroup($model,'orgId',array('span'=>5)); ?>
 
-                    <?php echo $form->textFieldControlGroup($model,'unitCode',array('span'=>5)); ?>
+                    
 
         <div class="form-actions">
         <?php echo TbHtml::submitButton('Search',  array('color' => TbHtml::BUTTON_COLOR_PRIMARY,));?>

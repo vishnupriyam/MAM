@@ -32,11 +32,11 @@ class TagsController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','view'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -63,15 +63,52 @@ class TagsController extends Controller
 	public function actionCreate()
 	{
 		$model=new Tags;
-
+		
+		if(isset($_POST['buttonCancel']))
+        {
+         $this->redirect(Yii::app()->homeUrl);
+        }
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Tags'])) {
 			$model->attributes=$_POST['Tags'];
-			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->tagId));
-			}
+			//print_r($model->attributes=$_POST['Tags']);
+            //die();
+			$orgId = Yii::app()->user->getId();
+			//$tagName = $model->tagName;
+			//$dept_name = $model['dept_name']['child'];
+			//$dept_id = $model->dept_name;
+			$model->orgId = $orgId;
+			/*$sql3 = "select id from org_ou where orgId = :orgId";
+		    $command =  Yii::app()->db->createCommand($sql3);
+		    $command->bindParam(":orgId",$orgId,PDO::PARAM_INT);
+		    $dataReader = $command->query();
+	        $row = $dataReader->read();
+	        $dataReader->close();
+	        $ans = $row['id'];
+	        $dataReader->close();
+	        
+	        $criteria=new CDbCriteria();
+			$criteria->compare('root', $ans, true);
+			
+			$categories = CActiveRecord::model('ou_structure')->findAll($criteria, array('order' => 'lft, root'));
+        	
+        	$idd = 0;
+        	foreach ($categories as $n => $category) {
+        		if ($category->id = $dept_id) {
+        			//echo $dept_name;
+        			$idd = $category->id;
+        			break;
+        		}
+        	}
+        	*/
+        	//$model->dept_id = $idd;
+        	
+        	$model->save();
+        	$this->redirect(array('view','id'=>$model->tagId));
+        	//$this->redirect("/final/tags/view");
 		}
 
 		$this->render('create',array(
@@ -88,6 +125,12 @@ class TagsController extends Controller
 	{
 		$model=$this->loadModel($id);
 
+		
+		if(isset($_POST['buttonCancel']))
+        {
+         $this->redirect(Yii::app()->homeUrl);
+        }
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -128,7 +171,10 @@ class TagsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Tags');
+		//$dataProvider=new CActiveDataProvider('Tags');
+		$orgId = Yii::app()->user->getId();
+		$dataProvider=new CActiveDataProvider('Tags', array('criteria'=>array('condition'=>  'orgId = :orgId', 'params'=>array(':orgId'=>$orgId),
+		),));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

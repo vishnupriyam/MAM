@@ -13,6 +13,11 @@
  */
 class Module extends CActiveRecord
 {
+	
+public function behaviors(){
+          return array( 'CAdvancedArBehavior' => array(
+            'class' => 'application.extensions.CAdvancedArBehavior'));
+          }
 	/**
 	 * @return string the associated database table name
 	 */
@@ -79,9 +84,12 @@ class Module extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
+	
+		$orgId = Yii::app()->user->getId();
+		
 		$criteria->compare('mid',$this->mid);
 		$criteria->compare('name',$this->name,true);
+		$criteria->compare('orgId',$orgId);
 		$criteria->compare('description',$this->description,true);
 
 		return new CActiveDataProvider($this, array(

@@ -2,6 +2,25 @@
 
 class OrganisationController extends Controller
 {
+	
+	
+	public function actions()
+	{
+		return array(
+			// captcha action renders the CAPTCHA image displayed on the contact page
+			'captcha'=>array(
+				'class'=>'CCaptchaAction',
+				'backColor'=>0xFFFFFF,
+			),
+			// page action renders "static" pages stored under 'protected/views/site/pages'
+			// They can be accessed via: index.php?r=site/page&view=FileName
+			'page'=>array(
+				'class'=>'CViewAction',
+			),
+		);
+	}
+	
+	
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -19,6 +38,21 @@ class OrganisationController extends Controller
 		);
 	}
 
+	public function actionRegdone()
+	{
+		$this->render('regdone');
+	}
+	
+	public function actionNext()
+	{
+		print_r("hello");
+		if(isset($_POST['theIds'])){
+          $arra=explode(',', $_POST['theIds']);
+          // now do something with the ids in $arra
+          
+          die();
+    	}
+	}
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
@@ -28,15 +62,15 @@ class OrganisationController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','register1'),
+				'actions'=>array('index','view','register1','regdone','captcha'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','adddept'),
+				'actions'=>array('update','view'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','view','adddept','index','create','register1','regdone'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -64,6 +98,12 @@ class OrganisationController extends Controller
 	{
 		$model=new Organisation;
 
+		if(isset($_POST['buttonCancel']))
+        {
+         $this->redirect(Yii::app()->homeUrl);
+        }
+		
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -97,6 +137,37 @@ public function mailsend($to,$from,$subject,$message){
             echo "Message sent!";
         }
     }
+    
+	public function actionChangePassword($id){
+		$model=$this->loadModel($id);
+		if(isset($_POST['buttonCancel'])){
+		$this->redirect(Yii::app()->homeUrl);
+		}
+		if(isset($_POST['Users'])) 
+			{	
+			if(crypt($_POST['Users']['oldpassword'],'salt')!=$model->password){
+				echo "old password not matching";
+				$this->redirect(Yii::app()->homeUrl);
+			}
+			$model->attributes=$_POST['Users'];
+			//if($model->save())
+			//{
+				$orgId = Yii::app()->user->getId();
+				$newpassword = crypt($_POST['Users']['newpassword'],'salt');
+				$connection=Yii::app()->db;
+				$sql ="update users set password=:newpassword where orgId=:orgId";
+				$command=$connection->createCommand($sql);
+				$command->bindParam(":newpassword",$newpassword,PDO::PARAM_STR);
+				$command->bindParam(":orgId",$orgId,PDO::PARAM_INT);
+				$command->execute();	 
+				$this->redirect(array('view','id'=>$model->uid));
+			//}
+		}
+
+		$this->render('changePassword',array(
+		'model'=>$model,
+		));
+	}
 /*
 	public function actionCreate()
 	{
@@ -124,7 +195,10 @@ public function mailsend($to,$from,$subject,$message){
 	{
 		$model=new Organisation;
 
-		
+		if(isset($_POST['buttonCancel']))
+        {
+         $this->redirect(Yii::app()->homeUrl);
+        }
 
 		$this->render('adddept',array(
 			'model'=>$model,
@@ -142,6 +216,12 @@ public function mailsend($to,$from,$subject,$message){
 	{
 		$model=$this->loadModel($id);
 
+		if(isset($_POST['buttonCancel']))
+        {
+         $this->redirect(Yii::app()->homeUrl);
+        }
+		
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -178,6 +258,12 @@ public function mailsend($to,$from,$subject,$message){
 	{
 		$dataProvider=new CActiveDataProvider('Organisation');
 
+		/*$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));*/
+		$orgId = Yii::app()->user->getId();
+		$dataProvider=new CActiveDataProvider('Organisation', array('criteria'=>array('condition'=>  'orgId = :orgId', 'params'=>array(':orgId'=>$orgId),
+		),));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -188,7 +274,95 @@ public function mailsend($to,$from,$subject,$message){
 	{
 		$model=new Organisation;
 		/*$dataProvider=new CActiveDataProvider('Organisation');*/
-
+		$model->scenario = 'captchaRequired';
+		$connection = Yii::app()->db;
+		
+		if(isset($_POST['buttonCancel']))
+        {
+         $this->redirect(Yii::app()->homeUrl);
+        }
+		
+		if(isset($_POST['Organisation'])) {
+			$model->attributes=$_POST['Organisation'];
+			$model->valid = 1;
+			if($model->save()) {
+				$sql3 = "select max(id) from ou_structure";
+			    $command = $connection->createCommand($sql3);
+			    //$a = $command->query();
+			    $dataReader = $command->query();
+        		$row = $dataReader->read();
+        		$dataReader->close();
+        		$ans = $row['max(id)'];
+			    $ans = $ans + 1;
+			    $orgName = $model->orgName;
+			    $desc = "hello";
+				$sql = "insert into ou_structure(root,lft,rgt,level,name,description) values(:root, 1, 2, 1, :orgName,:desc)";
+				
+				$command = $connection->createCommand($sql);
+				$command->bindParam(":root",$ans,PDO::PARAM_INT);
+				$command->bindParam(":desc",$desc,PDO::PARAM_STR);
+				$command->bindParam(":orgName",$orgName,PDO::PARAM_STR);
+        		$command->execute(); 
+        	
+        		$sq = "select orgId from organisation where orgName = :orgName";
+        		$command = Yii::app()->db->createCommand($sq);
+        		$command->bindParam(":orgName",$orgName,PDO::PARAM_INT);
+			    $dataReader = $command->query();
+        		$row = $dataReader->read();
+        		$ans2 = $row['orgId'];
+        		$dataReader->close();
+        		
+        		
+				$sql4 = "insert into org_ou(orgId, id) values(:orgId, :id)";
+				$command = $connection->createCommand($sql4);
+				$command->bindParam(":orgId",$ans2,PDO::PARAM_INT);
+				$command->bindParam(":id",$ans,PDO::PARAM_INT);
+				$command->execute();
+				
+				//$id = Yii::app()->db->getLastInsertId();
+				$desc = $model->note;
+				$email = $model->email;
+				$pwd = crypt("hello", 'salt');
+				$sql2 = "insert into users(name,password,email,orgId) values(:username, :pwd, :email, :id)";
+        		$username = $model->orgName;
+				$command2 = $connection->createCommand($sql2);
+				$command2->bindParam(":username",$username,PDO::PARAM_STR);
+				$command2->bindParam(":pwd",$pwd,PDO::PARAM_STR);
+				$command2->bindParam(":email",$email,PDO::PARAM_STR);
+				$command2->bindParam(":id",$ans2,PDO::PARAM_INT);
+				
+				$command2->execute();
+				
+				$connection = Yii::app()->db;
+				
+				$sqlcom = "insert into module(name, description, orgId) values('Add asset',
+				'For adding assets', :orgId)";
+			    $command2 = $connection->createCommand($sqlcom);
+			    $command2->bindParam(":orgId",$ans2,PDO::PARAM_INT);
+			    $command2->execute();
+			    
+			    $sqlcom = "insert into module(name, description, orgId) values('Check in',
+				'Downloading requests enabled', :orgId)";
+			    $command2 = $connection->createCommand($sqlcom);
+			    $command2->bindParam(":orgId",$ans2,PDO::PARAM_INT);
+			    $command2->execute();
+			    
+			    $sqlcom = "insert into module(name, description, orgId) values('Check out',
+				'Uploading requests enabled', :orgId)";
+			    $command2 = $connection->createCommand($sqlcom);
+			    $command2->bindParam(":orgId",$ans2,PDO::PARAM_INT);
+			    $command2->execute();
+			    
+			    $sqlcom = "insert into module(name, description, orgId) values('Admin',
+				'CRUD for user, role, module, tag, category, permission', :orgId)";
+			    $command2 = $connection->createCommand($sqlcom);
+			    $command2->bindParam(":orgId",$ans2,PDO::PARAM_INT);
+			    $command2->execute();
+			    
+			    
+				$this->redirect('regdone');
+			}
+		}
 		$this->render('register1',array(
 			'model'=>$model,
 		));
@@ -199,14 +373,16 @@ public function mailsend($to,$from,$subject,$message){
 	 */
 	public function actionAdmin()
 	{
-		$model=new Organisation('search');
+		/*$model=new Organisation('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Organisation']))
 			$model->attributes=$_GET['Organisation'];
 
 		$this->render('admin',array(
 			'model'=>$model,
-		));
+		));*/
+		$url = "/final/ou_structure/tree";
+		$this->redirect($url);
 	}
 
 	/**

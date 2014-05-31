@@ -4,6 +4,14 @@
 /* @var $form TbActiveForm */
 ?>
 
+<style type="text/css">
+
+ .btn{
+ margin-right:15px;}
+
+</style>
+
+
 <div class="form">
 
     <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
@@ -24,10 +32,20 @@
             <?php echo $form->textFieldControlGroup($model,'weight',array('span'=>5)); ?>
 
         <div class="form-actions">
-        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
+        
+         <div class="row buttons">   
+          <?php 
+        
+            echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
-		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
-		)); ?>
+		    ));
+			echo TbHtml::submitButton(Yii::t('Yii','Cancel'),array(
+ 			'name'=>'buttonCancel',
+			'color'=>TbHtml::BUTTON_COLOR_DANGER,
+		    ));
+		    
+		   ?>
+		   </div>
     </div>
 
     <?php $this->endWidget(); ?>

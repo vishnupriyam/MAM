@@ -4,11 +4,6 @@
 ?>
 
 <?php
-$this->breadcrumbs=array(
-	'Category1s'=>array('index'),
-	$model->Name=>array('view','id'=>$model->cat_id),
-	'Update',
-);
 
 $this->menu=array(
 	array('label'=>'List Category1', 'url'=>array('index')),

@@ -11,7 +11,7 @@
 	'method'=>'get',
 )); ?>
 
-                    <?php echo $form->textFieldControlGroup($model,'cat_id',array('span'=>5)); ?>
+                    <?php /*echo $form->textFieldControlGroup($model,'cat_id',array('span'=>5));*/ ?>
 
                     <?php echo $form->textAreaControlGroup($model,'Name',array('rows'=>6,'span'=>8)); ?>
 

@@ -4,9 +4,6 @@
 ?>
 
 <?php
-$this->breadcrumbs=array(
-	'Category1s',
-);
 
 $this->menu=array(
 	array('label'=>'Create Category1','url'=>array('create')),
@@ -15,6 +12,7 @@ $this->menu=array(
 ?>
 
 <h1>Category1s</h1>
+
 
 <?php $this->widget('bootstrap.widgets.TbListView',array(
 	'dataProvider'=>$dataProvider,

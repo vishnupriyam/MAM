@@ -55,3 +55,20 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		),
 	),
 )); ?>
+
+	<?php 
+          /*  $orgId= Yii::app()->user->getId();
+			$criteria=new CDbCriteria();
+			$criteria->compare('orgId', $orgId, true);
+            echo $form->dropDownListControlGroup($model, 'module_mid',
+			CHtml::listData(Role::model()->findAll($criteria), 'rid', 'name'), 
+			array('span'=>3,'label'=>'Roles','help' => '<strong>Note:</strong> Labels surround all the options for much larger click areas.'), array('label'=>'Role')); ?>
+*/
+//<?php 
+    /*        $orgId= Yii::app()->user->getId();
+			$criteria=new CDbCriteria();
+			$criteria->compare('orgId', $orgId, true);
+            echo $form->dropDownListControlGroup($model, 'module_mid',
+			CHtml::listData(Users::model()->findAll($criteria), 'uid', 'name'), 
+			array('span'=>3,'label'=>'Roles','help' => '<strong>Note:</strong> Labels surround all the options for much larger click areas.'), array('label'=>'Role')); ?>
+*/

@@ -60,11 +60,17 @@
 		<?php /*echo $form->passwordFieldControlGroup($model, 'password',
 			array('label'=>'Password','placeholder'=>'Enter Password','help'=>'atleast 3 alphbets,2 numbers and a special character')); */?>
 		
-		<?php echo $form->textFieldcontrolGroup($model,'orgId',
-	        		array('label'=>'Organisation Id','placeholder' => 'Id'));?>
+		<?php /*echo $form->textFieldcontrolGroup($model,'orgId',
+	        		array('label'=>'Organisation Id','placeholder' => 'Id'));*/?>
 
 		<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo TbHtml::submitButton(Yii::t('Yii','Cancel'),array(
+ 			'name'=>'buttonCancel',
+			'color'=>TbHtml::BUTTON_COLOR_DANGER,
+		    ));?>
+		    
+
 	</div>
 	
 	</fieldset>

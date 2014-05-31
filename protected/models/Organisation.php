@@ -16,10 +16,16 @@
  * @property string $note
  * @property integer $fax
  * @property string $password
- * @property integer $orgId
+ * @property string $orgId
  */
 class Organisation extends CActiveRecord
 {
+	public $verifyCode;
+	
+	public function behaviors(){
+          return array( 'CAdvancedArBehavior' => array(
+            'class' => 'application.extensions.CAdvancedArBehavior'));
+          }
 	/**
 	 * @return string the associated database table name
 	 */
@@ -27,7 +33,6 @@ class Organisation extends CActiveRecord
 	{
 		return 'organisation';
 	}
-
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -36,13 +41,15 @@ class Organisation extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('orgName, orgId', 'required'),
-			array('empNo, phone, fax, orgId', 'numerical', 'integerOnly'=>true),
+			array('orgName', 'required'),
+			array('empNo, phone, fax', 'numerical', 'integerOnly'=>true),
 			array('email', 'length', 'max'=>26),
 			array('addr1, addr2', 'length', 'max'=>20),
 			array('note', 'length', 'max'=>150),
 			array('password', 'length', 'max'=>10),
 			array('state, country, orgType', 'safe'),
+			// verifyCode needs to be entered correctly
+			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('orgName, empNo, phone, email, addr1, addr2, state, country, orgType, note, fax, password, orgId', 'safe', 'on'=>'search'),
@@ -57,6 +64,9 @@ class Organisation extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+		 'category1'=>array(self::HAS_MANY,'Category1','orgId'),
+		 'tags'=>array(self::HAS_MANY,'tags','orgId'),
+		
 		);
 	}
 
@@ -66,19 +76,23 @@ class Organisation extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'orgName' => 'Org Name',
-			'empNo' => 'Emp No',
+			'orgName' => 'Organisation Name',
+			'empNo' => 'No of employee',
 			'phone' => 'Phone',
 			'email' => 'Email',
-			'addr1' => 'Addr1',
-			'addr2' => 'Addr2',
+			'addr1' => 'Address Street 1',
+			'addr2' => 'Address',
 			'state' => 'State',
 			'country' => 'Country',
-			'orgType' => 'Org Type',
+			'orgType' => 'Organisation Type',
 			'note' => 'Note',
 			'fax' => 'Fax',
 			'password' => 'Password',
-			'orgId' => 'Org',
+			'orgId' => 'Organisation Id',
+			'verifyCode'=>'Verification Code',
+		
+		
+		
 		);
 	}
 
@@ -112,7 +126,7 @@ class Organisation extends CActiveRecord
 		$criteria->compare('note',$this->note,true);
 		$criteria->compare('fax',$this->fax);
 		$criteria->compare('password',$this->password,true);
-		$criteria->compare('orgId',$this->orgId);
+		$criteria->compare('orgId',$this->orgId,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -4,10 +4,6 @@
 ?>
 
 <?php
-$this->breadcrumbs=array(
-	'Category1s'=>array('index'),
-	'Create',
-);
 
 $this->menu=array(
 	array('label'=>'List Category1', 'url'=>array('index')),

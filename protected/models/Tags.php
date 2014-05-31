@@ -11,6 +11,11 @@
  */
 class Tags extends CActiveRecord
 {
+	
+public function behaviors(){
+          return array( 'CAdvancedArBehavior' => array(
+            'class' => 'application.extensions.CAdvancedArBehavior'));
+          }
 	/**
 	 * @return string the associated database table name
 	 */
@@ -22,16 +27,19 @@ class Tags extends CActiveRecord
 	/**
 	 * @return array validation rules for model attributes.
 	 */
+	public $orgName;
+	public $name;
+	
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('tagName, orgId, unitCode', 'required'),
-			array('orgId, unitCode', 'numerical', 'integerOnly'=>true),
+			array('tagName, orgId, dept_id', 'required'),
+			array('orgId, dept_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('tagId, tagName, orgId, unitCode', 'safe', 'on'=>'search'),
+			array('tagName, orgName, name', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -43,6 +51,9 @@ class Tags extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+		  'organisation'=>array(self::BELONGS_TO,'Organisation','orgId'),
+		  // ou_stucture and category1 relationship
+		  'ou_structure'=>array(self::BELONGS_TO,'Ou_structure','dept_id'),
 		);
 	}
 
@@ -54,8 +65,8 @@ class Tags extends CActiveRecord
 		return array(
 			'tagId' => 'Tag',
 			'tagName' => 'Tag Name',
-			'orgId' => 'Org',
-			'unitCode' => 'Unit Code',
+			'orgId' => 'Organisation Id',
+			
 		);
 	}
 
@@ -75,18 +86,25 @@ class Tags extends CActiveRecord
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
+		//$criteria=new CDbCriteria;
 		$criteria=new CDbCriteria;
-
+		$orgId = Yii::app()->user->getId();
 		$criteria->compare('tagId',$this->tagId);
 		$criteria->compare('tagName',$this->tagName,true);
-		$criteria->compare('orgId',$this->orgId);
-		$criteria->compare('unitCode',$this->unitCode);
+		$criteria->compare('orgId',$orgId);
+		
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
+	 public function getStatus() 
+	{
+        if (isset(self::$validPropertyStatuses[$this->pr_status]))
+            return self::$validPropertyStatuses[$this->pr_status];
 
+        return false; // Or throw exception or something
+    }
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

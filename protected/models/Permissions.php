@@ -8,6 +8,7 @@
  * @property string $name
  * @property string $description
  * @property integer $module_mid
+ * @property integer $role_rid
  *
  * The followings are the available model relations:
  * @property Module $moduleM
@@ -31,12 +32,12 @@ class Permissions extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, description, module_mid', 'required'),
-			array('module_mid', 'numerical', 'integerOnly'=>true),
+			array('name, description, module_mid, role_rid', 'required'),
+			array('module_mid, role_rid', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>65),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('pid, name, description, module_mid', 'safe', 'on'=>'search'),
+			array('pid, name, description, module_mid, role_rid', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,6 +64,7 @@ class Permissions extends CActiveRecord
 			'name' => 'Name',
 			'description' => 'Description',
 			'module_mid' => 'Module Mid',
+			'role_rid' => 'Role Rid',
 		);
 	}
 
@@ -88,6 +90,7 @@ class Permissions extends CActiveRecord
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('module_mid',$this->module_mid);
+		$criteria->compare('role_rid',$this->role_rid);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

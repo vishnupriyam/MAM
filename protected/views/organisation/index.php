@@ -7,9 +7,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Organisation', 'url'=>array('create')),
+	
 	array('label'=>'Manage Organisation', 'url'=>array('admin')),
-	array('label'=>'Add Department', 'url'=>array('adddept')),
+	//array('label'=>'Add Department', 'url'=>array('adddept')),
 );
 ?>
 

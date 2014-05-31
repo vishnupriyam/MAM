@@ -38,16 +38,8 @@
 	<?php echo $form->passwordFieldControlGroup($model, 'password',array('label'=>'Password','Placeholder'=>'Password',
 		'help'=>'minimum 2 alphabets,2 numbers,a special character')); ?>
 	
-	<?php echo TbHtml::passwordFieldControlGroup('cpassword','',array('label'=>'Confirm Password','Placeholder'=>'Password')); ?>
-	
-	<script type="text/javascript">
-	
-   		if($('#Users_password').val()!=$('#cpassword').val()){
-       	alert('Password not matches');
-       	return false;
-   		}
-   	return true;
-	</script>
+	<?php echo $form->passwordFieldControlGroup($model, 'cpassword',array('label'=>' Confirm Password','Placeholder'=>'Password',
+	'id'=>'cpassword')); ?>
 	
 	
 	
@@ -57,15 +49,11 @@
 	
 	<div class="span12">
 	<div class="" style="margin-left:-2em">
-		<?php echo TbHtml::inlinecheckBoxListControlGroup('roles','',array(
-	  	 '1'=> 'Permission 1',
-	  	  '2'=>'Permission 2',
-	  	  '3'=>'Permission 3',
-	  	  '4'=>'Permission 4',
-	  	  '5'=>'Permission 5',
-	  	  '6'=>'Permission 6',
-	  	  
-	  	  ), array('span'=>3,'label'=>'Roles','help' => '<strong>Note:</strong> Labels surround all the options for much larger click areas.')); ?>	 
+		<?php 
+		 $orgId= Yii::app()->user->getId();
+			$criteria=new CDbCriteria();
+			$criteria->compare('orgId', $orgId, true);
+		echo TbHtml::inlinecheckBoxListControlGroup('roles','',CHtml::listData(Role::model()->findAll($criteria), 'rid', 'name'), array('span'=>3,'label'=>'Roles','help' => '<strong>Note:</strong> Labels surround all the options for much larger click areas.')); ?>	 
 	 </div>	 
 	 </div>
 	  <?php echo $form->radioButtonListControlGroup($model, 'status', array(
@@ -100,7 +88,14 @@
 	
 	
 	<div class="row buttons" id="">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('id'=>'B1')); ?>
+		<?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('id'=>'B1')); ?>
+		<?php echo TbHtml::submitButton(Yii::t('Yii','Cancel'),array(
+ 			'name'=>'buttonCancel',
+			'color'=>TbHtml::BUTTON_COLOR_DANGER,
+		    ));?>
+		    
+	
+	
 	</div>
 
 	
@@ -110,7 +105,6 @@
 
 	</div><!-- form -->
 	
-	</fieldset>
 	<script type="text/javascript">
 	/*$(input['B1']).on('submit',function(){
    		if($('#Users_password').val()!=$('#cpassword').val()){
@@ -119,4 +113,4 @@
    		}
    	return true;
 		});*/
-	<script>
+	</script>

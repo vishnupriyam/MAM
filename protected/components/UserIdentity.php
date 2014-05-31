@@ -35,18 +35,25 @@ class UserIdentity extends CUserIdentity
 		return !$this->errorCode;
 	*/
 		
-	$record=Users::model()->findByAttributes(array('name'=>$this->username));
+		$record=Users::model()->findByAttributes(array('name'=>$this->username));
 		if($record===null)
 		$this->errorCode=self::ERROR_USERNAME_INVALID;
 		else if ($record->password!==crypt($this->password,'salt'))
 		$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		else{
-	/*	$this->_id=$record->uid;
-		$role=Role::model()->findByPk($record->id)	;
-		$this->setState('role',$role->name); */
+	    $this->_id=$record->orgId;
+	  //  $this->_id2=$record->uid;
+		//$role=Role::model()->findByPk($record->id)	;
+		//$this->setState('role',$role->name); 
 		$this->errorCode=self::ERROR_NONE;
 		}
 		return !$this->errorCode;
 		
 	}
+	
+	public function getId()
+	{
+		return $this->_id;
+	}
+	
 }

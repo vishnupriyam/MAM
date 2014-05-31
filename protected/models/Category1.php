@@ -22,16 +22,20 @@ class Category1 extends CActiveRecord
 	/**
 	 * @return array validation rules for model attributes.
 	 */
+	public $orgName;
+	public $name;
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('Name, orgId, unitCode', 'required'),
+			array('Name', 'required'),
+			//array('Name, orgName', 'max'=>45),
 			array('orgId, unitCode', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('cat_id, Name, orgId, unitCode', 'safe', 'on'=>'search'),
+			array('Name, orgName, name', 'safe', 'on'=>'search'),
+			
 		);
 	}
 
@@ -43,6 +47,9 @@ class Category1 extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+		 'organisation'=>array(self::BELONGS_TO,'Organisation','orgId'),
+		  // ou_stucture and category1 relationship
+		  'ou_structure'=>array(self::BELONGS_TO,'Ou_structure','unitCode'),
 		);
 	}
 
@@ -52,9 +59,9 @@ class Category1 extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'cat_id' => 'Cat',
-			'Name' => 'Name',
-			'orgId' => 'Org',
+			'cat_id' => 'Category',
+			'Name' => 'Category Name',
+			'orgId' => 'Organisation',
 			'unitCode' => 'Unit Code',
 		);
 	}
@@ -76,12 +83,16 @@ class Category1 extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
-		$criteria->compare('cat_id',$this->cat_id);
+		$orgId = Yii::app()->user->getId();
+		//$criteria->compare('cat_id',$this->cat_id);
 		$criteria->compare('Name',$this->Name,true);
-		$criteria->compare('orgId',$this->orgId);
+		$criteria->compare('orgId',$orgId, true);
 		$criteria->compare('unitCode',$this->unitCode);
-
+		//$criteria->compare(organisation.orgName,$this->orgName,true);
+		//$criteria->compare(ou_structure.name,$this->name,true);
+		    
+		
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

@@ -16,9 +16,12 @@
      array('label'=>'Description','span'=>8,'rows'=>'5')); ?>
 
      <div class="span4 offset1">
-     
-     <?php echo TbHtml::button('Edit'); ?>
      <?php echo TbHtml::button('Submit', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
+     <?php echo TbHtml::submitButton(Yii::t('Yii','Cancel'),array(
+ 			'name'=>'buttonCancel',
+			'color'=>TbHtml::BUTTON_COLOR_DANGER,
+		    ));?>
+		
      </div>
      
      </fieldset>

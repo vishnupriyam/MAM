@@ -32,7 +32,7 @@ class UsersController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','changePassword'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -56,23 +56,81 @@ class UsersController extends Controller
 		));
 	}
 
+	/*
+	 * ChangePassword controller
+	 */
+	
+	public function actionChangePassword($id){
+		$model=$this->loadModel($id);
+		$model->scenario='changePassword';
+		if(isset($_POST['buttonCancel'])){
+		$this->redirect(Yii::app()->homeUrl);
+		}
+		if(isset($_POST['Users'])) 
+			{	
+			if(crypt($_POST['Users']['oldpassword'],'salt')!=$model->password){
+			//	echo $this->errorSummary('oldpassword', 'Ur password and present password are not matching');
+			//	$this->redirect(Yii::app()->user->returnUrl);
+				print_r("BAD PASSWORD!!! " );
+				die();
+			}
+		
+			if($model->save())
+			{
+				
+				$orgId = Yii::app()->user->getId();
+				$newpassword = crypt($_POST['Users']['newpassword'],'salt');
+				$connection=Yii::app()->db;
+							
+				$sql ="update users set password=:newpassword where orgId=:orgId";
+				$command=$connection->createCommand($sql);
+				$command->bindParam(":newpassword",$newpassword,PDO::PARAM_STR);
+				$command->bindParam(":orgId",$orgId,PDO::PARAM_INT);
+				$command->execute();
+				//print_r($newpassword);die();	 
+				$this->redirect(Yii::app()->homeUrl);
+			}
+		}
+
+		$this->render('changePassword',array(
+		'model'=>$model,
+		));
+	}
+	
+	
+	
+	
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 	public function actionCreate()
 	{
-		$model=new Users;
+		$model=new Users('create');
+	    //$dataProvider=new CActiveDataProvider('Role');
 
+		if(isset($_POST['buttonCancel']))
+        {
+         $this->redirect(Yii::app()->homeUrl);
+        }
+		
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Users']))
 		{
+			
+			//echo json_encode($model->roles);
 			$model->attributes=$_POST['Users'];
-			$model->password=crypt($model->password,'salt');
-			if($model->save())
+			if($model->validate())
+			{
+			$model->cpassword=crypt($model->cpassword,'salt');	
+			$model->password=crypt($model->password,'salt');}
+			
+			if($model->save()){
 				$this->redirect(array('view','id'=>$model->uid));
+			echo json_encode($model->roles);}
 		}
 
 		$this->render('create',array(
@@ -88,16 +146,23 @@ class UsersController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+		
+		if(isset($_POST['buttonCancel']))
+        {
+         $this->redirect(Yii::app()->homeUrl);
+        }
+		
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Users']))
 		{
-			$model->attributes=$_POST['Users'];
-			if($model->save())
+			$model->attributes=$_POST['Users'];		
+			if($model->save()){
 				$this->redirect(array('view','id'=>$model->uid));
-		}
+				}		
+			}
 
 		$this->render('update',array(
 			'model'=>$model,

@@ -4,10 +4,6 @@
 ?>
 
 <?php
-$this->breadcrumbs=array(
-	'Category1s'=>array('index'),
-	$model->Name,
-);
 
 $this->menu=array(
 	array('label'=>'List Category1', 'url'=>array('index')),
@@ -26,9 +22,17 @@ $this->menu=array(
     ),
     'data'=>$model,
     'attributes'=>array(
-		'cat_id',
 		'Name',
-		'orgId',
-		'unitCode',
-	),
-)); ?>
+		 array(
+    	  'name'=>'organisation Name',
+    	  'value'=>$model->organisation->orgName,
+    	 ),
+    	 array(
+    	 'name'=>'department name',
+    	 'value'=>$model->ou_structure->name,
+    	 ),
+    	//'unitCode',
+    		),
+)); 
+
+?>

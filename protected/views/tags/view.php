@@ -29,6 +29,6 @@ $this->menu=array(
 		'tagId',
 		'tagName',
 		'orgId',
-		'unitCode',
+    	'dept_id'
 	),
 )); ?>

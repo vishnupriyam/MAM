@@ -14,12 +14,14 @@ $this->breadcrumbs=array(
 <p>Please fill out the following form with your login credentials:</p>
 
 <div class="form">
-<?php $form=$this->beginWidget('CActiveForm', array(
+<?php //$a = crypt("us", 'salt');echo $a;?>
+<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'id'=>'login-form',
+	'layout'=>TbHtml::FORM_LAYOUT_HORIZONTAL,
 	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
+	//'clientOptions'=>array(
+	//	'validateOnSubmit'=>true,
+	//),
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -46,7 +48,11 @@ $this->breadcrumbs=array(
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Login'); ?>
+		<?php echo TbHtml::submitButton('Login'); ?>
+		<?php echo TbHtml::submitButton(Yii::t('Yii','Cancel'),array(
+ 			'name'=>'buttonCancel',
+			'color'=>TbHtml::BUTTON_COLOR_DANGER,
+		    ));?>
 	</div>
 
 <?php $this->endWidget(); ?>

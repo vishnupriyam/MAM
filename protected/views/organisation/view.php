@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Organisation', 'url'=>array('index')),
-	array('label'=>'Create Organisation', 'url'=>array('create')),
+	//array('label'=>'Create Organisation', 'url'=>array('create')),
 	array('label'=>'Update Organisation', 'url'=>array('update', 'id'=>$model->orgId)),
 	array('label'=>'Delete Organisation', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->orgId),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Organisation', 'url'=>array('admin')),
