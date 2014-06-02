@@ -23,7 +23,7 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		"orgName:text:Organisation Name",
-		"empNo:number:Number Of Employees",
+		"noEmp:number:Number Of Employees",
 		"phone:text:Phone",
 		"email:email:Email id",
 		"addr1:text:Address Street 1",
@@ -31,9 +31,8 @@ $this->menu=array(
 		"state:text:State",
 		"country:text:Country",
 		"orgType:text:Type of Organisation",
-		"note:text:Description",
+		"description:text:Description",
 		"fax:number:Fax",
-		/*"password:password:Password",*/
 		"orgId:number:Organisation ID",
 	),
 )); ?>

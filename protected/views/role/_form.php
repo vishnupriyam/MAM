@@ -16,6 +16,7 @@
 
     <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'id'=>'role-form',
+    'layout'=>TbHtml::FORM_LAYOUT_HORIZONTAL,
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
@@ -27,9 +28,9 @@
 
     <?php echo $form->errorSummary($model); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'name',array('span'=>5,'maxlength'=>60)); ?>
+            <?php echo $form->textFieldControlGroup($model,'name',array('span'=>3,'maxlength'=>60)); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'weight',array('span'=>5)); ?>
+            <?php echo $form->textFieldControlGroup($model,'weight',array('span'=>3)); ?>
 
         <div class="form-actions">
         

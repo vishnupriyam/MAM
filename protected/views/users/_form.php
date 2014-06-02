@@ -22,7 +22,7 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -38,10 +38,10 @@
 	<?php echo $form->passwordFieldControlGroup($model, 'password',array('label'=>'Password','Placeholder'=>'Password',
 		'help'=>'minimum 2 alphabets,2 numbers,a special character')); ?>
 	
-	<?php echo $form->passwordFieldControlGroup($model, 'cpassword',array('label'=>' Confirm Password','Placeholder'=>'Password',
-	'id'=>'cpassword')); ?>
+	<?php echo $form->passwordFieldControlGroup($model, 'cpassword',array('label'=>'Confirm Password','Placeholder'=>'Password',
+		'id'=>'cpassword')); ?>
 	
-	
+			
 	
 	<?php echo $form->textFieldControlGroup($model,'mobile',array('label'=>'Phone','Placeholder'=>'Phone Number')); ?>
 	
@@ -49,12 +49,11 @@
 	
 	<div class="span12">
 	<div class="" style="margin-left:-2em">
-		<?php 
-		 $orgId= Yii::app()->user->getId();
-			$criteria=new CDbCriteria();
-			$criteria->compare('orgId', $orgId, true);
-		echo TbHtml::inlinecheckBoxListControlGroup('roles','',CHtml::listData(Role::model()->findAll($criteria), 'rid', 'name'), array('span'=>3,'label'=>'Roles','help' => '<strong>Note:</strong> Labels surround all the options for much larger click areas.')); ?>	 
-	 </div>	 
+		<?php echo TbHtml::inlinecheckBoxListControlGroup('roles','',CHtml::listData(Role::model()->findAll(), 'rid', 'name'), array('span'=>3,'label'=>'Roles','help' => '<strong>Note:</strong> Labels surround all the options for much larger click areas.')); ?>	 
+	 </div>
+	 
+	  
+	 	 
 	 </div>
 	  <?php echo $form->radioButtonListControlGroup($model, 'status', array(
 	  	  'Blocked',
@@ -87,8 +86,8 @@
 	      
 	
 	
-	<div class="row buttons" id="">
-		<?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('id'=>'B1')); ?>
+	<div class="row buttons" id="" >
+		<?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('id'=>'B1','color'=>TbHtml::BUTTON_COLOR_PRIMARY,)); ?>
 		<?php echo TbHtml::submitButton(Yii::t('Yii','Cancel'),array(
  			'name'=>'buttonCancel',
 			'color'=>TbHtml::BUTTON_COLOR_DANGER,

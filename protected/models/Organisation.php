@@ -5,7 +5,7 @@
  *
  * The followings are the available columns in table 'organisation':
  * @property string $orgName
- * @property integer $empNo
+ * @property integer $noEmp
  * @property integer $phone
  * @property string $email
  * @property string $addr1
@@ -13,10 +13,10 @@
  * @property string $state
  * @property string $country
  * @property string $orgType
- * @property string $note
+ * @property string $description
  * @property integer $fax
- * @property string $password
  * @property string $orgId
+ * @property integer $validity
  */
 class Organisation extends CActiveRecord
 {
@@ -26,6 +26,7 @@ class Organisation extends CActiveRecord
           return array( 'CAdvancedArBehavior' => array(
             'class' => 'application.extensions.CAdvancedArBehavior'));
           }
+	
 	/**
 	 * @return string the associated database table name
 	 */
@@ -33,26 +34,28 @@ class Organisation extends CActiveRecord
 	{
 		return 'organisation';
 	}
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
+	
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
 			array('orgName', 'required'),
-			array('empNo, phone, fax', 'numerical', 'integerOnly'=>true),
+			array('noEmp, phone, fax, validity', 'numerical', 'integerOnly'=>true),
 			array('email', 'length', 'max'=>26),
-			array('addr1, addr2', 'length', 'max'=>20),
-			array('note', 'length', 'max'=>150),
-			array('password', 'length', 'max'=>10),
-			array('state, country, orgType', 'safe'),
+			array('addr1, addr2', 'length', 'max'=>255),
+			array('state', 'length', 'max'=>50),
+			array('country, orgType', 'length', 'max'=>30),
+			array('description', 'safe'),
 			// verifyCode needs to be entered correctly
 			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('orgName, empNo, phone, email, addr1, addr2, state, country, orgType, note, fax, password, orgId', 'safe', 'on'=>'search'),
+			array('orgName, noEmp, phone, email, addr1, addr2, state, country, orgType, description, fax, orgId, validity', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -64,7 +67,8 @@ class Organisation extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		 'category1'=>array(self::HAS_MANY,'Category1','orgId'),
+		 //one to many relationship	
+		 'category'=>array(self::HAS_MANY,'Category','orgId'),
 		 'tags'=>array(self::HAS_MANY,'tags','orgId'),
 		
 		);
@@ -76,23 +80,19 @@ class Organisation extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'orgName' => 'Organisation Name',
-			'empNo' => 'No of employee',
+			'orgName' => 'Org Name',
+			'noEmp' => 'No Emp',
 			'phone' => 'Phone',
 			'email' => 'Email',
-			'addr1' => 'Address Street 1',
-			'addr2' => 'Address',
+			'addr1' => 'Addr1',
+			'addr2' => 'Addr2',
 			'state' => 'State',
 			'country' => 'Country',
-			'orgType' => 'Organisation Type',
-			'note' => 'Note',
+			'orgType' => 'Org Type',
+			'description' => 'Description',
 			'fax' => 'Fax',
-			'password' => 'Password',
-			'orgId' => 'Organisation Id',
-			'verifyCode'=>'Verification Code',
-		
-		
-		
+			'orgId' => 'Org',
+			'validity' => 'Validity',
 		);
 	}
 
@@ -115,7 +115,7 @@ class Organisation extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('orgName',$this->orgName,true);
-		$criteria->compare('empNo',$this->empNo);
+		$criteria->compare('noEmp',$this->noEmp);
 		$criteria->compare('phone',$this->phone);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('addr1',$this->addr1,true);
@@ -123,10 +123,10 @@ class Organisation extends CActiveRecord
 		$criteria->compare('state',$this->state,true);
 		$criteria->compare('country',$this->country,true);
 		$criteria->compare('orgType',$this->orgType,true);
-		$criteria->compare('note',$this->note,true);
+		$criteria->compare('description',$this->description,true);
 		$criteria->compare('fax',$this->fax);
-		$criteria->compare('password',$this->password,true);
 		$criteria->compare('orgId',$this->orgId,true);
+		$criteria->compare('validity',$this->validity);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

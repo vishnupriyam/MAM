@@ -29,6 +29,6 @@ $this->menu=array(
 		'pid',
 		'name',
 		'description',
-		'module_mid',
+		'role_rid',//instead have to display role name
 	),
 )); ?>

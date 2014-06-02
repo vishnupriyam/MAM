@@ -20,14 +20,12 @@
 
     <?php echo $form->errorSummary($model); ?>
 
-            <?php //echo $form->textFieldControlGroup($model,'name',array('maxlength'=>45)); ?>
-            <?php //echo $form->textAreaControlGroup($model,'description',array('rows'=>6,'span'=>8)); ?>
-			
-		    <div class="" style="margin-left:-2em">
-		<?php echo TbHtml::inlinecheckBoxListControlGroup('Modules','',CHtml::listData(ModData::model()->findAll(), 'mod_id', 'mod_name'), array('span'=>3,'label'=>'Module')); ?>	 
-	 </div>	 
+            <?php echo $form->textFieldControlGroup($model,'name',array('maxlength'=>45)); ?>
+
+            <?php echo $form->textAreaControlGroup($model,'description',array('rows'=>6,'span'=>8)); ?>
+
         <div class="form-actions">
-        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array(
+        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
 		)); ?>
 		<?php echo TbHtml::submitButton(Yii::t('Yii','Cancel'),array(

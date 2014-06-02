@@ -9,11 +9,6 @@
  */
 class UsersHasRole extends CActiveRecord
 {
-	
-public function behaviors(){
-          return array( 'CAdvancedArBehavior' => array(
-            'class' => 'application.extensions.CAdvancedArBehavior'));
-          }
 	/**
 	 * @return string the associated database table name
 	 */

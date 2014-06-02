@@ -86,8 +86,7 @@ class UsersController extends Controller
 				$command=$connection->createCommand($sql);
 				$command->bindParam(":newpassword",$newpassword,PDO::PARAM_STR);
 				$command->bindParam(":orgId",$orgId,PDO::PARAM_INT);
-				$command->execute();
-				//print_r($newpassword);die();	 
+				$command->execute();	 
 				$this->redirect(Yii::app()->homeUrl);
 			}
 		}
@@ -107,7 +106,6 @@ class UsersController extends Controller
 	public function actionCreate()
 	{
 		$model=new Users('create');
-	    //$dataProvider=new CActiveDataProvider('Role');
 
 		if(isset($_POST['buttonCancel']))
         {
@@ -123,6 +121,7 @@ class UsersController extends Controller
 			
 			//echo json_encode($model->roles);
 			$model->attributes=$_POST['Users'];
+			$model->orgId = Yii::app()->user->getId();
 			if($model->validate())
 			{
 			$model->cpassword=crypt($model->cpassword,'salt');	

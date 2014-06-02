@@ -64,8 +64,7 @@ class TagsController extends Controller
 	{
 		$model=new Tags;
 		
-		if(isset($_POST['buttonCancel']))
-        {
+		if(isset($_POST['buttonCancel'])){
          $this->redirect(Yii::app()->homeUrl);
         }
 		
@@ -74,41 +73,11 @@ class TagsController extends Controller
 
 		if (isset($_POST['Tags'])) {
 			$model->attributes=$_POST['Tags'];
-			//print_r($model->attributes=$_POST['Tags']);
-            //die();
 			$orgId = Yii::app()->user->getId();
-			//$tagName = $model->tagName;
-			//$dept_name = $model['dept_name']['child'];
-			//$dept_id = $model->dept_name;
 			$model->orgId = $orgId;
-			/*$sql3 = "select id from org_ou where orgId = :orgId";
-		    $command =  Yii::app()->db->createCommand($sql3);
-		    $command->bindParam(":orgId",$orgId,PDO::PARAM_INT);
-		    $dataReader = $command->query();
-	        $row = $dataReader->read();
-	        $dataReader->close();
-	        $ans = $row['id'];
-	        $dataReader->close();
-	        
-	        $criteria=new CDbCriteria();
-			$criteria->compare('root', $ans, true);
-			
-			$categories = CActiveRecord::model('ou_structure')->findAll($criteria, array('order' => 'lft, root'));
-        	
-        	$idd = 0;
-        	foreach ($categories as $n => $category) {
-        		if ($category->id = $dept_id) {
-        			//echo $dept_name;
-        			$idd = $category->id;
-        			break;
-        		}
-        	}
-        	*/
-        	//$model->dept_id = $idd;
-        	
-        	$model->save();
+			if($model->save())
         	$this->redirect(array('view','id'=>$model->tagId));
-        	//$this->redirect("/final/tags/view");
+        	
 		}
 
 		$this->render('create',array(
@@ -205,7 +174,12 @@ class TagsController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Tags::model()->findByPk($id);
+		//$model=Tags::model()->findByPk($id);
+		//$model = Yii::app()->db->createCommand()->select('*')->from('tags')->where('tagId=:tagId',array(':tagId'=>$id));
+		//$model = Tags::model()->findByPk($id);
+		$model=Tags::model()->find('tagId=:tagId', array(':tagId'=>$id));
+		
+		
 		if ($model===null) {
 			throw new CHttpException(404,'The requested page does not exist.');
 		}

@@ -17,5 +17,6 @@
 	<?php echo CHtml::encode($data->description); ?>
 	<br />
 
+	
 
 </div>

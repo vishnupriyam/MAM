@@ -28,7 +28,8 @@ $this->menu=array(
     'attributes'=>array(
 		'tagId',
 		'tagName',
-		'orgId',
-    	'dept_id'
+		array(
+		'name'=>'organisation name',
+		'value'=>$model->organisation->orgName),
 	),
 )); ?>

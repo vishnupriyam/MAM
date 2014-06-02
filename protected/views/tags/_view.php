@@ -14,8 +14,11 @@
 	<?php echo CHtml::encode($data->organisation->orgName); ?>
 	<br />
 	
-	<b><?php echo CHtml::encode($data->getAttributeLabel('dept_id')); ?>:</b>
-	<?php echo CHtml::encode($data->ou_structure->name); ?>
+	
+	<?php 
+	//to be changed to dept_name using tags_has_department
+	/*echo CHtml::encode($data->getAttributeLabel('dept_id')); ?>:</b>
+	<?php echo CHtml::encode($data->ou_structure->name);*/ ?>
 	<br />
 
 	

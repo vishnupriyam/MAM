@@ -38,30 +38,20 @@ If you have business inquiries or other questions, please fill out the following
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name'); ?>
-		<?php echo $form->error($model,'name'); ?>
-	</div>
+	<?php echo $form->textFieldControlGroup($model, 'name',
+		array('label'=>'Name','Placeholder'=>'Name'));?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email'); ?>
-		<?php echo $form->error($model,'email'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'subject'); ?>
-		<?php echo $form->textField($model,'subject',array('size'=>60,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'subject'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'body'); ?>
-		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'body'); ?>
-	</div>
-
+	<?php echo $form->emailFieldControlGroup($model, 'email',
+		array('label'=>'Email','Placeholder'=>'Email'));?>
+		
+	<?php echo $form->textFieldControlGroup($model, 'subject',
+		array('label'=>'Subject','Placeholder'=>'Subject'));?>
+	
+	<?php echo $form->textAreaControlGroup($model, 'body',
+		array('label'=>'Body','Placeholder'=>'Body','rows'=>3,'span'=>6));?>
+	
+	
+	
 	<?php if(CCaptcha::checkRequirements()): ?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'verifyCode'); ?>

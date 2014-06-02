@@ -6,70 +6,26 @@
 
 <div class="wide form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
+    <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 )); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'uid'); ?>
-		<?php echo $form->textField($model,'uid'); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>60)); ?>
-	</div>
+                    <?php echo $form->textFieldControlGroup($model,'name',array('span'=>5,'maxlength'=>45)); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'login'); ?>
-		<?php echo $form->textField($model,'login'); ?>
-	</div>
+                    <?php echo $form->textFieldControlGroup($model,'email',array('span'=>5,'maxlength'=>60)); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'logout'); ?>
-		<?php echo $form->textField($model,'logout'); ?>
-	</div>
+                    <?php echo $form->textFieldControlGroup($model,'DateCreated',array('span'=>5)); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'status'); ?>
-		<?php echo $form->textField($model,'status',array('size'=>60,'maxlength'=>60)); ?>
-	</div>
+                    <?php echo $form->textFieldControlGroup($model,'LastUpdate',array('span'=>5)); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'picture'); ?>
-		<?php echo $form->textField($model,'picture'); ?>
-	</div>
+                   
+        <div class="form-actions">
+        <?php echo TbHtml::submitButton('Search',  array('color' => TbHtml::BUTTON_COLOR_PRIMARY,));?>
+    </div>
 
-	<div class="row">
-		<?php echo $form->label($model,'mobile'); ?>
-		<?php echo $form->textField($model,'mobile',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'quota'); ?>
-		<?php echo $form->textField($model,'quota'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'DateCreated'); ?>
-		<?php echo $form->textField($model,'DateCreated'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'LastUpdate'); ?>
-		<?php echo $form->textField($model,'LastUpdate'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
+    <?php $this->endWidget(); ?>
 
 </div><!-- search-form -->

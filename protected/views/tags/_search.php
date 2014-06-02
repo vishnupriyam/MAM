@@ -13,11 +13,9 @@
 
                     <?php echo $form->textFieldControlGroup($model,'tagId',array('span'=>5)); ?>
 
-                    <?php echo $form->textAreaControlGroup($model,'tagName',array('rows'=>6,'span'=>8)); ?>
+                    <?php echo $form->textFieldControlGroup($model,'tagName',array('span'=>5,'maxlength'=>45)); ?>
 
-                    <?php echo $form->textFieldControlGroup($model,'orgId',array('span'=>5)); ?>
-
-                    
+                    <?php echo $form->textFieldControlGroup($model,'orgId',array('span'=>5,'maxlength'=>11)); ?>
 
         <div class="form-actions">
         <?php echo TbHtml::submitButton('Search',  array('color' => TbHtml::BUTTON_COLOR_PRIMARY,));?>

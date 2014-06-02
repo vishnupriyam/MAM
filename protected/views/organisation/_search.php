@@ -18,7 +18,7 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'No of employees'); ?>
-		<?php echo $form->textField($model,'empNo'); ?>
+		<?php echo $form->textField($model,'noEmp'); ?>
 	</div>
 
 	<div class="row">
@@ -58,7 +58,7 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'Note'); ?>
-		<?php echo $form->textField($model,'note',array('size'=>60,'maxlength'=>150)); ?>
+		<?php echo $form->textField($model,'description',array('size'=>60,'maxlength'=>150)); ?>
 	</div>
 
 	<div class="row">

@@ -46,19 +46,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'id'=>'tags-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
-	'columns'=>array(
-		//'tagId',
-		'tagName',
-		//'orgId',
-		//'dept_id',
-		array('name'=>'orgName',
-		      'value'=>'$data->organisation->orgName'),
-		//'unitCode',
-		array('name'=>'name',
-		      'value'=>'$data->ou_structure->name'),
 		
-		array(
-			'class'=>'bootstrap.widgets.TbButtonColumn',
-		),
-	),
-)); ?>
+	)
+); ?>

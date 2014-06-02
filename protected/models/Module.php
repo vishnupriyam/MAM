@@ -7,17 +7,10 @@
  * @property integer $mid
  * @property string $name
  * @property string $description
- *
- * The followings are the available model relations:
- * @property Permissions[] $permissions
+ * @property integer $orgId
  */
 class Module extends CActiveRecord
 {
-	
-public function behaviors(){
-          return array( 'CAdvancedArBehavior' => array(
-            'class' => 'application.extensions.CAdvancedArBehavior'));
-          }
 	/**
 	 * @return string the associated database table name
 	 */
@@ -35,11 +28,12 @@ public function behaviors(){
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
+			array('orgId', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>45),
-			array('description', 'safe'),
+			array('description', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('mid, name, description', 'safe', 'on'=>'search'),
+			array('mid, name, description, orgId', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -51,7 +45,6 @@ public function behaviors(){
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'permissions' => array(self::HAS_MANY, 'Permissions', 'module_mid'),
 		);
 	}
 
@@ -61,9 +54,10 @@ public function behaviors(){
 	public function attributeLabels()
 	{
 		return array(
-			'mid' => 'Mid',
+			'mid' => 'Module id',
 			'name' => 'Name',
 			'description' => 'Description',
+			'orgId' => 'Organisation Id',
 		);
 	}
 
@@ -84,13 +78,11 @@ public function behaviors(){
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-	
-		$orgId = Yii::app()->user->getId();
-		
+
 		$criteria->compare('mid',$this->mid);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('orgId',$orgId);
 		$criteria->compare('description',$this->description,true);
+		$criteria->compare('orgId',$this->orgId);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

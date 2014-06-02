@@ -1,7 +1,9 @@
 <?php
 /* @var $this UsersController */
 /* @var $model Users */
+?>
 
+<?php
 $this->breadcrumbs=array(
 	'Users'=>array('index'),
 	$model->name=>array('view','id'=>$model->uid),
@@ -16,6 +18,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Users <?php echo $model->uid; ?></h1>
+    <h1>Update Users <?php echo $model->uid; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -1,7 +1,9 @@
 <?php
 /* @var $this UsersController */
 /* @var $model Users */
+?>
 
+<?php
 $this->breadcrumbs=array(
 	'Users'=>array('index'),
 	$model->name,
@@ -18,9 +20,12 @@ $this->menu=array(
 
 <h1>View Users #<?php echo $model->uid; ?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
+<?php $this->widget('zii.widgets.CDetailView',array(
+    'htmlOptions' => array(
+        'class' => 'table table-striped table-condensed table-hover',
+    ),
+    'data'=>$model,
+    'attributes'=>array(
 		'uid',
 		'name',
 		'password',
@@ -33,5 +38,6 @@ $this->menu=array(
 		'quota',
 		'DateCreated',
 		'LastUpdate',
+		'orgId',
 	),
 )); ?>

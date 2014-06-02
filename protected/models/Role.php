@@ -7,18 +7,9 @@
  * @property string $rid
  * @property string $name
  * @property integer $weight
- *
- * The followings are the available model relations:
- * @property Permissions[] $permissions
- * @property Users[] $users
  */
 class Role extends CActiveRecord
 {
-	
-public function behaviors(){
-          return array( 'CAdvancedArBehavior' => array(
-            'class' => 'application.extensions.CAdvancedArBehavior'));
-          }
 	/**
 	 * @return string the associated database table name
 	 */
@@ -52,8 +43,6 @@ public function behaviors(){
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'permissions' => array(self::MANY_MANY, 'Permissions', 'role_has_permissions(role_rid, permissions_pid)'),
-			'users' => array(self::MANY_MANY, 'Users', 'users_has_role(role_rid, users_uid)'),
 		);
 	}
 
@@ -86,13 +75,11 @@ public function behaviors(){
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-		$orgId = Yii::app()->User->getId();
-		
+
 		$criteria->compare('rid',$this->rid,true);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('weight',$this->weight, true);
-		$criteria->compare('orgId', $orgId, true);
-		
+		$criteria->compare('weight',$this->weight);
+
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

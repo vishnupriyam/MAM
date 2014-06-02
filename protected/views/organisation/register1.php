@@ -33,7 +33,7 @@
 		
 		<?php echo $form->textFieldControlGroup($model, 'orgName',array('label'=>'Organisation Name','Placeholder'=>'Name of your organisation')); ?>
 		
-		<?php echo $form->numberFieldControlGroup($model,'empNo',array('label'=>'Number of employess','min'=>0,'placeholder'=>0));?>
+		<?php echo $form->numberFieldControlGroup($model,'noEmp',array('label'=>'Number of employess','min'=>0,'placeholder'=>0));?>
 		
 		<?php echo $form->textFieldcontrolGroup($model,'phone',
 	        		array('maxlength'=>'12','minlength'=>'10','label'=>'Phone Number','placeholder' => 'Phone Number','prepend'=>'+91')); ?>
@@ -51,7 +51,7 @@
 		<?php echo $form->dropDownListControlGroup($model, 'orgType',
 			array('Profit', 'Non-profit', 'NGO'), array('label'=>'Type Of organisation')); ?>
 		
-		<?php echo $form->textAreaControlGroup($model, 'note',
+		<?php echo $form->textAreaControlGroup($model, 'description',
 			array('span' => 8, 'rows' => 5,'label'=>'Description')); ?>
 
 		<?php echo $form->textFieldcontrolGroup($model,'fax',

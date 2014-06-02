@@ -33,9 +33,9 @@
 	         
 			 $criteria=new CDbCriteria();
 			 $criteria->compare('root', $ans, true);
-			 echo  $form->dropDownListControlGroup($model, 'dept_id',
+			 echo  TbHtml::dropDownListControlGroup('dept_id','',
 			 CHtml::listData(ou_structure::model()->findAll($criteria), 'id', 'name'), 
-			 array('span'=>3,'label'=>'Add tag for'), array('label'=>'child')); ?>
+			 array('span'=>3,'label'=>'Add tag for','multiple'=>true), array('label'=>'child')); ?>
 			
             
 			<?php echo $form->textfieldControlGroup($model,'tagName',

@@ -4,16 +4,11 @@
  * This is the model class for table "role_has_permissions".
  *
  * The followings are the available columns in table 'role_has_permissions':
- * @property string $role_rid
- * @property integer $permissions_pid
+ * @property string $rid
+ * @property integer $pid
  */
 class RoleHasPermissions extends CActiveRecord
 {
-	
-public function behaviors(){
-          return array( 'CAdvancedArBehavior' => array(
-            'class' => 'application.extensions.CAdvancedArBehavior'));
-          }
 	/**
 	 * @return string the associated database table name
 	 */
@@ -30,12 +25,12 @@ public function behaviors(){
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('role_rid, permissions_pid', 'required'),
-			array('permissions_pid', 'numerical', 'integerOnly'=>true),
-			array('role_rid', 'length', 'max'=>20),
+			array('rid, pid', 'required'),
+			array('pid', 'numerical', 'integerOnly'=>true),
+			array('rid', 'length', 'max'=>20),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('role_rid, permissions_pid', 'safe', 'on'=>'search'),
+			array('rid, pid', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,8 +51,8 @@ public function behaviors(){
 	public function attributeLabels()
 	{
 		return array(
-			'role_rid' => 'Role Rid',
-			'permissions_pid' => 'Permissions Pid',
+			'rid' => 'Rid',
+			'pid' => 'Pid',
 		);
 	}
 
@@ -79,8 +74,8 @@ public function behaviors(){
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('role_rid',$this->role_rid,true);
-		$criteria->compare('permissions_pid',$this->permissions_pid);
+		$criteria->compare('rid',$this->rid,true);
+		$criteria->compare('pid',$this->pid);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

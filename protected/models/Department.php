@@ -4,9 +4,10 @@
  * This is the model class for table "department".
  *
  * The followings are the available columns in table 'department':
- * @property integer $unitCode
- * @property integer $unitName
- * @property string $note
+ * @property integer $dept_id
+ * @property string $name
+ * @property string $description
+ * @property string $orgId
  */
 class Department extends CActiveRecord
 {
@@ -26,12 +27,13 @@ class Department extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('unitCode, unitName', 'required'),
-			array('unitCode, unitName', 'numerical', 'integerOnly'=>true),
-			array('note', 'safe'),
+			array('name, orgId', 'required'),
+			array('name', 'length', 'max'=>75),
+			array('description', 'length', 'max'=>255),
+			array('orgId', 'length', 'max'=>11),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('unitCode, unitName, note', 'safe', 'on'=>'search'),
+			array('dept_id, name, description, orgId', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -52,9 +54,10 @@ class Department extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'unitCode' => 'Unit Code',
-			'unitName' => 'Unit Name',
-			'note' => 'Note',
+			'dept_id' => 'Dept',
+			'name' => 'Name',
+			'description' => 'Description',
+			'orgId' => 'Org',
 		);
 	}
 
@@ -76,9 +79,10 @@ class Department extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('unitCode',$this->unitCode);
-		$criteria->compare('unitName',$this->unitName);
-		$criteria->compare('note',$this->note,true);
+		$criteria->compare('dept_id',$this->dept_id);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('description',$this->description,true);
+		$criteria->compare('orgId',$this->orgId,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

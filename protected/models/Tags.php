@@ -6,16 +6,10 @@
  * The followings are the available columns in table 'tags':
  * @property integer $tagId
  * @property string $tagName
- * @property integer $orgId
- * @property integer $unitCode
+ * @property string $orgId
  */
 class Tags extends CActiveRecord
 {
-	
-public function behaviors(){
-          return array( 'CAdvancedArBehavior' => array(
-            'class' => 'application.extensions.CAdvancedArBehavior'));
-          }
 	/**
 	 * @return string the associated database table name
 	 */
@@ -29,17 +23,17 @@ public function behaviors(){
 	 */
 	public $orgName;
 	public $name;
-	
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('tagName, orgId, dept_id', 'required'),
-			array('orgId, dept_id', 'numerical', 'integerOnly'=>true),
+			array('tagName, orgId', 'required'),
+			array('tagName', 'length', 'max'=>45),
+			array('orgId', 'length', 'max'=>11),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('tagName, orgName, name', 'safe', 'on'=>'search'),
+			array('tagId, tagName, orgId', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -51,9 +45,10 @@ public function behaviors(){
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		  'organisation'=>array(self::BELONGS_TO,'Organisation','orgId'),
-		  // ou_stucture and category1 relationship
-		  'ou_structure'=>array(self::BELONGS_TO,'Ou_structure','dept_id'),
+		'organisation'=>array(self::BELONGS_TO,'Organisation','orgId'),
+		//change relationship to ou_structure
+		'ou_structure' => array(self::MANY_MANY, 'Ou_structure', 'tags_has_department(tag_id, dept_id)'),
+		
 		);
 	}
 
@@ -65,8 +60,7 @@ public function behaviors(){
 		return array(
 			'tagId' => 'Tag',
 			'tagName' => 'Tag Name',
-			'orgId' => 'Organisation Id',
-			
+			'orgId' => 'Org',
 		);
 	}
 
@@ -86,25 +80,17 @@ public function behaviors(){
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
-		//$criteria=new CDbCriteria;
 		$criteria=new CDbCriteria;
-		$orgId = Yii::app()->user->getId();
+
 		$criteria->compare('tagId',$this->tagId);
 		$criteria->compare('tagName',$this->tagName,true);
-		$criteria->compare('orgId',$orgId);
-		
+		$criteria->compare('orgId',$this->orgId,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
-	 public function getStatus() 
-	{
-        if (isset(self::$validPropertyStatuses[$this->pr_status]))
-            return self::$validPropertyStatuses[$this->pr_status];
 
-        return false; // Or throw exception or something
-    }
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
@@ -115,4 +101,8 @@ public function behaviors(){
 	{
 		return parent::model($className);
 	}
+	
+	
 }
+
+

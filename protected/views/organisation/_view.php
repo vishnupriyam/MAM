@@ -14,7 +14,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('No of employees')); ?>:</b>
-	<?php echo CHtml::encode($data->empNo); ?>
+	<?php echo CHtml::encode($data->noEmp); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('Phone')); ?>:</b>
@@ -45,19 +45,12 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('Type Of organisation')); ?>:</b>
 	<?php echo CHtml::encode($data->orgType); ?>
 	<br />
-
-	<!--<b><?php /*echo CHtml::encode($data->getAttributeLabel('note')); ?>:</b>
-	<?php echo CHtml::encode($data->note);*/ ?>
-	<br />-->
-
+	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('Fax')); ?>:</b>
 	<?php echo CHtml::encode($data->fax); ?>
 	<br />
 
-	<b></b><?php /*echo CHtml::encode($data->getAttributeLabel('Password')); ?>:</b>
-	<?php echo CHtml::encode($data->password); */?>
-	<br />
-
+	
 	
 
 </div>

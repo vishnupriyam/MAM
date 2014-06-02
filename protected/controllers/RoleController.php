@@ -61,12 +61,12 @@ class RoleController extends Controller
 		$this->render('rfu');
 	}
 	
-	public function actionPermission_change($id)
+	/*public function actionPermission_change($id)
 	{
 		$this->render('permission_change',array(
 			'dataProvider'=>$dataProvider,
 		));
-	}
+	}*/
 
 	/**
 	 * Creates a new model.
@@ -166,7 +166,7 @@ class RoleController extends Controller
 		));
 	}
 	
-	public function actionPermission_change2()
+	public function actionPermission_change()
 	{
 		$dataProvider=new CActiveDataProvider('Permissions');
 		
@@ -182,7 +182,7 @@ class RoleController extends Controller
         
         
 		
-		$this->render('permission_change2',array(
+		$this->render('permission_change',array(
 			'dataProvider'=>$dataProvider,
 		));
 	}

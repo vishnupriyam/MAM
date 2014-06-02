@@ -11,10 +11,10 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Module', 'url'=>array('index')),
-	//array('label'=>'Manage Module', 'url'=>array('admin')),
+	array('label'=>'Manage Module', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Add modules to your Organisation</h1>
+<h1>Create Module</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

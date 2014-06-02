@@ -41,8 +41,6 @@ public function behaviors(){
 	 */
 	
 	public $cpassword;
-	public $oldpassword;
-	public $newpassword;
 	public function rules()
 	{
 		
@@ -50,13 +48,12 @@ public function behaviors(){
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, password, email', 'required'),
+			array('name, password, email,cpassword', 'required'),
 			array('quota', 'numerical', 'integerOnly'=>true),
 			array('name, mobile', 'length', 'max'=>45),
 			array('email, status', 'length', 'max'=>60),
 			array('logout, picture, LastUpdate,cpassword', 'safe'),
-			array('password','compare','on'=>'create','compareAttribute'=>'cpassword'),
-			array('cpassword','compare','on'=>'changePassword','compareAttribute'=>'newpassword'), 
+			array('password','compare','compareAttribute'=>'cpassword'), 
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('uid, name, password, email, login, logout, status, picture, mobile, quota, DateCreated, LastUpdate', 'safe', 'on'=>'search'),

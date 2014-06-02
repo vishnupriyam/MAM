@@ -9,8 +9,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Add Module','url'=>array('create')),
-	//array('label'=>'Manage Module','url'=>array('admin')),
+	array('label'=>'Create Module','url'=>array('create')),
+	array('label'=>'Manage Module','url'=>array('admin')),
 );
 ?>
 
@@ -19,4 +19,5 @@ $this->menu=array(
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'dataProvider'=>$dataProvider,
 	/*'itemView'=>'_view',*/
+    'columns'=>array('mid','name','description'),
 )); ?>

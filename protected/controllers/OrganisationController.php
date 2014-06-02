@@ -284,7 +284,7 @@ public function mailsend($to,$from,$subject,$message){
 		
 		if(isset($_POST['Organisation'])) {
 			$model->attributes=$_POST['Organisation'];
-			$model->valid = 1;
+			$model->validity = 1;
 			if($model->save()) {
 				$sql3 = "select max(id) from ou_structure";
 			    $command = $connection->createCommand($sql3);
@@ -320,7 +320,7 @@ public function mailsend($to,$from,$subject,$message){
 				$command->execute();
 				
 				//$id = Yii::app()->db->getLastInsertId();
-				$desc = $model->note;
+				$desc = $model->description;
 				$email = $model->email;
 				$pwd = crypt("hello", 'salt');
 				$sql2 = "insert into users(name,password,email,orgId) values(:username, :pwd, :email, :id)";

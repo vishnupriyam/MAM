@@ -21,37 +21,13 @@
     <?php echo $form->errorSummary($model); ?>
 
 			
-            
+			
+            <?php echo $form->dropDownListControlGroup($model, 'role_rid',
+			array('Role 1', 'Role 2', 'Role 3'), array('label'=>'Role')); ?>
 		
 			
-		<?php 
-            $orgId= Yii::app()->user->getId();
-            
-			$criteria=new CDbCriteria();
-			$criteria->compare('orgId', $orgId, true);
-            echo $form->dropDownListControlGroup($model, 'module_mid',
-			CHtml::listData(Module::model()->findAll($criteria), 'mid', 'name'), 
-			array('span'=>3,'label'=>'Modules'), array('label'=>'child')); ?>
-		 
-		    <?php 
-            $orgId= Yii::app()->user->getId();
-            
-			$criteria=new CDbCriteria();
-			$criteria->compare('orgId', $orgId, true);
-            echo $form->dropDownListControlGroup($model, 'role_rid',
-			CHtml::listData(Role::model()->findAll($criteria), 'rid', 'name'), 
-			array('span'=>3,'label'=>'Roles'), array('label'=>'child')); ?>
-		     
-		     <div class="" style="margin-left:-2em">
-		<?php 
-		// $orgId= Yii::app()->user->getId();
-			//$criteria=new CDbCriteria();
-			//$criteria->compare('orgId', $orgId, true);
-		echo TbHtml::inlinecheckBoxListControlGroup('Permissions','',CHtml::listData(Basicpermissions::model()->findAll(), 'id', 'vpermission'), array('span'=>3,'label'=>'Permissions')); 
-		?>	 
-	 </div>	 
-	
-			
+			<?php echo $form->textFieldControlGroup($model,'name',array('maxlength'=>65,'label'=>'Permissions')); ?>
+
             <?php echo $form->textAreaControlGroup($model,'description',array('rows'=>6,'span'=>8)); ?>
 
             

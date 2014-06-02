@@ -64,9 +64,9 @@ class Ou_structure extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 		     //relation that defines each ou_structure has many categories and 2 param must start with caps
-			'category1'=>array(self::HAS_MANY,'Category1','id'),
-			'tags'=>array(self::HAS_MANY,'Category1','dept_id'),
-		
+		     //many to many realtionship
+			'category' => array(self::MANY_MANY, 'Category', 'category_has_department(cat_id,dept_id)'),
+			'tags' => array(self::MANY_MANY, 'Tags', 'tags_has_department(tag_id, dept_id)'),
 		);
 	}
 
