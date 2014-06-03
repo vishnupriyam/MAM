@@ -313,11 +313,11 @@ public function mailsend($to,$from,$subject,$message){
         		$dataReader->close();
         		
         		
-				$sql4 = "insert into org_ou(orgId, id) values(:orgId, :id)";
+				/*$sql4 = "insert into org_ou(orgId, id) values(:orgId, :id)";
 				$command = $connection->createCommand($sql4);
 				$command->bindParam(":orgId",$ans2,PDO::PARAM_INT);
 				$command->bindParam(":id",$ans,PDO::PARAM_INT);
-				$command->execute();
+				$command->execute();*/
 				
 				//$id = Yii::app()->db->getLastInsertId();
 				$desc = $model->description;

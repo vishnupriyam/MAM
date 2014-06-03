@@ -23,7 +23,7 @@
             <?php 
 			 $orgId= Yii::app()->user->getId();
 			 $connection = Yii::app()->db;
-			 $sql3 = "select id from org_ou where orgId = :orgId";
+			 $sql3 = "select id from ou_structure where orgId = :orgId";
 			 $command = $connection->createCommand($sql3);
 			 $command->bindParam(":orgId",$orgId,PDO::PARAM_INT);
 			 $dataReader = $command->query();

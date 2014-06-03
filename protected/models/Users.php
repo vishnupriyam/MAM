@@ -23,7 +23,7 @@
 class Users extends CActiveRecord
 {
 	
-	
+	public $roles;
 public function behaviors(){
           return array( 'CAdvancedArBehavior' => array(
             'class' => 'application.extensions.CAdvancedArBehavior'));

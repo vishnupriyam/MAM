@@ -14,7 +14,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
-	<?php echo CHtml::encode($data->description); ?>
+	<?php echo CHtml::encode($data->desc); ?>
 	<br />
 	
 	<?php //instead of role id have to display the roles for which this permission has been granted?>

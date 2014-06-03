@@ -22,7 +22,7 @@ $this->menu=array(
     ),
     'data'=>$model,
     'attributes'=>array(
-		'Name',
+		'name',
 		 array(
     	  'name'=>'organisation Name',
     	  'value'=>$model->organisation->orgName,

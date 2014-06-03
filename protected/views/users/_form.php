@@ -49,7 +49,30 @@
 	
 	<div class="span12">
 	<div class="" style="margin-left:-2em">
-		<?php echo TbHtml::inlinecheckBoxListControlGroup('roles','',CHtml::listData(Role::model()->findAll(), 'rid', 'name'), array('span'=>3,'label'=>'Roles','help' => '<strong>Note:</strong> Labels surround all the options for much larger click areas.')); ?>	 
+		<?php // echo TbHtml::inlinecheckBoxListControlGroup('roles','',CHtml::listData(Role::model()->findAll(), 'rid', 'name'), array('span'=>3,'label'=>'Roles','help' => '<strong>Note:</strong> Labels surround all the options for much larger click areas.')); ?>	 
+	 
+	 
+	    <?php //echo CHtml::checkBox("status",$model->roles=='ACTIVE',array('checked'=>'checked')); 
+    $criteria = new CDbCriteria();
+    $orgId = Yii::app()->user->getId();
+   $criteria->compare('orgId', $orgId, true);
+    echo $form->labelEx($model,'Roles');
+    $type_list=CHtml::listData(Role::model()->findAll(),'rid','name');
+    echo $form->checkBoxList($model,'roles',$type_list,array('checked'=>'checked','value' => '1', 'uncheckValue'=>'0','template'=>'{input}{label}',
+            'separator'=>'',
+ 
+        'labelOptions'=>
+           array(
+           
+            'style'=> ' padding-left:200px;
+                    width: 60px;
+                    float: left;
+                '),
+              'style'=>'float:left;',
+              ) 
+    ); 
+    
+	    ?>
 	 </div>
 	 
 	  

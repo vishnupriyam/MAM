@@ -13,15 +13,15 @@
 	<br />	
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('Name')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->Name),array('view','id'=>$data->cat_id)); ?>
+	<?php echo CHtml::link(CHtml::encode($data->name),array('view','id'=>$data->cat_id)); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('orgId')); ?>:</b>
 	<?php echo CHtml::encode($data->organisation->orgName); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('unitCode')); ?>:</b>
-	<?php echo CHtml::encode($data->ou_structure->name); ?>
+	<b><?php /* echo CHtml::encode($data->getAttributeLabel('unitCode')); ?>:</b>
+	<?php echo CHtml::encode($data->ou_structure->name); */?>
 	<br />
 	
 	<?php 

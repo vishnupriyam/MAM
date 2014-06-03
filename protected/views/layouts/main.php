@@ -37,7 +37,7 @@
 	
 </head>
 
-<body>
+<body class="container">
 
 <?php Yii::app()->bootstrap->register(); ?>
 
@@ -55,7 +55,7 @@
 	
 	 
        <?php $this->widget('bootstrap.widgets.TbNavbar', array(
-        'brandLabel' => 'MAMLOGIN',
+        'brandLabel' => 'MAM',
         //'display' => null, // default is static to top
         'color' => TbHtml::NAVBAR_COLOR_INVERSE,
         'collapse' => true,

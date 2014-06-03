@@ -28,7 +28,10 @@ $this->menu=array(
     'attributes'=>array(
 		'pid',
 		'name',
-		'description',
-		'role_rid',//instead have to display role name
+		'desc',
+		//'mid',//instead have to display role name
+		array('name'=>'Module Name',
+		       'value'=>$model->module->name
+		),
 	),
 )); ?>

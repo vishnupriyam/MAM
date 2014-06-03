@@ -64,6 +64,7 @@ class Category extends CActiveRecord
 			'cat_id' => 'Category',
 			'name' => 'Name',
 			'orgId' => 'Organisation Id',
+			'description'=>'Description',
 		);
 	}
 

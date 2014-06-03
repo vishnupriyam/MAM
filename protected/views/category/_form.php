@@ -30,7 +30,7 @@
 		<?php 
 			 $orgId= Yii::app()->user->getId();
 			 $connection = Yii::app()->db;
-			 $sql3 = "select id from org_ou where orgId = :orgId";
+			 $sql3 = "select id from ou_structure where orgId = :orgId";
 			 $command = $connection->createCommand($sql3);
 			 $command->bindParam(":orgId",$orgId,PDO::PARAM_INT);
 			 $dataReader = $command->query();
@@ -40,13 +40,13 @@
 	         
 			 $criteria=new CDbCriteria();
 			 $criteria->compare('root', $ans, true);
-			 echo TbHtml::dropDownListControlGroup('dept','',
+			 echo  TbHtml::dropDownListControlGroup('dept_id','',
 			 CHtml::listData(ou_structure::model()->findAll($criteria), 'id', 'name'), 
-			 array('span'=>3,'label'=>'Add category for'), array('label'=>'ou_structure'));
-			?>
-		
+			 array('span'=>3,'label'=>'Add tag for','multiple'=>true), array('label'=>'child')); ?>
+			
 
 	<?php echo $form->textfieldControlGroup($model,'name',array('label'=>'Category Name','Placeholder'=>'Category')); ?>
+	
 	
 			 
 			 

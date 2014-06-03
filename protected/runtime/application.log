@@ -18327,3 +18327,1998 @@ Stack trace:
 REQUEST_URI=/final/index.php/users/create
 HTTP_REFERER=http://localhost/final/index.php/users/create
 ---
+2014/06/03 00:11:03 [error] [php] Array to string conversion (C:\xampp\htdocs\final\protected\controllers\TagsController.php:79)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): TagsController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): TagsController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): TagsController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): TagsController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(13): CWebApplication->run()
+REQUEST_URI=/final/index.php/tags/create
+in C:\xampp\htdocs\final\protected\controllers\TagsController.php (79)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 00:26:09 [error] [php] include(tags_has_department.php): failed to open stream: No such file or directory (C:\xampp\htdocs\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\final\protected\controllers\TagsController.php(82): spl_autoload_call()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): TagsController->actionCreate()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): TagsController->runAction()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): TagsController->filterAccessControl()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(265): TagsController->runActionWithFilters()
+#10 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): TagsController->run()
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\final\index.php(13): CWebApplication->run()
+REQUEST_URI=/final/index.php/tags/create
+in C:\xampp\htdocs\final\protected\controllers\TagsController.php (82)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 00:26:52 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`tags_has_department`, CONSTRAINT `fk_tags_has_department_department1` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `tags_has_department` (`dept_id`, `tagId`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\TagsController.php (85)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 00:26:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`tags_has_department`, CONSTRAINT `fk_tags_has_department_department1` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `tags_has_department` (`dept_id`, `tagId`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\TagsController.php(85): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): TagsController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tags/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/tags/create
+HTTP_REFERER=http://localhost/final/index.php/tags/create
+---
+2014/06/03 00:29:52 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`tags_has_department`, CONSTRAINT `fk_tags_has_department_department1` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `tags_has_department` (`dept_id`, `tagId`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\TagsController.php (86)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 00:29:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`tags_has_department`, CONSTRAINT `fk_tags_has_department_department1` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `tags_has_department` (`dept_id`, `tagId`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\TagsController.php(86): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): TagsController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tags/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/tags/create
+HTTP_REFERER=http://localhost/final/index.php/tags/create
+---
+2014/06/03 00:31:55 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`tags_has_department`, CONSTRAINT `tags_has_department_ibfk_2` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `tags_has_department` (`dept_id`, `tagId`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\TagsController.php (86)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 00:31:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`tags_has_department`, CONSTRAINT `tags_has_department_ibfk_2` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `tags_has_department` (`dept_id`, `tagId`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\TagsController.php(86): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): TagsController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tags/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/tags/create
+HTTP_REFERER=http://localhost/final/index.php/tags/create
+---
+2014/06/03 00:34:36 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`tags_has_department`, CONSTRAINT `tags_has_department_ibfk_4` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `tags_has_department` (`dept_id`, `tagId`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\TagsController.php (86)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 00:34:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`tags_has_department`, CONSTRAINT `tags_has_department_ibfk_4` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `tags_has_department` (`dept_id`, `tagId`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\TagsController.php(86): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): TagsController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tags/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/tags/create
+HTTP_REFERER=http://localhost/final/index.php/tags/create
+---
+2014/06/03 00:40:06 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`tags_has_department`, CONSTRAINT `tags_has_department_ibfk_6` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `tags_has_department` (`dept_id`, `tagId`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\TagsController.php (87)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 00:40:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`tags_has_department`, CONSTRAINT `tags_has_department_ibfk_6` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `tags_has_department` (`dept_id`, `tagId`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\TagsController.php(87): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): TagsController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tags/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/tags/create
+HTTP_REFERER=http://localhost/final/index.php/tags/create
+---
+2014/06/03 00:41:27 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`tags_has_department`, CONSTRAINT `tags_has_department_ibfk_6` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `tags_has_department` (`dept_id`, `tagId`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\TagsController.php (87)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 00:41:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`tags_has_department`, CONSTRAINT `tags_has_department_ibfk_6` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `tags_has_department` (`dept_id`, `tagId`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\TagsController.php(87): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): TagsController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tags/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/tags/create
+HTTP_REFERER=http://localhost/final/index.php/tags/create
+---
+2014/06/03 00:41:41 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`tags_has_department`, CONSTRAINT `tags_has_department_ibfk_6` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `tags_has_department` (`dept_id`, `tagId`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\TagsController.php (87)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 00:41:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`tags_has_department`, CONSTRAINT `tags_has_department_ibfk_6` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `tags_has_department` (`dept_id`, `tagId`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\TagsController.php(87): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): TagsController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tags/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/tags/create
+HTTP_REFERER=http://localhost/final/index.php/tags/create
+---
+2014/06/03 00:41:59 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`tags_has_department`, CONSTRAINT `tags_has_department_ibfk_6` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `tags_has_department` (`tagId`, `dept_id`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\TagsController.php (87)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 00:41:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`tags_has_department`, CONSTRAINT `tags_has_department_ibfk_6` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `tags_has_department` (`tagId`, `dept_id`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\TagsController.php(87): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): TagsController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tags/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/tags/create
+HTTP_REFERER=http://localhost/final/index.php/tags/create
+---
+2014/06/03 00:44:40 [error] [exception.CDbException] exception 'CDbException' with message 'The active record cannot be updated because it is new.' in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:1118
+Stack trace:
+#0 C:\xampp\htdocs\final\protected\controllers\TagsController.php(87): CActiveRecord->update()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): TagsController->actionCreate()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tags/create')
+#12 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/final/index.php/tags/create
+HTTP_REFERER=http://localhost/final/index.php/tags/create
+---
+2014/06/03 00:55:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`tags_has_department`, CONSTRAINT `tags_has_department_ibfk_6` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `tags_has_department` (`tagId`, `dept_id`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\TagsController.php (86)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 00:55:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`tags_has_department`, CONSTRAINT `tags_has_department_ibfk_6` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `tags_has_department` (`tagId`, `dept_id`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\TagsController.php(86): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): TagsController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tags/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/tags/create
+HTTP_REFERER=http://localhost/final/index.php/tags/create
+---
+2014/06/03 07:11:50 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'final_28.org_ou' doesn't exist. The SQL statement executed was: insert into org_ou(orgId, id) values(:orgId, :id).
+in C:\xampp\htdocs\final\protected\controllers\OrganisationController.php (320)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 07:11:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'final_28.org_ou' doesn't exist. The SQL statement executed was: insert into org_ou(orgId, id) values(:orgId, :id)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\final\protected\controllers\OrganisationController.php(320): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): OrganisationController->actionRegister1()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('register1')
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('organisation/re...')
+#12 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/final/index.php/organisation/register1
+HTTP_REFERER=http://localhost/final/index.php/organisation/register1
+---
+2014/06/03 07:15:54 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'final_28.org_ou' doesn't exist. The SQL statement executed was: select id from org_ou where orgId = :orgId.
+in C:\xampp\htdocs\final\protected\views\tags\_form.php (29)
+in C:\xampp\htdocs\final\protected\views\tags\create.php (20)
+in C:\xampp\htdocs\final\protected\controllers\TagsController.php (94)
+2014/06/03 07:15:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'final_28.org_ou' doesn't exist. The SQL statement executed was: select id from org_ou where orgId = :orgId' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(377): CDbCommand->queryInternal('', 0, Array)
+#1 C:\xampp\htdocs\final\protected\views\tags\_form.php(29): CDbCommand->query()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\final\protected\views\tags\create.php(20): CController->renderPartial('_form', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#10 C:\xampp\htdocs\final\protected\controllers\TagsController.php(94): CController->render('create', Array)
+#11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): TagsController->actionCreate()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tags/create')
+#22 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/final/index.php/tags/create
+HTTP_REFERER=http://localhost/final/index.php
+---
+2014/06/03 07:20:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\final\protected\controllers\TagsController.php:193
+Stack trace:
+#0 C:\xampp\htdocs\final\protected\controllers\TagsController.php(55): TagsController->loadModel('25')
+#1 [internal function]: TagsController->actionView('25')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TagsController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TagsController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tags/view')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/tags/25
+HTTP_REFERER=http://localhost/final/index.php/tags/create
+---
+2014/06/03 07:21:13 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'final_28.org_ou' doesn't exist. The SQL statement executed was: select id from org_ou where orgId = :orgId.
+in C:\xampp\htdocs\final\protected\behaviors\JsTreeBehavior.php (298)
+in C:\xampp\htdocs\final\protected\behaviors\JsTreeBehavior.php (274)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 07:21:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'final_28.org_ou' doesn't exist. The SQL statement executed was: select id from org_ou where orgId = :orgId' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(377): CDbCommand->queryInternal('', 0, Array)
+#1 C:\xampp\htdocs\final\protected\behaviors\JsTreeBehavior.php(298): CDbCommand->query()
+#2 C:\xampp\htdocs\final\protected\behaviors\JsTreeBehavior.php(274): JsTreeBehavior->printULTree()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): JsTreeBehavior->actionFetchTree()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('fetchTree')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ou_structure/fe...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/final/ou_structure/fetchTree
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:22:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/create.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:22:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/rename.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:22:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/update.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:22:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/delete.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:22:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/move.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:22:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/properties.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:22:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/update.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:22:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/create.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:22:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/properties.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:22:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/move.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:22:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/delete.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:22:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/rename.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:23:05 [error] [exception.CException] exception 'CException' with message 'Property "TagsHasOuStructure.id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(161): CComponent->__set('id', '59')
+#1 C:\xampp\htdocs\final\protected\controllers\TagsController.php(84): CActiveRecord->__set('id', '59')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): TagsController->actionCreate()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tags/create')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/final/index.php/tags/create
+HTTP_REFERER=http://localhost/final/index.php/tags/create
+---
+2014/06/03 07:31:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "category1/create".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('category1/creat...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/category1/create
+---
+2014/06/03 07:31:53 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`category_has_ou_structure`, CONSTRAINT `fk_category_has_ou_structure_ou_structure1` FOREIGN KEY (`id`) REFERENCES `ou_structure` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `category_has_ou_structure` (`id`, `cat_id`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\CategoryController.php (81)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 07:31:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`category_has_ou_structure`, CONSTRAINT `fk_category_has_ou_structure_ou_structure1` FOREIGN KEY (`id`) REFERENCES `ou_structure` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `category_has_ou_structure` (`id`, `cat_id`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\CategoryController.php(81): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CategoryController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('category/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/category/create
+HTTP_REFERER=http://localhost/final/index.php/category/create
+---
+2014/06/03 07:32:58 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`category_has_ou_structure`, CONSTRAINT `fk_category_has_ou_structure_ou_structure1` FOREIGN KEY (`id`) REFERENCES `ou_structure` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `category_has_ou_structure` (`id`, `cat_id`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\CategoryController.php (81)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 07:32:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`category_has_ou_structure`, CONSTRAINT `fk_category_has_ou_structure_ou_structure1` FOREIGN KEY (`id`) REFERENCES `ou_structure` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `category_has_ou_structure` (`id`, `cat_id`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\CategoryController.php(81): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CategoryController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('category/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/category/create
+HTTP_REFERER=http://localhost/final/index.php/category/create
+---
+2014/06/03 07:35:52 [error] [exception.CException] exception 'CException' with message 'Property "Category.Name" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('Name')
+#1 C:\xampp\htdocs\final\protected\views\category\_view.php(16): CActiveRecord->__get('Name')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(130): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, false)
+#4 C:\xampp\htdocs\yii\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('C:\xampp\htdocs...', Array)
+#5 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(167): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{items}?<div cl...')
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): CBaseListView->run()
+#10 C:\xampp\htdocs\final\protected\views\category\index.php(20): CBaseController->widget('bootstrap.widge...', Array)
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#15 C:\xampp\htdocs\final\protected\controllers\CategoryController.php(145): CController->render('index', Array)
+#16 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CategoryController->actionIndex()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('category')
+#27 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/final/index.php/category
+---
+2014/06/03 07:36:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`category_has_ou_structure`, CONSTRAINT `fk_category_has_ou_structure_ou_structure1` FOREIGN KEY (`id`) REFERENCES `ou_structure` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `category_has_ou_structure` (`id`, `cat_id`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\CategoryController.php (81)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 07:36:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`category_has_ou_structure`, CONSTRAINT `fk_category_has_ou_structure_ou_structure1` FOREIGN KEY (`id`) REFERENCES `ou_structure` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `category_has_ou_structure` (`id`, `cat_id`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\CategoryController.php(81): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CategoryController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('category/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/category/create
+HTTP_REFERER=http://localhost/final/index.php/category/create
+---
+2014/06/03 07:37:01 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`category_has_ou_structure`, CONSTRAINT `fk_category_has_ou_structure_ou_structure1` FOREIGN KEY (`id`) REFERENCES `ou_structure` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `category_has_ou_structure` (`id`, `cat_id`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\CategoryController.php (81)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 07:37:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`category_has_ou_structure`, CONSTRAINT `fk_category_has_ou_structure_ou_structure1` FOREIGN KEY (`id`) REFERENCES `ou_structure` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `category_has_ou_structure` (`id`, `cat_id`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\CategoryController.php(81): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CategoryController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('category/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/category/create
+HTTP_REFERER=http://localhost/final/index.php/category/create
+---
+2014/06/03 07:39:28 [error] [exception.CException] exception 'CException' with message 'Property "Category.Name" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('Name')
+#1 C:\xampp\htdocs\final\protected\views\category\_view.php(16): CActiveRecord->__get('Name')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(130): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, false)
+#4 C:\xampp\htdocs\yii\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('C:\xampp\htdocs...', Array)
+#5 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(167): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{items}?<div cl...')
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): CBaseListView->run()
+#10 C:\xampp\htdocs\final\protected\views\category\index.php(20): CBaseController->widget('bootstrap.widge...', Array)
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#15 C:\xampp\htdocs\final\protected\controllers\CategoryController.php(145): CController->render('index', Array)
+#16 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CategoryController->actionIndex()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('category')
+#27 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/final/index.php/category
+---
+2014/06/03 07:39:54 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'final_28.category_has_department' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `category_has_department`.
+in C:\xampp\htdocs\final\protected\views\category\_view.php (24)
+in C:\xampp\htdocs\final\protected\views\category\index.php (20)
+in C:\xampp\htdocs\final\protected\controllers\CategoryController.php (145)
+2014/06/03 07:39:54 [error] [exception.CDbException] exception 'CDbException' with message 'The relation "ou_structure" in active record class "Category" is not specified correctly: the join table "category_has_department" given in the foreign key cannot be found in the database.' in C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php:542
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(500): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Category))
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(163): CJoinElement->lazyFind(Object(Category))
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Category))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(143): CActiveRecord->getRelated('ou_structure')
+#4 C:\xampp\htdocs\final\protected\views\category\_view.php(24): CActiveRecord->__get('ou_structure')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(130): require('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, false)
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('C:\xampp\htdocs...', Array)
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(167): CListView->renderItems()
+#9 [internal function]: CBaseListView->renderSection(Array)
+#10 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{items}?<div cl...')
+#11 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): CBaseListView->run()
+#13 C:\xampp\htdocs\final\protected\views\category\index.php(20): CBaseController->widget('bootstrap.widge...', Array)
+#14 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#15 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#18 C:\xampp\htdocs\final\protected\controllers\CategoryController.php(145): CController->render('index', Array)
+#19 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CategoryController->actionIndex()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#29 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('category')
+#30 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/final/index.php/category
+---
+2014/06/03 07:42:04 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '8' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `category_has_ou_structure` (`id`, `cat_id`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\CategoryController.php (81)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 07:42:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '8' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `category_has_ou_structure` (`id`, `cat_id`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\CategoryController.php(81): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CategoryController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('category/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/category/create
+HTTP_REFERER=http://localhost/final/index.php/category/create
+---
+2014/06/03 07:52:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/create.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:52:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/move.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:52:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/rename.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:52:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/delete.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:52:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/properties.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:52:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/update.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:53:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/rename.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:53:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/properties.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:53:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/update.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:53:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/create.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:53:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/delete.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:53:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/move.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:53:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/move.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:53:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/update.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:53:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/properties.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:53:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/create.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:53:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/rename.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:53:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/delete.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 07:53:40 [error] [exception.CException] exception 'CException' with message 'Property "TagsHasOuStructure.dept_id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('dept_id')
+#1 C:\xampp\htdocs\yii\framework\validators\CRequiredValidator.php(58): CActiveRecord->__get('dept_id')
+#2 C:\xampp\htdocs\yii\framework\validators\CValidator.php(213): CRequiredValidator->validateAttribute(Object(TagsHasOuStructure), 'dept_id')
+#3 C:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(TagsHasOuStructure), NULL)
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(805): CModel->validate(NULL)
+#5 C:\xampp\htdocs\final\protected\controllers\TagsController.php(87): CActiveRecord->save()
+#6 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): TagsController->actionCreate()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tags/create')
+#17 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/final/index.php/tags/create
+HTTP_REFERER=http://localhost/final/index.php/tags/create
+---
+2014/06/03 07:55:34 [error] [exception.CException] exception 'CException' with message 'Property "TagsHasOuStructure.dept_id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('dept_id')
+#1 C:\xampp\htdocs\yii\framework\validators\CRequiredValidator.php(58): CActiveRecord->__get('dept_id')
+#2 C:\xampp\htdocs\yii\framework\validators\CValidator.php(213): CRequiredValidator->validateAttribute(Object(TagsHasOuStructure), 'dept_id')
+#3 C:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(TagsHasOuStructure), NULL)
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(805): CModel->validate(NULL)
+#5 C:\xampp\htdocs\final\protected\controllers\TagsController.php(87): CActiveRecord->save()
+#6 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): TagsController->actionCreate()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tags/create')
+#17 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/final/index.php/tags/create
+HTTP_REFERER=http://localhost/final/index.php/tags/create
+---
+2014/06/03 07:58:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`category_has_ou_structure`, CONSTRAINT `fk_category_has_ou_structure_ou_structure1` FOREIGN KEY (`id`) REFERENCES `ou_structure` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `category_has_ou_structure` (`id`, `cat_id`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\CategoryController.php (81)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 07:58:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`category_has_ou_structure`, CONSTRAINT `fk_category_has_ou_structure_ou_structure1` FOREIGN KEY (`id`) REFERENCES `ou_structure` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `category_has_ou_structure` (`id`, `cat_id`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\CategoryController.php(81): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CategoryController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('category/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/category/create
+HTTP_REFERER=http://localhost/final/index.php/category/create
+---
+2014/06/03 08:00:08 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`category_has_ou_structure`, CONSTRAINT `fk_category_has_ou_structure_ou_structure1` FOREIGN KEY (`id`) REFERENCES `ou_structure` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `category_has_ou_structure` (`id`, `cat_id`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\CategoryController.php (81)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 08:00:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`category_has_ou_structure`, CONSTRAINT `fk_category_has_ou_structure_ou_structure1` FOREIGN KEY (`id`) REFERENCES `ou_structure` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `category_has_ou_structure` (`id`, `cat_id`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\CategoryController.php(81): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CategoryController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('category/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/category/create
+HTTP_REFERER=http://localhost/final/index.php/category/create
+---
+2014/06/03 08:01:20 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`category_has_ou_structure`, CONSTRAINT `fk_category_has_ou_structure_ou_structure1` FOREIGN KEY (`id`) REFERENCES `ou_structure` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `category_has_ou_structure` (`id`, `cat_id`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\CategoryController.php (81)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 08:01:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`category_has_ou_structure`, CONSTRAINT `fk_category_has_ou_structure_ou_structure1` FOREIGN KEY (`id`) REFERENCES `ou_structure` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `category_has_ou_structure` (`id`, `cat_id`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\CategoryController.php(81): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CategoryController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('category/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/category/create
+HTTP_REFERER=http://localhost/final/index.php/category/create
+---
+2014/06/03 08:25:16 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`category_has_ou_structure`, CONSTRAINT `fk_category_has_ou_structure_ou_structure1` FOREIGN KEY (`id`) REFERENCES `ou_structure` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `category_has_ou_structure` (`id`, `cat_id`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\CategoryController.php (81)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 08:25:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`category_has_ou_structure`, CONSTRAINT `fk_category_has_ou_structure_ou_structure1` FOREIGN KEY (`id`) REFERENCES `ou_structure` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `category_has_ou_structure` (`id`, `cat_id`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\CategoryController.php(81): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CategoryController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('category/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/category/create
+HTTP_REFERER=http://localhost/final/index.php/category/create
+---
+2014/06/03 08:43:23 [error] [exception.CException] exception 'CException' with message 'Property "Permissions.module_mid" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('module_mid')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('module_mid')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1802): CHtml::resolveValue(Object(Permissions), 'module_mid')
+#3 C:\xampp\htdocs\final\protected\extensions\bootstrap\helpers\TbHtml.php(1677): CHtml::activeDropDownList(Object(Permissions), 'module_mid', Array, Array)
+#4 C:\xampp\htdocs\final\protected\extensions\bootstrap\helpers\TbHtml.php(2163): TbHtml::activeDropDownList(Object(Permissions), 'module_mid', Array, Array)
+#5 C:\xampp\htdocs\final\protected\extensions\bootstrap\helpers\TbHtml.php(2097): TbHtml::createActiveInput('dropDownList', Object(Permissions), 'module_mid', Array, Array)
+#6 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbActiveForm.php(704): TbHtml::activeControlGroup('dropDownList', Object(Permissions), 'module_mid', Array, Array)
+#7 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbActiveForm.php(577): TbActiveForm->createControlGroup('dropDownList', Object(Permissions), 'module_mid', Array, Array)
+#8 C:\xampp\htdocs\final\protected\views\permissions\_form.php(27): TbActiveForm->dropDownListControlGroup(Object(Permissions), 'module_mid', Array, Array, Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\final\protected\views\permissions\create.php(20): CController->renderPartial('_form', Array)
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#14 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#17 C:\xampp\htdocs\final\protected\controllers\PermissionsController.php(132): CController->render('create', Array)
+#18 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PermissionsController->actionCreate()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#28 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('permissions/cre...')
+#29 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#30 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/final/index.php/permissions/create
+---
+2014/06/03 08:45:30 [error] [exception.CException] exception 'CException' with message 'Property "Permissions.module_mid" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('module_mid')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('module_mid')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1802): CHtml::resolveValue(Object(Permissions), 'module_mid')
+#3 C:\xampp\htdocs\final\protected\extensions\bootstrap\helpers\TbHtml.php(1677): CHtml::activeDropDownList(Object(Permissions), 'module_mid', Array, Array)
+#4 C:\xampp\htdocs\final\protected\extensions\bootstrap\helpers\TbHtml.php(2163): TbHtml::activeDropDownList(Object(Permissions), 'module_mid', Array, Array)
+#5 C:\xampp\htdocs\final\protected\extensions\bootstrap\helpers\TbHtml.php(2097): TbHtml::createActiveInput('dropDownList', Object(Permissions), 'module_mid', Array, Array)
+#6 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbActiveForm.php(704): TbHtml::activeControlGroup('dropDownList', Object(Permissions), 'module_mid', Array, Array)
+#7 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbActiveForm.php(577): TbActiveForm->createControlGroup('dropDownList', Object(Permissions), 'module_mid', Array, Array)
+#8 C:\xampp\htdocs\final\protected\views\permissions\_form.php(27): TbActiveForm->dropDownListControlGroup(Object(Permissions), 'module_mid', Array, Array, Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\final\protected\views\permissions\create.php(20): CController->renderPartial('_form', Array)
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#14 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#17 C:\xampp\htdocs\final\protected\controllers\PermissionsController.php(132): CController->render('create', Array)
+#18 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PermissionsController->actionCreate()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#28 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('permissions/cre...')
+#29 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#30 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/final/index.php/permissions/create
+---
+2014/06/03 08:46:50 [warning] [application] Failed to set unsafe attribute "mid" of "Permissions".
+in C:\xampp\htdocs\final\protected\controllers\PermissionsController.php (77)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 08:46:50 [warning] [application] Failed to set unsafe attribute "description" of "Permissions".
+in C:\xampp\htdocs\final\protected\controllers\PermissionsController.php (77)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 08:46:50 [error] [exception.CException] exception 'CException' with message 'Property "Permissions.module_mid" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('module_mid')
+#1 C:\xampp\htdocs\final\protected\controllers\PermissionsController.php(82): CActiveRecord->__get('module_mid')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PermissionsController->actionCreate()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('permissions/cre...')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/final/index.php/permissions/create
+HTTP_REFERER=http://localhost/final/index.php/permissions/create
+---
+2014/06/03 08:50:50 [warning] [application] Failed to set unsafe attribute "description" of "Permissions".
+in C:\xampp\htdocs\final\protected\controllers\PermissionsController.php (77)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 09:01:45 [warning] [application] Failed to set unsafe attribute "description" of "Permissions".
+in C:\xampp\htdocs\final\protected\controllers\PermissionsController.php (77)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 09:04:08 [warning] [application] Failed to set unsafe attribute "description" of "Permissions".
+in C:\xampp\htdocs\final\protected\controllers\PermissionsController.php (77)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 09:06:39 [warning] [application] Failed to set unsafe attribute "description" of "Permissions".
+in C:\xampp\htdocs\final\protected\controllers\PermissionsController.php (77)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 09:06:39 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '54' for key 'mid'. The SQL statement executed was: INSERT INTO `permissions` (`mid`, `name`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\final\protected\controllers\PermissionsController.php (78)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 09:06:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '54' for key 'mid'. The SQL statement executed was: INSERT INTO `permissions` (`mid`, `name`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\PermissionsController.php(78): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PermissionsController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('permissions/cre...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/permissions/create
+HTTP_REFERER=http://localhost/final/index.php/permissions/create
+---
+2014/06/03 09:11:29 [warning] [application] Failed to set unsafe attribute "description" of "Permissions".
+in C:\xampp\htdocs\final\protected\controllers\PermissionsController.php (77)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 09:14:36 [warning] [application] Failed to set unsafe attribute "description" of "Permissions".
+in C:\xampp\htdocs\final\protected\controllers\PermissionsController.php (77)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 09:15:17 [warning] [application] Failed to set unsafe attribute "description" of "Permissions".
+in C:\xampp\htdocs\final\protected\controllers\PermissionsController.php (77)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 09:16:29 [warning] [application] Failed to set unsafe attribute "description" of "Permissions".
+in C:\xampp\htdocs\final\protected\controllers\PermissionsController.php (77)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 09:16:43 [warning] [application] Failed to set unsafe attribute "description" of "Permissions".
+in C:\xampp\htdocs\final\protected\controllers\PermissionsController.php (77)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 09:24:44 [error] [exception.CException] exception 'CException' with message 'Property "Permissions.module" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('module')
+#1 C:\xampp\htdocs\final\protected\views\permissions\view.php(34): CActiveRecord->__get('module')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\final\protected\controllers\PermissionsController.php(56): CController->render('view', Array)
+#7 [internal function]: PermissionsController->actionView('31')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PermissionsController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PermissionsController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('permissions/vie...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/final/index.php/permissions/31
+HTTP_REFERER=http://localhost/final/index.php/permissions/create
+---
+2014/06/03 09:30:48 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'field list'. The SQL statement executed was: insert into role (name, weight, orgId) values (:name, :weight, :orgId).
+in C:\xampp\htdocs\final\protected\controllers\RoleController.php (101)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 09:30:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'field list'. The SQL statement executed was: insert into role (name, weight, orgId) values (:name, :weight, :orgId)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\final\protected\controllers\RoleController.php(101): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): RoleController->actionCreate()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('role/create')
+#12 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/final/index.php/role/create
+HTTP_REFERER=http://localhost/final/index.php/role/create
+---
+2014/06/03 09:34:10 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `role` `t` WHERE orgId = :orgId.
+in C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView1.php (48)
+in C:\xampp\htdocs\final\protected\views\role\index.php (45)
+in C:\xampp\htdocs\final\protected\controllers\RoleController.php (166)
+2014/06/03 09:34:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `role` `t` WHERE orgId = :orgId' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#8 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView1.php(48): CGridView->init()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): TbGridView1->init()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#11 C:\xampp\htdocs\final\protected\views\role\index.php(45): CBaseController->widget('bootstrap.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#16 C:\xampp\htdocs\final\protected\controllers\RoleController.php(166): CController->render('index', Array)
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): RoleController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('role')
+#28 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#29 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/final/index.php/role/
+HTTP_REFERER=http://localhost/final/index.php/role/create
+---
+2014/06/03 11:02:23 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT * FROM `role` `t` WHERE orgId LIKE :ycp0.
+in C:\xampp\htdocs\final\protected\views\users\_form.php (60)
+in C:\xampp\htdocs\final\protected\views\users\create.php (20)
+in C:\xampp\htdocs\final\protected\controllers\UsersController.php (146)
+2014/06/03 11:02:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT * FROM `role` `t` WHERE orgId LIKE :ycp0' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\final\protected\views\users\_form.php(60): CActiveRecord->findAll(Object(CDbCriteria))
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\final\protected\views\users\create.php(20): CController->renderPartial('_form', Array)
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 C:\xampp\htdocs\final\protected\controllers\UsersController.php(146): CController->render('create', Array)
+#13 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsersController->actionCreate()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/create')
+#24 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/final/index.php/users/create
+HTTP_REFERER=http://localhost/final/index.php
+---
+2014/06/03 11:09:23 [warning] [application] Failed to set unsafe attribute "roles" of "Users".
+in C:\xampp\htdocs\final\protected\controllers\UsersController.php (123)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 11:09:25 [warning] [application] Failed to set unsafe attribute "roles" of "Users".
+in C:\xampp\htdocs\final\protected\controllers\UsersController.php (123)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 11:09:57 [warning] [application] Failed to set unsafe attribute "roles" of "Users".
+in C:\xampp\htdocs\final\protected\controllers\UsersController.php (123)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 11:10:04 [warning] [application] Failed to set unsafe attribute "roles" of "Users".
+in C:\xampp\htdocs\final\protected\controllers\UsersController.php (123)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 11:10:08 [warning] [application] Failed to set unsafe attribute "roles" of "Users".
+in C:\xampp\htdocs\final\protected\controllers\UsersController.php (123)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 11:10:13 [warning] [application] Failed to set unsafe attribute "roles" of "Users".
+in C:\xampp\htdocs\final\protected\controllers\UsersController.php (123)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 11:10:13 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\final\protected\controllers\UsersController.php:133)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UsersController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UsersController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UsersController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(13): CWebApplication->run()
+REQUEST_URI=/final/index.php/users/create
+in C:\xampp\htdocs\final\protected\controllers\UsersController.php (133)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 11:10:23 [warning] [application] Failed to set unsafe attribute "roles" of "Users".
+in C:\xampp\htdocs\final\protected\controllers\UsersController.php (123)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 11:10:27 [warning] [application] Failed to set unsafe attribute "roles" of "Users".
+in C:\xampp\htdocs\final\protected\controllers\UsersController.php (123)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 11:10:28 [warning] [application] Failed to set unsafe attribute "roles" of "Users".
+in C:\xampp\htdocs\final\protected\controllers\UsersController.php (123)
+in C:\xampp\htdocs\final\index.php (13)
+2014/06/03 11:18:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/rename.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/properties.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/move.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/delete.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/update.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/create.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/move.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/properties.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/rename.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/create.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/delete.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/update.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/move.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/update.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/properties.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/create.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/rename.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/delete.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/properties.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/update.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/create.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/rename.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/delete.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/move.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/create.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/properties.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/rename.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/move.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/delete.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:18:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/update.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:19:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/create.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:19:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/move.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:19:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/delete.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:19:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/update.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:19:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/rename.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:19:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/properties.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:20:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/create.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:20:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/update.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:20:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/move.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:20:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/delete.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:20:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/properties.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:20:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/rename.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:20:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/move.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:20:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/delete.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:20:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/update.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:20:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/rename.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:20:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/create.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:20:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/properties.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 11:21:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/delete.png
+HTTP_REFERER=http://localhost/final/ou_structure/tree
+---
+2014/06/03 11:21:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/images/rename.png
+HTTP_REFERER=http://localhost/final/ou_structure/tree
+---
+2014/06/03 11:21:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/images/update.png
+HTTP_REFERER=http://localhost/final/ou_structure/tree
+---
+2014/06/03 11:21:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/create.png
+HTTP_REFERER=http://localhost/final/ou_structure/tree
+---
+2014/06/03 11:21:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/move.png
+HTTP_REFERER=http://localhost/final/ou_structure/tree
+---
+2014/06/03 11:21:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/properties.png
+HTTP_REFERER=http://localhost/final/ou_structure/tree
+---
+2014/06/03 11:21:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "cut.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cut.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/cut.png
+HTTP_REFERER=http://localhost/final/ou_structure/tree
+---
+2014/06/03 11:21:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "paste.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paste.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/paste.png
+HTTP_REFERER=http://localhost/final/ou_structure/tree
+---
+2014/06/03 11:21:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "copy.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('copy.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/copy.png
+HTTP_REFERER=http://localhost/final/ou_structure/tree
+---
+2014/06/03 11:21:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/properties.png
+HTTP_REFERER=http://localhost/final/ou_structure/tree
+---
+2014/06/03 11:21:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/move.png
+HTTP_REFERER=http://localhost/final/ou_structure/tree
+---
+2014/06/03 11:21:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/images/update.png
+HTTP_REFERER=http://localhost/final/ou_structure/tree
+---
+2014/06/03 11:21:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/delete.png
+HTTP_REFERER=http://localhost/final/ou_structure/tree
+---
+2014/06/03 11:21:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/images/rename.png
+HTTP_REFERER=http://localhost/final/ou_structure/tree
+---
+2014/06/03 11:21:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/create.png
+HTTP_REFERER=http://localhost/final/ou_structure/tree
+---
+2014/06/03 11:22:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "cut.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cut.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/cut.png
+HTTP_REFERER=http://localhost/final/ou_structure/tree
+---
+2014/06/03 11:22:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "copy.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('copy.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/copy.png
+HTTP_REFERER=http://localhost/final/ou_structure/tree
+---
+2014/06/03 11:22:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "paste.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paste.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/paste.png
+HTTP_REFERER=http://localhost/final/ou_structure/tree
+---
+2014/06/03 11:31:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/final/index.php/users/admin
+HTTP_REFERER=http://localhost/final/index.php/users/create
+---

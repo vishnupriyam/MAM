@@ -6,8 +6,11 @@
  * The followings are the available columns in table 'permissions':
  * @property integer $pid
  * @property string $name
- * @property string $description
- * @property integer $role_rid
+ * @property string $desc
+ * @property integer $mid
+ *
+ * The followings are the available model relations:
+ * @property RoleHasPermissions $roleHasPermissions
  */
 class Permissions extends CActiveRecord
 {
@@ -27,12 +30,13 @@ class Permissions extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name', 'required'),
-			array('role_rid', 'numerical', 'integerOnly'=>true),
+			array('name, mid', 'required'),
+			array('mid', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>65),
+			array('desc', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('pid, name, description, role_rid', 'safe', 'on'=>'search'),
+			array('pid, name, desc, mid', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -44,6 +48,8 @@ class Permissions extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'roleHasPermissions' => array(self::HAS_ONE, 'RoleHasPermissions', 'pid'),
+			'module'=>array(self::BELONGS_TO,'Module','mid'),
 		);
 	}
 
@@ -55,8 +61,8 @@ class Permissions extends CActiveRecord
 		return array(
 			'pid' => 'Pid',
 			'name' => 'Name',
-			'description' => 'Description',
-			'role_rid' => 'Role Rid',
+			'desc' => 'Desc',
+			'mid' => 'Mid',
 		);
 	}
 
@@ -80,8 +86,8 @@ class Permissions extends CActiveRecord
 
 		$criteria->compare('pid',$this->pid);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('description',$this->description,true);
-		$criteria->compare('role_rid',$this->role_rid);
+		$criteria->compare('desc',$this->desc,true);
+		$criteria->compare('mid',$this->mid);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

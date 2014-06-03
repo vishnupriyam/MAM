@@ -22,13 +22,14 @@
 
 			
 			
-            <?php echo $form->dropDownListControlGroup($model, 'role_rid',
-			array('Role 1', 'Role 2', 'Role 3'), array('label'=>'Role')); ?>
+           <?php echo $form->dropDownListControlGroup($model, 'mid',
+			CHtml::listData(Module::model()->findAll(), 'mid', 'name'), 
+			array('span'=>3,'label'=>'Modules'), array('label'=>'Module')); ?>
 		
 			
-			<?php echo $form->textFieldControlGroup($model,'name',array('maxlength'=>65,'label'=>'Permissions')); ?>
+			<?php echo $form->textFieldControlGroup($model,'name',array('maxlength'=>65,'label'=>'Permission Name')); ?>
 
-            <?php echo $form->textAreaControlGroup($model,'description',array('rows'=>6,'span'=>8)); ?>
+            <?php echo $form->textAreaControlGroup($model,'desc',array('rows'=>6,'span'=>8)); ?>
 
             
 

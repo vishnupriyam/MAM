@@ -75,17 +75,17 @@ class PermissionsController extends Controller
 
 		if (isset($_POST['Permissions'])) {
 			$model->attributes=$_POST['Permissions'];
-			//if ($model->save()) {
-				//$this->redirect(array('view','id'=>$model->pid));
-			//}
-			$connection = Yii::app()->db;
-			$module_mid=$model->module_mid;
-			$role_rid=$model->role_rid;
-			$name = $model->name;
-			$description = $model->description;
+			if ($model->save()) {	
+				$this->redirect(array('view','id'=>$model->pid));
+			}
+			//$connection = Yii::app()->db;
+			//$module_mid=$model->mid;
+			//$role_rid=$model->role_rid;
+			//$name = $model->name;
+			//$description = $model->description;
 			//print_r($role_rid);
 			//die();
-			$orgId = Yii::app()->user->getId();
+			/*$orgId = Yii::app()->user->getId();
 			
 			$sql = "select name from module where orgId= :orgId and mid = :module_mid";
 			$command = $connection->createCommand($sql);
@@ -124,7 +124,7 @@ class PermissionsController extends Controller
 			$command->bindParam(":module_mid",$module_mid,PDO::PARAM_INT);
             $command->execute(); 
 				
-    		$this->redirect('/final/Permissions/Index');        
+    		$this->redirect('/final/Permissions/Index');        */
 		}
 
 		$this->render('create',array(

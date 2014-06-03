@@ -70,7 +70,17 @@ class CategoryController extends Controller
 		if (isset($_POST['Category'])) {
 			$model->attributes=$_POST['Category'];
 			$model->orgId=Yii::app()->user->getId();
-			if ($model->save()) {
+			
+			if($model->save()){
+				
+				foreach ($_POST['dept_id'] as $key=>$dept_id)
+				{
+			 		$cat_dept = new CategoryHasOuStructure;
+			 		$cat_dept->id = $dept_id;
+			 		$cat_dept->cat_id = $model->cat_id;
+					$cat_dept->save();
+				}
+				
 				$this->redirect(array('view','id'=>$model->cat_id));
 			}
 		}

@@ -72,11 +72,21 @@ class TagsController extends Controller
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Tags'])) {
+			
 			$model->attributes=$_POST['Tags'];
 			$orgId = Yii::app()->user->getId();
 			$model->orgId = $orgId;
-			if($model->save())
-        	$this->redirect(array('view','id'=>$model->tagId));
+			
+			if($model->save()){
+			//print_r( json_encode($_POST['dept_id']));die();
+			foreach ($_POST['dept_id'] as $key=>$dept_id)
+				{
+			 		$tag_dept = new TagsHasOuStructure;
+					$tag_dept->id = $dept_id;
+			 		$tag_dept->tagId = $model->tagId;
+			 		$tag_dept->save();
+				}
+			$this->redirect(array('view','id'=>$model->tagId));}
         	
 		}
 

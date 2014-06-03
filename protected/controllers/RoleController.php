@@ -93,10 +93,10 @@ class RoleController extends Controller
 			$name = $model->name;
 			$weight = $model->weight;
 			
-			$sql = "insert into role (name, weight, orgId) values (:name, :weight, :orgId)";
+			$sql = "insert into role (name, weight) values (:name, :weight)";
 			$command = $connection->createCommand($sql);
 			$command->bindParam(":name",$name,PDO::PARAM_STR);
-			$command->bindParam(":orgId",$id,PDO::PARAM_STR);
+			
 			$command->bindParam(":weight",$weight,PDO::PARAM_STR);
 			$command->execute(); 
 			
@@ -159,8 +159,9 @@ class RoleController extends Controller
 	public function actionIndex()
 	{
 		$orgId = Yii::app()->user->getId();
-		$dataProvider=new CActiveDataProvider('Role', array('criteria'=>array('condition'=>  'orgId = :orgId', 'params'=>array(':orgId'=>$orgId),
-		),));
+		//$dataProvider=new CActiveDataProvider('Role', array('criteria'=>array('condition'=>  'orgId = :orgId', 'params'=>array(':orgId'=>$orgId),
+		$dataProvider = new CActiveDataProvider('Role');
+		//),));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

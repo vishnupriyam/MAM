@@ -128,6 +128,15 @@ class UsersController extends Controller
 			$model->password=crypt($model->password,'salt');}
 			
 			if($model->save()){
+				
+				$roid = $_POST['Users']['roles'];
+				foreach($roid as $categoryId){
+					$UsersHasRoles = new UsersHasRole;
+        	        $UsersHasRoles->users_uid = $model->uid;
+            	    $UsersHasRoles->role_rid = $categoryId;
+                	$UsersHasRoles->save();
+        
+				}
 				$this->redirect(array('view','id'=>$model->uid));
 			echo json_encode($model->roles);}
 		}
