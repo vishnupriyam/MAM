@@ -32,6 +32,13 @@ return array(
 	    'yiiwheels.widgets.datepicker.WhDatePicker',
 		'bootstrap.widgets.TbGridView',
 		'bootstrap.widgets.TbGridView1',
+		'application.extensions.log4php.*',
+		'application.extensions.log4php.renderers.*',
+		'application.extensions.log4php.appenders.*',
+		'application.extensions.log4php.configurators.*',
+		'application.extensions.log4php.filters.*',
+		'application.extensions.log4php.helpers.*',
+		'application.extensions.log4php.layouts.*',
 	
 		
 	),

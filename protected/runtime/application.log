@@ -20322,3 +20322,175 @@ Stack trace:
 REQUEST_URI=/final/index.php/users/admin
 HTTP_REFERER=http://localhost/final/index.php/users/create
 ---
+2014/06/03 17:17:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "fileupload".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('fileupload')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('fileupload')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('addasset/fileup...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/addasset/fileupload
+HTTP_REFERER=http://localhost/final/index.php
+---
+2014/06/03 17:18:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/30a07eba/web/yii_viewer.css".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/30a07eba...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/assets/30a07eba/web/yii_viewer.css
+HTTP_REFERER=http://localhost/final/addasset/onlineviewer
+---
+2014/06/03 17:20:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/rename.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 17:20:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/create.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 17:20:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/move.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 17:20:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/delete.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 17:20:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/update.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 17:20:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/properties.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 17:26:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/create.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 17:26:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/delete.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 17:26:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/rename.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 17:26:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/move.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 17:26:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/properties.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 17:26:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/update.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 17:26:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "copy.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('copy.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/copy.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 17:26:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "cut.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cut.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/cut.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 17:26:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "paste.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paste.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/paste.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/03 17:30:50 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#11 {main}
+REQUEST_URI=/final/index.php/users/admin
+HTTP_REFERER=http://localhost/final/index.php/users/create
+---
