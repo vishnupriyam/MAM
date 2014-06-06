@@ -24,7 +24,7 @@ class Users extends CActiveRecord
 {
 	
 	public $roles;
-public function behaviors(){
+	public function behaviors(){
           return array( 'CAdvancedArBehavior' => array(
             'class' => 'application.extensions.CAdvancedArBehavior'));
           }
@@ -41,6 +41,7 @@ public function behaviors(){
 	 */
 	
 	public $cpassword;
+	public $oldAttributes;
 	public function rules()
 	{
 		
@@ -139,4 +140,28 @@ public function behaviors(){
 	{
 		return parent::model($className);
 	}
+	public function getModelName(){
+		return __CLASS__;
+	}
+	
+	public function afterFind(){
+    	 $this->oldAttributes = $this->attributes;
+   		 return parent::afterFind();
+	}
+	public function afterSave(){
+	  $Log = Logger::getLogger("accessLog");
+	  
+	  if($this->name != $this->oldAttributes['name'])
+	 	{$Log->info("name ".$this->oldAttributes['name']." ".$this->name);}
+	  if($this->email != $this->oldAttributes['email'])
+	    {$Log->info("email ".$this->email." ".$this->oldAttributes['email']);}
+	  if($this->password != $this->oldAttributes['password']){
+	 	$Log->info("password".$this->password." ".$this->oldAttributes['password']);}
+	  if($this->mobile != $this->oldAttributes['mobile']){
+	 	$Log->info("mobile ".$this->mobile." ".$this->oldAttributes['mobile']);}
+	  if($this->status != $this->oldAttributes['status']){
+	 	$Log->info("status ".$this->status." ".$this->oldAttributes['status']);}
+	  
+	}
+	
 }

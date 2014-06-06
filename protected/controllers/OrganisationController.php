@@ -292,16 +292,18 @@ public function mailsend($to,$from,$subject,$message){
 			    $dataReader = $command->query();
         		$row = $dataReader->read();
         		$dataReader->close();
+        		$orgId = $model->orgId;
         		$ans = $row['max(id)'];
 			    $ans = $ans + 1;
 			    $orgName = $model->orgName;
 			    $desc = "hello";
-				$sql = "insert into ou_structure(root,lft,rgt,level,name,description) values(:root, 1, 2, 1, :orgName,:desc)";
+				$sql = "insert into ou_structure(root,lft,rgt,level,name,description,orgId) values(:root, 1, 2, 1, :orgName,:desc,:orgId)";
 				
 				$command = $connection->createCommand($sql);
 				$command->bindParam(":root",$ans,PDO::PARAM_INT);
 				$command->bindParam(":desc",$desc,PDO::PARAM_STR);
 				$command->bindParam(":orgName",$orgName,PDO::PARAM_STR);
+				$command->bindParam(":orgId",$orgId,PDO::PARAM_STR);
         		$command->execute(); 
         	
         		$sq = "select orgId from organisation where orgName = :orgName";
@@ -313,7 +315,7 @@ public function mailsend($to,$from,$subject,$message){
         		$dataReader->close();
         		
         		
-				/*$sql4 = "insert into org_ou(orgId, id) values(:orgId, :id)";
+				/*$sql4 = "insert into ou_structure(orgId, id) values(:orgId, :id)";
 				$command = $connection->createCommand($sql4);
 				$command->bindParam(":orgId",$ans2,PDO::PARAM_INT);
 				$command->bindParam(":id",$ans,PDO::PARAM_INT);

@@ -46,8 +46,8 @@ class Tags extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 		'organisation'=>array(self::BELONGS_TO,'Organisation','orgId'),
-		//change relationship to ou_structure
-		'ou_structure' => array(self::MANY_MANY, 'Ou_structure', 'tags_has_department(tag_id, dept_id)'),
+		//many to many relationship departments and tags , first param in relationship must be that of the active class,i.e of the Tag
+		'ou_structure' => array(self::MANY_MANY, 'Ou_structure', 'tags_has_ou_structure(tagId,id)'),
 		
 		);
 	}
@@ -102,6 +102,24 @@ class Tags extends CActiveRecord
 		return parent::model($className);
 	}
 	
+	public function getDepartments()
+		{
+    		$ret = "";
+    		$first = true;
+    		
+    		foreach ($this->ou_structure as $record) {
+
+        	if ($first === true) {
+            	$first = false;
+        	} else {
+            $ret .= ', ';
+        	}
+
+        $ret .= $record->name;
+    	}
+		
+	    return $ret;
+		}
 	
 }
 

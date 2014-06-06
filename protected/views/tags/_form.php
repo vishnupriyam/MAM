@@ -31,6 +31,8 @@
 	         $dataReader->close();
 	         $ans = $row['id'];
 	         
+	  	
+	         
 			 $criteria=new CDbCriteria();
 			 $criteria->compare('root', $ans, true);
 			 echo  TbHtml::dropDownListControlGroup('dept_id','',

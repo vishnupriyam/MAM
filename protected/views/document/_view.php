@@ -5,16 +5,32 @@
 
 <div class="view">
 
-    	<b><?php echo CHtml::encode($data->getAttributeLabel('doc_id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->doc_id),array('view','id'=>$data->doc_id)); ?>
+    	<b><?php echo CHtml::encode($data->getAttributeLabel('docId')); ?>:</b>
+	<?php echo CHtml::link(CHtml::encode($data->docId),array('view','id'=>$data->docId)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('doc_name')); ?>:</b>
-	<?php echo CHtml::encode($data->doc_name); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Name')); ?>:</b>
+	<?php echo CHtml::encode($data->Name); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('url')); ?>:</b>
-	<?php echo CHtml::encode($data->url); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('ownerId')); ?>:</b>
+	<?php echo CHtml::encode($data->ownerId); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('departmentId')); ?>:</b>
+	<?php echo CHtml::encode($data->departmentId); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('categoryId')); ?>:</b>
+	<?php echo CHtml::encode($data->categoryId); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
+	<?php echo CHtml::encode($data->description); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('comment')); ?>:</b>
+	<?php echo CHtml::encode($data->comment); ?>
 	<br />
 
 

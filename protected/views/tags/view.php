@@ -31,5 +31,8 @@ $this->menu=array(
 		array(
 		'name'=>'organisation name',
 		'value'=>$model->organisation->orgName),
+		array(
+		'name'=>'department name',
+		'value'=>$model->getDepartments()),
 	),
 )); ?>

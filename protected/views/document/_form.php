@@ -20,57 +20,76 @@
 
     <?php echo $form->errorSummary($model); ?>
 
-            <?php echo $form->fileFieldControlGroup($model,'doc',array('span'=>5)); ?>
-            <?php echo $form->dropDownListControlGroup($model, 'owner',
-        	   CHtml::listData(Users::model()->findAll(),'uid','name')
-	        ); ?>
-	        <?php echo $form->dropDownListControlGroup($model, 'department',
-        	   CHtml::listData(Ou_structure::model()->findAll(),'id','name')
-	        ); ?>
-	        <?php echo $form->dropDownListControlGroup($model, 'category',
-        	   CHtml::listData(Category::model()->findAll(),'cat_id','name')
-	        ); ?>
-	        <?php echo $form->textfieldControlGroup($model,'tags',
-	        array('label'=>'User Defined Tags','Placeholder'=>'Tags')); ?>
-	        
-	        <?php //echo CHtml::checkBox("status",$model->roles=='ACTIVE',array('checked'=>'checked')); 
-    $criteria = new CDbCriteria();
-    $orgId = Yii::app()->user->getId();
-   $criteria->compare('orgId', $orgId, true);
-    echo $form->labelEx($model,'tags_defined');
-    $type_list=CHtml::listData(Tags::model()->findAll(),'tagId','name');
-    echo $form->checkBoxList($model,'roles',$type_list,array('checked'=>'checked','value' => '1', 'uncheckValue'=>'0','template'=>'{input}{label}',
-            'separator'=>'',
- 
-        'labelOptions'=>
-           array(
-           
-            'style'=> ' padding-left:200px;
-                    width: 60px;
-                    float: left;
-                '),
-              'style'=>'float:left;',
-              ) 
-    ); 
-    
-	    ?>
-	       
-	      <?php echo $form->textfieldControlGroup($model,'description',
-	        array('label'=>'Description','Placeholder'=>'description')); ?>
-	       
-	        <?php echo $form->textfieldControlGroup($model,'comment',
-	        array('label'=>'comment','Placeholder'=>'comment')); ?>
-	          
-	
+			<?php echo $form->fileFieldControlGroup($model,'file'); ?>
+			
+		    <?php echo $form->textFieldControlGroup($model,'Name',array('span'=>3,'maxlength'=>70,'label'=>'File Name')); ?>
 
+            <?php echo $form->dropDownListControlGroup($model,'ownerId',CHtml::listData(Users::model()->findAll(), 'uid', 'name')); ?>
             
+            <?php echo $form->dropDownListControlGroup($model,'departmentId',CHtml::listData(Ou_structure::model()->findAll(), 'id', 'name')); ?>
+            
+         	<?php echo $form->dropDownListControlGroup($model,'categoryId',CHtml::listData(Category::model()->findAll(), 'cat_id', 'name')); ?>
+            
+			<?php  echo TbHtml::inlinecheckBoxListControlGroup('tags','',CHtml::listData(Tags::model()->findAll(), 'tagId', 'tagName'), array('span'=>3,'label'=>'Roles','help' => '<strong>Note:</strong> Labels surround all the options for much larger click areas.')); ?>	 
+	 
+         
+
+            <?php echo $form->textAreaControlGroup($model,'description',array('rows'=>4,'span'=>8)); ?>
+
+            <?php echo $form->textAreaControlGroup($model,'comment',array('rows'=>1,'span'=>8)); ?>
 
         <div class="form-actions">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
-		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
 		)); ?>
-    </div>
+		<?php echo TbHtml::submitButton(Yii::t('Yii','Cancel'),array(
+ 			'name'=>'buttonCancel',
+			'color'=>TbHtml::BUTTON_COLOR_DANGER,
+		    ));?>
+		
+		<?php
+			$dataProvider = new CActiveDataProvider('Users');
+			$model1 = Users::model()->findAll();
+			$number = 0;
+ 			foreach ($model1 as $model2)
+ 				{
+ 				$string = $model2->name;
+				$this->widget('zii.widgets.grid.CGridView', array(
+				'id'=>'gview',
+				'selectableRows'=>2,
+				'dataProvider'=>$dataProvider,
+
+				'columns'=>array(
+    			array('name'=>'name','header'=>'Permissions'),    /*in header give the role name while passing*/
+	    		array(
+	        		'class'=>'CCheckBoxColumn',
+	        		'id'=>'read'.$number,
+	        		'selectableRows'=>1,
+	    			'header'=>'Read'
+	    		),    	
+	    		array(
+	        		'class'=>'CCheckBoxColumn',
+	        		'id'=>'write'.$number,
+	        		'selectableRows'=>1,
+	    			'header'=>'Write'
+	    		),
+	    		array(
+	        		'class'=>'CCheckBoxColumn',
+	        		'id'=>'edit'.$number,
+	        		'selectableRows'=>1,
+	    			'header'=>'Edit'
+	    		),    	
+	      ),
+   		)
+		);
+ 		$number++;
+ 		}
+	?>
+		
+		
+		
+		
+	    </div>
 
     <?php $this->endWidget(); ?>
 

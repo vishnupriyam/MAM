@@ -1,42 +1,53 @@
 <?php
 
 /**
- * This is the model class for table "document".
+ * This is the model class for table "asset".
  *
- * The followings are the available columns in table 'document':
- * @property integer $docId
- * @property string $Name
- * @property integer $ownerId
- * @property integer $departmentId
- * @property integer $categoryId
+ * The followings are the available columns in table 'asset':
+ * @property integer $assetId
+ * @property string $assetName
+ * @property string $createDate
  * @property string $description
  * @property string $comment
+ * @property integer $status
+ * @property integer $publication
+ * @property integer $onlineEditable
+ * @property integer $size
+ * @property string $type
+ * @property string $reviewer
+ * @property string $reviewerComments
+ * @property integer $ownerId
  */
-class Document extends CActiveRecord
+class Asset extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'document';
+		return 'asset';
 	}
 
 	/**
 	 * @return array validation rules for model attributes.
 	 */
-	public $file;
+	public $departmentId;
+	public $categoryId;
+	public $tags;
+	public $tagsUser;
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('Name, ownerId, departmentId, categoryId, description, comment', 'required'),
-			array('ownerId, departmentId, categoryId', 'numerical', 'integerOnly'=>true),
-			array('Name', 'length', 'max'=>70),
+			array('assetId, assetName, publication, onlineEditable, ownerId', 'required'),
+			array('assetId, status, publication, onlineEditable, size, ownerId', 'numerical', 'integerOnly'=>true),
+			array('assetName, reviewer', 'length', 'max'=>45),
+			array('type', 'length', 'max'=>10),
+			array('createDate, description, comment, reviewerComments', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('docId, Name, ownerId, departmentId, categoryId, description, comment', 'safe', 'on'=>'search'),
+			array('assetId, assetName, createDate, description, comment, status, publication, onlineEditable, size, type, reviewer, reviewerComments, ownerId', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,13 +68,19 @@ class Document extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'docId' => 'Doc',
-			'Name' => 'Name',
-			'ownerId' => 'Owner',
-			'departmentId' => 'Department',
-			'categoryId' => 'Category',
+			'assetId' => 'Asset',
+			'assetName' => 'Asset Name',
+			'createDate' => 'Create Date',
 			'description' => 'Description',
 			'comment' => 'Comment',
+			'status' => 'Status',
+			'publication' => 'Publication',
+			'onlineEditable' => 'Online Editable',
+			'size' => 'Size',
+			'type' => 'Type',
+			'reviewer' => 'Reviewer',
+			'reviewerComments' => 'Reviewer Comments',
+			'ownerId' => 'Owner',
 		);
 	}
 
@@ -85,13 +102,19 @@ class Document extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('docId',$this->docId);
-		$criteria->compare('Name',$this->Name,true);
-		$criteria->compare('ownerId',$this->ownerId);
-		$criteria->compare('departmentId',$this->departmentId);
-		$criteria->compare('categoryId',$this->categoryId);
+		$criteria->compare('assetId',$this->assetId);
+		$criteria->compare('assetName',$this->assetName,true);
+		$criteria->compare('createDate',$this->createDate,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('comment',$this->comment,true);
+		$criteria->compare('status',$this->status);
+		$criteria->compare('publication',$this->publication);
+		$criteria->compare('onlineEditable',$this->onlineEditable);
+		$criteria->compare('size',$this->size);
+		$criteria->compare('type',$this->type,true);
+		$criteria->compare('reviewer',$this->reviewer,true);
+		$criteria->compare('reviewerComments',$this->reviewerComments,true);
+		$criteria->compare('ownerId',$this->ownerId);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -102,7 +125,7 @@ class Document extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Document the static model class
+	 * @return Asset the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

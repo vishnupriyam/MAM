@@ -2,7 +2,7 @@
 
 class SiteController extends Controller
 {
-	private $filemanagerLog;
+	private $Log;
 	/**
 	 * Declares class-based actions.
 	 */
@@ -30,8 +30,6 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$filemanagerLog = Logger::getLogger("user1log");
-		$filemanagerLog->info("user1Log.log");
 		$this->render('index');
 	}
 
@@ -96,47 +94,8 @@ public function actionAsset()
 
 	/**
 	 * Displays the login page
-	 *//*
+	 */
 	public function actionLogin()
-	{
-		$model=new LoginForm;
-		
-		if(isset($_POST['buttonCancel']))
-        {
-         $this->redirect(Yii::app()->homeUrl);
-        }
-		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
-		{
-			if(isset($_POST['buttonCancel']))
-	        {
-	         $this->redirect(Yii::app()->homeUrl);
-	        }
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-		// collect user input data
-		if(isset($_POST['LoginForm']))
-		{
-			$model->attributes=$_POST['LoginForm'];
-			$name = $model->username;
-			$password = $model->password;
-			$user = Users::model()->findByAttributes(array('name'=>$name, 'password'=>$password));
-			if ($user===null) { 
-			$this->redirect("/final/Site/login");
-			} else if ($user->password !== $password ) {
-			$this->redirect("/final/Site/login");
-			} else {
-			$model->validate();
-			$model->login();
-			$this->redirect("/final/site/asset");
-			}
-		}
-		// display the login form
-		$this->render('login',array('model'=>$model));
-	}
-*/
-public function actionLogin()
 	{
 		$model=new LoginForm;
 
@@ -149,10 +108,13 @@ public function actionLogin()
 		{
 			$model->attributes=$_POST['LoginForm'];
 			if($model->validate() && $model->login()) {
+				$model1 = Users::model()->find('name=:username',array(':username'=>$model->username));
 				//$session=new CDbHttpSession;
 				//$session->open();
 				//$orgId = "hello";
 				//$session['orgId'] = $orgId;
+				$Log = Logger::getLogger("systemLog");
+				$Log->info($model1->uid ."\t".$model->username."  LOGGED IN ");
 				$this->redirect(Yii::app()->user->returnUrl);
 			}
 		}
@@ -163,8 +125,12 @@ public function actionLogin()
 	 */
 	public function actionLogout()
 	{
+		$Log = Logger::getLogger("systemLog");
+		if(Yii::app()->user->isGuest){
+		//$user = Users::model()->find('name=:name',array(':name'=>Yii::app()->user->name));
+		$Log->info(Yii::app()->user->getState("uid")."\t".Yii::app()->user->name."\tLOGGED OUT");}
 		Yii::app()->user->logout();
-	//	$session->close();
+		//	$session->close();
 		//$session->destroy();
 		$this->redirect(Yii::app()->homeUrl);
 	}

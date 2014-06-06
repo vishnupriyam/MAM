@@ -22,7 +22,7 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>true,
+	'enableAjaxValidation'=>false,
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -48,11 +48,9 @@
 	<?php echo TbHtml::fileFieldControlGroup('picture','',array('label'=>'Photo'));?>
 	
 	<div class="span12">
-	<div class="" style="margin-left:-2em">
-		<?php // echo TbHtml::inlinecheckBoxListControlGroup('roles','',CHtml::listData(Role::model()->findAll(), 'rid', 'name'), array('span'=>3,'label'=>'Roles','help' => '<strong>Note:</strong> Labels surround all the options for much larger click areas.')); ?>	 
-	 
-	 
-	    <?php //echo CHtml::checkBox("status",$model->roles=='ACTIVE',array('checked'=>'checked')); 
+	<div class="" style="margin-left:6.4em">
+		  
+	    <?php 
     $criteria = new CDbCriteria();
     $orgId = Yii::app()->user->getId();
    $criteria->compare('orgId', $orgId, true);
@@ -64,8 +62,9 @@
         'labelOptions'=>
            array(
            
-            'style'=> ' padding-left:200px;
+            'style'=> ' padding-left:6.4em;
                     width: 60px;
+                    height:30px;
                     float: left;
                 '),
               'style'=>'float:left;',
@@ -83,33 +82,8 @@
 	  	  'Active',
 	  	  )); ?>
 
-	
-	    <?php
-	    /*$this->widget(
-	    	    'yiiwheels.widgets.fileupload.WhFileUpload',
-	    	    array(
-	    	    	    'name' => 'photo',
-	    	    	    'url' => $this->createUrl('site/upload', array('type' => 'file')),
-	    	    	    'multiple' => true,
-	    	    	    )
-	    	    );*/
-	    ?>
-	    <b></b><?php /*echo "Photo"?></b>
-	    <?php
-	        $this->widget('yiiwheels.widgets.fineuploader.WhFineUploader', array(
-	        	'name' => 'fineuploadtest',
-	        	'uploadAction' => $this->createUrl('site/upload', array()),
-	        	'pluginOptions' => array(
-	        		'validation'=>array(
-	        			'allowedExtensions' => array('jpeg', 'jpg')
-	        			)
-	        		)
-	        	));
-	       */ ?>
-	      
-	
-	
-	<div class="row buttons" id="" >
+	     
+	 <div class="row buttons" id="" >
 		<?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('id'=>'B1','color'=>TbHtml::BUTTON_COLOR_PRIMARY,)); ?>
 		<?php echo TbHtml::submitButton(Yii::t('Yii','Cancel'),array(
  			'name'=>'buttonCancel',
@@ -120,19 +94,8 @@
 	
 	</div>
 
-	
-	
-
 	<?php $this->endWidget(); ?>
 
 	</div><!-- form -->
 	
-	<script type="text/javascript">
-	/*$(input['B1']).on('submit',function(){
-   		if($('#Users_password').val()!=$('#cpassword').val()){
-       	alert('Password not matches');
-       	return false;
-   		}
-   	return true;
-		});*/
-	</script>
+	

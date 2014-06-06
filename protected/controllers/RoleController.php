@@ -28,7 +28,7 @@ class RoleController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','permission_change'),
+				'actions'=>array('index','view','permission_change','permission'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -164,6 +164,18 @@ class RoleController extends Controller
 		//),));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+		));
+	}
+	
+	public function actionPermission()
+	{
+		$model = new Role;
+		//$orgId = Yii::app()->user->getId();
+		//$dataProvider=new CActiveDataProvider('Role', array('criteria'=>array('condition'=>  'orgId = :orgId', 'params'=>array(':orgId'=>$orgId),
+		//$dataProvider = new CActiveDataProvider('Role');
+		//),));
+		$this->render('permission',array(
+			'model'=>$model,
 		));
 	}
 	

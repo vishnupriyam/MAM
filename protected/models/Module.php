@@ -100,4 +100,24 @@ class Module extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	public function getModelName(){
+		return __CLASS__;
+	}
+	public function afterFind(){
+    	 $this->oldAttributes = $this->attributes;
+   		 return parent::afterFind();
+	}
+	public function afterSave(){
+	  $Log = Logger::getLogger("accessLog");
+	if($this->name != $this->oldAttributes['name'])
+	 	{$Log->info("name ".$this->oldAttributes['name']." ".$this->name);}
+	if($this->description != $this->oldAttributes['description'])
+	 	{$Log->info("description ".$this->oldAttributes['description']." ".$this->description);}
+	if($this->orgId != $this->oldAttributes['orgId'])
+	 	{$Log->info("orgId ".$this->oldAttributes['orgId']." ".$this->orgId);}
+	 		
+	
+	}
+	
 }

@@ -2,6 +2,7 @@
 
 class UsersController extends Controller
 {
+	private $userLog;
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -69,8 +70,7 @@ class UsersController extends Controller
 		if(isset($_POST['Users'])) 
 			{	
 			if(crypt($_POST['Users']['oldpassword'],'salt')!=$model->password){
-			//	echo $this->errorSummary('oldpassword', 'Ur password and present password are not matching');
-			//	$this->redirect(Yii::app()->user->returnUrl);
+			
 				print_r("BAD PASSWORD!!! " );
 				die();
 			}
@@ -105,6 +105,7 @@ class UsersController extends Controller
 	 */
 	public function actionCreate()
 	{
+		
 		$model=new Users('create');
 
 		if(isset($_POST['buttonCancel']))
@@ -122,12 +123,17 @@ class UsersController extends Controller
 			//echo json_encode($model->roles);
 			$model->attributes=$_POST['Users'];
 			$model->orgId = Yii::app()->user->getId();
-			if($model->validate())
+			if($_POST['Users'])
 			{
 			$model->cpassword=crypt($model->cpassword,'salt');	
 			$model->password=crypt($model->password,'salt');}
 			
 			if($model->save()){
+
+				$Log = Logger::getLogger("accessLog");
+	  			$uid=Yii::app()->user->getState("uid");
+	 		    $Log->info($uid."\t".Yii::app()->user->name."\t".$model->getModelName()."\tcreate\t".$model->uid);	
+	  
 				
 				$roid = $_POST['Users']['roles'];
 				foreach($roid as $categoryId){
@@ -138,7 +144,7 @@ class UsersController extends Controller
         
 				}
 				$this->redirect(array('view','id'=>$model->uid));
-			echo json_encode($model->roles);}
+			}
 		}
 
 		$this->render('create',array(
@@ -154,20 +160,33 @@ class UsersController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		
+	
 		if(isset($_POST['buttonCancel']))
         {
          $this->redirect(Yii::app()->homeUrl);
         }
 		
-
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Users']))
 		{
-			$model->attributes=$_POST['Users'];		
+			
+			//$Log = Logger::getLogger("accessLog");
+			
+			//$Log->info(json_encode($model));			
+			$model->attributes=$_POST['Users'];
+			//$model2 = $model;
+			 	
+			
 			if($model->save()){
+				
+				$Log = Logger::getLogger("accessLog");
+	  			$uid=Yii::app()->user->getState("uid");
+	  			$Log->info($uid."\t".Yii::app()->user->name."\t".$model->getModelName()."\tupdate\t".$model->uid);	
+	  
+				
 				$this->redirect(array('view','id'=>$model->uid));
 				}		
 			}
@@ -243,5 +262,12 @@ class UsersController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	public function findUpdatedAttributes($model1,$model2){
+		
+		$Log = Logger::getLogger("accessLog");
+		$Log->info("entered the function");
+		print_r($model1);die();
+		
 	}
 }

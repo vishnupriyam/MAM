@@ -1,16 +1,16 @@
 <?php
-/* @var $this DocumentController */
-/* @var $model Document */
+/* @var $this AssetController */
+/* @var $model Asset */
 
 
 $this->breadcrumbs=array(
-	'Documents'=>array('index'),
+	'Assets'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List Document', 'url'=>array('index')),
-	array('label'=>'Create Document', 'url'=>array('create')),
+	array('label'=>'List Asset', 'url'=>array('index')),
+	array('label'=>'Create Asset', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -19,7 +19,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#document-grid').yiiGridView('update', {
+	$('#asset-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -27,7 +27,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Documents</h1>
+<h1>Manage Assets</h1>
 
 <p>
     You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>
@@ -43,18 +43,24 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </div><!-- search-form -->
 
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
-	'id'=>'document-grid',
+	'id'=>'asset-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'docId',
-		'Name',
-		'ownerId',
-		'departmentId',
-		'categoryId',
+		'assetId',
+		'assetName',
+		'createDate',
 		'description',
-		/*
 		'comment',
+		'status',
+		/*
+		'publication',
+		'onlineEditable',
+		'size',
+		'type',
+		'reviewer',
+		'reviewerComments',
+		'ownerId',
 		*/
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',

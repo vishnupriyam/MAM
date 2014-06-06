@@ -106,7 +106,7 @@
         array('label' => 'Add tags', 'url' => array('/tags/create')),
         array('label' => 'Add category', 'url' => array('/category/create')),
         array('label' => 'users', 'items'=>array(array('label'=>'Add user','url'=>array('/users/create')),array('label'=>'manage user','url'=>array('/users/admin')))),
-        array('label' => 'Role', 'items'=>array(array('label'=>'Add role','url'=>array('/role/create')),array('label'=>'Add module','url'=>array('/module/create')),array('label'=>'Add permission','url'=>array('/permissions/create')))),
+        array('label' => 'Role', 'items'=>array(array('label'=>'Add role','url'=>array('/role')),array('label'=>'Add module','url'=>array('/module/create')),array('label'=>'Add permission','url'=>array('/permissions/create')))),
         
     )),
 	)); 

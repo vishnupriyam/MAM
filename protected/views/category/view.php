@@ -28,12 +28,9 @@ $this->menu=array(
     	  'value'=>$model->organisation->orgName,
     	 ),
     	 array(
-    	 'name'=>'department name',
-    	 'value'=>'',
-    	 //to be changed to many to many 
-    	 //'value'=>$model->ou_structure->name,
-    	 ),
-    	//'unitCode',
+		'name'=>'department name',
+		'value'=>$model->getDepartments()),
+    	
     		),
 )); 
 

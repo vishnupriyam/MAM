@@ -70,6 +70,12 @@ class ModuleController extends Controller
 		if (isset($_POST['Module'])) {
 			$model->attributes=$_POST['Module'];
 			if ($model->save()) {
+				
+				$Log = Logger::getLogger("accessLog");
+	  			$uid=Yii::app()->user->getState("uid");
+	  			$Log->info($uid."\t".Yii::app()->user->name."\t".$model->getModelName()."\tcreate\t".$model->mid);	
+	  
+				
 				$this->redirect(array('view','id'=>$model->mid));
 			}
 		}
@@ -94,6 +100,12 @@ class ModuleController extends Controller
 		if (isset($_POST['Module'])) {
 			$model->attributes=$_POST['Module'];
 			if ($model->save()) {
+				
+				$Log = Logger::getLogger("accessLog");
+	  			$uid=Yii::app()->user->getState("uid");
+	  			$Log->info($uid."\t".Yii::app()->user->name."\t".$model->getModelName()."\tupdate\t".$model->mid);	
+	  
+				
 				$this->redirect(array('view','id'=>$model->mid));
 			}
 		}

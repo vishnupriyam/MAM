@@ -4,7 +4,7 @@
  * This is the model class for table "tags_has_ou_structure".
  *
  * The followings are the available columns in table 'tags_has_ou_structure':
- * @property string $dept_id
+ * @property string $id
  * @property integer $tagId
  */
 class TagsHasOuStructure extends CActiveRecord
@@ -51,7 +51,7 @@ class TagsHasOuStructure extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'Dept',
+			'id' => 'ID',
 			'tagId' => 'Tag',
 		);
 	}
@@ -74,7 +74,7 @@ class TagsHasOuStructure extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('dept_id',$this->dept_id,true);
+		$criteria->compare('id',$this->id,true);
 		$criteria->compare('tagId',$this->tagId);
 
 		return new CActiveDataProvider($this, array(

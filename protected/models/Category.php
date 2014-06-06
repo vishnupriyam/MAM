@@ -13,6 +13,7 @@ class Category extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+	public $oldAttributes;
 	public function tableName()
 	{
 		return 'category';
@@ -51,7 +52,8 @@ class Category extends CActiveRecord
 		  // ou_stucture and category relationship
 		  //to be changed to many to many relationship
 		  //'ou_structure'=>array(self::BELONGS_TO,'Ou_structure','unitCode'),
-		 'ou_structure' => array(self::MANY_MANY, 'Ou_structure', 'category_has_department(cat_id, dept_id)'),
+		 //'ou_structure' => array(self::MANY_MANY, 'Ou_structure', 'category_has_department(cat_id, dept_id)'),
+		 'ou_structure' => array(self::MANY_MANY, 'Ou_structure', 'category_has_ou_structure(cat_id,id)'),		
 		);
 	}
 
@@ -105,4 +107,38 @@ class Category extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	public function getModelName(){
+		return __CLASS__;
+	}
+	public function afterFind(){
+    	 $this->oldAttributes = $this->attributes;
+   		 return parent::afterFind();
+	}
+	
+	public function afterSave(){
+	  $Log = Logger::getLogger("accessLog");
+	
+	if($this->name != $this->oldAttributes['name'])
+	 	{$Log->info("name ".$this->oldAttributes['name']." ".$this->name);}
+	}
+	
+	public function getDepartments()
+		{
+    		$ret = "";
+    		$first = true;
+    		
+    		foreach ($this->ou_structure as $record) {
+
+        	if ($first === true) {
+            	$first = false;
+        	} else {
+            $ret .= ', ';
+        	}
+
+        $ret .= $record->name;
+    	}
+		
+	    return $ret;
+		}
+	
 }

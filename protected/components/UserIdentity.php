@@ -17,6 +17,7 @@ class UserIdentity extends CUserIdentity
 	 */
 	
 	private $_id;
+	private $_uid;
 	public function authenticate()
 	{
 		
@@ -32,7 +33,7 @@ class UserIdentity extends CUserIdentity
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		else
 			$this->errorCode=self::ERROR_NONE;
-		return !$this->errorCode;
+		return !$this->err orCode;
 	*/
 		
 		$record=Users::model()->findByAttributes(array('name'=>$this->username));
@@ -42,9 +43,10 @@ class UserIdentity extends CUserIdentity
 		$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		else{
 	    $this->_id=$record->orgId;
-	  //  $this->_id2=$record->uid;
-		//$role=Role::model()->findByPk($record->id)	;
-		//$this->setState('role',$role->name); 
+	    $this->_uid=$record->uid;
+	    //setting the session variable uid with id of the logged in user
+	    $this->setState('uid', $record->uid,NULL);
+	    //Yii::app()->user->setState("uid","value");
 		$this->errorCode=self::ERROR_NONE;
 		}
 		return !$this->errorCode;
@@ -55,5 +57,9 @@ class UserIdentity extends CUserIdentity
 	{
 		return $this->_id;
 	}
+	public function getUid(){
+		return $this->_uid;
+	}
+
 	
 }

@@ -3,7 +3,7 @@
 		<!-- ????appender -->
 		<appender name="default" class="LoggerAppenderRollingFile">	
 			<layout class="LoggerLayoutPattern" />			
-			<param name="file" value="C:\xampp\htdocs\log44php\logs\cloudstore.log" />	            
+			<param name="file" value="C:\xampp\htdocs\final\logs\accessLog.log" />	            
 			<param name="append" value="true" />                    
 			<param name="maxFileSize" value="10MB" />				
 			<param name="maxBackupIndex" value="10" />				
@@ -14,25 +14,17 @@
 				
 				<param name="conversionPattern" value="%date [%logger] %message%newline"/>
 			</layout>			
-			<param name="file" value="C:\xampp\htdocs\log44php\logs\user1Log.log" />	            <!-- ??????? -->
+			<param name="file" value="C:\xampp\htdocs\final\logs\systemLog.log" />	            <!-- ??????? -->
 			<param name="append" value="true" />                    <!-- ?????????? -->
 			<param name="maxFileSize" value="100MB" />				<!-- ?????? -->
 			<param name="maxBackupIndex" value="10" />				<!-- ????????? -->
 		</appender>		
 	
-	 	<!-- ??appender?? -->
-	 	<!-- ???????  ??root????  Logger::getRootLogger() ????????????-->
-	 	<!--  <root>
-	 		<level value="info" />
-	 		<appender_ref ref="default" />
-	 	</root>
-	 	-->
-	 	<!-- ????????   ?????????  Logger::getLogger($name)-->
-		<logger name="user1log">
+		<logger name="systemLog">
 			<level value="info" />
 			<appender_ref ref="user1" />
 		</logger>
-		<logger name="user2log">
+		<logger name="accessLog">
 			<level value="info" />
 			<appender_ref ref="default" />
 		</logger>	
