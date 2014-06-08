@@ -179,27 +179,7 @@ class RoleController extends Controller
 		));
 	}
 	
-	public function actionPermission_change()
-	{
-		$dataProvider=new CActiveDataProvider('Permissions');
-		
-		if(isset($_POST['buttonCancel']))
-        {
-         $this->redirect(Yii::app()->homeUrl);
-        }
-        
-		if(isset($_POST['buttonSubmit']))
-        {
-         $this->redirect("/organisation");
-        }
-        
-        
-		
-		$this->render('permission_change',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
-
+	
 	/**
 	 * Manages all models.
 	 */
@@ -216,6 +196,48 @@ class RoleController extends Controller
 		));
 	}
 
+	public function actionPermission_change($id)
+	{
+		//$dataProvider=new CActiveDataProvider('Permissions');
+		
+		$model= $this->loadModel($id);
+		
+		if(isset($_POST['buttonCancel']))
+        {
+         $this->redirect(Yii::app()->homeUrl);
+        }
+       
+
+        if (isset($_POST['buttonUpdate'])) {
+        	
+        	$module=ModuleOrganisation::model()->findAll('orgId=:orgId',array(':orgId'=>Yii::app()->user->getId()));
+        	$data = count($module);
+        	RoleHasPermissions::model()->deleteAll('rid=:rid',array(':rid'=>$model->rid));
+        	//print_r($data);die();
+        	$number = 0;
+        	while($number<$data){
+        		if(!empty($_POST['CB'.$number])){
+        		foreach($_POST['CB'.$number] as $rec)
+        		{
+        		  $RoleHasPermissions = new RoleHasPermissions;
+        		  $RoleHasPermissions->rid = $model->rid;
+        		  $RoleHasPermissions->pid = $rec;
+        		  $RoleHasPermissions->save();
+        		}}
+        		$number++;
+        	}
+        	$this->redirect(array('/role'));
+        }
+        
+        
+		$this->render('permission_change',array(
+			'model'=>$model,
+		));
+	}
+	
+	
+	
+	
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
