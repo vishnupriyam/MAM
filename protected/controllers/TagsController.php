@@ -79,6 +79,10 @@ class TagsController extends Controller
 			
 			if($model->save()){
 			//print_r( json_encode($_POST['dept_id']));die();
+			
+			$Log = Logger::getLogger("accessLog");
+	  			$uid=Yii::app()->user->getState("uid");
+	  			$Log->info($uid."\t".Yii::app()->user->name."\t".$model->getModelName()."\tcreate\t".$model->uid);		
 			foreach ($_POST['dept_id'] as $key=>$dept_id)
 				{
 			 		$tag_dept = new TagsHasOuStructure;
@@ -116,6 +120,10 @@ class TagsController extends Controller
 		if (isset($_POST['Tags'])) {
 			$model->attributes=$_POST['Tags'];
 			if ($model->save()) {
+				
+				$Log = Logger::getLogger("accessLog");
+	  			$uid=Yii::app()->user->getState("uid");
+	  			$Log->info($uid."\t".Yii::app()->user->name."\t".$model->getModelName()."\tupdate\t".$model->uid);	
 				$this->redirect(array('view','id'=>$model->tagId));
 			}
 		}

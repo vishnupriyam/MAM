@@ -4,6 +4,7 @@
  * This is the model class for table "asset".
  *
  * The followings are the available columns in table 'asset':
+ * @property string $file
  * @property integer $assetId
  * @property string $assetName
  * @property string $createDate
@@ -20,6 +21,9 @@
  */
 class Asset extends CActiveRecord
 {
+	
+	public $write;
+	public $file;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -33,21 +37,23 @@ class Asset extends CActiveRecord
 	 */
 	public $departmentId;
 	public $categoryId;
-	public $tags;
 	public $tagsUser;
+	public $gview;
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('assetId, assetName, publication, onlineEditable, ownerId', 'required'),
+			//array('file, assetId, assetName, publication, onlineEditable, ownerId', 'required'),
+			//array('file,assetId,assetName,ownerId', 'required'),
+			array('file', 'required'),
 			array('assetId, status, publication, onlineEditable, size, ownerId', 'numerical', 'integerOnly'=>true),
 			array('assetName, reviewer', 'length', 'max'=>45),
 			array('type', 'length', 'max'=>10),
 			array('createDate, description, comment, reviewerComments', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('assetId, assetName, createDate, description, comment, status, publication, onlineEditable, size, type, reviewer, reviewerComments, ownerId', 'safe', 'on'=>'search'),
+			array('file, assetId, assetName, createDate, description, comment, status, publication, onlineEditable, size, type, reviewer, reviewerComments, ownerId', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,6 +74,7 @@ class Asset extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'file' => 'File',
 			'assetId' => 'Asset',
 			'assetName' => 'Asset Name',
 			'createDate' => 'Create Date',
@@ -102,6 +109,7 @@ class Asset extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$criteria->compare('file',$this->file,true);
 		$criteria->compare('assetId',$this->assetId);
 		$criteria->compare('assetName',$this->assetName,true);
 		$criteria->compare('createDate',$this->createDate,true);

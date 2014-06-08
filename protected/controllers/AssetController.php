@@ -69,9 +69,56 @@ class AssetController extends Controller
 
 		if (isset($_POST['Asset'])) {
 			$model->attributes=$_POST['Asset'];
+			$model->file=CUploadedFile::getInstance($model,'file');
+			 
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->assetId));
+				$model->file->saveAs('C:/xampp/htdocs/final/upload/img/'.$model->file->getName());
+				
+				if(!empty($_POST['read'])){
+				$read = $_POST['read'];
+				foreach($read as $readRow){
+					$AssetOuFilep = new AssetOuFilep;
+        	        $AssetOuFilep->assetId = $model->assetId;
+            	    $AssetOuFilep->ouId = $readRow;
+            	    $AssetOuFilep->fpId = 0;
+                	$AssetOuFilep->save();
+       			}}
+				
+       			
+       			if(!empty($_POST['edit'])){
+				$write = $_POST['write'];
+       			foreach($write as $writeRow){
+					$AssetOuFilep = new AssetOuFilep;
+        	        $AssetOuFilep->assetId = $model->assetId;
+            	    $AssetOuFilep->ouId = $writeRow;
+            	    $AssetOuFilep->fpId = 1;
+                	$AssetOuFilep->save();
+       			}}
+       			
+				
+				if(!empty($_POST['edit'])){
+				$edit = $_POST['edit'];
+				foreach($edit as $editRow){
+					$AssetOuFilep = new AssetOuFilep;
+        	        $AssetOuFilep->assetId = $model->assetId;
+            	    $AssetOuFilep->ouId = $editRow;
+            	    $AssetOuFilep->fpId = 2;
+                	$AssetOuFilep->save();
+       			}}
+				
+       			
+				if(!empty($_POST['delete'])){
+				$delete = $_POST['delete'];
+				foreach($delete as $deleteRow){
+					$AssetOuFilep = new AssetOuFilep;
+        	        $AssetOuFilep->assetId = $model->assetId;
+            	    $AssetOuFilep->ouId = $editRow;
+            	    $AssetOuFilep->fpId = 3;
+                	$AssetOuFilep->save();
+       			}}
 			}
+			
+			$this->redirect(array('view','id'=>$model->assetId));
 		}
 
 		$this->render('create',array(

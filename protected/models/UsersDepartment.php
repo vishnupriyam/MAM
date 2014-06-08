@@ -1,24 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "module".
+ * This is the model class for table "users_department".
  *
- * The followings are the available columns in table 'module':
- * @property integer $mid
- * @property string $name
- * @property string $description
- * @property integer $orgId
+ * The followings are the available columns in table 'users_department':
+ * @property integer $uid
+ * @property string $id
  */
-class Module extends CActiveRecord
+class UsersDepartment extends CActiveRecord
 {
-
-	public $oldAttributes;
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'module';
+		return 'users_department';
 	}
 
 	/**
@@ -29,13 +25,12 @@ class Module extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name', 'required'),
-			array('orgId', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>45),
-			array('description', 'length', 'max'=>100),
+			array('uid, id', 'required'),
+			array('uid', 'numerical', 'integerOnly'=>true),
+			array('id', 'length', 'max'=>11),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('mid, name, description, orgId', 'safe', 'on'=>'search'),
+			array('uid, id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -47,7 +42,6 @@ class Module extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		 'Permissions'=>array(self::HAS_MANY,'Permissions','mid'),
 		);
 	}
 
@@ -57,10 +51,8 @@ class Module extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'mid' => 'Module id',
-			'name' => 'Name',
-			'description' => 'Description',
-			'orgId' => 'Organisation Id',
+			'uid' => 'Uid',
+			'id' => 'ID',
 		);
 	}
 
@@ -82,10 +74,8 @@ class Module extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('mid',$this->mid);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('description',$this->description,true);
-		$criteria->compare('orgId',$this->orgId);
+		$criteria->compare('uid',$this->uid);
+		$criteria->compare('id',$this->id,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -96,30 +86,10 @@ class Module extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Module the static model class
+	 * @return UsersDepartment the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
-	
-	public function getModelName(){
-		return __CLASS__;
-	}
-	public function afterFind(){
-    	 $this->oldAttributes = $this->attributes;
-   		 return parent::afterFind();
-	}
-	public function afterSave(){
-	  $Log = Logger::getLogger("accessLog");
-	if($this->name != $this->oldAttributes['name'])
-	 	{$Log->info("name ".$this->oldAttributes['name']." ".$this->name);}
-	if($this->description != $this->oldAttributes['description'])
-	 	{$Log->info("description ".$this->oldAttributes['description']." ".$this->description);}
-	if($this->orgId != $this->oldAttributes['orgId'])
-	 	{$Log->info("orgId ".$this->oldAttributes['orgId']." ".$this->orgId);}
-	 		
-	
-	}
-	
 }

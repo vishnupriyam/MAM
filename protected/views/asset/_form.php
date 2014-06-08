@@ -21,6 +21,7 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
+    'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
     <p class="help-block">Fields with <span class="required">*</span> are required.</p>
@@ -31,11 +32,18 @@
 			
 		    <?php echo $form->textFieldControlGroup($model,'assetName',array('span'=>3,'maxlength'=>70,'label'=>'File Name')); ?>
 
-            <?php echo $form->dropDownListControlGroup($model,'ownerId',CHtml::listData(Users::model()->findAll(), 'uid', 'name')); ?>
+            <?php
+			$orgId=Yii::app()->user->getId();
+            echo $form->dropDownListControlGroup($model,'ownerId',CHtml::listData(Users::model()->findAll('orgId=:orgId',array(':orgId'=>$orgId)), 'uid', 'name')); ?>
             
-            <?php echo $form->dropDownListControlGroup($model,'departmentId',CHtml::listData(Ou_structure::model()->findAll(), 'id', 'name'),array('label'=>'Deprtment')); ?>
+            <?php 
             
-         	<?php echo $form->dropDownListControlGroup($model,'categoryId',CHtml::listData(Category::model()->findAll(), 'cat_id', 'name'),array('label'=>'Category')); ?>
+            $root = Ou_structure::model()->find('orgId=:orgId',array(':orgId'=>$orgId));
+            $root = $root->id;
+            echo $form->dropDownListControlGroup($model,'departmentId',CHtml::listData(Ou_structure::model()->findAll('root=:root',array(':root'=>$root)), 'id', 'name'),array('label'=>'Deprtment')); ?>
+            
+         	<?php
+			echo $form->dropDownListControlGroup($model,'categoryId',CHtml::listData(Category::model()->findAll('orgId=:orgId',array(':orgId'=>$orgId)), 'cat_id', 'name'),array('label'=>'Category')); ?>
             
 			<?php  echo TbHtml::inlinecheckBoxListControlGroup('tags','',CHtml::listData(Tags::model()->findAll(), 'tagId', 'tagName'), array('span'=>3,'label'=>'Tags','help' => '<strong>Note:</strong> Add multiple tags with commas.')); ?>	 
 	 
@@ -48,15 +56,22 @@
 
         <div class="span9 offset1">
 		<?php
-			$dataProvider = new CActiveDataProvider('Users');
-			$model1 = Users::model()->findAll();
+			
+			$dataProvider = new CActiveDataProvider('Ou_structure',array('criteria'=>array(
+                        'condition'=>'root=:root',
+                        'params'=>array(':root'=>$root),
+    
+                    ),    ));
+			
+			//$dataProvider = Ou_structure::model()->findAll('orgId=:orgId',array('orgId'=>$orgId));
 			$number = 0;
 				$this->widget('bootstrap.widgets.TbGridView', array(
 				
 				'id'=>'gview',
 				'dataProvider'=>$dataProvider,
+				'rowHtmlOptionsExpression' => 'array("id"=>$data->id)',
 				'columns'=>array(
-    			array('name'=>'name','header'=>'Permissions'),    /*in header give the role name while passing*/
+    			array('name'=>'name','header'=>'Departments'),    /*in header give the role name while passing*/
 	 			array('header'=>'Read','value'=>'','id'=>'headerA'),
 	    		array(
 	    		    
@@ -66,7 +81,7 @@
 	    			'header'=>'Read',
 	    		
 	    		),    	
-	    		array('header'=>'write','value'=>'','id'=>'headerA'),
+	    		array('header'=>'Write','value'=>'','id'=>'headerA'),
 	    		array(
 	        		'class'=>'CCheckBoxColumn',
 	        		'id'=>'write',
@@ -92,6 +107,27 @@
 		);
 
  		
+	?>
+	
+	
+	<?php 
+	
+	/*	echo TbHtml::dropDownList('department','',CHtml::listData(Ou_structure::model()->findAll(),'id','name'),array(
+		  'onKeyUp'=>CHtml::ajax(
+		      array(
+		      'type'=>'POST',
+		      'dataType'=>'html',
+		      'data'=>array(
+		        'id'=>'js:department.value' 
+		      ),
+		      'update'=>'#user_select',
+		      'url'=>Yii::app()->createUrl('create/searchajax'),
+		      
+		      )
+		
+		))
+		);
+	*/
 	?>
 		</div>
 		

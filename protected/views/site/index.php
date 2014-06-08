@@ -18,6 +18,7 @@ $this->pageTitle=Yii::app()->name;
  <center>MEDIA ASSET MANAGEMENT </center>
  </h1>
 
+<a href="/ViewerJS/final/logs/accessLog.txt">LOGS</a>
 
 <div class="span12" style="margin-top:4em;">
 	

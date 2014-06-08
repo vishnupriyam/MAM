@@ -42,6 +42,7 @@ class Users extends CActiveRecord
 	
 	public $cpassword;
 	public $oldAttributes;
+	public $dept_id;
 	public function rules()
 	{
 		

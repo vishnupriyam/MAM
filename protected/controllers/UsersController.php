@@ -134,15 +134,20 @@ class UsersController extends Controller
 	  			$uid=Yii::app()->user->getState("uid");
 	 		    $Log->info($uid."\t".Yii::app()->user->name."\t".$model->getModelName()."\tcreate\t".$model->uid);	
 	  
-				
+	 		    $dept_id = $_POST['dept_id'];
+				$user_department = new UsersDepartment;
+				$user_department->uid = $model->uid;
+				$user_department->id  = $dept_id;
+				$user_department->save();
+	 		    
+				if(!empty($_POST['Users']['roles'])){
 				$roid = $_POST['Users']['roles'];
 				foreach($roid as $categoryId){
 					$UsersHasRoles = new UsersHasRole;
         	        $UsersHasRoles->users_uid = $model->uid;
             	    $UsersHasRoles->role_rid = $categoryId;
                 	$UsersHasRoles->save();
-        
-				}
+        		}}
 				$this->redirect(array('view','id'=>$model->uid));
 			}
 		}
@@ -186,6 +191,14 @@ class UsersController extends Controller
 	  			$uid=Yii::app()->user->getState("uid");
 	  			$Log->info($uid."\t".Yii::app()->user->name."\t".$model->getModelName()."\tupdate\t".$model->uid);	
 	  
+				foreach($roid as $categoryId){
+					$UsersHasRoles = new UsersHasRole;
+        	        $UsersHasRoles->users_uid = $model->uid;
+            	    $UsersHasRoles->role_rid = $categoryId;
+                	$UsersHasRoles->save();
+        
+				}
+	  			
 				
 				$this->redirect(array('view','id'=>$model->uid));
 				}		

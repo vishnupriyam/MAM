@@ -35,6 +35,26 @@
 	<?php echo $form->emailFieldControlGroup($model, 'email',array('label'=>'Email','Placeholder'=>'Valid email id',
 		'help'=>'Please enter a freuently used email id')); ?>
 	
+	
+	<?php 
+			 $orgId= Yii::app()->user->getId();
+			 $connection = Yii::app()->db;
+			 $sql3 = "select id from ou_structure where orgId = :orgId";
+			 $command = $connection->createCommand($sql3);
+			 $command->bindParam(":orgId",$orgId,PDO::PARAM_INT);
+			 $dataReader = $command->query();
+	         $row = $dataReader->read();
+	         $dataReader->close();
+	         $ans = $row['id'];
+	         
+	  	
+	         
+			 $criteria=new CDbCriteria();
+			 $criteria->compare('root', $ans, true);
+			 echo  TbHtml::dropDownListControlGroup('dept_id','',
+			 CHtml::listData(ou_structure::model()->findAll($criteria), 'id', 'name'), 
+			 array('span'=>3,'label'=>'Department'), array('label'=>'child')); ?>
+	
 	<?php echo $form->passwordFieldControlGroup($model, 'password',array('label'=>'Password','Placeholder'=>'Password',
 		'help'=>'minimum 2 alphabets,2 numbers,a special character')); ?>
 	
