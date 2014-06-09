@@ -43,6 +43,8 @@ class OrganisationController extends Controller
 		$this->render('regdone');
 	}
 	
+	
+	
 	public function actionNext()
 	{
 		print_r("hello");
@@ -337,26 +339,22 @@ public function mailsend($to,$from,$subject,$message){
 				
 				$connection = Yii::app()->db;
 				
-				$sqlcom = "insert into module(name, description, orgId) values('Add asset',
-				'For adding assets', :orgId)";
+				$sqlcom = "insert into module_organisation(mid, orgId) values(54, :orgId)";
 			    $command2 = $connection->createCommand($sqlcom);
 			    $command2->bindParam(":orgId",$ans2,PDO::PARAM_INT);
 			    $command2->execute();
 			    
-			    $sqlcom = "insert into module(name, description, orgId) values('Check in',
-				'Downloading requests enabled', :orgId)";
+			    $sqlcom = "insert into module_organisation(mid, orgId) values(55, :orgId)";
 			    $command2 = $connection->createCommand($sqlcom);
 			    $command2->bindParam(":orgId",$ans2,PDO::PARAM_INT);
 			    $command2->execute();
 			    
-			    $sqlcom = "insert into module(name, description, orgId) values('Check out',
-				'Uploading requests enabled', :orgId)";
+			    $sqlcom = "insert into module_organisation(mid, orgId) values(56, :orgId)";
 			    $command2 = $connection->createCommand($sqlcom);
 			    $command2->bindParam(":orgId",$ans2,PDO::PARAM_INT);
 			    $command2->execute();
 			    
-			    $sqlcom = "insert into module(name, description, orgId) values('Admin',
-				'CRUD for user, role, module, tag, category, permission', :orgId)";
+			    $sqlcom = "insert into module_organisation(mid, orgId) values(57, :orgId)";
 			    $command2 = $connection->createCommand($sqlcom);
 			    $command2->bindParam(":orgId",$ans2,PDO::PARAM_INT);
 			    $command2->execute();

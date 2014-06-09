@@ -101,7 +101,9 @@ class Tags extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-	
+	public function getModelName(){
+		return __CLASS__;
+	}
 	public function getDepartments()
 		{
     		$ret = "";

@@ -64,8 +64,7 @@
  			'name'=>'buttonCancel',
 			'color'=>TbHtml::BUTTON_COLOR_DANGER,
 		    ));?>
-		    
-
+		   
 	</div>
 	
 	</fieldset>

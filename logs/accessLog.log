@@ -147,3 +147,8 @@ Date			Time					  uid	user	table 	action rowid
 2014-06-08T07:48:52+02:00 INFO  accessLog passwordsaEZ6MlWYV9nQ 
 2014-06-08T07:48:52+02:00 INFO  accessLog status 0 
 2014-06-08T07:48:52+02:00 INFO  accessLog 127	org2	Users	create	128
+2014-06-09T08:28:53+02:00 INFO  accessLog 129	vishnu962014	Tags	create	9
+2014-06-09T09:11:00+02:00 INFO  accessLog name  vishnu
+2014-06-09T09:11:00+02:00 INFO  accessLog email vishnu@gmail.com 
+2014-06-09T09:11:00+02:00 INFO  accessLog passwordsa5Boz/NeN2pU 
+2014-06-09T09:11:00+02:00 INFO  accessLog 129	vishnu962014	Users	create	131

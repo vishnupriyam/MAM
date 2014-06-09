@@ -86,7 +86,9 @@
 			'color'=>TbHtml::BUTTON_COLOR_DANGER,
 		    ));?>
 		    
-
+ <?php 
+	echo CHtml::link('Media Browser', array('/ddmedia'));
+	?>
 	</div>
 	
 	</fieldset>

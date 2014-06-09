@@ -128,6 +128,9 @@ class UsersController extends Controller
 			$model->cpassword=crypt($model->cpassword,'salt');	
 			$model->password=crypt($model->password,'salt');}
 			
+			
+			
+			
 			if($model->save()){
 
 				$Log = Logger::getLogger("accessLog");
@@ -140,6 +143,7 @@ class UsersController extends Controller
 				$user_department->id  = $dept_id;
 				$user_department->save();
 	 		    
+				
 				if(!empty($_POST['Users']['roles'])){
 				$roid = $_POST['Users']['roles'];
 				foreach($roid as $categoryId){
