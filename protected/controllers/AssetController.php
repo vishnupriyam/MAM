@@ -32,7 +32,7 @@ class AssetController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','loadcities'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -61,7 +61,8 @@ class AssetController extends Controller
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 	public function actionCreate()
-	{
+	{	if(!Yii::app()->user->checkAccess('create'))
+ // Yii::app()->end();
 		$model=new Asset;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -69,10 +70,31 @@ class AssetController extends Controller
 
 		if (isset($_POST['Asset'])) {
 			$model->attributes=$_POST['Asset'];
+			
 			$model->file=CUploadedFile::getInstance($model,'file');
+			//$model->type=$model->file->getType();
+			//$model->type=$model->file->extensionName;
+			//$model->createDate=
 			 
 			if ($model->save()) {
-				$model->file->saveAs('C:/xampp/htdocs/final/upload/img/'.$model->file->getName());
+				
+				$orgId=Yii::app()->user->getId();
+				$fileName=$model->assetId.'.dat';
+				$categoryId=$_POST['Asset']['categoryId'];
+				$old = umask(0);
+
+
+				if (!is_dir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/' )) {
+                //mkdir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/',0777 ,true);
+                mkdir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/',0777 ,true);
+				}
+				umask($old);
+				
+				
+				$model->file->saveAs(Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$fileName);
+				
+				
+				print_r($_POST['tags']);die();
 				
 				if(!empty($_POST['read'])){
 				$read = $_POST['read'];
@@ -224,4 +246,18 @@ class AssetController extends Controller
 			Yii::app()->end();
 		}
 	}
+	
+	public function actionLoadcities()
+	{
+     $data=Users::model()->findAll('orgId=:orgId', 
+     array(':orgId'=>(int)$_POST['region_id']));
+ 
+     $data=CHtml::listData($data,'uid','name');
+ 
+     echo "<option value=''>Select City</option>";
+     foreach($data as $value=>$name)
+     echo CHtml::tag('option', array('value'=>$value),CHtml::encode($name),true);
+    }
+	
+	
 }

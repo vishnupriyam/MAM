@@ -50,10 +50,8 @@ class Category extends CActiveRecord
 		   //organisation and category relationship
 		  'organisation'=>array(self::BELONGS_TO,'Organisation','orgId'),
 		  // ou_stucture and category relationship
-		  //to be changed to many to many relationship
-		  //'ou_structure'=>array(self::BELONGS_TO,'Ou_structure','unitCode'),
-		 //'ou_structure' => array(self::MANY_MANY, 'Ou_structure', 'category_has_department(cat_id, dept_id)'),
-		 'ou_structure' => array(self::MANY_MANY, 'Ou_structure', 'category_has_ou_structure(cat_id,id)'),		
+		  'ou_structure' => array(self::MANY_MANY, 'Ou_structure', 'category_has_ou_structure(cat_id,id)'),		
+		  'asset' => array(self::HAS_MANY,'Asset','cat_id'),	
 		);
 	}
 

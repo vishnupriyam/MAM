@@ -71,6 +71,7 @@ class Users extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'roles' => array(self::MANY_MANY, 'Role', 'users_has_role(users_uid, role_rid)'),
+		    'asset' => array(self::HAS_MANY,'Asset','uid'),
 		);
 	}
 

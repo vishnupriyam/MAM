@@ -24,6 +24,8 @@ class Asset extends CActiveRecord
 	
 	public $write;
 	public $file;
+	public $departmentId;
+	public $categoryId;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -35,8 +37,8 @@ class Asset extends CActiveRecord
 	/**
 	 * @return array validation rules for model attributes.
 	 */
-	public $departmentId;
-	public $categoryId;
+	
+	
 	public $tagsUser;
 	public $gview;
 	public function rules()
@@ -65,6 +67,8 @@ class Asset extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+		 'users'=>array(self::BELONGS_TO,'Users','ownerId'),
+		
 		);
 	}
 
@@ -139,4 +143,14 @@ class Asset extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+public function beforeSave(){
+
+                        $this->type=$this->file->getType();
+                        $this->size=$this->file->getSize();
+                        $this->createDate=new CDbExpression('NOW()');
+                        return parent::beforeSave();
+                        }
+	
+	
 }

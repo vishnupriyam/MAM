@@ -39,7 +39,7 @@ return array(
 		'application.extensions.log4php.filters.*',
 		'application.extensions.log4php.helpers.*',
 		'application.extensions.log4php.layouts.*',
-	
+		'ext.combobox.EJuiComboBox',
 		
 	),
 
