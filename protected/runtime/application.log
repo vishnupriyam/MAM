@@ -33543,3 +33543,2470 @@ in C:\xampp\htdocs\final\index.php (18)
 2014/06/11 11:57:14 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
 in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
 in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:15:07 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:15:07 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:15:07 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:15:08 [error] [php] Undefined index: tags (C:\xampp\htdocs\final\protected\controllers\AssetController.php:97)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/asset/create
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (97)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:15:23 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:15:23 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:15:23 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:18:38 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:18:38 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:18:38 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:20:50 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:20:50 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:20:50 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:35:52 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:35:52 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:35:52 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:40:02 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:40:02 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:40:02 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:48:46 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:48:46 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 18:48:46 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:16:50 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:16:50 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:16:50 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:20:14 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:20:14 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:20:14 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:20:14 [error] [php] Undefined index: tags (C:\xampp\htdocs\final\protected\controllers\AssetController.php:82)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/asset/create
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (82)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:25:12 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:25:12 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:25:12 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:25:12 [error] [php] Undefined index: tags (C:\xampp\htdocs\final\protected\controllers\AssetController.php:79)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/asset/create
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (79)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:28:06 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:28:06 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:28:06 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:49:15 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:49:15 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:49:15 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:49:15 [error] [php] Undefined index: tags (C:\xampp\htdocs\final\protected\controllers\AssetController.php:79)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/asset/create
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (79)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:49:27 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:49:27 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:49:27 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:54:04 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:54:04 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:54:04 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:54:04 [error] [php] Undefined variable: tags (C:\xampp\htdocs\final\protected\controllers\AssetController.php:107)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/asset/create
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (107)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:54:36 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:54:36 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:54:36 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:58:05 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:58:05 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 20:58:05 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 21:03:52 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 21:03:52 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 21:03:52 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 22:31:24 [error] [exception.CException] exception 'CException' with message 'Property "Asset.category" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('category')
+#1 C:\xampp\htdocs\final\protected\views\asset\view.php(35): CActiveRecord->__get('category')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\final\protected\controllers\AssetController.php(56): CController->render('view', Array)
+#7 [internal function]: AssetController->actionView('81')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(AssetController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AssetController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/view')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#22 {main}
+REQUEST_URI=/final/index.php/asset/81
+---
+2014/06/11 22:33:16 [error] [exception.CException] exception 'CException' with message 'Property "Asset.CategoryId" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('CategoryId')
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(656): CActiveRecord->__get('CategoryId')
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(500): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Asset))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(163): CJoinElement->lazyFind(Object(Asset))
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Asset))
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(143): CActiveRecord->getRelated('category')
+#6 C:\xampp\htdocs\final\protected\views\asset\view.php(35): CActiveRecord->__get('category')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#11 C:\xampp\htdocs\final\protected\controllers\AssetController.php(56): CController->render('view', Array)
+#12 [internal function]: AssetController->actionView('81')
+#13 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(AssetController), Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AssetController), Object(ReflectionMethod), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/view')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#27 {main}
+REQUEST_URI=/final/index.php/asset/81
+---
+2014/06/11 22:42:07 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 22:42:07 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 22:42:07 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 22:42:20 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 22:42:20 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 22:42:20 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 22:45:03 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 22:45:03 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 22:45:03 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 22:45:31 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 22:45:31 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 22:45:31 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 22:52:59 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 22:52:59 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 22:52:59 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 23:28:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/delete.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/11 23:28:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/create.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/11 23:28:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/move.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/11 23:28:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/update.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/11 23:28:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/properties.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/11 23:28:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/rename.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/11 23:29:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "move.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('move.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/move.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/11 23:29:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rename.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rename.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/rename.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/11 23:29:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('create.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/create.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/11 23:29:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "properties.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('properties.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/properties.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/11 23:29:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/update.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/update.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/images/update.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/11 23:29:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "delete.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delete.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/delete.png
+HTTP_REFERER=http://localhost/final/index.php/ou_structure/tree
+---
+2014/06/11 23:41:04 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 23:41:04 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 23:41:04 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/11 23:44:09 [error] [exception.CException] exception 'CException' with message 'CWebUser and its behaviors do not have a method or closure named "grtId".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\final\protected\controllers\AssetController.php(219): CComponent->__call('grtId', Array)
+#1 C:\xampp\htdocs\final\protected\controllers\AssetController.php(219): CWebUser->grtId()
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): AssetController->actionIndex()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/index')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#15 {main}
+REQUEST_URI=/final/index.php/asset/index
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/11 23:44:24 [error] [exception.CException] exception 'CException' with message 'Property "CActiveDataProvider.0" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(96): CComponent->__set('0', 'orgId:=orgId')
+#1 C:\xampp\htdocs\final\protected\controllers\AssetController.php(219): CActiveDataProvider->__construct('Asset', Array)
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): AssetController->actionIndex()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/index')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#15 {main}
+REQUEST_URI=/final/index.php/asset/index
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/11 23:48:44 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `asset` `t` WHERE orgId=:orgId.
+in C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php (48)
+in C:\xampp\htdocs\final\protected\views\asset\index.php (40)
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (229)
+2014/06/11 23:48:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `asset` `t` WHERE orgId=:orgId' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#8 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php(48): CGridView->init()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#11 C:\xampp\htdocs\final\protected\views\asset\index.php(40): CBaseController->widget('bootstrap.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#16 C:\xampp\htdocs\final\protected\controllers\AssetController.php(229): CController->render('index', Array)
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): AssetController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/index')
+#28 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#29 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#30 {main}
+REQUEST_URI=/final/index.php/asset/index
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:20:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:22:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:22:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:22:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:22:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:22:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:22:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:22:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:22:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:22:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:22:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:23:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:23:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:23:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:23:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:23:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:23:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:27:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:27:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:27:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:27:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:27:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:27:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:27:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/Asset/getuserstable
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:28:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ajax".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('ajax')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('ajax')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/ajax')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/ajax?_=1402540129215
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:32:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ajax".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('ajax')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('ajax')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/ajax')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/ajax?_=1402540322175
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:32:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ajax".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('ajax')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('ajax')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/ajax')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/ajax?_=1402540323076
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:32:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ajax".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('ajax')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('ajax')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/ajax')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/ajax?_=1402540323284
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:32:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ajax".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('ajax')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('ajax')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/ajax')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/ajax?_=1402540323470
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:32:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ajax".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('ajax')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('ajax')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/ajax')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/ajax?_=1402540323641
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:32:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ajax".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('ajax')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('ajax')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/ajax')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/ajax?_=1402540325534
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:32:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402540345087
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:32:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402540345908
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:32:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402540346106
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:32:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402540346290
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:32:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402540346461
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:35:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402540548354
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:35:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402540549073
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:35:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402540553683
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 04:35:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402540553855
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 05:01:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542095442
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:01:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542097012
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:01:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542097356
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:01:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542097614
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:01:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542104665
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:01:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542106149
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:01:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542106323
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:01:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542106938
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:01:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542107110
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:01:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542107604
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:02:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542148846
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:02:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542153752
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:02:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542153928
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:02:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542154244
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:06:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542388725
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:06:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542389735
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:06:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542390606
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:06:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542391617
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:06:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542397861
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:06:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542398328
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:06:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542398525
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 05:06:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402542398697
+HTTP_REFERER=http://localhost/final/asset/create
+---
+2014/06/12 06:23:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402546994581
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 06:24:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402547056835
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 06:25:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402547113977
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 06:26:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getuserstable".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('getuserstable')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('getuserstable')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/getuserst...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/final/index.php/asset/getuserstable?_=1402547196676
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 06:34:07 [error] [php] Undefined index: dept_id (C:\xampp\htdocs\final\protected\controllers\AssetController.php:276)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/Asset/loadcities
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (276)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 06:35:26 [error] [php] Undefined index: dept_id (C:\xampp\htdocs\final\protected\controllers\AssetController.php:276)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/Asset/loadcities
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (276)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 06:43:37 [error] [php] Undefined index: dept_id (C:\xampp\htdocs\final\protected\controllers\AssetController.php:276)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/Asset/loadcities
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (276)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 06:43:46 [error] [php] Undefined index: dept_id (C:\xampp\htdocs\final\protected\controllers\AssetController.php:276)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/Asset/loadcities
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (276)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 06:45:21 [error] [php] Undefined index: dept_id (C:\xampp\htdocs\final\protected\controllers\AssetController.php:276)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/Asset/loadcities
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (276)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 06:46:52 [error] [php] Undefined index: dept_id (C:\xampp\htdocs\final\protected\controllers\AssetController.php:276)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/Asset/loadcities
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (276)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 06:48:05 [error] [php] Undefined index: dept_id (C:\xampp\htdocs\final\protected\controllers\AssetController.php:276)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/Asset/loadcities
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (276)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 06:52:58 [error] [php] Undefined index: dept_id (C:\xampp\htdocs\final\protected\controllers\AssetController.php:275)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/Asset/loadcities
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (275)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 06:54:02 [error] [php] Undefined variable: data (C:\xampp\htdocs\final\protected\controllers\AssetController.php:276)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/Asset/loadcities
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (276)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 06:58:30 [error] [php] Object of class UsersDepartment could not be converted to string (C:\xampp\htdocs\yii\framework\db\CDbCommand.php:275)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\schema\CDbCommandBuilder.php(100): CMysqlCommandBuilder->bindValues()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1350): CMysqlCommandBuilder->createFindCommand()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1456): Users->query()
+#3 C:\xampp\htdocs\final\protected\controllers\AssetController.php(285): Users->find()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): AssetController->actionLoadcities()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/Asset/loadcities
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (285)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 07:01:50 [error] [php] Array to string conversion (C:\xampp\htdocs\final\protected\controllers\AssetController.php:282)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/Asset/loadcities
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (282)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 07:03:32 [error] [php] Object of class UsersDepartment could not be converted to string (C:\xampp\htdocs\final\protected\controllers\AssetController.php:282)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/Asset/loadcities
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (282)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 07:06:46 [error] [php] Object of class UsersDepartment could not be converted to string (C:\xampp\htdocs\final\protected\controllers\AssetController.php:282)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/Asset/loadcities
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (282)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 07:09:08 [error] [php] Array to string conversion (C:\xampp\htdocs\final\protected\controllers\AssetController.php:282)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/Asset/loadcities
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (282)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 07:10:23 [error] [php] Array to string conversion (C:\xampp\htdocs\final\protected\controllers\AssetController.php:282)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/Asset/loadcities
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (282)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 07:17:43 [error] [php] Array to string conversion (C:\xampp\htdocs\final\protected\controllers\AssetController.php:282)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/Asset/loadcities
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (282)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 07:23:43 [error] [php] Object of class UsersDepartment could not be converted to string (C:\xampp\htdocs\yii\framework\db\CDbCommand.php:275)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\schema\CDbCommandBuilder.php(100): CMysqlCommandBuilder->bindValues()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1350): CMysqlCommandBuilder->createFindCommand()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1456): Users->query()
+#3 C:\xampp\htdocs\final\protected\controllers\AssetController.php(286): Users->find()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): AssetController->actionLoadcities()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/Asset/loadcities
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (286)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:42:13 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:42:13 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:42:13 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:44:02 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:44:02 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:44:02 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:51:59 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:51:59 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:51:59 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:51:59 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `asset` `t` WHERE orgId=:orgId.
+in C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php (48)
+in C:\xampp\htdocs\final\protected\views\asset\index.php (40)
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (242)
+2014/06/12 09:51:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `asset` `t` WHERE orgId=:orgId' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#8 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php(48): CGridView->init()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#11 C:\xampp\htdocs\final\protected\views\asset\index.php(40): CBaseController->widget('bootstrap.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#16 C:\xampp\htdocs\final\protected\controllers\AssetController.php(242): CController->render('index', Array)
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): AssetController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset')
+#28 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#29 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#30 {main}
+REQUEST_URI=/final/index.php/asset/
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 09:54:21 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:54:21 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:54:21 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:54:21 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `asset` `t` WHERE orgId=:orgId.
+in C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php (48)
+in C:\xampp\htdocs\final\protected\views\asset\index.php (40)
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (242)
+2014/06/12 09:54:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `asset` `t` WHERE orgId=:orgId' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#8 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php(48): CGridView->init()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#11 C:\xampp\htdocs\final\protected\views\asset\index.php(40): CBaseController->widget('bootstrap.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#16 C:\xampp\htdocs\final\protected\controllers\AssetController.php(242): CController->render('index', Array)
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): AssetController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset')
+#28 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#29 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#30 {main}
+REQUEST_URI=/final/index.php/asset/
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 09:56:26 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:56:26 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:56:26 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:56:26 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `asset` `t` WHERE orgId=:orgId.
+in C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php (48)
+in C:\xampp\htdocs\final\protected\views\asset\index.php (40)
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (242)
+2014/06/12 09:56:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `asset` `t` WHERE orgId=:orgId' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#8 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php(48): CGridView->init()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#11 C:\xampp\htdocs\final\protected\views\asset\index.php(40): CBaseController->widget('bootstrap.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#16 C:\xampp\htdocs\final\protected\controllers\AssetController.php(242): CController->render('index', Array)
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): AssetController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset')
+#28 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#29 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#30 {main}
+REQUEST_URI=/final/index.php/asset/
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 09:58:05 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `asset` `t` WHERE orgId=:orgId.
+in C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php (48)
+in C:\xampp\htdocs\final\protected\views\asset\index.php (40)
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (242)
+2014/06/12 09:58:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `asset` `t` WHERE orgId=:orgId' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#8 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php(48): CGridView->init()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#11 C:\xampp\htdocs\final\protected\views\asset\index.php(40): CBaseController->widget('bootstrap.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#16 C:\xampp\htdocs\final\protected\controllers\AssetController.php(242): CController->render('index', Array)
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): AssetController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset')
+#28 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#29 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#30 {main}
+REQUEST_URI=/final/index.php/asset/
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 09:58:15 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:58:15 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:58:15 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 09:58:15 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `asset` `t` WHERE orgId=:orgId.
+in C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php (48)
+in C:\xampp\htdocs\final\protected\views\asset\index.php (40)
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (242)
+2014/06/12 09:58:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `asset` `t` WHERE orgId=:orgId' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#8 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php(48): CGridView->init()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#11 C:\xampp\htdocs\final\protected\views\asset\index.php(40): CBaseController->widget('bootstrap.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#16 C:\xampp\htdocs\final\protected\controllers\AssetController.php(242): CController->render('index', Array)
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): AssetController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset')
+#28 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#29 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#30 {main}
+REQUEST_URI=/final/index.php/asset/
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 10:02:32 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:02:32 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:02:32 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:02:32 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `asset` `t` WHERE orgId=:orgId.
+in C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php (48)
+in C:\xampp\htdocs\final\protected\views\asset\index.php (40)
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (242)
+2014/06/12 10:02:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `asset` `t` WHERE orgId=:orgId' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#8 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php(48): CGridView->init()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#11 C:\xampp\htdocs\final\protected\views\asset\index.php(40): CBaseController->widget('bootstrap.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#16 C:\xampp\htdocs\final\protected\controllers\AssetController.php(242): CController->render('index', Array)
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): AssetController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset')
+#28 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#29 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#30 {main}
+REQUEST_URI=/final/index.php/asset/
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 10:03:41 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:03:41 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:03:41 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:03:41 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `asset` `t` WHERE orgId=:orgId.
+in C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php (48)
+in C:\xampp\htdocs\final\protected\views\asset\index.php (40)
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (229)
+2014/06/12 10:03:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orgId' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `asset` `t` WHERE orgId=:orgId' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#8 C:\xampp\htdocs\final\protected\extensions\bootstrap\widgets\TbGridView.php(48): CGridView->init()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#11 C:\xampp\htdocs\final\protected\views\asset\index.php(40): CBaseController->widget('bootstrap.widge...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#16 C:\xampp\htdocs\final\protected\controllers\AssetController.php(229): CController->render('index', Array)
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): AssetController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset')
+#28 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#29 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#30 {main}
+REQUEST_URI=/final/index.php/asset/
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 10:10:43 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:10:43 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:10:43 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:14:24 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:14:24 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:14:24 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:15:51 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:15:51 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:15:51 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:17:58 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:17:58 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:17:58 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:18:43 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:18:43 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:18:43 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:20:14 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:20:14 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:20:14 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:21:14 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:21:14 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:21:14 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:22:12 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:22:12 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:22:12 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:24:31 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:24:31 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:24:31 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:26:08 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:26:08 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:26:08 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:43:12 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:43:12 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:43:12 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:44:40 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:44:40 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:44:40 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:47:26 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:47:26 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:47:26 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:50:17 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:50:17 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:50:17 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:51:40 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:51:40 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:51:40 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:53:04 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:53:04 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:53:04 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:53:35 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:53:35 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 10:53:35 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 11:09:23 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 11:09:23 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 11:09:23 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 11:27:30 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 11:27:30 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 11:27:30 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 11:29:51 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 11:29:51 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 11:29:51 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 11:47:22 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 11:47:22 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 11:47:22 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 11:48:20 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 11:48:20 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 11:48:20 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 11:55:06 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 11:55:06 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 11:55:06 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 12:04:20 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 12:04:20 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 12:04:20 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 12:04:20 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`asset`, CONSTRAINT `asset_ibfk_1` FOREIGN KEY (`categoryId`) REFERENCES `category` (`cat_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `asset` (`assetName`, `ownerId`, `publication`, `onlineEditable`, `description`, `comment`, `type`, `size`, `createDate`, `file`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, NOW(), :yp8).
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (79)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 12:04:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`final_28`.`asset`, CONSTRAINT `asset_ibfk_1` FOREIGN KEY (`categoryId`) REFERENCES `category` (`cat_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `asset` (`assetName`, `ownerId`, `publication`, `onlineEditable`, `description`, `comment`, `type`, `size`, `createDate`, `file`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, NOW(), :yp8)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\final\protected\controllers\AssetController.php(79): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): AssetController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#16 {main}
+REQUEST_URI=/final/index.php/asset/create
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 12:05:50 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 12:05:50 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 12:05:50 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 12:05:50 [error] [php] Undefined index: tags (C:\xampp\htdocs\final\protected\controllers\AssetController.php:99)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AssetController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AssetController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): AssetController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AssetController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\final\index.php(18): CWebApplication->run()
+REQUEST_URI=/final/index.php/asset/create
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (99)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 12:06:20 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 12:06:20 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 12:06:20 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 12:06:20 [error] [exception.CException] exception 'CException' with message 'Property "Asset.category" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('category')
+#1 C:\xampp\htdocs\final\protected\views\asset\view.php(35): CActiveRecord->__get('category')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\final\protected\controllers\AssetController.php(56): CController->render('view', Array)
+#7 [internal function]: AssetController->actionView('88')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(AssetController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AssetController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/view')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#22 {main}
+REQUEST_URI=/final/index.php/asset/88
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 12:08:10 [error] [exception.CException] exception 'CException' with message 'Property "Asset.category" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('category')
+#1 C:\xampp\htdocs\final\protected\views\asset\view.php(35): CActiveRecord->__get('category')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\final\protected\controllers\AssetController.php(56): CController->render('view', Array)
+#7 [internal function]: AssetController->actionView('88')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(AssetController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AssetController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('asset/view')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#22 {main}
+REQUEST_URI=/final/index.php/asset/88
+HTTP_REFERER=http://localhost/final/index.php/asset/create
+---
+2014/06/12 12:11:46 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 12:11:46 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 12:11:46 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 12:22:17 [warning] [application] Failed to set unsafe attribute "departmentId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 12:22:17 [warning] [application] Failed to set unsafe attribute "categoryId" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)
+2014/06/12 12:22:17 [warning] [application] Failed to set unsafe attribute "tagsUser" of "Asset".
+in C:\xampp\htdocs\final\protected\controllers\AssetController.php (72)
+in C:\xampp\htdocs\final\index.php (18)

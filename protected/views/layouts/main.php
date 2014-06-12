@@ -77,7 +77,7 @@
         	),
         )); ?>
 
-<div class="span2 pull-right" style="margin-top:3em;text-transform:uppercase;font-weight:900;font-size:2em;color:maroon;">
+<div class="span3 pull-right" style="float:right;margin-top:3em;text-transform:uppercase;font-weight:900;font-size:2em;color:maroon;">
 	<?php echo $record['orgName'];?>
 </div>
 

@@ -57,7 +57,9 @@
 		</div><!-- end of span 7 -->
 
 			<div class="span5" style="margin-top:3.5em;">
-				<?php echo TbHtml::inlinecheckBoxListControlGroup('tags','',CHtml::listData(Tags::model()->findAll(), 'tagId', 'tagName'), array('span'=>3,'label'=>'Tags')); ?>	 
+				<?php echo TbHtml::inlinecheckBoxListControlGroup('tags','',
+					CHtml::listData(Tags::model()->findAll('orgId=:orgId',array(':orgId'=>$orgId)), 'tagId', 'tagName'), 
+					array('span'=>3,'label'=>'Tags')); ?>	 
 	 			<?php echo $form->textFieldControlGroup($model,'tagsUser',array('span'=>3,'maxlength'=>70,'label'=>'Add Tags')); ?>
          	
 	 		
@@ -66,25 +68,41 @@
 		</div><!-- end of span12 -->
 			
 			
-		<?php                                 
-  			echo CHtml::dropDownList('region_id','', 
-  			array(535=>'New England',541=>'Middle Atlantic',536=>'East North Central'),
- 
+		<?php /*                                 
+  			echo CHtml::dropDownList('dept_id','', 
+  			//array(535=>'New England',541=>'Middle Atlantic',536=>'East North Central'),
+ 			array(CHtml::listData(Ou_structure::model()->findAll('root=:root',array(':root'=>$root)), 'id', 'name')),
+  			
+  			
  			 array(
     			'prompt'=>'Select Region',
     			'ajax' => array(
     			'type'=>'POST', 
     			'url'=>Yii::app()->createUrl('Asset/loadcities'), //or $this->createUrl('loadcities') if '$this' extends CController
     			'update'=>'#city_name', //or 'success' => 'function(data){...handle the data in the way you want...}',
-  				'data'=>array('region_id'=>'js:this.value'),
+  				'data'=>array('dept_id'=>'js:this.value'),
   			))); 
  
  
  
 			echo CHtml::dropDownList('city_name','', array(), array('prompt'=>'Select City','multiple'=>true));
+			
 			?>
 			
-			<?php
+			
+			<?php echo CHtml::ajaxSubmitButton('Form Ajax Submit Button',
+                CHtml::normalizeUrl(array('Asset/getuserstable')), 
+                
+				array('success'=>'funcztion(){$("#mydialog").dialog("close");}',
+                      'update'=>'#myDiv'                            ),
+                array('name' => 'run', 'class' => 'btn btn-success')
+          ); */ ?>
+			
+			
+			<?php /* echo CHtml::ajaxLink('clickMe', CController::createUrl('asset/getuserstable'), array('update'=>'#mydiv'));*/ ?>
+			
+			
+			<?php /*
  			$model1 = new Users;	
 			$this->widget('ext.combobox.EJuiComboBox', array(
     		'model' => $model1,
@@ -107,10 +125,19 @@
     	// Options passed to the text input
     	'htmlOptions' => array('size' => 10),
     
-		));
+		));*/
 	?>
 			
 	
+			<?php echo $form->radioButtonListControlGroup($model, 'publication', array(
+        		'yes',
+        		'no',
+ 			   )); ?>
+ 			<?php echo $form->radioButtonListControlGroup($model, 'onlineEditable', array(
+        		'yes',
+        		'no',
+ 		   )); ?>
+ 
 			
             <?php echo $form->textAreaControlGroup($model,'description',array('rows'=>4,'span'=>8)); ?>
 

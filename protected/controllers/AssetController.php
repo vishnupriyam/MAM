@@ -70,14 +70,23 @@ class AssetController extends Controller
 
 		if (isset($_POST['Asset'])) {
 			$model->attributes=$_POST['Asset'];
-			
+
 			$model->file=CUploadedFile::getInstance($model,'file');
 			//$model->type=$model->file->getType();
 			//$model->type=$model->file->extensionName;
 			//$model->createDate=
-			 
+
+			$model->categoryId = $_POST['Asset']['categoryId'];
+			
+			if(!empty($_POST['tags']))
+			{
+				$tags = $_POST['tags'];
+			}
+			
+			
+			
 			if ($model->save()) {
-				
+
 				$orgId=Yii::app()->user->getId();
 				$fileName=$model->assetId.'.dat';
 				$categoryId=$_POST['Asset']['categoryId'];
@@ -89,12 +98,21 @@ class AssetController extends Controller
                 mkdir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/',0777 ,true);
 				}
 				umask($old);
-				
-				
+
+
 				$model->file->saveAs(Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$fileName);
+
+				
+				if(!empty($_POST['tags'])){
+				$tag = $_POST['tags'];
+				foreach($tag as $tagRow){
+					$AssetTag = new AssetTags;
+            	    $AssetTag->assetId = $model->assetId;
+            	    $AssetTag->tagId = $tagRow ;
+                	$AssetTag->save();
+       			}}
 				
 				
-				print_r($_POST['tags']);die();
 				
 				if(!empty($_POST['read'])){
 				$read = $_POST['read'];
@@ -105,7 +123,7 @@ class AssetController extends Controller
             	    $AssetOuFilep->fpId = 0;
                 	$AssetOuFilep->save();
        			}}
-				
+
        			
        			if(!empty($_POST['edit'])){
 				$write = $_POST['write'];
@@ -117,7 +135,7 @@ class AssetController extends Controller
                 	$AssetOuFilep->save();
        			}}
        			
-				
+
 				if(!empty($_POST['edit'])){
 				$edit = $_POST['edit'];
 				foreach($edit as $editRow){
@@ -127,7 +145,7 @@ class AssetController extends Controller
             	    $AssetOuFilep->fpId = 2;
                 	$AssetOuFilep->save();
        			}}
-				
+
        			
 				if(!empty($_POST['delete'])){
 				$delete = $_POST['delete'];
@@ -139,7 +157,7 @@ class AssetController extends Controller
                 	$AssetOuFilep->save();
        			}}
 			}
-			
+
 			$this->redirect(array('view','id'=>$model->assetId));
 		}
 
@@ -246,7 +264,7 @@ class AssetController extends Controller
 			Yii::app()->end();
 		}
 	}
-	
+
 	public function actionLoadcities()
 	{
      $data=Users::model()->findAll('orgId=:orgId', 
@@ -258,6 +276,6 @@ class AssetController extends Controller
      foreach($data as $value=>$name)
      echo CHtml::tag('option', array('value'=>$value),CHtml::encode($name),true);
     }
-	
-	
+
+
 }

@@ -165,5 +165,11 @@ class Users extends CActiveRecord
 	 	$Log->info("status ".$this->status." ".$this->oldAttributes['status']);}
 	  
 	}
+	public function getstatus(){
+	 if($this->status==0)
+	  return "BLOCKED";
+	 elseif($this->status==1)
+	  return "ACTIVE";
+	} 
 	
 }

@@ -21,7 +21,7 @@
  */
 class Asset extends CActiveRecord
 {
-	
+
 	public $write;
 	public $file;
 	public $departmentId;
@@ -37,8 +37,8 @@ class Asset extends CActiveRecord
 	/**
 	 * @return array validation rules for model attributes.
 	 */
-	
-	
+
+
 	public $tagsUser;
 	public $gview;
 	public function rules()
@@ -68,7 +68,8 @@ class Asset extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 		 'users'=>array(self::BELONGS_TO,'Users','ownerId'),
-		
+		'category'=>array(self::BELONGS_TO,'Category','categoryId'),
+
 		);
 	}
 
@@ -143,14 +144,38 @@ class Asset extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-	
-public function beforeSave(){
 
-                        $this->type=$this->file->getType();
-                        $this->size=$this->file->getSize();
-                        $this->createDate=new CDbExpression('NOW()');
-                        return parent::beforeSave();
-                        }
-	
-	
+	public function beforeSave(){
+
+              $this->type=$this->file->getType();
+              $this->size=$this->file->getSize();
+              $this->createDate=new CDbExpression('NOW()');
+              return parent::beforeSave();
+               }
+
+public function getStatus(){
+    	if($this->status==0)
+    	 return "NOT REVIEWED";
+    	elseif($this->status==1)
+    	 return "REVIEWED";
+     	elseif($this->status==2)
+    	 return "CHECKOUT";
+    	elseif($this->status==3)
+    	 return "BLOCKED";
+    }
+    public function getPublication(){
+     if($this->publication==0)
+      return "Yes";
+     if($this->publication==1)
+      return "No";
+    
+    }
+	public function getOnlineEditable(){
+     if($this->onlineEditable==0)
+      return "Yes";
+     if($this->onlineEditable==1)
+      return "No";
+    
+    }
+               
 }

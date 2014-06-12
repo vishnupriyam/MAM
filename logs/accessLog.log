@@ -166,3 +166,7 @@ Date			Time					  uid	user	table 	action rowid
 2014-06-11T06:28:49+02:00 INFO  accessLog passwordsaEZ6MlWYV9nQ 
 2014-06-11T06:28:49+02:00 INFO  accessLog status 0 
 2014-06-11T06:28:49+02:00 INFO  accessLog 127	org2	Users	create	134
+2014-06-11T23:00:02+02:00 INFO  accessLog 127	org2	Tags	create	11
+2014-06-11T23:29:48+02:00 INFO  accessLog 135	new orgnaisation	Tags	create	12
+2014-06-11T23:30:03+02:00 INFO  accessLog name  category2
+2014-06-11T23:30:03+02:00 INFO  accessLog 135	new orgnaisation	Category	create	9
