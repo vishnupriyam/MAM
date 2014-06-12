@@ -103,6 +103,8 @@ class AssetController extends Controller
 				$model->file->saveAs(Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$fileName);
 
 				
+				
+				
 				if(!empty($_POST['tags'])){
 				$tag = $_POST['tags'];
 				foreach($tag as $tagRow){
@@ -112,7 +114,20 @@ class AssetController extends Controller
                 	$AssetTag->save();
        			}}
 				
-				
+       			if(!empty($_POST['Asset']['tagsUser'])){
+       			$tagsUser=explode(",",$_POST['Asset']['tagsUser']);
+       			foreach($tagsUser as $tagsRow){
+					$Tags = new Tags;
+            	    $Tags->tagName = $tagsRow;
+            	    $Tags->orgId  = Yii::app()->user->getId();
+                	$Tags->save();
+                	$AssetTag1 = new AssetTags;
+                	$AssetTag1->assetId = $model->assetId;
+                	$AssetTag1->tagId = $Tags->tagId;
+                	$AssetTag1->save();
+                	
+       			}
+       			}
 				
 				if(!empty($_POST['read'])){
 				$read = $_POST['read'];
