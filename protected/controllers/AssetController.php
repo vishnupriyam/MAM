@@ -28,11 +28,11 @@ class AssetController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','loadusers'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','loadcities'),
+				'actions'=>array('create','update','loadusers'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -279,18 +279,20 @@ class AssetController extends Controller
 			Yii::app()->end();
 		}
 	}
-
-	public function actionLoadcities()
-	{
-     $data=Users::model()->findAll('orgId=:orgId', 
-     array(':orgId'=>(int)$_POST['region_id']));
+public function actionLoadusers()
+{
+   $data=UsersDepartment::model()->findAll('id=:id', 
+   array(':id'=>(int) $_POST['ou_id']));
  
-     $data=CHtml::listData($data,'uid','name');
- 
-     echo "<option value=''>Select City</option>";
-     foreach($data as $value=>$name)
-     echo CHtml::tag('option', array('value'=>$value),CHtml::encode($name),true);
-    }
-
-
+  // $data=CHtml::listData($data,'uid','city_name');
+  
+   foreach($data as $data1){
+  	$userRow = Users::model()->find('uid=:uid',array(':uid'=>$data1->uid));
+     echo "<option value=''>$userRow->name</option>";
+   }
+  // foreach($data as $value=>$city_name)
+  // echo CHtml::tag('option', array('value'=>$value),CHtml::encode($city_name),true);
 }
+		
+}
+

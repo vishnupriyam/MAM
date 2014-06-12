@@ -170,3 +170,12 @@ Date			Time					  uid	user	table 	action rowid
 2014-06-11T23:29:48+02:00 INFO  accessLog 135	new orgnaisation	Tags	create	12
 2014-06-11T23:30:03+02:00 INFO  accessLog name  category2
 2014-06-11T23:30:03+02:00 INFO  accessLog 135	new orgnaisation	Category	create	9
+2014-06-12T20:01:56+02:00 INFO  accessLog name  user1
+2014-06-12T20:01:56+02:00 INFO  accessLog email user1@gmail.com 
+2014-06-12T20:01:56+02:00 INFO  accessLog passwordsaFLGt/QKS6yw 
+2014-06-12T20:01:56+02:00 INFO  accessLog 127	org2	Users	create	136
+2014-06-12T20:04:24+02:00 INFO  accessLog name  user3
+2014-06-12T20:04:24+02:00 INFO  accessLog email user3@gmail.com 
+2014-06-12T20:04:24+02:00 INFO  accessLog passwordsaFLGt/QKS6yw 
+2014-06-12T20:04:24+02:00 INFO  accessLog status 0 
+2014-06-12T20:04:24+02:00 INFO  accessLog 127	org2	Users	create	137

@@ -66,31 +66,28 @@
 	 		</div>
 
 		</div><!-- end of span12 -->
+		
+		<!--  -->
 			
-			
-		<?php /*                                 
-  			echo CHtml::dropDownList('dept_id','', 
-  			//array(535=>'New England',541=>'Middle Atlantic',536=>'East North Central'),
- 			array(CHtml::listData(Ou_structure::model()->findAll('root=:root',array(':root'=>$root)), 'id', 'name')),
-  			
-  			
- 			 array(
-    			'prompt'=>'Select Region',
+			<?php                                   
+  				echo CHtml::dropDownList('ou_id','', 
+  				CHtml::listData(Ou_structure::model()->findAll('root=:root',array(':root'=>$root)), 'id', 'name'),
+  
+  				array(
+    			'prompt'=>'Select Department',
     			'ajax' => array(
     			'type'=>'POST', 
-    			'url'=>Yii::app()->createUrl('Asset/loadcities'), //or $this->createUrl('loadcities') if '$this' extends CController
-    			'update'=>'#city_name', //or 'success' => 'function(data){...handle the data in the way you want...}',
-  				'data'=>array('dept_id'=>'js:this.value'),
-  			))); 
+    			'url'=>Yii::app()->createUrl('Asset/loadusers'), 
+    			'update'=>'#users', //or 'success' => 'function(data){...handle the data in the way you want...}',
+  				'data'=>array('ou_id'=>'js:this.value'),
+  				))); 
  
- 
- 
-			echo CHtml::dropDownList('city_name','', array(), array('prompt'=>'Select City','multiple'=>true));
-			
+ 			echo CHtml::dropDownList('users','', array(), array('prompt'=>'Select Users','multiple'=>true));
 			?>
 			
+							
 			
-			<?php echo CHtml::ajaxSubmitButton('Form Ajax Submit Button',
+			<?php /*echo CHtml::ajaxSubmitButton('Form Ajax Submit Button',
                 CHtml::normalizeUrl(array('Asset/getuserstable')), 
                 
 				array('success'=>'funcztion(){$("#mydialog").dialog("close");}',
@@ -99,35 +96,53 @@
           ); */ ?>
 			
 			
-			<?php /* echo CHtml::ajaxLink('clickMe', CController::createUrl('asset/getuserstable'), array('update'=>'#mydiv'));*/ ?>
+			<?php 
+				$dataProvider = new CActiveDataProvider('Ou_structure');
+				$this->widget('bootstrap.widgets.TbGridView', array(
+				
+				'id'=>'gview',
+				'dataProvider'=>$dataProvider,
+				'rowHtmlOptionsExpression' => 'array("id"=>$data->id)',
+				'columns'=>array(
+    			array('name'=>'name','header'=>'Departments'),    /*in header give the role name while passing*/
+	 			array('header'=>'Read','value'=>'','id'=>'headerA'),
+	    		array(
+	    		    
+	        		'class'=>'CCheckBoxColumn',
+	        		'id'=>'read',
+	        		'selectableRows'=>2,
+	    			'header'=>'Read',
+	    		
+	    		),    	
+	    		array('header'=>'Write','value'=>'','id'=>'headerA'),
+	    		array(
+	        		'class'=>'CCheckBoxColumn',
+	        		'id'=>'write',
+	        		'selectableRows'=>2,
+	    			'header'=>'Write',
+	    		),
+	    		array('header'=>'Edit','value'=>'','id'=>'headerA'),
+	    		array(
+	        		'class'=>'CCheckBoxColumn',
+	        		'id'=>'edit',
+	        		'header'=>'Edit',
+	    			'selectableRows'=>2,
+	    		),
+	    		array('header'=>'Delete','value'=>'','id'=>'headerA'),
+	    		array(
+	        		'class'=>'CCheckBoxColumn',
+	        		'id'=>'delete',
+	        		'selectableRows'=>2,
+	    			'header'=>'Delete',
+	    		)    	
+	      ),
+   		)
+		);
+
 			
 			
-			<?php /*
- 			$model1 = new Users;	
-			$this->widget('ext.combobox.EJuiComboBox', array(
-    		'model' => $model1,
-    		'attribute' => 'name',
-   			 // data to populate the select. Must be an array.
-    		'data' => CHtml::listData(Users::model()->findAll(),'uid','name'),
-    		// options passed to plugin
-    		'options' => array(
-        	// JS code to execute on 'select' event, the selected item is
-        	// available through the 'item' variable.
-        	'onSelect' => 'alert("selected value : " + item.value);',
-			//'onSelect'=>"function(){document.getElementById('checkboxes').style.display=block;}",
-	    	// JS code to be executed on 'change' event, the input is available
-        	// through the '$(this)' variable.
-        	'onChange' => 'alert("changed value : " + $(this).val());',
-        	// If false, field value must be present in the select.
-        	// Defaults to true.
-        	'allowText' => false,
-  		  ),
-    	// Options passed to the text input
-    	'htmlOptions' => array('size' => 10),
-    
-		));*/
-	?>
 			
+			?>		
 	
 			<?php echo $form->radioButtonListControlGroup($model, 'publication', array(
         		'yes',
@@ -201,25 +216,6 @@
 	?>
 	
 	
-	<?php 
-	
-	/*	echo TbHtml::dropDownList('department','',CHtml::listData(Ou_structure::model()->findAll(),'id','name'),array(
-		  'onKeyUp'=>CHtml::ajax(
-		      array(
-		      'type'=>'POST',
-		      'dataType'=>'html',
-		      'data'=>array(
-		        'id'=>'js:department.value' 
-		      ),
-		      'update'=>'#user_select',
-		      'url'=>Yii::app()->createUrl('create/searchajax'),
-		      
-		      )
-		
-		))
-		);
-	*/
-	?>
 		</div>
 		
 		<div class="">
