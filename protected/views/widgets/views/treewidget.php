@@ -13,28 +13,26 @@
   * @version 1.0.0
   */
   -->
-  
-  <style type="text/css">
-    body{
-    background-color:skyblue;}
-  
-  </style>
+
+<style type="text/css">
+
+.span12{margin-left:0em !important;}
+
+</style>
   
    
-<div class="span12" style="margin-left:15em;">
-    <h1 class="page-header"><center>Manage Your Organization</center></h1>
+<div class="span5" style="">
+    <h1 class="page-header">Manage Your Organization</h1>
     <div class="row well">
-    <center> 
-       
+    
             You can Create,Rename,Delete,Move departments of your organization.</li>
-        
-       </center>
+   
     </div>
   
-    <div class="row span11">
+    <div class="row span5">
     
         <!--The tree will be rendered in this div-->
-        <div class="well" style ="background-color:#ccc;margin-top: 20px" class="row" id="<?php echo $this->jstree_container_ID;?>"></div>
+        <div class="well"  class="row" id="<?php echo $this->jstree_container_ID;?>"></div>
    
     </div>
     

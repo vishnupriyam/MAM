@@ -84,8 +84,8 @@
         <div class="control-group">
             <?php echo $form->labelEx($model, 'name', array('class' => 'control-label')); ?>
             <div class="controls">
-                <?php  $name=(!$model->isNewRecord)?$model->name:''  ?>
-                <?php echo $form->textField($model, 'name', array('value'=>$name,'class' => 'span4', 'size' => 60, 'maxlength' => 128)); ?>
+                <?php  //$name=(!$model->isNewRecord)?$model->name:"New node"  ?>
+                <?php echo $form->textField($model, 'name', array('value'=>$_POST['name'],'class' => 'span4', 'size' => 60, 'maxlength' => 128)); ?>
                 <p class="help-block"><?php echo $form->error($model, 'name'); ?></p>
             </div>
         </div>

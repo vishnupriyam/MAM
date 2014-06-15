@@ -59,10 +59,10 @@ class Permissions extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'pid' => 'Pid',
+			'pid' => 'Permission id',
 			'name' => 'Name',
-			'desc' => 'Desc',
-			'mid' => 'Mid',
+			'desc' => 'Description',
+			'mid' => 'Module',
 		);
 	}
 

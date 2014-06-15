@@ -70,7 +70,7 @@
 		<!--  -->
 			
 			<?php                                   
-  				echo CHtml::dropDownList('ou_id','', 
+  				/*echo CHtml::dropDownList('ou_id','', 
   				CHtml::listData(Ou_structure::model()->findAll('root=:root',array(':root'=>$root)), 'id', 'name'),
   
   				array(
@@ -82,30 +82,37 @@
   				'data'=>array('ou_id'=>'js:this.value'),
   				))); 
  
- 			echo CHtml::dropDownList('users','', array(), array('prompt'=>'Select Users','multiple'=>true));
-			?>
+ 			echo CHtml::dropDownList('users','', array(), array('prompt'=>'Select Users','multiple'=>true),
+ 			
+ 				array(
+    			'prompt'=>'',
+    			'ajax' => array(
+    			'type'=>'POST', 
+    			'url'=>Yii::app()->createUrl('Asset/loaduserstable'), 
+    			'update'=>'#userstable', //or 'success' => 'function(data){...handle the data in the way you want...}',
+  				'data'=>array('users'=>'js:this.value'),
+  				)));
+ 			*/?>
+ 			
+ 			
+ 
 			
-							
-			
-			<?php /*echo CHtml::ajaxSubmitButton('Form Ajax Submit Button',
-                CHtml::normalizeUrl(array('Asset/getuserstable')), 
-                
-				array('success'=>'funcztion(){$("#mydialog").dialog("close");}',
-                      'update'=>'#myDiv'                            ),
-                array('name' => 'run', 'class' => 'btn btn-success')
-          ); */ ?>
-			
-			
-			<?php 
-				$dataProvider = new CActiveDataProvider('Ou_structure');
+				<?php 				
+
+				/*$dataProvider = new CActiveDataProvider('Users');
+				
+				//$usersIds = $_POST['users'];
+				//$userRecords = Users::model()->findAllByPk($usersIds);
+				//$dataProvider = Users::model()->findAllByPk($usersIds);;
+				
 				$this->widget('bootstrap.widgets.TbGridView', array(
 				
-				'id'=>'gview',
+				'id'=>'userstable',
 				'dataProvider'=>$dataProvider,
-				'rowHtmlOptionsExpression' => 'array("id"=>$data->id)',
+				'rowHtmlOptionsExpression' => 'array("id"=>$data->uid)',
 				'columns'=>array(
-    			array('name'=>'name','header'=>'Departments'),    /*in header give the role name while passing*/
-	 			array('header'=>'Read','value'=>'','id'=>'headerA'),
+    			array('name'=>'name','header'=>'Departments'),    in header give the role name while passing*/
+	 			/*array('header'=>'Read','value'=>'','id'=>'headerA'),
 	    		array(
 	    		    
 	        		'class'=>'CCheckBoxColumn',
@@ -138,12 +145,21 @@
 	      ),
    		)
 		);
-
+			*/	?>			
+						
+			
+										
+			
+			<?php /*echo CHtml::ajaxSubmitButton('Form Ajax Submit Button',
+                CHtml::normalizeUrl(array('Asset/getuserstable')), 
+                
+				array('success'=>'funcztion(){$("#mydialog").dialog("close");}',
+                      'update'=>'#myDiv'                            ),
+                array('name' => 'run', 'class' => 'btn btn-success')
+          ); */ ?>
 			
 			
-			
-			?>		
-	
+				
 			<?php echo $form->radioButtonListControlGroup($model, 'publication', array(
         		'yes',
         		'no',
@@ -167,7 +183,9 @@
                         'condition'=>'root=:root',
                         'params'=>array(':root'=>$root),
     
-                    ),    ));
+                    ),
+					
+                    ));
 			
 			//$dataProvider = Ou_structure::model()->findAll('orgId=:orgId',array('orgId'=>$orgId));
 			$number = 0;

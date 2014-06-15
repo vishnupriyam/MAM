@@ -15,26 +15,28 @@ $this->menu=array(
 ?>
 
 <h1 style="margin-top:3em;">Assets</h1>
-
-<?php $this->widget('bootstrap.widgets.TbGridView',array(
-	'dataProvider'=>$dataProvider,
-	//'itemView'=>'_view',
-	'columns'=>array(
-		'assetName',
-		'file',
-		'createDate',
-		//'status',
-		array('name'=>'Status','value'=>'$data->getStatus()'),
-		array('name'=>'Category','value'=>'$data->category->name'),
-		array('name'=>'Publication','value'=>'$data->getPublication()'),
-		//'publication',
-		//'onlineEditable',
-		array('name'=>'OnlineEditable','value'=>'$data->getOnlineEditable()'),
-		'size',
-		'type',
-		'reviewer',
+<?php 
+$gridColumns = array(
+		//array('name'=>'name', 'header'=>'ROLE'),
+		array('name'=>'assetName', 'header'=>'Asset name','value'=>'$data->assetName'),
+		array('name'=>'file', 'header'=>'file'),
+		array('name'=>'createDate', 'header'=>'create date'),
+		array('name'=>'status', 'header'=>'status', 'value'=>'$data->getStatus()'),
+		array('name'=>'publication', 'header'=>'publication','value'=>'$data->getPublication()'),
+		array('name'=>'onlineEditable', 'header'=>'online editable','value'=>'$data->getOnlineEditable()'),
+		array('name'=>'size', 'header'=>'size'),
+		array('name'=>'reviewer','header'=>'reviewer'),
 		//'ownerId',
-		array('name'=>'Owner Name','value'=>'$data->users->name'),
-		//array('name'=>'view','type'=>'raw','onclick'=>function(){},),
-	),
-)); ?>
+        //array('name'=>'owner name','value'=>'$data->users->name'),
+       // array('name'=>'view','type'=>'raw','value'=>$this->renderPartial('viewer', true, true)),
+		//array('name'=>'view online','type'=>'raw','value'=>'CHtml::link("view", array("asset/","viewer"=>$data->assetId))'),
+	);
+?>
+<?php $this->widget('bootstrap.widgets.TbGridView',array(
+	'dataProvider'=>$model->search(),
+	//'itemView'=>'_view',
+	'filter'=>$model,
+	'columns'=> $gridColumns,
+));
+ ?>
+

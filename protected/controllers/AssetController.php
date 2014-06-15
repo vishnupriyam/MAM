@@ -28,11 +28,11 @@ class AssetController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','loadusers'),
+				'actions'=>array('index','view','properties'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','loadusers'),
+				'actions'=>array('create','update','loadusers','loaduserstable',  'viewer'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -75,7 +75,21 @@ class AssetController extends Controller
 			//$model->type=$model->file->getType();
 			//$model->type=$model->file->extensionName;
 			//$model->createDate=
+			
+			
+			/* getting the records from list of primary keys 
+			//print_r($_POST['users']);die();
+			$usersIds = $_POST['users'];
+			$userRecords = Users::model()->findAllByPk($usersIds);
+			//print_r($userRecords);die();
 
+			foreach($userRecords as $record){
+				print_r($record->name."\n");
+			}
+			die();
+			
+			*/
+			
 			$model->categoryId = $_POST['Asset']['categoryId'];
 			
 			if(!empty($_POST['tags']))
@@ -230,9 +244,9 @@ class AssetController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Asset');
+		$model=new Asset('search');
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'model'=>$model,
 		));
 	}
 
@@ -267,6 +281,15 @@ class AssetController extends Controller
 		}
 		return $model;
 	}
+	
+public function actionViewer($id)
+	{
+		$model= $this->loadModel($id);
+		
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		$this->render('viewer', array('a'=>$id));
+	}
 
 	/**
 	 * Performs the AJAX validation.
@@ -279,20 +302,15 @@ class AssetController extends Controller
 			Yii::app()->end();
 		}
 	}
-public function actionLoadusers()
-{
-   $data=UsersDepartment::model()->findAll('id=:id', 
-   array(':id'=>(int) $_POST['ou_id']));
- 
-  // $data=CHtml::listData($data,'uid','city_name');
-  
-   foreach($data as $data1){
-  	$userRow = Users::model()->find('uid=:uid',array(':uid'=>$data1->uid));
-     echo "<option value=''>$userRow->name</option>";
-   }
-  // foreach($data as $value=>$city_name)
-  // echo CHtml::tag('option', array('value'=>$value),CHtml::encode($city_name),true);
-}
+
+	public function actionProperties($id){
 		
+		$model=$this->loadModel($id);
+		
+		$this->render('properties',
+		 array('model'=>$model)
+		);
+	}
+	
 }
 

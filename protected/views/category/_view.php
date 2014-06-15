@@ -16,8 +16,8 @@
 	<?php echo CHtml::link(CHtml::encode($data->name),array('view','id'=>$data->cat_id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('orgId')); ?>:</b>
-	<?php echo CHtml::encode($data->organisation->orgName); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Departments')); ?>:</b>
+	<?php echo CHtml::encode($data->getDepartments()); ?>
 	<br />
 
 	<b><?php /* echo CHtml::encode($data->getAttributeLabel('unitCode')); ?>:</b>

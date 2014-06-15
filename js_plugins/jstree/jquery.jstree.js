@@ -340,7 +340,7 @@
 			load_open	: false,
 			strings		: {
 				loading		: "loading OU",
-				new_node	: "Add to OU",
+				new_node	: "Add",
 				multiple_selection : "Multiple selection"
 			}
 		},

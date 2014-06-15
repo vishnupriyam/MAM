@@ -1,42 +1,39 @@
 <?php
 
 /**
- * This is the model class for table "document".
+ * This is the model class for table "fileaccesslog".
  *
- * The followings are the available columns in table 'document':
- * @property integer $docId
- * @property string $Name
- * @property integer $ownerId
- * @property integer $departmentId
- * @property integer $categoryId
- * @property string $description
- * @property string $comment
+ * The followings are the available columns in table 'fileaccesslog':
+ * @property string $timeStamp
+ * @property string $action
+ * @property integer $fileAccessLogId
+ * @property integer $assetId
+ * @property integer $uId
  */
-class Document extends CActiveRecord
+class Fileaccesslog extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'document';
+		return 'fileaccesslog';
 	}
 
 	/**
 	 * @return array validation rules for model attributes.
 	 */
-	public $file;
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('Name, ownerId, departmentId, categoryId, description, comment', 'required'),
-			array('ownerId, departmentId, categoryId', 'numerical', 'integerOnly'=>true),
-			array('Name', 'length', 'max'=>70),
+			array('timeStamp, action, assetId, uId', 'required'),
+			array('assetId, uId', 'numerical', 'integerOnly'=>true),
+			array('action', 'length', 'max'=>3),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('docId, Name, ownerId, departmentId, categoryId, description, comment', 'safe', 'on'=>'search'),
+			array('timeStamp, action, fileAccessLogId, assetId, uId', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -48,6 +45,8 @@ class Document extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'asset'=>array(self::BELONGS_TO,'Asset','assetId'),
+			'users'=>array(self::BELONGS_TO,'Users','uId'),
 		);
 	}
 
@@ -57,13 +56,11 @@ class Document extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'docId' => 'Doc',
-			'Name' => 'Name',
-			'ownerId' => 'Owner',
-			'departmentId' => 'Department',
-			'categoryId' => 'Category',
-			'description' => 'Description',
-			'comment' => 'Comment',
+			'timeStamp' => 'Time Stamp',
+			'action' => 'Action',
+			'fileAccessLogId' => 'File Access Log',
+			'assetId' => 'Asset',
+			'uId' => 'U',
 		);
 	}
 
@@ -85,13 +82,11 @@ class Document extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('docId',$this->docId);
-		$criteria->compare('Name',$this->Name,true);
-		$criteria->compare('ownerId',$this->ownerId);
-		$criteria->compare('departmentId',$this->departmentId);
-		$criteria->compare('categoryId',$this->categoryId);
-		$criteria->compare('description',$this->description,true);
-		$criteria->compare('comment',$this->comment,true);
+		$criteria->compare('timeStamp',$this->timeStamp,true);
+		$criteria->compare('action',$this->action,true);
+		$criteria->compare('fileAccessLogId',$this->fileAccessLogId);
+		$criteria->compare('assetId',$this->assetId);
+		$criteria->compare('uId',$this->uId);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -102,10 +97,17 @@ class Document extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Document the static model class
+	 * @return Fileaccesslog the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	public function getAction(){
+	  if($this->action == 'V')
+	   return "View";
+	  elseif($this->action=='CI')
+	   return "Checkout";
+	
 	}
 }

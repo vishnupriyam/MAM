@@ -48,6 +48,7 @@ class Tags extends CActiveRecord
 		'organisation'=>array(self::BELONGS_TO,'Organisation','orgId'),
 		//many to many relationship departments and tags , first param in relationship must be that of the active class,i.e of the Tag
 		'ou_structure' => array(self::MANY_MANY, 'Ou_structure', 'tags_has_ou_structure(tagId,id)'),
+		'asset' => array(self::MANY_MANY, 'Asset', 'asset_tags(tagId,assetId)'),
 		
 		);
 	}

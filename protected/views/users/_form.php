@@ -83,8 +83,8 @@
            array(
            
             'style'=> ' padding-left:6.4em;
-                    width: 60px;
-                    height:30px;
+                    width: 100px;
+                    height:60px;
                     float: left;
                 '),
               'style'=>'float:left;',

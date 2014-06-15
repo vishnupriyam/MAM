@@ -172,4 +172,13 @@ class Users extends CActiveRecord
 	  return "ACTIVE";
 	} 
 	
+	public function beforeSave(){
+	
+	
+	$this->DateCreated=new CDbExpression('NOW()');
+	return parent::beforeSave();
+	
+	}
+	
+	
 }

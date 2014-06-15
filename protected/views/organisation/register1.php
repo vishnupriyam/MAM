@@ -87,7 +87,7 @@
 		    ));?>
 		    
  <?php 
-	echo CHtml::link('Media Browser', array('/ddmedia'));
+	//echo CHtml::link('Media Browser', array('/ddmedia'));
 	?>
 	</div>
 	

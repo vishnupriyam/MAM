@@ -150,7 +150,13 @@ class CategoryController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Category');
+		$orgId = Yii::app()->user->getId();
+		$dataProvider=new CActiveDataProvider('Category',array('criteria'=>array(
+                        'condition'=>'orgId=:orgId',
+                        'params'=>array(':orgId'=>$orgId),
+    
+                    ),    )
+				);
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

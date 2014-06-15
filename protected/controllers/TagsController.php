@@ -77,9 +77,19 @@ class TagsController extends Controller
 			$orgId = Yii::app()->user->getId();
 			$model->orgId = $orgId;
 			
+			
+			//print_r($_POST['Tags']['tagName']);die();
+			
 			if($model->save()){
 			//print_r( json_encode($_POST['dept_id']));die();
 			
+				/*if(!empty($_POST['Tags']['tagName'])){
+					$tags = explode(",",$_POST['Tags']['tagName']);
+					foreach($tag as $tagRow)
+					
+				}*/
+				
+				
 			$Log = Logger::getLogger("accessLog");
 	  			$uid=Yii::app()->user->getState("uid");
 	  			$Log->info($uid."\t".Yii::app()->user->name."\t".$model->getModelName()."\tcreate\t".$model->tagId);		

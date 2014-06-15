@@ -30,12 +30,12 @@ class Module extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
-			array('orgId', 'numerical', 'integerOnly'=>true),
+			//array('orgId', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>45),
 			array('description', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('mid, name, description, orgId', 'safe', 'on'=>'search'),
+			array('mid, name, description', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,7 +60,7 @@ class Module extends CActiveRecord
 			'mid' => 'Module id',
 			'name' => 'Name',
 			'description' => 'Description',
-			'orgId' => 'Organisation Id',
+			//'orgId' => 'Organisation Id',
 		);
 	}
 
@@ -85,7 +85,7 @@ class Module extends CActiveRecord
 		$criteria->compare('mid',$this->mid);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('description',$this->description,true);
-		$criteria->compare('orgId',$this->orgId);
+		//$criteria->compare('orgId',$this->orgId);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -116,8 +116,8 @@ class Module extends CActiveRecord
 	 	{$Log->info("name ".$this->oldAttributes['name']." ".$this->name);}
 	if($this->description != $this->oldAttributes['description'])
 	 	{$Log->info("description ".$this->oldAttributes['description']." ".$this->description);}
-	if($this->orgId != $this->oldAttributes['orgId'])
-	 	{$Log->info("orgId ".$this->oldAttributes['orgId']." ".$this->orgId);}
+	//if($this->orgId != $this->oldAttributes['orgId'])
+	 //	{$Log->info("orgId ".$this->oldAttributes['orgId']." ".$this->orgId);}
 	 		
 	
 	}

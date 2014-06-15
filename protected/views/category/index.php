@@ -11,7 +11,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Category1s</h1>
+<h1>Categories</h1>
 
 
 <?php $this->widget('bootstrap.widgets.TbListView',array(

@@ -10,8 +10,8 @@
 	<?php echo CHtml::link(CHtml::encode($data->tagName),array('view','id'=>$data->tagId)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('orgId')); ?>:</b>
-	<?php echo CHtml::encode($data->organisation->orgName); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Department')); ?>:</b>
+	<?php echo CHtml::encode($data->getDepartments()); ?>
 	<br />
 	
 	

@@ -69,6 +69,7 @@ class Asset extends CActiveRecord
 		return array(
 		 'users'=>array(self::BELONGS_TO,'Users','ownerId'),
 		'category'=>array(self::BELONGS_TO,'Category','categoryId'),
+		'tags' => array(self::MANY_MANY, 'Tags', 'asset_tags(assetId,tagId)'),
 
 		);
 	}
@@ -114,9 +115,10 @@ class Asset extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$criteria->compare('assetName',$this->assetName,true);
 		$criteria->compare('file',$this->file,true);
 		$criteria->compare('assetId',$this->assetId);
-		$criteria->compare('assetName',$this->assetName,true);
+		
 		$criteria->compare('createDate',$this->createDate,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('comment',$this->comment,true);
@@ -177,5 +179,25 @@ public function getStatus(){
       return "No";
     
     }
+    
+    public function getTags()
+		{
+    		$ret = "";
+    		$first = true;
+    		
+    		foreach ($this->tags as $record) {
+
+        	if ($first === true) {
+            	$first = false;
+        	} else {
+            $ret .= ', ';
+        	}
+
+        $ret .= "<a href='#'>".$record->tagName."</a>";
+    	}
+		
+	    return $ret;
+		}
+    
                
 }

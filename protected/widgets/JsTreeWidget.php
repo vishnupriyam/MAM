@@ -115,7 +115,24 @@ EOD;
      */
     private function getOpenNodes()
     {
-        $categories = CActiveRecord::model($this->modelClassName)->findAll(array('order' => 'lft'));
+      //  $criteria=new CDbCriteria;
+       // $orgId = Yii::app()->user->getId();
+    	//$criteria->compare('orgId',$orgId,true);
+    	 $orgId= Yii::app()->user->getId();
+      
+        $sql3 = "select id from ou_structure where orgId = :orgId";
+	    $command =  Yii::app()->db->createCommand($sql3);
+	    $command->bindParam(":orgId",$orgId,PDO::PARAM_INT);
+	    $dataReader = $command->query();
+        $row = $dataReader->read();
+        $dataReader->close();
+        $ans = $row['id'];
+        $dataReader->close();
+         
+    	$criteria=new CDbCriteria();
+		$criteria->compare('root', $ans, true);
+		
+    	$categories = CActiveRecord::model($this->modelClassName)->findAll($criteria, array('order' => 'lft'));
         $identifiers = array();
         foreach ($categories as $n => $category) {
             $identifiers[] = "'" . 'node_' . $category->id . "'";

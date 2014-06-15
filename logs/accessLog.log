@@ -179,3 +179,59 @@ Date			Time					  uid	user	table 	action rowid
 2014-06-12T20:04:24+02:00 INFO  accessLog passwordsaFLGt/QKS6yw 
 2014-06-12T20:04:24+02:00 INFO  accessLog status 0 
 2014-06-12T20:04:24+02:00 INFO  accessLog 127	org2	Users	create	137
+2014-06-13T13:12:53+02:00 INFO  accessLog 127	org2	Tags	create	26
+2014-06-13T13:48:32+02:00 INFO  accessLog name  C++
+2014-06-13T13:48:32+02:00 INFO  accessLog 138	IIT Bombay1	Category	create	10
+2014-06-13T13:48:46+02:00 INFO  accessLog name  JAVA
+2014-06-13T13:48:46+02:00 INFO  accessLog 138	IIT Bombay1	Category	create	11
+2014-06-13T13:49:02+02:00 INFO  accessLog name  POWER SYSTEM
+2014-06-13T13:49:02+02:00 INFO  accessLog 138	IIT Bombay1	Category	create	12
+2014-06-13T13:49:16+02:00 INFO  accessLog name  POWER ELECTRONICS
+2014-06-13T13:49:16+02:00 INFO  accessLog 138	IIT Bombay1	Category	create	13
+2014-06-13T13:53:44+02:00 INFO  accessLog 138	IIT Bombay1	Tags	create	27
+2014-06-13T13:54:00+02:00 INFO  accessLog 138	IIT Bombay1	Tags	create	28
+2014-06-13T13:54:14+02:00 INFO  accessLog 138	IIT Bombay1	Tags	create	29
+2014-06-13T13:54:39+02:00 INFO  accessLog 138	IIT Bombay1	Tags	create	30
+2014-06-13T13:58:12+02:00 INFO  accessLog 138	IIT Bombay1	Tags	create	31
+2014-06-13T14:05:20+02:00 INFO  accessLog name  online viewer
+2014-06-13T14:05:20+02:00 INFO  accessLog description  can view files online..
+2014-06-13T14:05:20+02:00 INFO  accessLog 138	IIT Bombay1	Module	create	58
+2014-06-13T14:06:20+02:00 INFO  accessLog name  online viewer
+2014-06-13T14:06:20+02:00 INFO  accessLog description  displaying files onlimne
+2014-06-13T14:06:20+02:00 INFO  accessLog 138	IIT Bombay1	Module	create	59
+2014-06-13T14:22:02+02:00 INFO  accessLog name  sashi
+2014-06-13T14:22:02+02:00 INFO  accessLog email sa@gmail.com 
+2014-06-13T14:22:02+02:00 INFO  accessLog passwordsadgC/1v9zmic 
+2014-06-13T14:22:02+02:00 INFO  accessLog status 1 
+2014-06-13T14:22:02+02:00 INFO  accessLog 138	IIT Bombay1	Users	create	139
+2014-06-13T14:29:50+02:00 INFO  accessLog name  viki
+2014-06-13T14:29:50+02:00 INFO  accessLog email v@gmail.com 
+2014-06-13T14:29:50+02:00 INFO  accessLog passwordsadgC/1v9zmic 
+2014-06-13T14:29:50+02:00 INFO  accessLog status 1 
+2014-06-13T14:29:50+02:00 INFO  accessLog 138	IIT Bombay1	Users	create	140
+2014-06-13T15:01:26+02:00 INFO  accessLog name  Coding
+2014-06-13T15:01:26+02:00 INFO  accessLog 142	IIT Bombay	Category	create	14
+2014-06-13T15:01:45+02:00 INFO  accessLog name  algorithms
+2014-06-13T15:01:45+02:00 INFO  accessLog 142	IIT Bombay	Category	create	15
+2014-06-13T15:02:00+02:00 INFO  accessLog name  powe electronics
+2014-06-13T15:02:00+02:00 INFO  accessLog 142	IIT Bombay	Category	create	16
+2014-06-13T15:02:35+02:00 INFO  accessLog 142	IIT Bombay	Tags	create	32
+2014-06-13T15:02:35+02:00 INFO  accessLog 142	IIT Bombay	Tags	create	33
+2014-06-13T15:02:48+02:00 INFO  accessLog 142	IIT Bombay	Tags	create	34
+2014-06-13T15:03:14+02:00 INFO  accessLog 142	IIT Bombay	Tags	create	35
+2014-06-13T15:04:12+02:00 INFO  accessLog name  admin
+2014-06-13T15:04:12+02:00 INFO  accessLog description  adninistrator
+2014-06-13T15:04:12+02:00 INFO  accessLog 142	IIT Bombay	Module	create	60
+2014-06-13T15:04:52+02:00 INFO  accessLog name  add asset
+2014-06-13T15:04:52+02:00 INFO  accessLog description  adding files  to the server
+2014-06-13T15:04:52+02:00 INFO  accessLog 142	IIT Bombay	Module	create	61
+2014-06-13T15:08:48+02:00 INFO  accessLog name  ashish
+2014-06-13T15:08:48+02:00 INFO  accessLog email aks133844@gmail.com 
+2014-06-13T15:08:48+02:00 INFO  accessLog passwordsadgC/1v9zmic 
+2014-06-13T15:08:48+02:00 INFO  accessLog mobile 8998123456 
+2014-06-13T15:08:48+02:00 INFO  accessLog status 1 
+2014-06-13T15:08:48+02:00 INFO  accessLog 142	IIT Bombay	Users	create	143
+2014-06-13T15:38:31+02:00 INFO  accessLog name  website development
+2014-06-13T15:38:31+02:00 INFO  accessLog 142	IIT Bombay	Category	create	17
+2014-06-15T06:51:36+02:00 INFO  accessLog name  Codinf
+2014-06-15T06:51:36+02:00 INFO  accessLog 1	IIT Bombay	Category	create	1

@@ -22,11 +22,6 @@
        'htmlOptions'=>array('class'=>'table table-striped table-bordered table-condensed'),
     //modify attributes according to your model
         'attributes'=>array(
-                    'id',
-            		'root',
-            		'lft',
-            		'rgt',
-            		'level',
             		'name',
             		'description',
         ),

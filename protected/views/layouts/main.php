@@ -77,7 +77,7 @@
         	),
         )); ?>
 
-<div class="span3 pull-right" style="float:right;margin-top:3em;text-transform:uppercase;font-weight:900;font-size:2em;color:maroon;">
+<div class="span3 pull-right" style="margin-top:3em;text-transform:uppercase;font-weight:900;font-size:2em;color:maroon;">
 	<?php echo $record['orgName'];?>
 </div>
 
@@ -98,8 +98,10 @@
 	$id =  Yii::app()->user->getId();
 	echo TbHtml::tabs(array(
 	
+	
+	
     array('label' => 'Add Asset', 'url' => '/final/asset/create'),
-    array('label' => 'Media Browser', 'url' => '/final/index.php/media'),
+    //array('label' => 'Media Browser', 'url' => '/final/index.php/media'),
     array('label' => 'Viewer', 'url' => '/final/site/viewer'),
     array('label' => 'Check In', 'url' => '/final/addasset/onlineviewer'),
     array('label' => 'Check Out', 'url' => '/final/addasset/onlineeditor'),
@@ -107,9 +109,10 @@
         array('label' => 'Manage OU', 'url' => array('/ou_structure/tree')),
         array('label' => 'Add tags', 'url' => array('/tags/create')),
         array('label' => 'Add category', 'url' => array('/category/create')),
-        array('label' => 'users', 'items'=>array(array('label'=>'Add user','url'=>array('/users/create')),array('label'=>'manage user','url'=>array('/users/admin')))),
-        array('label' => 'Role', 'items'=>array(array('label'=>'Add role','url'=>array('/role')),array('label'=>'Add module','url'=>array('/module/create')),array('label'=>'Add permission','url'=>array('/permissions/create')))),
-        
+        array('label' => 'users', 'items'=>array(array('label'=>'Add user','url'=>array('/users/create')),array('label'=>'Manage user','url'=>array('/users/admin')))),
+        array('label' => 'Role', 'items'=>array(array('label'=>'Add role','url'=>array('/role/index')))),
+        array('label' => 'Module', 'items'=>array(array('label'=>'Add module','url'=>array('/module/create')))),
+        array('label' => 'Permissions', 'items'=>array(array('label'=>'Add permission','url'=>array('/permissions/create')),array('label'=>'Manage permissions','url'=>array('/permissions/admin')))),
     )),
 	)); 
 	}
