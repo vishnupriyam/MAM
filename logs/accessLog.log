@@ -235,3 +235,5 @@ Date			Time					  uid	user	table 	action rowid
 2014-06-13T15:38:31+02:00 INFO  accessLog 142	IIT Bombay	Category	create	17
 2014-06-15T06:51:36+02:00 INFO  accessLog name  Codinf
 2014-06-15T06:51:36+02:00 INFO  accessLog 1	IIT Bombay	Category	create	1
+2014-06-16T08:33:05+02:00 INFO  accessLog name  module1
+2014-06-16T08:33:05+02:00 INFO  accessLog 1	IIT Bombay	Module	create	1

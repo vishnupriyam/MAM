@@ -47,10 +47,6 @@
 
 ?>
 
-<?php 
-
-  
-?>
 
 <?php echo TbHtml::tabbableTabs(array(
 
@@ -72,3 +68,21 @@
     array('label' => 'Email', 'content' => 'EMAIL UNDER CONSTRUCTION'),
     
 ), array('placement' => TbHtml::TABS_PLACEMENT_LEFT)); ?>
+
+<style type="text/css">
+ .btn {margin-left:.2em;}
+
+</style>
+
+<div class="" style="margin-left:7em;">
+<?php  echo TbHtml::button('View', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
+<?php  echo TbHtml::button('Check Out', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
+<?php  echo TbHtml::button('History',array(
+                'color' => TbHtml::BUTTON_COLOR_PRIMARY,
+				'submit' => Yii::app()->baseUrl.'/asset/history/'.$model->assetId,
+                //'confirm'=>"Please confirm to cancle transaction",
+                'class'=>'submit'
+                
+            )); ?>
+<?php  echo TbHtml::button('Manage', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
+</div>

@@ -72,6 +72,7 @@ class Users extends CActiveRecord
 		return array(
 			'roles' => array(self::MANY_MANY, 'Role', 'users_has_role(users_uid, role_rid)'),
 		    'asset' => array(self::HAS_MANY,'Asset','uid'),
+		    'asset_revision'=>array(self::HAS_MANY,'AssetRevision','uid')
 		);
 	}
 

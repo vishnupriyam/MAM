@@ -38,7 +38,9 @@ class Asset extends CActiveRecord
 	 * @return array validation rules for model attributes.
 	 */
 
-
+	public $owner_name;
+	public $view;
+	public $view_online;
 	public $tagsUser;
 	public $gview;
 	public function rules()
@@ -55,7 +57,7 @@ class Asset extends CActiveRecord
 			array('createDate, description, comment, reviewerComments', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('file, assetId, assetName, createDate, description, comment, status, publication, onlineEditable, size, type, reviewer, reviewerComments, ownerId', 'safe', 'on'=>'search'),
+			array('file, assetId, assetName, createDate, description, comment, status, publication, onlineEditable, size, type, reviewer, reviewerComments', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -130,9 +132,12 @@ class Asset extends CActiveRecord
 		$criteria->compare('reviewer',$this->reviewer,true);
 		$criteria->compare('reviewerComments',$this->reviewerComments,true);
 		$criteria->compare('ownerId',$this->ownerId);
-
+		//$criteria->compare('owner_name','',true);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'pagination' => array(
+            'pageSize' => 10
+        ),
 		));
 	}
 

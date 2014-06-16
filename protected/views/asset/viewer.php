@@ -1,6 +1,7 @@
 <?php 
 ?>
 <?php
+ /*
  $b = "http://localhost/final/Viewer.js/#../".$a;
  
  

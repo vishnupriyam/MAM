@@ -28,11 +28,11 @@ class AssetController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','properties'),
+				'actions'=>array('index','view','properties','infoOptions','history','admin','partUpdate'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','loadusers','loaduserstable',  'viewer'),
+				'actions'=>array('create','update',  'viewer'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -244,7 +244,13 @@ class AssetController extends Controller
 	 */
 	public function actionIndex()
 	{
+		
 		$model=new Asset('search');
+		$model->unsetAttributes();  // clear any default values
+		if (isset($_GET['Asset'])) {
+			$model->attributes=$_GET['Asset'];
+		}
+
 		$this->render('index',array(
 			'model'=>$model,
 		));
@@ -311,6 +317,33 @@ public function actionViewer($id)
 		 array('model'=>$model)
 		);
 	}
+	public function actionInfoOptions($id){
+		
+		$model=$this->loadModel($id);
+		
+		$this->render('infoOptions',
+		 array('model'=>$model)
+		);
+	}
+	
+	public function actionHistory($id){
+		$model=$this->loadModel($id);
+		
+		$this->render('history',
+		 array('model'=>$model)
+		);
+		
+	}
+	
+	public function actionPartUpdate($id = null) {
+        $model = Asset::model()->findByPk("1");
+        if ($model === null)
+            throw new CHttpException(404, 'The requested page does not exist.');
+ 
+        $this->renderPartial('view', array('model' => $model));
+        Yii::app()->end();
+	}
+	
 	
 }
 
