@@ -31,6 +31,8 @@
             <?php echo $form->textFieldControlGroup($model,'name',array('span'=>3,'maxlength'=>60)); ?>
 
             <?php echo $form->textFieldControlGroup($model,'weight',array('span'=>3)); ?>
+            
+             <?php echo $form->textFieldControlGroup($model,'description',array('span'=>3)); ?>
 
         <div class="form-actions">
         

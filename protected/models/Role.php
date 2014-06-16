@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "role".
  *
@@ -26,7 +25,7 @@ class Role extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, weight', 'required'),
+			array('name, weight, description', 'required'),
 			array('weight', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>60),
 			// The following rule is used by search().
@@ -43,6 +42,7 @@ class Role extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+		  'organisation'=>array(self::BELONGS_TO,'Organisation','orgId'),
 		);
 	}
 
@@ -55,6 +55,7 @@ class Role extends CActiveRecord
 			'rid' => 'Rid',
 			'name' => 'Name',
 			'weight' => 'Weight',
+			'description' => 'Description',
 		);
 	}
 
@@ -75,13 +76,17 @@ class Role extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$orgId = Yii::app()->user->getId();
 		$criteria->compare('rid',$this->rid,true);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('weight',$this->weight);
-
+		$criteria->compare('description',$this->description);
+		$criteria->compare('orgId',$orgId);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+		'sort'=>array(
+				'defaultOrder'=>'weight ASC',
+			),
 		));
 	}
 

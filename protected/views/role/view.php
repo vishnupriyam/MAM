@@ -11,7 +11,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Role', 'url'=>array('index')),
-	array('label'=>'Create Role', 'url'=>array('create')),
+	array('label'=>'Create Role', 'url'=>array('index')),
 	array('label'=>'Update Role', 'url'=>array('update', 'id'=>$model->rid)),
 	array('label'=>'Delete Role', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->rid),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Role', 'url'=>array('admin')),

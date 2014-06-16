@@ -1,15 +1,5 @@
 <div class="form">
 
-<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-	'id'=>'Permissions-change',
-	'layout'=>TbHtml::FORM_LAYOUT_HORIZONTAL,
-	'enableClientValidation'=>true,
-	//'clientOptions'=>array(
-	//	'validateOnSubmit'=>true,
-	//),
-)); ?>
-
-<?php //$model = new Role;?> 
 
 <?php
 
@@ -40,22 +30,25 @@ $dataReader3 = $command->query();
 $row = $dataReader3->read();
     //$dataReader3->close();
 $b = $row['name'];
+
+
 $this->rid = $model->rid;
 $this->widget('zii.widgets.grid.CGridView', array(
 'id'=>'gview',
-'selectableRows'=>2,
+'selectableRows'=>0,
 'dataProvider'=>$dataProvider,
 'rowHtmlOptionsExpression' => 'array("id"=>$data->pid)',
 'columns'=>array(
-   array('name'=>'name','header'=>$b),    
+   array('name'=>'name','header'=>$b),  
+   
    array(
        'class'=>'CCheckBoxColumn',
        'id'=>'CB'.$number,
-       'selectableRows'=>2,
-   	   'checked'=> 'Yii::app()->controller->isChecked($this->grid->controller->rid, $data->pid)' , 
+       'selectableRows'=>0,
+   		'checked'=> 'Yii::app()->controller->isChecked($this->grid->controller->rid, $data->pid)' , 	
    )    	
 ),
-)
+   	  )
 );
 $number++;
 }
@@ -75,7 +68,7 @@ $number++;
 	</div>
    </div>
    
-  <?php $this->endWidget(); ?>
+ 
 </div>
  
  

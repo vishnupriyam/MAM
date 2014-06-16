@@ -42513,3 +42513,11 @@ REQUEST_URI=/final/index.php/asset/PartUpdate?id=4
 in C:\xampp\htdocs\final\protected\views\asset\_view.php (8)
 in C:\xampp\htdocs\final\protected\controllers\AssetController.php (343)
 in C:\xampp\htdocs\final\index.php (18)
+2014/06/16 11:09:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "infoOptions/view".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('infoOptions/vie...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\final\index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/final/index.php/infoOptions/1
+---
