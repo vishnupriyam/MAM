@@ -1,3 +1,6 @@
+<h2>
+<?php echo $model->file;?>
+</h2>
 
 <?php
 	$properties =$this->widget('zii.widgets.CDetailView',array(
@@ -76,7 +79,13 @@
 
 <div class="" style="margin-left:7em;">
 <?php  echo TbHtml::button('View', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
-<?php  echo TbHtml::button('Check Out', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
+
+ 
+<?php  
+	// passes the userId and get the assets to be checked in by the user 
+
+	echo TbHtml::button('Check Out', array('color' => TbHtml::BUTTON_COLOR_PRIMARY,
+							'submit'=>Yii::app()->baseUrl.'/users/checkOut/'.Yii::app()->user->getState("uid"))); ?>
 <?php  echo TbHtml::button('History',array(
                 'color' => TbHtml::BUTTON_COLOR_PRIMARY,
 				'submit' => Yii::app()->baseUrl.'/asset/history/'.$model->assetId,
@@ -85,4 +94,5 @@
                 
             )); ?>
 <?php  echo TbHtml::button('Manage', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
+<?php  echo TbHtml::button('Download', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
 </div>

@@ -28,7 +28,7 @@ class AssetController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','properties','infoOptions','history','admin','versionViewUpdate','userTable'),
+				'actions'=>array('index','view','properties','infoOptions','history','admin','versionViewUpdate','userTable','download'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -353,5 +353,55 @@ public function actionViewer($id)
         $this->renderPartial('usersPermission', array('model' => $model));
         Yii::app()->end();
 	}
+	
+	public function actionDownload($file,$id){
+	
+		$model = $this->loadModel($id);
+	//print_r(	Yii::app()->user->getId());die();
+		if (isset($_SERVER['HTTP_RANGE'])) 
+			$range = $_SERVER['HTTP_RANGE'];
+			$dir_path = Yii::getPathOfAlias('webroot') .'/upload/'.Yii::app()->user->getId().'/'.$model->categoryId.'/';
+		
+			$filePath=$dir_path.$id;
+	
+			header('Content-Length: ' . filesize($filePath));
+			header("Pragma: public");
+  			header("Content-Type: text/plain",false);
+  			header("Content-Type: image/png",false);
+  			header("Content-Type: image/jpg",false);
+  			header("Content-Type: image/jpg",false);
+  			header("Content-Type: application/pdf",false);
+  			header("Content-Type: application/octet-stream",false);
+  			header("Content-Type: application/zip",false);
+  			header("Content-Type: application/msword",false);
+  			header("Content-Type: application/vnd.ms-excel",false);
+  			header("Content-Type: application/vnd.ms-powerpoint",false);
+  			header("Content-Type: application/force-download",false);
+ 			header("Content-Type: video/mp4");
+   			header("Content-Type: audio/mpeg");
+ 		    header("Content-Type: video/x-msvideo");
+    
+   			header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+  			header("Accept Ranges: bytes");
+  
+  			$filecontent=file_get_contents($dir_path.$image);
+  
+ 			 header("Content-disposition: attachment;  filename=$image");
+ 			 header("Pragma: no-cache");
+	
+			$file = @fopen($filePath,"rb");
+			while(!feof($file))
+			{
+				print(@fread($file, 1024*8));
+				ob_flush();
+				flush();
+			}
+ 			echo $filecontent;
+ 			 exit;
+ 			 
+	
+		}	
+	
+	
 }
 

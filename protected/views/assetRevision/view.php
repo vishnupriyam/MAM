@@ -43,3 +43,19 @@ $this->menu=array(
 		array('name'=>'tags','type'=>'raw','value'=>$model->asset->getTags()),
 	),
 )); ?>
+
+		<?php  echo TbHtml::button('view',array(
+                'color' => TbHtml::BUTTON_COLOR_PRIMARY,
+				'submit' => Yii::app()->baseUrl,
+                //'confirm'=>"Please confirm to cancle transaction",
+                'class'=>'submit'
+                
+            )); ?>
+		<?php  echo TbHtml::button('Download',array(
+                'color' => TbHtml::BUTTON_COLOR_PRIMARY,
+				'submit' => Yii::app()->baseUrl,
+                //'confirm'=>"Please confirm to cancle transaction",
+                'class'=>'submit'
+                
+            )); ?>
+		

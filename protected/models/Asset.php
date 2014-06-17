@@ -142,6 +142,38 @@ class Asset extends CActiveRecord
 		));
 	}
 
+	public function search1()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('assetName',$this->assetName,true);
+		$criteria->compare('file',$this->file,true);
+		$criteria->compare('assetId',$this->assetId);
+		
+		$criteria->compare('createDate',$this->createDate,true);
+		$criteria->compare('description',$this->description,true);
+		$criteria->compare('comment',$this->comment,true);
+		$criteria->compare('status',"2");
+		$criteria->compare('publication',$this->publication);
+		$criteria->compare('onlineEditable',$this->onlineEditable);
+		$criteria->compare('size',$this->size);
+		$criteria->compare('type',$this->type,true);
+		$criteria->compare('reviewer',$this->reviewer,true);
+		$criteria->compare('reviewerComments',$this->reviewerComments,true);
+		$criteria->compare('ownerId',Yii::app()->user->getState("uid"));
+		//$criteria->compare('owner_name','',true);
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+			'pagination' => array(
+            'pageSize' => 10
+        ),
+		));
+	}
+	
+	
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

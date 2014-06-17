@@ -38,13 +38,17 @@
 
             <?php
 			$orgId=Yii::app()->user->getId();
-            echo $form->dropDownListControlGroup($model,'ownerId',CHtml::listData(Users::model()->findAll('orgId=:orgId',array(':orgId'=>$orgId)), 'uid', 'name')); ?>
+			$presentuid = Yii::app()->user->getState("uid");
+			$modelA = Users::model()->find('uid=:uid',array(':uid'=>$presentuid));
+			$departmentId1 = $modelA->ouId;
+			
+            echo $form->dropDownListControlGroup($model,'ownerId',CHtml::listData(Users::model()->findAll('ouId=:ouId',array(':ouId'=>$departmentId1)), 'uid', 'name')); ?>
             
             <?php 
             
             $root = Ou_structure::model()->find('orgId=:orgId',array(':orgId'=>$orgId));
             $root = $root->id;
-            echo $form->dropDownListControlGroup($model,'departmentId',CHtml::listData(Ou_structure::model()->findAll('root=:root',array(':root'=>$root)), 'id', 'name'),array('label'=>'Deprtment')); ?>
+            echo $form->dropDownListControlGroup($model,'departmentId',CHtml::listData(Ou_structure::model()->findAll('root=:root',array(':root'=>$root)), 'id', 'name'),array('label'=>'Department')); ?>
             
          	<?php
 			echo $form->dropDownListControlGroup($model,'categoryId',CHtml::listData(Category::model()->findAll('orgId=:orgId',array(':orgId'=>$orgId)), 'cat_id', 'name'),array('label'=>'Category')); ?>
