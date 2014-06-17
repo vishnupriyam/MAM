@@ -51,12 +51,12 @@
 	         
 			 $criteria=new CDbCriteria();
 			 $criteria->compare('root', $ans, true);
-			 echo  TbHtml::dropDownListControlGroup('dept_id','',
-			 CHtml::listData(ou_structure::model()->findAll($criteria), 'id', 'name'), 
+			 echo  $form->dropDownListControlGroup($model,'ouId',
+			 CHtml::listData(Ou_structure::model()->findAll($criteria), 'id', 'name'), 
 			 array('span'=>3,'label'=>'Department'), array('label'=>'child')); ?>
 	
 	<?php echo $form->passwordFieldControlGroup($model, 'password',array('label'=>'Password','Placeholder'=>'Password',
-		'help'=>'minimum 2 alphabets,2 numbers,a special character')); ?>
+		'help'=>'')); ?>
 	
 	<?php echo $form->passwordFieldControlGroup($model, 'cpassword',array('label'=>'Confirm Password','Placeholder'=>'Password',
 		'id'=>'cpassword')); ?>

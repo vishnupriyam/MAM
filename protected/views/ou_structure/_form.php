@@ -90,14 +90,24 @@
             </div>
         </div>
 
-        <div class="control-group">
+       
+         <div class="control-group">
+            <?php echo $form->labelEx($model, 'dept_code', array('class' => 'control-label')); ?>
+            <div class="controls">
+                <?php  //$name=(!$model->isNewRecord)?$model->name:"New node"  ?>
+                <?php echo $form->textField($model, 'dept_code', array('value'=>'','class' => 'span4', 'size' => 60, 'maxlength' => 128)); ?>
+                <p class="help-block"><?php echo $form->error($model, 'dept_code'); ?></p>
+            </div>
+        </div>
+		
+		 <div class="control-group">
             <?php echo $form->labelEx($model, 'description', array('class' => 'control-label')); ?>
             <div class="controls">
                 <?php echo $form->textArea($model, 'description', array('class' => 'span4', 'rows' => 5, 'cols' => 50)); ?>
                 <p class="help-block"><?php echo $form->error($model, 'description'); ?></p>
             </div>
         </div>
-
+        
         <input type="hidden" name="YII_CSRF_TOKEN"
                value="<?php echo Yii::app()->request->csrfToken; ?>"/>
         <input type="hidden" name= "parent_id" value="<?php echo isset($_POST['parent_id'])?$_POST['parent_id']:''; ?>"  />

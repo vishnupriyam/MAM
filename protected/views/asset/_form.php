@@ -68,97 +68,7 @@
 		</div><!-- end of span12 -->
 		
 		<!--  -->
-			
-			<?php                                   
-  				/*echo CHtml::dropDownList('ou_id','', 
-  				CHtml::listData(Ou_structure::model()->findAll('root=:root',array(':root'=>$root)), 'id', 'name'),
-  
-  				array(
-    			'prompt'=>'Select Department',
-    			'ajax' => array(
-    			'type'=>'POST', 
-    			'url'=>Yii::app()->createUrl('Asset/loadusers'), 
-    			'update'=>'#users', //or 'success' => 'function(data){...handle the data in the way you want...}',
-  				'data'=>array('ou_id'=>'js:this.value'),
-  				))); 
- 
- 			echo CHtml::dropDownList('users','', array(), array('prompt'=>'Select Users','multiple'=>true),
- 			
- 				array(
-    			'prompt'=>'',
-    			'ajax' => array(
-    			'type'=>'POST', 
-    			'url'=>Yii::app()->createUrl('Asset/loaduserstable'), 
-    			'update'=>'#userstable', //or 'success' => 'function(data){...handle the data in the way you want...}',
-  				'data'=>array('users'=>'js:this.value'),
-  				)));
- 			*/?>
- 			
- 			
- 
-			
-				<?php 				
-
-				/*$dataProvider = new CActiveDataProvider('Users');
 				
-				//$usersIds = $_POST['users'];
-				//$userRecords = Users::model()->findAllByPk($usersIds);
-				//$dataProvider = Users::model()->findAllByPk($usersIds);;
-				
-				$this->widget('bootstrap.widgets.TbGridView', array(
-				
-				'id'=>'userstable',
-				'dataProvider'=>$dataProvider,
-				'rowHtmlOptionsExpression' => 'array("id"=>$data->uid)',
-				'columns'=>array(
-    			array('name'=>'name','header'=>'Departments'),    in header give the role name while passing*/
-	 			/*array('header'=>'Read','value'=>'','id'=>'headerA'),
-	    		array(
-	    		    
-	        		'class'=>'CCheckBoxColumn',
-	        		'id'=>'read',
-	        		'selectableRows'=>2,
-	    			'header'=>'Read',
-	    		
-	    		),    	
-	    		array('header'=>'Write','value'=>'','id'=>'headerA'),
-	    		array(
-	        		'class'=>'CCheckBoxColumn',
-	        		'id'=>'write',
-	        		'selectableRows'=>2,
-	    			'header'=>'Write',
-	    		),
-	    		array('header'=>'Edit','value'=>'','id'=>'headerA'),
-	    		array(
-	        		'class'=>'CCheckBoxColumn',
-	        		'id'=>'edit',
-	        		'header'=>'Edit',
-	    			'selectableRows'=>2,
-	    		),
-	    		array('header'=>'Delete','value'=>'','id'=>'headerA'),
-	    		array(
-	        		'class'=>'CCheckBoxColumn',
-	        		'id'=>'delete',
-	        		'selectableRows'=>2,
-	    			'header'=>'Delete',
-	    		)    	
-	      ),
-   		)
-		);
-			*/	?>			
-						
-			
-										
-			
-			<?php /*echo CHtml::ajaxSubmitButton('Form Ajax Submit Button',
-                CHtml::normalizeUrl(array('Asset/getuserstable')), 
-                
-				array('success'=>'funcztion(){$("#mydialog").dialog("close");}',
-                      'update'=>'#myDiv'                            ),
-                array('name' => 'run', 'class' => 'btn btn-success')
-          ); */ ?>
-			
-			
 				
 			<?php echo $form->radioButtonListControlGroup($model, 'publication', array(
         		'yes',
@@ -176,7 +86,26 @@
 
 		
 
-		        <div class="span9 offset1">
+	<div class="span9 offset1">
+	
+	<script type="text/javascript">
+    function updateUsersTable(grid_id) {
+ 
+        var keyId = $.fn.yiiGridView.getSelection(grid_id);
+        keyId  = keyId[0]; //above function returns an array with single item, so get the value of the first item
+ 
+        $.ajax({
+            url: '<?php echo $this->createUrl('UserTable'); ?>',
+            data: {id: keyId},
+            type: 'GET',
+            success: function(data) {
+                $('#Users_table').html(data);
+            }
+        });
+    }
+	</script>	        
+		        
+		        
 		<?php
 			
 			$dataProvider = new CActiveDataProvider('Ou_structure',array('criteria'=>array(
@@ -190,7 +119,8 @@
 			//$dataProvider = Ou_structure::model()->findAll('orgId=:orgId',array('orgId'=>$orgId));
 			$number = 0;
 				$this->widget('bootstrap.widgets.TbGridView', array(
-				
+				'selectionChanged' => 'updateUsersTable',
+				'selectableRows' => 1,
 				'id'=>'gview',
 				'dataProvider'=>$dataProvider,
 				'rowHtmlOptionsExpression' => 'array("id"=>$data->id)',
@@ -234,6 +164,11 @@
 	?>
 	
 	
+		</div>
+		
+		
+		<div id='Users_table'>
+			//your php-html code
 		</div>
 		
 		<div class="">

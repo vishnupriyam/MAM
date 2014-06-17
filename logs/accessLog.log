@@ -237,3 +237,38 @@ Date			Time					  uid	user	table 	action rowid
 2014-06-15T06:51:36+02:00 INFO  accessLog 1	IIT Bombay	Category	create	1
 2014-06-16T08:33:05+02:00 INFO  accessLog name  module1
 2014-06-16T08:33:05+02:00 INFO  accessLog 1	IIT Bombay	Module	create	1
+2014-06-16T13:08:22+02:00 INFO  accessLog name  vishnu1
+2014-06-16T13:08:22+02:00 INFO  accessLog email vishnu1@gmail.com 
+2014-06-16T13:08:22+02:00 INFO  accessLog passwordsaEZ6MlWYV9nQ 
+2014-06-16T13:08:22+02:00 INFO  accessLog mobile 7870889723 
+2014-06-16T13:08:22+02:00 INFO  accessLog status 0 
+2014-06-16T13:08:22+02:00 INFO  accessLog 1	IIT Bombay	Users	create	3
+2014-06-16T13:09:00+02:00 INFO  accessLog name  chinna
+2014-06-16T13:09:00+02:00 INFO  accessLog email chinna@gmail.com 
+2014-06-16T13:09:00+02:00 INFO  accessLog passwordsaEZ6MlWYV9nQ 
+2014-06-16T13:09:00+02:00 INFO  accessLog mobile 9037535375 
+2014-06-16T13:09:00+02:00 INFO  accessLog status 1 
+2014-06-16T13:09:00+02:00 INFO  accessLog 1	IIT Bombay	Users	create	4
+2014-06-16T13:17:21+02:00 INFO  accessLog name  chinni
+2014-06-16T13:17:21+02:00 INFO  accessLog email chinni@gmail.com 
+2014-06-16T13:17:21+02:00 INFO  accessLog passwordsaEZ6MlWYV9nQ 
+2014-06-16T13:17:21+02:00 INFO  accessLog status 0 
+2014-06-16T13:17:21+02:00 INFO  accessLog 1	IIT Bombay	Users	create	5
+2014-06-17T00:04:23+02:00 INFO  accessLog name  koding
+2014-06-17T00:04:24+02:00 INFO  accessLog 8	IITB1	Category	create	2
+2014-06-17T00:04:40+02:00 INFO  accessLog name  logic design
+2014-06-17T00:04:40+02:00 INFO  accessLog 8	IITB1	Category	create	3
+2014-06-17T00:04:55+02:00 INFO  accessLog name  computer organisation
+2014-06-17T00:04:55+02:00 INFO  accessLog 8	IITB1	Category	create	4
+2014-06-17T00:05:17+02:00 INFO  accessLog 8	IITB1	Tags	create	3
+2014-06-17T00:05:27+02:00 INFO  accessLog 8	IITB1	Tags	create	4
+2014-06-17T00:05:34+02:00 INFO  accessLog 8	IITB1	Tags	create	5
+2014-06-17T00:05:58+02:00 INFO  accessLog name  module12
+2014-06-17T00:05:58+02:00 INFO  accessLog 8	IITB1	Module	create	58
+2014-06-17T00:06:06+02:00 INFO  accessLog name  module13
+2014-06-17T00:06:06+02:00 INFO  accessLog 8	IITB1	Module	create	59
+2014-06-17T00:15:00+02:00 INFO  accessLog name  vishnu17061
+2014-06-17T00:15:00+02:00 INFO  accessLog email vishnu@gmail.com 
+2014-06-17T00:15:00+02:00 INFO  accessLog passwordsaEZ6MlWYV9nQ 
+2014-06-17T00:15:00+02:00 INFO  accessLog status 0 
+2014-06-17T00:15:00+02:00 INFO  accessLog 8	IITB1	Users	create	10

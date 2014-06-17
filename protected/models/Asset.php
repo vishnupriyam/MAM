@@ -24,7 +24,6 @@ class Asset extends CActiveRecord
 
 	public $write;
 	public $file;
-	public $departmentId;
 	public $categoryId;
 	/**
 	 * @return string the associated database table name
@@ -72,6 +71,7 @@ class Asset extends CActiveRecord
 		 'users'=>array(self::BELONGS_TO,'Users','ownerId'),
 		'category'=>array(self::BELONGS_TO,'Category','categoryId'),
 		'tags' => array(self::MANY_MANY, 'Tags', 'asset_tags(assetId,tagId)'),
+		'OwnerDept'=>array(self::BELONGS_TO,'Ou_structure','departmentId'),
 
 		);
 	}
@@ -96,6 +96,7 @@ class Asset extends CActiveRecord
 			'reviewer' => 'Reviewer',
 			'reviewerComments' => 'Reviewer Comments',
 			'ownerId' => 'Owner',
+			'departmentId'=>'departmentId'
 		);
 	}
 
@@ -160,8 +161,9 @@ class Asset extends CActiveRecord
               return parent::beforeSave();
                }
 
-public function getStatus(){
-    	if($this->status==0)
+public function getStatus(){      //for reviewer display all assets with status 0 ,3,
+									//display documents with status 1 - allowed to check out
+    	if($this->status==0)       
     	 return "NOT REVIEWED";
     	elseif($this->status==1)
     	 return "REVIEWED";

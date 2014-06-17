@@ -16,17 +16,17 @@
 
 
 <script type="text/javascript">
-    function updateABlock(grid_id) {
+    function updateUsersBlocks(grid_id) {
  
         var keyId = $.fn.yiiGridView.getSelection(grid_id);
         keyId  = keyId[0]; //above function returns an array with single item, so get the value of the first item
  
         $.ajax({
-            url: '<?php echo $this->createUrl('PartUpdate'); ?>',
+            url: '<?php echo $this->createUrl('VersionViewUpdate'); ?>',
             data: {id: keyId},
             type: 'GET',
             success: function(data) {
-                $('#part-block').html(data);
+                $('#version_details').html(data);
             }
         });
     }
@@ -35,12 +35,12 @@
 
 
 <?php
-	$modifiedBy = "1";
+	//$modifiedBy = "1";
 
 
 	$this->widget('zii.widgets.grid.CGridView',array(
 	'dataProvider'=>$dataProvider,
-	'selectionChanged' => 'updateABlock',
+	'selectionChanged' => 'updateUsersBlocks',
 	'selectableRows' => 1, 
 	'columns'=>array(
  	 'revision',
@@ -55,6 +55,6 @@
 ?>
 
 
-<div id='part-block'>
+<div id='version_details'>
 //your php-html code
 </div>

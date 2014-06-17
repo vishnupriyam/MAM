@@ -326,14 +326,16 @@ public function mailsend($to,$from,$subject,$message){
 				//$id = Yii::app()->db->getLastInsertId();
 				$desc = $model->description;
 				$email = $model->email;
+				$ouId = Ou_structure::model()->find('orgId=:orgId',array(':orgId'=>$model->orgId))->id;
 				$pwd = crypt("hello", 'salt');
-				$sql2 = "insert into users(name,password,email,orgId) values(:username, :pwd, :email, :id)";
+				$sql2 = "insert into users(name,password,email,orgId,ouId) values(:username, :pwd, :email, :id,:ouId)";
         		$username = $model->orgName;
 				$command2 = $connection->createCommand($sql2);
 				$command2->bindParam(":username",$username,PDO::PARAM_STR);
 				$command2->bindParam(":pwd",$pwd,PDO::PARAM_STR);
 				$command2->bindParam(":email",$email,PDO::PARAM_STR);
 				$command2->bindParam(":id",$ans2,PDO::PARAM_INT);
+				$command2->bindParam(":ouId",$ouId,PDO::PARAM_INT);
 				
 				$command2->execute();
 				

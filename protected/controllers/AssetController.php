@@ -28,7 +28,7 @@ class AssetController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','properties','infoOptions','history','admin','partUpdate'),
+				'actions'=>array('index','view','properties','infoOptions','history','admin','versionViewUpdate','userTable'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -91,6 +91,7 @@ class AssetController extends Controller
 			*/
 			
 			$model->categoryId = $_POST['Asset']['categoryId'];
+			$model->departmentId = $_POST['Asset']['departmentId'];
 			
 			if(!empty($_POST['tags']))
 			{
@@ -335,15 +336,22 @@ public function actionViewer($id)
 		
 	}
 	
-	public function actionPartUpdate($id = null) {
-        $model = Asset::model()->findByPk("1");
+	public function actionVersionViewUpdate($id = null) {
+		$model = AssetRevision::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
  
-        $this->renderPartial('view', array('model' => $model));
+        $this->renderPartial('../AssetRevision/view', array('model' => $model));
         Yii::app()->end();
 	}
-	
-	
+
+	public function actionUserTable($id = null) {
+        $model = Ou_structure::model()->findByPk($id);
+        if ($model === null)
+            throw new CHttpException(404, 'The requested page does not exist.');
+ 
+        $this->renderPartial('usersPermission', array('model' => $model));
+        Yii::app()->end();
+	}
 }
 
