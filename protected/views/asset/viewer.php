@@ -12,16 +12,16 @@
  $a = $asset->file;
  
  $assetId = $asset->assetId;
+ */
  
+ $b = "http://localhost/final/Viewer.js/#../upload/".Yii::app()->user->getId()."/".$model->categoryId."/".$model->file;
  
- $b = "http://localhost/final/Viewer.js/#../upload/545/".$category."/".$a;
- 
- 
+
  ?> 
  <iframe id="viewer" src = "<?php echo $b;?>"
   width='800' height='500' allowfullscreen webkitallowfullscreen></iframe>
 <?php  
- echo $a;
+ //echo $a;
 ?>
 <?php /* 
 if ($a == "odpp.odp") {?>	

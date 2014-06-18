@@ -66,7 +66,7 @@ If you have business inquiries or other questions, please fill out the following
 	<?php endif; ?>
 
 	<div class="row buttons">
-		<?php echo TbHtml::submitButton('Submit'); ?>
+		<?php echo TbHtml::submitButton('Submit',array('color'=>TbHtml::BUTTON_COLOR_PRIMARY)); ?>
 		<?php echo TbHtml::submitButton(Yii::t('Yii','Cancel'),array(
  			'name'=>'buttonCancel',
 			'color'=>TbHtml::BUTTON_COLOR_DANGER,

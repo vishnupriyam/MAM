@@ -18,12 +18,32 @@ $('.search-form form').submit(function(){
 ?>
 
 
+<script type="text/javascript">
+    function updateInfoOptions(grid_id) {
+ 
+        var keyId = $.fn.yiiGridView.getSelection(grid_id);
+        keyId  = keyId[0]; //above function returns an array with single item, so get the value of the first item
+ 
+        $.ajax({
+            url: '<?php echo $this->createUrl('InfoOptionsViewUpdate'); ?>',
+            data: {id: keyId},
+            type: 'GET',
+            success: function(data) {
+                $('#infoOptions_details').html(data);
+            }
+        });
+    }
+</script>
+
+
+
+
 
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'asset-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
-	
+	'selectionChanged'=>'updateInfoOptions',
 	'columns'=>array(
 		'assetId',
 		'assetName',
@@ -41,3 +61,9 @@ $('.search-form form').submit(function(){
 		
 	),
 )); ?>
+
+<div id="infoOptions_details">
+
+//info here
+
+</div>

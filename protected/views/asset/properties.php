@@ -94,5 +94,11 @@
                 
             )); ?>
 <?php  echo TbHtml::button('Manage', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
-<?php  echo TbHtml::button('Download', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
+<?php  echo CHtml::link(
+    'Download',
+     Yii::app()->createUrl('Asset/Download' , array('id' => $model->assetId)),
+     array('class'=>'btnPrint btn btn-info','target'=>'_blank'));
+
+?>
+
 </div>

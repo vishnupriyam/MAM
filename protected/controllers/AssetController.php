@@ -28,7 +28,7 @@ class AssetController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','properties','infoOptions','history','admin','versionViewUpdate','userTable','download'),
+				'actions'=>array('index','view','properties','infoOptions','history','admin','versionViewUpdate','userTable','download','infoOptionsViewUpdate'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -68,30 +68,25 @@ class AssetController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
+		$modelUsers = new Users('search');
+		
+		$modelUsers->unsetAttributes();
+		if (isset($_GET['Users'])) {
+			$modelUsers->attributes=$_GET['Users'];
+		}
+		
+		
+		
+		
 		if (isset($_POST['Asset'])) {
 			$model->attributes=$_POST['Asset'];
 
 			$model->file=CUploadedFile::getInstance($model,'file');
-			//$model->type=$model->file->getType();
-			//$model->type=$model->file->extensionName;
-			//$model->createDate=
-			
-			
-			/* getting the records from list of primary keys 
-			//print_r($_POST['users']);die();
-			$usersIds = $_POST['users'];
-			$userRecords = Users::model()->findAllByPk($usersIds);
-			//print_r($userRecords);die();
-
-			foreach($userRecords as $record){
-				print_r($record->name."\n");
-			}
-			die();
-			
-			*/
-			
+						
+			$uid = Yii::app()->user->getState("uid"); 
+			$user = Users::model()->find('uid=:uid',array(':uid'=>$uid));
 			$model->categoryId = $_POST['Asset']['categoryId'];
-			$model->departmentId = $_POST['Asset']['departmentId'];
+			$model->departmentId = $user->ouId;
 			
 			if(!empty($_POST['tags']))
 			{
@@ -102,6 +97,8 @@ class AssetController extends Controller
 			
 			if ($model->save()) {
 
+				
+				
 				$orgId=Yii::app()->user->getId();
 				$fileName=$model->assetId.'.dat';
 				$categoryId=$_POST['Asset']['categoryId'];
@@ -117,7 +114,6 @@ class AssetController extends Controller
 
 				$model->file->saveAs(Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$fileName);
 
-				
 				
 				
 				if(!empty($_POST['tags'])){
@@ -155,7 +151,7 @@ class AssetController extends Controller
        			}}
 
        			
-       			if(!empty($_POST['edit'])){
+       			if(!empty($_POST['write'])){
 				$write = $_POST['write'];
        			foreach($write as $writeRow){
 					$AssetOuFilep = new AssetOuFilep;
@@ -186,13 +182,59 @@ class AssetController extends Controller
             	    $AssetOuFilep->fpId = 3;
                 	$AssetOuFilep->save();
        			}}
+       			
+       			if(!empty($_POST['Aread'])){
+				$read = $_POST['Aread'];
+				foreach($read as $readRow){
+					$AssetUserFilep = new AssetUserFilep;
+        	        $AssetUserFilep->assetId = $model->assetId;
+            	    $AssetUserFilep->uId = $readRow;
+            	    $AssetUserFilep->fpId = 0;
+                	$AssetUserFilep->save();
+       			}}
+
+       			
+       			if(!empty($_POST['Awrite'])){
+				$write = $_POST['Awrite'];
+       			foreach($write as $writeRow){
+					$AssetUserFilep = new AssetUserFilep;
+        	        $AssetUserFilep->assetId = $model->assetId;
+            	    $AssetUserFilep->uId = $writeRow;
+            	    $AssetUserFilep->fpId = 1;
+                	$AssetUserFilep->save();
+       			}}
+       			
+
+				if(!empty($_POST['Aedit'])){
+				$edit = $_POST['Aedit'];
+				foreach($edit as $editRow){
+					$AssetUserFilep = new AssetUserFilep;
+        	        $AssetUserFilep->assetId = $model->assetId;
+            	    $AssetUserFilep->uId = $editRow;
+            	    $AssetUserFilep->fpId = 2;
+                	$AssetUserFilep->save();
+       			}}
+
+       			
+				if(!empty($_POST['Adelete'])){
+				$delete = $_POST['Adelete'];
+				foreach($delete as $deleteRow){
+					$AssetUserFilep = new AssetUserFilep;
+        	        $AssetUserFilep->assetId = $model->assetId;
+            	    $AssetUserFilep->uId = $editRow;
+            	    $AssetUserFilep->fpId = 3;
+                	$AssetUserFilep->save();
+       			}}
+       			
+       			
+       			
 			}
 
 			$this->redirect(array('view','id'=>$model->assetId));
 		}
 
 		$this->render('create',array(
-			'model'=>$model,
+			'model'=>$model,'modelUsers'=>$modelUsers,
 		));
 	}
 
@@ -295,7 +337,7 @@ public function actionViewer($id)
 		
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('viewer', array('a'=>$id));
+		$this->render('viewer', array('model'=>$model));
 	}
 
 	/**
@@ -345,6 +387,19 @@ public function actionViewer($id)
         Yii::app()->end();
 	}
 
+	public function actionInfoOptionsViewUpdate($id = null) {
+		$model = Asset::model()->findByPk($id);
+        if ($model === null)
+            throw new CHttpException(404, 'The requested page does not exist.');
+ 
+        $this->renderPartial('infoOptions', array('model' => $model));
+        Yii::app()->end();
+	}
+	
+	
+	
+	
+	
 	public function actionUserTable($id = null) {
         $model = Ou_structure::model()->findByPk($id);
         if ($model === null)
@@ -354,54 +409,30 @@ public function actionViewer($id)
         Yii::app()->end();
 	}
 	
-	public function actionDownload($file,$id){
+	public function actionDownload($id){
 	
 		$model = $this->loadModel($id);
-	//print_r(	Yii::app()->user->getId());die();
+		//print_r(	Yii::app()->user->getId());die();
 		if (isset($_SERVER['HTTP_RANGE'])) 
 			$range = $_SERVER['HTTP_RANGE'];
 			$dir_path = Yii::getPathOfAlias('webroot') .'/upload/'.Yii::app()->user->getId().'/'.$model->categoryId.'/';
 		
-			$filePath=$dir_path.$id;
-	
-			header('Content-Length: ' . filesize($filePath));
-			header("Pragma: public");
-  			header("Content-Type: text/plain",false);
-  			header("Content-Type: image/png",false);
-  			header("Content-Type: image/jpg",false);
-  			header("Content-Type: image/jpg",false);
-  			header("Content-Type: application/pdf",false);
-  			header("Content-Type: application/octet-stream",false);
-  			header("Content-Type: application/zip",false);
-  			header("Content-Type: application/msword",false);
-  			header("Content-Type: application/vnd.ms-excel",false);
-  			header("Content-Type: application/vnd.ms-powerpoint",false);
-  			header("Content-Type: application/force-download",false);
- 			header("Content-Type: video/mp4");
-   			header("Content-Type: audio/mpeg");
- 		    header("Content-Type: video/x-msvideo");
-    
-   			header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-  			header("Accept Ranges: bytes");
-  
-  			$filecontent=file_get_contents($dir_path.$image);
-  
- 			 header("Content-disposition: attachment;  filename=$image");
- 			 header("Pragma: no-cache");
-	
-			$file = @fopen($filePath,"rb");
-			while(!feof($file))
-			{
-				print(@fread($file, 1024*8));
-				ob_flush();
-				flush();
-			}
- 			echo $filecontent;
- 			 exit;
- 			 
-	
-		}	
-	
+			$filePath=$dir_path.$id.'.dat';
+			if (file_exists($filePath))
+    		{
+        		// send headers to browser to initiate file download
+        		header ('Content-Type: application/octet-stream');
+        		header ('Content-Disposition: attachment; filename="' . $model->file . '"');
+        		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        		header('Pragma: public');
+        		readfile($filePath);
+           }
+   		 else
+    		{
+        		echo 'File does not exist...';
+    		}
+			
+	  }	
 	
 }
 

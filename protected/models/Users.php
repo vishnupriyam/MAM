@@ -132,6 +132,24 @@ class Users extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	public function search2()    //for asset _form.php
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('uid',$this->uid);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('orgId',Yii::app()->user->getId());
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+	
+	
+	
+	
 
 	/**
 	 * Returns the static model of the specified AR class.

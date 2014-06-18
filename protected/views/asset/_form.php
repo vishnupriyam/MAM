@@ -10,6 +10,9 @@
 	width:10%;
 	padding-left:4em;}
 	.radio.inline, .checkbox.inline{width:34%; margin-left:20px !important;}
+	#Users_table{
+	
+	}
 
 
 </style>
@@ -42,16 +45,30 @@
 			$modelA = Users::model()->find('uid=:uid',array(':uid'=>$presentuid));
 			$departmentId1 = $modelA->ouId;
 			
-            echo $form->dropDownListControlGroup($model,'ownerId',CHtml::listData(Users::model()->findAll('ouId=:ouId',array(':ouId'=>$departmentId1)), 'uid', 'name')); ?>
+            echo $form->dropDownListControlGroup($model,'ownerId',CHtml::listData(Users::model()->findAll('ouId=:ouId',array(':ouId'=>$departmentId1)), 'uid', 'name'));
+             ?>
             
             <?php 
             
             $root = Ou_structure::model()->find('orgId=:orgId',array(':orgId'=>$orgId));
             $root = $root->id;
-            echo $form->dropDownListControlGroup($model,'departmentId',CHtml::listData(Ou_structure::model()->findAll('root=:root',array(':root'=>$root)), 'id', 'name'),array('label'=>'Department')); ?>
+            /*echo $form->dropDownListControlGroup($model,'departmentId',CHtml::listData(Ou_structure::model()->findAll('root=:root',array(':root'=>$root)), 'id', 'name'),
+            
+            	array(
+    			//'prompt'=>'Select Category',
+    			'label'=>'Department',
+    			'ajax' => array(
+    			'type'=>'POST', 
+    			'url'=>Yii::app()->createUrl('Asset/loadCategoryId'), //or $this->createUrl('loadcities') if '$this' extends CController
+    			'update'=>'#categoryId', //or 'success' => 'function(data){...handle the data in the way you want...}',
+  				'data'=>array('departmentId'=>'js:this.value'),
+ 			 ))
+            );*/ ?>
             
          	<?php
-			echo $form->dropDownListControlGroup($model,'categoryId',CHtml::listData(Category::model()->findAll('orgId=:orgId',array(':orgId'=>$orgId)), 'cat_id', 'name'),array('label'=>'Category')); ?>
+			echo $form->dropDownListControlGroup($model,'categoryId',
+			CHtml::listData(Category::model()->findAll('orgId=:orgId',array(':orgId'=>$orgId)), 'cat_id', 'name'),
+			array('label'=>'Category')); ?>
             
 			<?php // echo TbHtml::inlinecheckBoxListControlGroup('tags','',CHtml::listData(Tags::model()->findAll(), 'tagId', 'tagName'), array('span'=>3,'label'=>'Tags','help' => '<strong>Note:</strong> Add multiple tags with commas.')); ?>	 
 	 
@@ -93,20 +110,20 @@
 	<div class="span9 offset1">
 	
 	<script type="text/javascript">
-    function updateUsersTable(grid_id) {
+    /*function updateUsersTable(grid_id) {
  
         var keyId = $.fn.yiiGridView.getSelection(grid_id);
         keyId  = keyId[0]; //above function returns an array with single item, so get the value of the first item
  
         $.ajax({
-            url: '<?php echo $this->createUrl('UserTable'); ?>',
+            url: '<?php //echo $this->createUrl('UserTable'); ?>',
             data: {id: keyId},
             type: 'GET',
             success: function(data) {
                 $('#Users_table').html(data);
             }
         });
-    }
+    }*/
 	</script>	        
 		        
 		        
@@ -123,7 +140,7 @@
 			//$dataProvider = Ou_structure::model()->findAll('orgId=:orgId',array('orgId'=>$orgId));
 			$number = 0;
 				$this->widget('bootstrap.widgets.TbGridView', array(
-				'selectionChanged' => 'updateUsersTable',
+				//'selectionChanged' => 'updateUsersTable',
 				'selectableRows' => 1,
 				'id'=>'gview',
 				'dataProvider'=>$dataProvider,
@@ -170,9 +187,84 @@
 	
 		</div>
 		
-		
+		<br />
+		<hr />
 		<div id='Users_table'>
-			//your php-html code
+			
+			
+<?php
+/* @var $this AssetController */
+/* @var $model Asset */
+
+
+Yii::app()->clientScript->registerScript('search2', "
+$('.search-button').click(function(){
+	$('.search-form').toggle();
+	return false;
+});
+$('.search-form form').submit(function(){
+	$('#Agview').yiiGridView('update', {
+		data: $(modelUsers).serialize()
+	});
+	return false;
+});
+");
+?>
+			
+			
+			<?php 
+			
+				$this->widget('bootstrap.widgets.TbGridView', array(
+				'selectableRows' => 2,
+				'id'=>'Agview',
+				'dataProvider'=>$modelUsers->search2(),
+				'filter'=>$modelUsers,
+				'rowHtmlOptionsExpression' => 'array("uid"=>$data->uid)',
+				'columns'=>array(
+    			array('name'=>'name','header'=>'Users'),    /*in header give the role name while passing*/
+	 			array('header'=>'Read','value'=>'','id'=>'headerA'),
+	    		array(
+	    		    
+	        		'class'=>'CCheckBoxColumn',
+	        		'id'=>'Aread',
+	        		'selectableRows'=>2,
+	    			'header'=>'Read',
+	    		
+	    		),    	
+	    		array('header'=>'Write','value'=>'','id'=>'headerA'),
+	    		array(
+	        		'class'=>'CCheckBoxColumn',
+	        		'id'=>'Awrite',
+	        		'selectableRows'=>2,
+	    			'header'=>'Write',
+	    		),
+	    		array('header'=>'Edit','value'=>'','id'=>'headerA'),
+	    		array(
+	        		'class'=>'CCheckBoxColumn',
+	        		'id'=>'Aedit',
+	        		'header'=>'Edit',
+	    			'selectableRows'=>2,
+	    		),
+	    		array('header'=>'Delete','value'=>'','id'=>'headerA'),
+	    		array(
+	        		'class'=>'CCheckBoxColumn',
+	        		'id'=>'Adelete',
+	        		'selectableRows'=>2,
+	    			'header'=>'Delete',
+	    		)    	
+	      ),
+   		)
+		);
+
+			
+			
+			
+			
+			?>
+			
+			
+			
+			
 		</div>
 		
 		<div class="">

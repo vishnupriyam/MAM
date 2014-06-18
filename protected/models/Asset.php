@@ -133,11 +133,11 @@ class Asset extends CActiveRecord
 		$criteria->compare('reviewer',$this->reviewer,true);
 		$criteria->compare('reviewerComments',$this->reviewerComments,true);
 		$criteria->compare('ownerId',$this->ownerId);
-		//$criteria->compare('owner_name','',true);
+		//$criteria->compare('ownerId',$this->users->name,true);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 			'pagination' => array(
-            'pageSize' => 10
+            'pageSize' => 5
         ),
 		));
 	}
@@ -163,11 +163,11 @@ class Asset extends CActiveRecord
 		$criteria->compare('reviewer',$this->reviewer,true);
 		$criteria->compare('reviewerComments',$this->reviewerComments,true);
 		$criteria->compare('ownerId',Yii::app()->user->getState("uid"));
-		//$criteria->compare('owner_name','',true);
+		$criteria->compare('owner_name',$this->users->name,true);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 			'pagination' => array(
-            'pageSize' => 10
+            'pageSize' => 5
         ),
 		));
 	}

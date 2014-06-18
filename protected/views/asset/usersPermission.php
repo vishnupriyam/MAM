@@ -1,4 +1,7 @@
-<br/>
+<br />
+<hr >
+
+
 <?php
 
 	
@@ -16,50 +19,50 @@
                                 )));
 			
 			//$dataProvider = Ou_structure::model()->findAll('orgId=:orgId',array('orgId'=>$orgId));
-			$number = 0;
-				$this->widget('bootstrap.widgets.TbGridView', array(
+			$this->widget('bootstrap.widgets.TbGridView', array(
 				//'selectionChanged' => 'updateUsersTable',
-				'selectableRows' => 1,
-				'id'=>'gview',
+				'selectableRows' => 2,
+				'id'=>'Agview',
 				'dataProvider'=>$dataProvider,
 				'rowHtmlOptionsExpression' => 'array("uid"=>$data->uid)',
 				'columns'=>array(
-    			array('name'=>'name','header'=>'Users'),    //in header give the role name while passing
-	 			array('header'=>'Read1','value'=>'','id'=>'headerA'),
+    			array('name'=>'name','header'=>'Users'),    /*in header give the role name while passing*/
+	 			//array('header'=>'Read','value'=>'','id'=>'headerA'),
 	    		array(
 	    		    
 	        		'class'=>'CCheckBoxColumn',
-	        		'id'=>'read',
-	        		'selectableRows'=>2,
+	        		'id'=>'Aread',
+	        		'selectableRows'=>1,
 	    			'header'=>'Read',
 	    		
 	    		),    	
-	    		array('header'=>'Write1','value'=>'','id'=>'headerA'),
+	    		//array('header'=>'Write','value'=>'','id'=>'headerA'),
 	    		array(
 	        		'class'=>'CCheckBoxColumn',
-	        		'id'=>'write',
-	        		'selectableRows'=>2,
+	        		'id'=>'Awrite',
+	        		'selectableRows'=>1,
 	    			'header'=>'Write',
 	    		),
-	    		array('header'=>'Edit1','value'=>'','id'=>'headerA'),
+	    		//array('header'=>'Edit','value'=>'','id'=>'headerA'),
 	    		array(
 	        		'class'=>'CCheckBoxColumn',
-	        		'id'=>'edit',
+	        		'id'=>'Aedit',
 	        		'header'=>'Edit',
-	    			'selectableRows'=>2,
+	    			'selectableRows'=>1,
 	    		),
-	    		array('header'=>'Delete1','value'=>'','id'=>'headerA'),
+	    		//array('header'=>'Delete','value'=>'','id'=>'headerA'),
 	    		array(
 	        		'class'=>'CCheckBoxColumn',
-	        		'id'=>'delete',
-	        		'selectableRows'=>2,
+	        		'id'=>'Adelete',
+	        		'selectableRows'=>1,
 	    			'header'=>'Delete',
 	    		)    	
 	      ),
    		)
 		);
-   
- ?>
+
+ 		
+	?>
    
    
    
