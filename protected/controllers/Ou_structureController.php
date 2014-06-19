@@ -2,7 +2,7 @@
 
 class Ou_structureController extends BaseController
 {
-	public $layout = '//layouts/col2';
+	public $layout = '//layouts/column2';
 
     public function   init()
     {
@@ -68,4 +68,32 @@ class Ou_structureController extends BaseController
 		);
 	}
 	*/
+	
+	public function actionReviewerFind($id)
+		{
+    		$model=new ReviewerOustructure('reviewerFind');
+    		$model->ouId = $id;
+    		// uncomment the following code to enable ajax-based validation
+   			 /*
+    		if(isset($_POST['ajax']) && $_POST['ajax']==='reviewer-oustructure-reviewerFind-form')
+    		{
+        	echo CActiveForm::validate($model);
+        	Yii::app()->end();
+    		}
+    		*/
+
+    		if(isset($_POST['ReviewerOustructure']))
+    		{
+        		$model->attributes=$_POST['ReviewerOustructure'];
+        		if($model->validate())
+       			 {
+            		// form inputs are valid, do something here
+            		$model->save();
+            		return;
+       	 	}
+    	}
+    		$this->render('reviewerFind',array('model'=>$model));
+	}
+
+	
 }

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 17, 2014 at 08:35 AM
+-- Generation Time: Jun 19, 2014 at 09:21 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `asset` (
   `onlineEditable` tinyint(1) NOT NULL,
   `size` int(11) DEFAULT NULL,
   `type` varchar(18) DEFAULT NULL,
-  `reviewer` varchar(45) DEFAULT NULL,
+  `reviewer` int(11) DEFAULT NULL,
   `reviewerComments` text,
   `ownerId` int(11) NOT NULL,
   `categoryId` int(11) NOT NULL,
@@ -48,11 +48,14 @@ CREATE TABLE IF NOT EXISTS `asset` (
   PRIMARY KEY (`assetId`),
   KEY `fk_asset_users_idx` (`ownerId`),
   KEY `categoryId` (`categoryId`),
-  KEY `departmentId` (`departmentId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+  KEY `departmentId` (`departmentId`),
+  KEY `reviewer` (`reviewer`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- RELATIONS FOR TABLE `asset`:
+--   `reviewer`
+--       `users` -> `uid`
 --   `categoryId`
 --       `category` -> `cat_id`
 --   `departmentId`
@@ -66,9 +69,15 @@ CREATE TABLE IF NOT EXISTS `asset` (
 --
 
 INSERT INTO `asset` (`file`, `assetId`, `assetName`, `createDate`, `description`, `comment`, `status`, `publication`, `onlineEditable`, `size`, `type`, `reviewer`, `reviewerComments`, `ownerId`, `categoryId`, `departmentId`) VALUES
-('1.jpg', 4, 'file1', '2014-06-16 22:37:34', 'description :P', '', NULL, 1, 0, 14117, 'image/jpeg', NULL, NULL, 8, 2, 6),
-('2.jpg', 5, 'file2', '2014-06-16 22:39:04', '', '', NULL, 0, 0, 17422, 'image/jpeg', NULL, NULL, 8, 2, 6),
-('11.jpg', 7, 'three', '2014-06-17 03:21:04', '', '', NULL, 0, 0, 13014, 'image/jpeg', NULL, NULL, 10, 2, 6);
+('1.jpg', 4, 'file1', '2014-06-16 22:37:34', 'description :P', '', 5, 1, 0, 14117, 'image/jpeg', 8, NULL, 8, 2, 6),
+('2.jpg', 5, 'file2', '2014-06-16 22:39:04', '', '', 2, 0, 0, 17422, 'image/jpeg', 8, NULL, 8, 2, 6),
+('11.jpg', 7, 'three', '2014-06-17 03:21:04', '', '', 0, 0, 0, 13014, 'image/jpeg', 10, NULL, 10, 2, 6),
+('5.jpg', 8, 'fourth', '2014-06-17 08:39:37', 'this is the fourth asset in this', 'hehehe', 2, 0, 0, 16288, 'image/jpeg', 8, NULL, 8, 2, 6),
+('mvp resume.docx', 9, 'resume', '2014-06-17 08:55:34', 'asasasasas', 'asasa', 0, 0, 0, 13615, 'application/vnd.op', 10, NULL, 10, 4, 6),
+('permission.php', 11, '', '2014-06-17 14:47:27', '', '', 0, 0, 0, 1303, 'application/x-php', 10, NULL, 8, 2, 6),
+('Doc2.docx', 12, '', '2014-06-17 14:52:35', '', '', 0, 0, 0, 218323, 'application/vnd.op', 8, NULL, 8, 2, 6),
+('AMIP38175499_2013-06-28_22-12-05.pdf', 13, '', '2014-06-18 05:29:01', '', '', 0, 0, 0, 33975, 'application/pdf', 8, NULL, 8, 2, 6),
+('9.jpg', 14, '', '2014-06-18 06:55:18', '', '', 3, 0, 0, 17927, 'image/jpeg', 8, NULL, 8, 2, 6);
 
 -- --------------------------------------------------------
 
@@ -87,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `asset_ou_filep` (
   KEY `assetId` (`assetId`,`ouId`,`fpId`),
   KEY `ouId` (`ouId`),
   KEY `fpId` (`fpId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- RELATIONS FOR TABLE `asset_ou_filep`:
@@ -98,15 +107,6 @@ CREATE TABLE IF NOT EXISTS `asset_ou_filep` (
 --   `fpId`
 --       `filepermission` -> `fpId`
 --
-
---
--- Dumping data for table `asset_ou_filep`
---
-
-INSERT INTO `asset_ou_filep` (`Id`, `assetId`, `ouId`, `fpId`) VALUES
-(2, 4, 6, 0),
-(3, 4, 7, 0),
-(4, 4, 8, 0);
 
 -- --------------------------------------------------------
 
@@ -145,8 +145,8 @@ CREATE TABLE IF NOT EXISTS `asset_revision` (
 --
 
 INSERT INTO `asset_revision` (`assetId`, `modifiedOn`, `modifiedBy`, `note`, `revision`, `id`) VALUES
-(4, '2014-06-16 22:43:06', 7, 'note1', '0', 7),
-(4, '2014-06-16 22:43:28', 7, 'note', 'current', 8);
+(4, '2014-06-18 14:07:23', 7, 'note1', ' 0', 7),
+(4, '2014-06-18 14:07:28', 7, 'note', ' current', 8);
 
 -- --------------------------------------------------------
 
@@ -183,6 +183,34 @@ INSERT INTO `asset_tags` (`assetId`, `tagId`) VALUES
 (5, 5),
 (5, 7),
 (7, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `asset_user_filep`
+--
+-- Creation: Jun 17, 2014 at 02:37 PM
+--
+
+CREATE TABLE IF NOT EXISTS `asset_user_filep` (
+  `id` int(11) NOT NULL,
+  `assetId` int(11) NOT NULL,
+  `uId` int(11) NOT NULL,
+  `fpId` int(11) NOT NULL,
+  KEY `assetId` (`assetId`),
+  KEY `uId` (`uId`),
+  KEY `fpId` (`fpId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- RELATIONS FOR TABLE `asset_user_filep`:
+--   `assetId`
+--       `asset` -> `assetId`
+--   `uId`
+--       `users` -> `uid`
+--   `fpId`
+--       `filepermission` -> `fpId`
+--
 
 -- --------------------------------------------------------
 
@@ -267,7 +295,7 @@ CREATE TABLE IF NOT EXISTS `fileaccesslog` (
   PRIMARY KEY (`fileAccessLogId`),
   KEY `fk_fileAccessLog_asset1_idx` (`assetId`),
   KEY `uId` (`uId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
 
 --
 -- RELATIONS FOR TABLE `fileaccesslog`:
@@ -283,7 +311,32 @@ CREATE TABLE IF NOT EXISTS `fileaccesslog` (
 
 INSERT INTO `fileaccesslog` (`timeStamp`, `action`, `fileAccessLogId`, `assetId`, `uId`) VALUES
 ('2014-06-16 22:40:11', 'V', 3, 4, 8),
-('2014-06-16 22:40:11', 'CI', 4, 4, 8);
+('2014-06-16 22:40:11', 'CI', 4, 4, 8),
+('2014-06-18 12:24:24', 'CI', 7, 4, 8),
+('2014-06-18 12:33:49', 'CI', 8, 5, 8),
+('2014-06-18 12:35:25', 'CI', 9, 4, 8),
+('2014-06-18 12:37:25', 'CI', 10, 4, 8),
+('2014-06-18 12:39:16', 'CI', 11, 4, 8),
+('2014-06-18 12:41:05', 'CI', 12, 4, 8),
+('2014-06-18 12:42:48', 'CI', 13, 4, 8),
+('2014-06-18 12:45:48', 'CI', 14, 4, 8),
+('2014-06-18 12:51:52', 'CI', 15, 4, 8),
+('2014-06-18 12:54:17', 'CI', 16, 4, 8),
+('2014-06-18 13:00:04', 'CI', 17, 4, 8),
+('2014-06-18 13:01:10', 'CI', 18, 4, 8),
+('2014-06-18 13:02:02', 'CI', 19, 4, 8),
+('2014-06-18 13:54:20', 'CI', 20, 4, 8),
+('2014-06-18 13:56:11', 'CI', 21, 4, 8),
+('2014-06-18 14:04:07', 'CI', 22, 4, 8),
+('2014-06-18 14:04:28', 'CI', 23, 4, 8),
+('2014-06-18 14:04:58', 'CI', 24, 4, 8),
+('2014-06-18 14:05:31', 'CI', 25, 4, 8),
+('2014-06-18 14:06:12', 'CI', 26, 4, 8),
+('2014-06-18 14:06:54', 'CI', 27, 4, 8),
+('2014-06-18 14:07:42', 'CI', 28, 4, 8),
+('2014-06-18 14:08:05', 'CI', 29, 4, 8),
+('2014-06-18 14:13:23', 'CI', 30, 4, 8),
+('2014-06-18 14:13:50', 'CI', 31, 4, 8);
 
 -- --------------------------------------------------------
 
@@ -367,7 +420,11 @@ INSERT INTO `module_organisation` (`mid`, `orgId`) VALUES
 (54, 4),
 (55, 4),
 (56, 4),
-(57, 4);
+(57, 4),
+(54, 5),
+(55, 5),
+(56, 5),
+(57, 5);
 
 -- --------------------------------------------------------
 
@@ -392,7 +449,7 @@ CREATE TABLE IF NOT EXISTS `organisation` (
   `orgId` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `validity` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`orgId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `organisation`
@@ -402,7 +459,8 @@ INSERT INTO `organisation` (`orgName`, `noEmp`, `phone`, `email`, `addr1`, `addr
 ('IIT Bombay', NULL, NULL, '', '', '', '', '', '0', '', NULL, 1, 1),
 ('IITBOO', NULL, NULL, '', '', '', '', '', '0', '', NULL, 2, 1),
 ('IITBOO', NULL, NULL, '', '', '', '', '', '0', '', NULL, 3, 1),
-('IITB1', NULL, NULL, '', '', '', '', '', '0', '', NULL, 4, 1);
+('IITB1', NULL, NULL, '', '', '', '', '', '0', '', NULL, 4, 1),
+('iitb2', 299, 2147483647, 'aks@gmail.com', 'asas', 'asasas', 'asasa', 'asasas', '1', 'asasa', 121212121, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -427,7 +485,7 @@ CREATE TABLE IF NOT EXISTS `ou_structure` (
   KEY `rgt` (`rgt`),
   KEY `level` (`level`),
   KEY `root` (`root`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `ou_structure`
@@ -439,9 +497,11 @@ INSERT INTO `ou_structure` (`id`, `root`, `lft`, `rgt`, `level`, `name`, `descri
 (3, 1, 4, 5, 2, 'dept2', 'dept2\n', 0, 'dept2'),
 (4, 4, 1, 2, 1, 'IITBOO', 'hello', 2, ''),
 (5, 5, 1, 2, 1, 'IITBOO', 'hello', 3, ''),
-(6, 6, 1, 6, 1, 'IITB1', 'hello', 4, ''),
+(6, 6, 1, 8, 1, 'IITB1', 'hello', 4, ''),
 (7, 6, 2, 3, 2, 'IITB12', 'iitbombay\n', 0, 'IITB'),
-(8, 6, 4, 5, 2, 'IITB22', 'sffsad', 0, 'iitb22');
+(8, 6, 4, 7, 2, 'IITB22', 'sffsad', 0, 'iitb22'),
+(9, 9, 1, 2, 1, 'iitb2', 'hello', 5, ''),
+(10, 6, 5, 6, 3, 'cse', 'cse', 0, '3');
 
 -- --------------------------------------------------------
 
@@ -469,6 +529,43 @@ INSERT INTO `permissions` (`pid`, `name`, `desc`, `mid`) VALUES
 (3, 'permission1', '', 54),
 (4, 'permission2', '', 56),
 (5, 'permission1', '', 54);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reviewer_oustructure`
+--
+-- Creation: Jun 19, 2014 at 02:15 AM
+--
+
+CREATE TABLE IF NOT EXISTS `reviewer_oustructure` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ouId` int(11) unsigned NOT NULL,
+  `uId` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `ouId` (`ouId`,`uId`),
+  KEY `uId` (`uId`),
+  KEY `ouId_2` (`ouId`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- RELATIONS FOR TABLE `reviewer_oustructure`:
+--   `uId`
+--       `users` -> `uid`
+--   `ouId`
+--       `ou_structure` -> `id`
+--
+
+--
+-- Dumping data for table `reviewer_oustructure`
+--
+
+INSERT INTO `reviewer_oustructure` (`id`, `ouId`, `uId`) VALUES
+(2, 6, 10),
+(1, 7, 12),
+(3, 8, 14),
+(4, 9, 11),
+(5, 10, 16);
 
 -- --------------------------------------------------------
 
@@ -629,7 +726,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `fk_users_organisation1_idx` (`orgId`),
   KEY `orgId` (`orgId`),
   KEY `ouId` (`ouId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
 -- RELATIONS FOR TABLE `users`:
@@ -646,7 +743,13 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`uid`, `name`, `password`, `email`, `login`, `logout`, `status`, `picture`, `mobile`, `quota`, `DateCreated`, `LastUpdate`, `orgId`, `ouId`) VALUES
 (7, 'IITBOO', 'saPPmoXIbs91M', '', '2014-06-16 22:01:56', NULL, NULL, NULL, NULL, NULL, '0000-00-00 00:00:00', NULL, 2, 5),
 (8, 'IITB1', 'saPPmoXIbs91M', '', '2014-06-16 22:02:40', NULL, NULL, NULL, NULL, NULL, '0000-00-00 00:00:00', NULL, 4, 6),
-(10, 'vishnu17061', 'saEZ6MlWYV9nQ', 'vishnu@gmail.com', '2014-06-16 22:15:00', NULL, '0', NULL, '', NULL, '2014-06-17 03:45:00', NULL, 4, 6);
+(10, 'vishnu17061', 'saEZ6MlWYV9nQ', 'vishnu@gmail.com', '2014-06-16 22:15:00', NULL, '0', NULL, '', NULL, '2014-06-17 03:45:00', NULL, 4, 6),
+(11, 'iitb2', 'saPPmoXIbs91M', 'aks@gmail.com', '2014-06-17 08:48:04', NULL, NULL, NULL, NULL, NULL, '0000-00-00 00:00:00', NULL, 5, 9),
+(12, 'abcd', 'saEZ6MlWYV9nQ', 'asd@gmail.com', '2014-06-17 13:16:15', NULL, '0', NULL, '', NULL, '2014-06-17 18:46:15', NULL, 4, 7),
+(13, 'abcd2', 'saEZ6MlWYV9nQ', 'asd@gmail.com', '2014-06-17 13:16:57', NULL, '1', NULL, '8769898', NULL, '2014-06-17 18:46:57', NULL, 4, 7),
+(14, 'hjk1', 'saEZ6MlWYV9nQ', 'djh@gmail.com', '2014-06-17 13:17:34', NULL, '0', NULL, '', NULL, '2014-06-17 18:47:34', NULL, 4, 8),
+(15, 'cseuser', 'saEZ6MlWYV9nQ', 'cse@gmail.com', '2014-06-19 03:19:29', NULL, '0', NULL, '', NULL, '2014-06-19 08:49:29', NULL, 4, 6),
+(16, 'cseuser1', 'saEZ6MlWYV9nQ', 'cse@gmail.com', '2014-06-19 03:20:05', NULL, '0', NULL, '', NULL, '2014-06-19 08:50:05', NULL, 4, 10);
 
 -- --------------------------------------------------------
 
@@ -725,7 +828,12 @@ CREATE TABLE IF NOT EXISTS `users_has_role` (
 --
 
 INSERT INTO `users_has_role` (`users_uid`, `role_rid`) VALUES
-(10, 2);
+(10, 2),
+(12, 2),
+(13, 2),
+(14, 2),
+(15, 2),
+(16, 2);
 
 --
 -- Constraints for dumped tables
@@ -735,6 +843,7 @@ INSERT INTO `users_has_role` (`users_uid`, `role_rid`) VALUES
 -- Constraints for table `asset`
 --
 ALTER TABLE `asset`
+  ADD CONSTRAINT `asset_ibfk_3` FOREIGN KEY (`reviewer`) REFERENCES `users` (`uid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `asset_ibfk_1` FOREIGN KEY (`categoryId`) REFERENCES `category` (`cat_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `asset_ibfk_2` FOREIGN KEY (`departmentId`) REFERENCES `ou_structure` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_asset_users` FOREIGN KEY (`ownerId`) REFERENCES `users` (`uid`) ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -762,6 +871,14 @@ ALTER TABLE `asset_tags`
   ADD CONSTRAINT `asset_tags_ibfk_2` FOREIGN KEY (`tagId`) REFERENCES `tags` (`tagId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
+-- Constraints for table `asset_user_filep`
+--
+ALTER TABLE `asset_user_filep`
+  ADD CONSTRAINT `asset_user_filep_ibfk_1` FOREIGN KEY (`assetId`) REFERENCES `asset` (`assetId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `asset_user_filep_ibfk_2` FOREIGN KEY (`uId`) REFERENCES `users` (`uid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `asset_user_filep_ibfk_3` FOREIGN KEY (`fpId`) REFERENCES `filepermission` (`fpId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
 -- Constraints for table `category`
 --
 ALTER TABLE `category`
@@ -780,6 +897,13 @@ ALTER TABLE `category_has_ou_structure`
 ALTER TABLE `fileaccesslog`
   ADD CONSTRAINT `fileaccesslog_ibfk_1` FOREIGN KEY (`uId`) REFERENCES `users` (`uid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_fileAccessLog_asset1` FOREIGN KEY (`assetId`) REFERENCES `asset` (`assetId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `reviewer_oustructure`
+--
+ALTER TABLE `reviewer_oustructure`
+  ADD CONSTRAINT `reviewer_oustructure_ibfk_2` FOREIGN KEY (`uId`) REFERENCES `users` (`uid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `reviewer_oustructure_ibfk_1` FOREIGN KEY (`ouId`) REFERENCES `ou_structure` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `role`

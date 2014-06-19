@@ -30,18 +30,24 @@
 	{
 		color:#000 !important;
 	}
+	@media (min-width: 1200px)
+	{
+	.container{
+	 width :1100px;
+	}
 		
-	
+	};
 	</style>
 	
 	
 </head>
 
-<body class="container">
+
+<body class="container" >
 
 <?php Yii::app()->bootstrap->register(); ?>
 
-    
+
 <div class="container" id="page">
 
 	<?php 
@@ -103,7 +109,8 @@
     array('label' => 'Add Asset', 'url' => '/final/asset/create'),
     //array('label' => 'Media Browser', 'url' => '/final/index.php/media'),
     array('label' => 'Viewer', 'url' => '/final/site/viewer'),
-    array('label' => 'Check In', 'url' => '/final/addasset/onlineviewer'),
+    array('label' => 'Check In', 'url' => array('/users/checkIn','id'=>Yii::app()->user->getState("uid"))),
+    array('label' => 'Review', 'url' => array('/users/review','id'=>Yii::app()->user->getState("uid"))),
     array('label' => 'Check Out', 'url' => '/final/addasset/onlineeditor'),
     array('label' => 'Admin', 'items' => array(
         array('label' => 'Manage OU', 'url' => array('/ou_structure/tree')),

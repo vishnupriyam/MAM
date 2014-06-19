@@ -33,7 +33,7 @@ class AssetController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update',  'viewer','checkOut','checkOutAsset','checkIn','checkInform'),
+				'actions'=>array('create','update',  'viewer','checkOut','checkOutAsset','checkIn','checkInform','reviewAssetDetails','authorizeOrReject'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -86,6 +86,8 @@ class AssetController extends Controller
 			$user = Users::model()->find('uid=:uid',array(':uid'=>$uid));
 			$model->categoryId = $_POST['Asset']['categoryId'];
 			$model->departmentId = $user->ouId;
+			$reviewerOustructure = ReviewerOustructure::model()->find('ouId=:ouId',array(':ouId'=>$model->departmentId));
+			$model->reviewer = $reviewerOustructure->uId;
 			
 			if(!empty($_POST['tags']))
 			{
@@ -368,6 +370,19 @@ public function actionViewer($id)
 		);
 	}
 	
+	/*
+	 * view of asset for reviewer to authorize/reject
+	 */
+	
+	public function actionReviewAssetDetails($id){
+		
+			$model=$this->loadModel($id);
+		
+			$this->render('reviewAssetDetails',
+		 	array('model'=>$model)
+			);
+	}
+	
 	public function actionHistory($id){
 		$model=$this->loadModel($id);
 		
@@ -561,6 +576,54 @@ public function actionViewer($id)
           
 	  	 	// $this->renderPartial('checkInform', array('model' => $model));
 	  }
-	 }
+	  
+		public function actionAuthorizeOrReject($id)
+		{
+    		$model=$this->loadModel($id);
+
+    		// uncomment the following code to enable ajax-based validation
+    		/*
+    		if(isset($_POST['ajax']) && $_POST['ajax']==='asset-authorizeOrReject-form')
+    		{
+        		echo CActiveForm::validate($model);
+        		Yii::app()->end();
+    		}
+    		*/
+    		
+    		
+
+    		if(isset($_POST['buttonAuthorize']))
+    		{
+       			 //$model->attributes=$_POST['Asset'];
+       			 
+        		 
+        		{
+            		// form inputs are valid, do something here
+            		$command = Yii::app()->db->createCommand();
+					$command->update('asset', array(
+   				 	'status'=>1,
+						), 'assetId=:assetId', array(':assetId'=>$model->assetId));
+        			$this->redirect(array("/users/review/".Yii::app()->user->getState("uid")));
+        		}
+    		}
+			if(isset($_POST['buttonReject']))
+    		{
+       			 //$model->attributes=$_POST['Asset'];
+       			 
+        		 
+        		{
+            		// form inputs are valid, do something here
+            		$command = Yii::app()->db->createCommand();
+					$command->update('asset', array(
+   				 	'status'=>5,
+						), 'assetId=:assetId', array(':assetId'=>$model->assetId));
+        			
+            		$this->redirect(array("/users/review/".Yii::app()->user->getState("uid")));
+        		}
+    		}
+    		$this->render('authorizeOrReject',array('model'=>$model));
+		}
+	  
+}
 
 

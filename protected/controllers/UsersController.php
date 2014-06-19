@@ -29,7 +29,7 @@ class UsersController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','checkIn','UpdateFileCheckIn'),
+				'actions'=>array('index','view','checkIn','UpdateFileCheckIn','review','UpdateReviewDocs'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -306,6 +306,29 @@ class UsersController extends Controller
 			
 			
 	}
+
+	/*
+	 * function to obtain the view of documents pending to be reviewed
+	 */
+	public function actionReview($id){
+			$model=$this->loadModel($id);
+			
+			$model1=new Asset('search'); 
+			
+			$model1->unsetAttributes();  // clear any default values
+			if (isset($_GET['Asset'])) {
+				$model1->attributes=$_GET['Asset'];
+			}
+
+		$this->render('review',array(
+			'model'=>$model,'model1'=>$model1,
+		));
+			
+			
+	}
+	
+	
+	
 	
 	/*
 	 * to update the checkIn when row selected to input details and upload again
@@ -317,6 +340,15 @@ class UsersController extends Controller
             throw new CHttpException(404, 'The requested page does not exist.');
 
         $this->renderPartial('../asset/checkInform', array('model' => $model));
+        Yii::app()->end();
+	}
+
+	public function actionUpdateReviewDocs($id = null) {
+        $model = Asset::model()->findByPk($id);
+        if ($model === null)
+            throw new CHttpException(404, 'The requested page does not exist.');
+
+        $this->renderPartial('../asset/reviewAssetDetails', array('model' => $model));
         Yii::app()->end();
 	}
 	

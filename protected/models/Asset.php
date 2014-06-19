@@ -130,7 +130,7 @@ class Asset extends CActiveRecord
 		$criteria->compare('onlineEditable',$this->onlineEditable);
 		$criteria->compare('size',$this->size);
 		$criteria->compare('type',$this->type,true);
-		$criteria->compare('reviewer',$this->reviewer,true);
+		$criteria->compare('reviewer',$this->reviewer);
 		$criteria->compare('reviewerComments',$this->reviewerComments,true);
 		$criteria->compare('ownerId',$this->ownerId);
 		//$criteria->compare('ownerId',$this->users->name,true);
@@ -142,6 +142,7 @@ class Asset extends CActiveRecord
 		));
 	}
 
+	//for checkIn form
 	public function search1()
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
@@ -160,10 +161,42 @@ class Asset extends CActiveRecord
 		$criteria->compare('onlineEditable',$this->onlineEditable);
 		$criteria->compare('size',$this->size);
 		$criteria->compare('type',$this->type,true);
-		$criteria->compare('reviewer',$this->reviewer,true);
+		$criteria->compare('reviewer',$this->reviewer);
 		$criteria->compare('reviewerComments',$this->reviewerComments,true);
 		$criteria->compare('ownerId',Yii::app()->user->getState("uid"));
 		//$criteria->compare('owner_name',$this->users->name,true);
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+			'pagination' => array(
+            'pageSize' => 5
+        ),
+		));
+	}
+
+	//for reviewer asset
+	public function search2()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('assetName',$this->assetName,true);
+		$criteria->compare('file',$this->file,true);
+		$criteria->compare('assetId',$this->assetId);
+		
+		$criteria->compare('createDate',$this->createDate,true);
+		$criteria->compare('description',$this->description,true);
+		$criteria->compare('comment',$this->comment,true);
+		$criteria->compare('status',array(0,3));
+		//$criteria->compare('status','3');
+		$criteria->compare('publication',$this->publication);
+		$criteria->compare('onlineEditable',$this->onlineEditable);
+		$criteria->compare('size',$this->size);
+		$criteria->compare('type',$this->type,true);
+		$criteria->compare('reviewer',Yii::app()->user->getState("uid"));
+		$criteria->compare('reviewerComments',$this->reviewerComments,true);
+		$criteria->compare('ownerId',$this->ownerId);
+		//$criteria->compare('ownerId',$this->users->name,true);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 			'pagination' => array(
@@ -190,8 +223,9 @@ class Asset extends CActiveRecord
               $this->type=$this->file->getType();
               $this->size=$this->file->getSize();
               $this->createDate=new CDbExpression('NOW()');
+              
               return parent::beforeSave();
-               }
+             }
 
 public function getStatus(){      //for reviewer display all assets with status 0 ,3,
 									//display documents with status 1 - allowed to check out
@@ -205,6 +239,9 @@ public function getStatus(){      //for reviewer display all assets with status 
     	 return "CHECK IN"; 
     	elseif($this->status==4)
     	 return "BLOCKED";
+    	elseif($this->status==5)
+    	 return "REJECTED"; 
+    	 
     	 
     }
     public function getPublication(){

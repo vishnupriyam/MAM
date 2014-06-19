@@ -3,7 +3,12 @@
  * form for check in of a document
  */		
 ?>
+<style type="text/css">
+ #note{
+   margin-left:5em;
+ }
 
+</style>
 
 <div class="form">
 
@@ -38,10 +43,10 @@
             
             <?php echo $form->fileFieldControlGroup($model,'file'); ?>
 			
-			
-			
+			<div id="note">
+			<?php echo TbHtml::label('Note', 'note'); ?>
 			<?php echo TbHtml::textArea('note','',array('label'=>'note','rows'=>3,'span'=>6)); ?>
-
+			</div>
             
         <div class="form-actions">
         <div class="row buttons">
