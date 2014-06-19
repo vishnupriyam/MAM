@@ -21,8 +21,8 @@
 	
 	   <?php echo CHtml::FileField('file', '');?>
 
-       <?php echo CHtml::button('Submit', array('submit' => array('Asset/checkInform2','id'=>'submitButton')));?>
-    
+       <?php //echo CHtml::button('Submit', array('submit' => array('users/checkIn','id'=>Yii::app()->user->getState("uid")),'id'=>'submitButton'));?>
+    	<?php echo TbHtml::submitButton('Submit',array('name'=>'buttonSubmit','color'=>TbHtml::BUTTON_COLOR_PRIMARY)); ?>
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
