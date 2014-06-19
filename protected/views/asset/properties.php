@@ -97,7 +97,7 @@
 <?php  echo CHtml::link(
     'Download',
      Yii::app()->createUrl('Asset/Download' , array('id' => $model->assetId)),
-     array('class'=>'btnPrint btn btn-info','target'=>'_blank'));
+     array('class'=>'btnPrint btn btn-primary','target'=>'_blank'));
 
 ?>
 

@@ -163,7 +163,7 @@ class Asset extends CActiveRecord
 		$criteria->compare('reviewer',$this->reviewer,true);
 		$criteria->compare('reviewerComments',$this->reviewerComments,true);
 		$criteria->compare('ownerId',Yii::app()->user->getState("uid"));
-		$criteria->compare('owner_name',$this->users->name,true);
+		//$criteria->compare('owner_name',$this->users->name,true);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 			'pagination' => array(
@@ -186,7 +186,7 @@ class Asset extends CActiveRecord
 	}
 
 	public function beforeSave(){
-
+			 $this->status=0;
               $this->type=$this->file->getType();
               $this->size=$this->file->getSize();
               $this->createDate=new CDbExpression('NOW()');
@@ -202,7 +202,10 @@ public function getStatus(){      //for reviewer display all assets with status 
      	elseif($this->status==2)
     	 return "CHECKOUT";
     	elseif($this->status==3)
+    	 return "CHECK IN"; 
+    	elseif($this->status==4)
     	 return "BLOCKED";
+    	 
     }
     public function getPublication(){
      if($this->publication==0)

@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ ~E_NOTICE);
 
 class AssetController extends Controller
 {
@@ -32,7 +33,7 @@ class AssetController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update',  'viewer'),
+				'actions'=>array('create','update',  'viewer','checkOut','checkOutAsset','checkIn','checkInform'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -74,8 +75,6 @@ class AssetController extends Controller
 		if (isset($_GET['Users'])) {
 			$modelUsers->attributes=$_GET['Users'];
 		}
-		
-		
 		
 		
 		if (isset($_POST['Asset'])) {
@@ -432,7 +431,136 @@ public function actionViewer($id)
         		echo 'File does not exist...';
     		}
 			
-	  }	
+	  }
+
+	  public function actionCheckOut($id){
+			$model=$this->loadModel($id);
+		
+			
+			$this->render('checkOut',
+		 	array('model'=>$model)
+		);  	
+	  }
+	  
+	  public function actionCheckOutAsset($id){
 	
-}
+		$model = $this->loadModel($id);
+		//print_r(	Yii::app()->user->getId());die();
+		if (isset($_SERVER['HTTP_RANGE'])) 
+			$range = $_SERVER['HTTP_RANGE'];
+			$dir_path = Yii::getPathOfAlias('webroot') .'/upload/'.Yii::app()->user->getId().'/'.$model->categoryId.'/';
+		
+			$filePath=$dir_path.$id.'.dat';
+			if (file_exists($filePath))
+    		{
+    			
+    			$command = Yii::app()->db->createCommand();
+        		$command->update('asset', array(
+   				 'status'=>2,
+				), 'assetId=:assetId', array(':assetId'=>$model->assetId));
+        		
+        		// send headers to browser to initiate file download
+        		header ('Content-Type: application/octet-stream');
+        		header ('Content-Disposition: attachment; filename="' . $model->file . '"');
+        		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        		header('Pragma: public');
+        		readfile($filePath);
+        		
+        		//$model->status=2;
+				
+        		
+        		
+           }
+   		 else
+    		{
+        		echo 'File does not exist...';
+    		}
+			
+	  }
+	  
+	  public function actionCheckInform($id){
+	  	
+	  	
+	  	$model=$this->loadModel($id);
+	  	
+	  	 if(isset($_POST['Asset']))
+          {
+				
+          		$model->file = $_POST['Asset']['file'];
+          		$model->file=CUploadedFile::getInstance($model,'file');
+          		
+          			
+          		$orgId=Yii::app()->user->getId();
+				$fileName=$model->assetId.'.dat';
+				$categoryId=$model->categoryId;
+				$old = umask(0);
+				
+				if (!is_dir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/'.$model->assetId.'/')) {
+                
+                mkdir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/'.$model->assetId.'/',0777 ,true);
+				}
+				
+				 
+  				$lfhandler = fopen ($fileName, "r");
+        		$lfcontent = fread($lfhandler, filesize ($fileName));
+        		
+        		fclose ($lfhandler);
+        		//write and close
+      
+          	 	$lfhandler = fopen (Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'/'.$fileName, "w");
+       		 	fwrite($lfhandler, $lfcontent);
+       		 	fclose ($lfhandler);
+          			
+	  	  		$command = Yii::app()->db->createCommand();
+        		
+	  	  		//changing the status of the asset to checked in
+	  	  		/*$command->update('asset', array(
+   				 	'status'=>3,
+						), 'assetId=:assetId', array(':assetId'=>$model->assetId));*/
+
+				//adding the fileaccesslog record		
+				$command->insert('fileaccesslog', array(
+    					'action'=>'CI',
+    					'assetId'=>$model->assetId,
+						'uId'=> Yii::app()->user->getState("uid"),
+					));
+						
+						
+				
+				//counting the present version and temporarily saving in $presentnum
+				$records = AssetRevision::model()->findAll('assetId=:assetId',array(':assetId'=>$model->assetId));
+				$presentnum = count($records);
+				//print_r($presentnum);die();
+				
+				
+				//updating the current version in asset_revision to the required number 
+					
+				$record1 = AssetRevision::model()->find('assetId=:assetId AND revision=:revision', array(':assetId'=>$model->assetId,':revision'=>'current'));
+				
+				$command = Yii::app()->db->createCommand();
+				
+				
+          		//print_r(' '.($presentnum-1).' ');die();
+				if(	$command->update('asset_revision', array(
+   				 	'revision'=>' '.($presentnum-1).' ',
+						),'revision=:revision', array(':revision'=>"0")))
+						{print_r("YES DONE");die();}
+						else{print_r("NO");die();}
+				
+				
+				print_r($record1);die();
+				//updating the assetrevision table
+				$modelAssetRevision = new AssetRevision;
+				$modelAssetRevision->assetId = $model->assetId;
+				$modelAssetRevision->modifiedBy = Yii::app()->user->getState("uid");
+				$modelAssetRevision->note = $_POST['note'];
+				$modelAssetRevision->revision = 'current'; 	
+				$modelAssetRevision->save();
+        	
+          }
+          
+	  	 	// $this->renderPartial('checkInform', array('model' => $model));
+	  }
+	 }
+
 

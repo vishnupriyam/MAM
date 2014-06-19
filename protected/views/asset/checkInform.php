@@ -15,6 +15,11 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
+    'htmlOptions'=>array(		'enctype' => 'multipart/form-data',
+                               'onsubmit'=>"return false;",/* Disable normal form submit */
+                               'onkeypress'=>" if(event.keyCode == 13){ send(); } " /* Do ajax call when user presses enter key */
+                             ),
+    
 )); ?>
 
 	<fieldset>
@@ -33,15 +38,18 @@
             
             <?php echo $form->fileFieldControlGroup($model,'file'); ?>
 			
-			<?php echo $form->textAreaControlGroup($model1,'note',array('rows'=>3,'span'=>6)); ?>
+			
+			
+			<?php echo TbHtml::textArea('note','',array('label'=>'note','rows'=>3,'span'=>6)); ?>
 
             
         <div class="form-actions">
-        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
-		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
-		    
-		)); ?>
-		
+        <div class="row buttons">
+        <?php echo CHtml::Button('SUBMIT',array('onclick'=>'send();')); ?> 
+    </div>
+ 
+        
+        		
 		<?php echo TbHtml::submitButton(Yii::t('Yii','Cancel'),array(
  			'name'=>'buttonCancel',
 			'color'=>TbHtml::BUTTON_COLOR_DANGER,
@@ -53,3 +61,32 @@
     <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+
+
+<script type="text/javascript">
+ 
+function send()
+ {
+ 
+   var data=$("#asset-checkin-form").serialize();
+ 
+ 
+  $.ajax({
+   type: 'POST',
+    url: '<?php echo Yii::app()->createAbsoluteUrl("asset/checkInform/".$model->assetId); ?>',
+   data:data,
+success:function(data){
+                alert(data); 
+              },
+   error: function(data) { // if error occured
+         alert("Error occured.please try again");
+         alert(data);
+    },
+ 
+  dataType:'html'
+  });
+ 
+}
+ 
+</script>
