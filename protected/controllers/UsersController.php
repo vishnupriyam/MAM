@@ -339,8 +339,9 @@ class UsersController extends Controller
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
 
-        $this->renderPartial('../asset/checkInform', array('model' => $model));
-        Yii::app()->end();
+        //$this->redirect('../asset/checkInform', array('model' => $model));
+        $this->redirect(array("../asset/checkInform2",array('model' => $model)));
+        //Yii::app()->end();
 	}
 
 	public function actionUpdateReviewDocs($id = null) {
@@ -349,7 +350,7 @@ class UsersController extends Controller
             throw new CHttpException(404, 'The requested page does not exist.');
 
         $this->renderPartial('../asset/reviewAssetDetails', array('model' => $model));
-        Yii::app()->end();
+        //Yii::app()->end();
 	}
 	
 	

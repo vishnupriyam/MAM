@@ -44,8 +44,8 @@ class Organisation extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('orgName', 'required'),
-			array('noEmp, phone, fax, validity', 'numerical', 'integerOnly'=>true),
+			array('orgName, phone,email,addr1', 'required'),
+			array('noEmp,phone, fax, validity', 'numerical', 'integerOnly'=>true),
 			array('email', 'length', 'max'=>26),
 			array('addr1, addr2', 'length', 'max'=>255),
 			array('state', 'length', 'max'=>50),

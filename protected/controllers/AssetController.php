@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL ^ ~E_NOTICE);
+error_reporting(E_ALL ^ ~E_NOTICE  ^ ~E_WARNING);
 
 class AssetController extends Controller
 {
@@ -33,7 +33,7 @@ class AssetController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update',  'viewer','checkOut','checkOutAsset','checkIn','checkInform','reviewAssetDetails','authorizeOrReject'),
+				'actions'=>array('create','update',  'viewer','checkOut','checkOutAsset','checkIn','checkInform','reviewAssetDetails','authorizeOrReject','checkInform2'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -493,7 +493,7 @@ public function actionViewer($id)
 			
 	  }
 	  
-	  public function actionCheckInform($id){
+	  /*public function actionCheckInform($id){
 	  	
 	  	
 	  	$model=$this->loadModel($id);
@@ -531,7 +531,7 @@ public function actionViewer($id)
 	  	  		//changing the status of the asset to checked in
 	  	  		/*$command->update('asset', array(
    				 	'status'=>3,
-						), 'assetId=:assetId', array(':assetId'=>$model->assetId));*/
+						), 'assetId=:assetId', array(':assetId'=>$model->assetId));
 
 				//adding the fileaccesslog record		
 				$command->insert('fileaccesslog', array(
@@ -574,8 +574,8 @@ public function actionViewer($id)
         	
           }
           
-	  	 	// $this->renderPartial('checkInform', array('model' => $model));
-	  }
+	  	 	 $this->renderPartial('checkInform', array('model' => $model));
+	  }*/
 	  
 		public function actionAuthorizeOrReject($id)
 		{
@@ -623,7 +623,117 @@ public function actionViewer($id)
     		}
     		$this->render('authorizeOrReject',array('model'=>$model));
 		}
+		
+		
+	public function actionCheckInform2()
+		{
+
+		
+			{
+			if ($_FILES["file"]["error"] > 0) {
+  				echo "Error: " . $_FILES["file"]["error"] . "<br>";
+			}
+
+			else {
+  				echo "Upload: " . $_FILES["file"]["name"] . "<br>";
+  				echo "Type: " . $_FILES["file"]["type"] . "<br>";
+  				echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
+  				echo "Stored in: " . $_FILES["file"]["tmp_name"];
+			}
+			
+			/*if (file_exists(Yii::app()->basePath.'/../upload/'. $_FILES["file"]["name"])) {
+      			echo $_FILES["file"]["name"] . " already exists. ";
+    		} 
+    		else {*/
+      		move_uploaded_file($_FILES["file"]["tmp_name"],
+      		Yii::app()->basePath.'/../upload/' . $_FILES["file"]["name"]);
+      		echo "Stored in: " . Yii::app()->basePath.'/../upload/' . $_FILES["file"]["name"];
+    	//}
+    
+  	}
+
+	$this->render('checkInform2',array());				
+					
+	}	
+}	
+			
+    		//$model=$this->loadModel($id);
+
+   	 		// uncomment the following code to enable ajax-based validation
+    		/*
+    		if(isset($_POST['ajax']) && $_POST['ajax']==='asset-checkInform2-form')
+    		{
+        		echo CActiveForm::validate($model);
+        		Yii::app()->end();
+    		}
+    		*/
+
+    	/*	
+    		if (isset($_POST['Asset'])) {
+			
+    		//$model->attributes=$_POST['Asset'];
+
+			$model->file=CUploadedFile::getInstance($model,'file');
+						
+			$uid = Yii::app()->user->getState("uid"); 
+			$user = Users::model()->find('uid=:uid',array(':uid'=>$uid));
+			//$model->categoryId = $_POST['Asset']['categoryId'];
+			$model->departmentId = $user->ouId;
+			$reviewerOustructure = ReviewerOustructure::model()->find('ouId=:ouId',array(':ouId'=>$model->departmentId));
+			$model->reviewer = $reviewerOustructure->uId;
+			
+			*/
+			
+			/*if(!empty($_POST['tags']))
+			{
+				$tags = $_POST['tags'];
+			}*/
+			
+			
+			/*
+			 {
+
+				
+				
+				$orgId=Yii::app()->user->getId();
+				$fileName=$model->assetId.'.dat';
+				$categoryId=$model->categoryId;
+				$old = umask(0);
+				
+
+				if (!is_dir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/'.$model->assetId.'/' )) {
+                
+					//mkdir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/',0777 ,true);
+                mkdir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/'.$model->assetId.'/',0777 ,true);
+				}
+				umask($old);
+				
+				
+				$lfhandler = fopen ($fileName, "r");
+        		$lfcontent = fread($lfhandler, filesize ($fileName));
+        		
+        		fclose ($lfhandler);
+        		//write and close
+      
+          	 	$lfhandler = fopen (Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'/'.$fileName, "w");
+       		 	fwrite($lfhandler, $lfcontent);
+       		 	fclose ($lfhandler);
+      
+				
+				/*print_r($model->file);die();
+				if($model->file->saveAs(Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'/'.$fileName))
+				{
+					print_r("yes");die();}
+				
+				else{print_r("no");die();}
+				print_r("hhfsd");die();*/
+			//}
+    		//}
+    		/*
+       		$this->render('checkInform2',array('model'=>$model));
+	}	
+		
 	  
-}
+
 
 

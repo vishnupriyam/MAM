@@ -23,7 +23,7 @@
 	'htmlOptions'=>array('enctype' => 'multipart/form-data'),
 )); ?>
 
-
+	<h2>AUTHORIZE OR REJECT <?php echo $model->file;?></h2>
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>

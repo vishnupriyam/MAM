@@ -21,7 +21,7 @@
  */
 class Asset extends CActiveRecord
 {
-
+	public $checkIn;
 	public $write;
 	public $file;
 	public $categoryId;

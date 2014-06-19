@@ -66,7 +66,7 @@ $('.search-form form').submit(function(){
 		'size',	
 		array('name'=>'owner_name','value'=>'$data->users->name'),
 		'type',
-		
+		array('name'=>'checkIn','type'=>'raw','value'=>'CHtml::link("view", array("asset/","checkInform2"=>$data->assetId))' )
 		
 	),
 )); ?>
