@@ -9,6 +9,7 @@
  */
 class AssetTags extends CActiveRecord
 {
+	public $oldAttributes;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -91,4 +92,28 @@ class AssetTags extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	//get model name
+	public function getModelName(){
+		return __CLASS__;
+	}
+	
+	//get oldAttributes
+	public function afterFind(){
+    	 $this->oldAttributes = $this->attributes;
+   		 return parent::afterFind();
+	}
+	
+	 //adding details to log the asset save   
+    public function afterSave()
+    {
+    	$Log = Logger::getLogger("accessLog");
+    	
+    	if($this->assetId != $this->oldAttributes['assetId'])
+	 	{$Log->info("assetId ".$this->oldAttributes['assetId']." ".$this->assetId);}
+    	if($this->tagId != $this->oldAttributes['tagId'])
+	 	{$Log->info("tagId ".$this->oldAttributes['tagId']." ".$this->tagId);}
+	 	
+	 	return parent::afterSave();
+    }
 }

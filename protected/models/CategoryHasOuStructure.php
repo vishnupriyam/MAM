@@ -13,6 +13,8 @@
  */
 class CategoryHasOuStructure extends CActiveRecord
 {
+	
+	public $oldAttributes;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -98,4 +100,31 @@ class CategoryHasOuStructure extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+	
+	//get model name
+	public function getModelName(){
+		return __CLASS__;
+	}
+	
+	//get oldAttributes
+	public function afterFind(){
+    	 $this->oldAttributes = $this->attributes;
+   		 return parent::afterFind();
+	}
+	
+	 //adding details to log the cheanges   
+    public function afterSave()
+    {
+    	$Log = Logger::getLogger("accessLog");
+    	if($this->cat_id != $this->oldAttributes['cat_id'])
+	 	{$Log->info("categoryId ".$this->oldAttributes['cat_id']." ".$this->cat_id);}
+    	if($this->id != $this->oldAttributes['id'])
+	 	{$Log->info("ou structureId ".$this->oldAttributes['id']." ".$this->id);}
+    	return parent::afterSave();
+    }	
 }

@@ -16,6 +16,8 @@
  */
 class AssetUserFilep extends CActiveRecord
 {
+	
+	public $oldAttributes;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -105,4 +107,29 @@ class AssetUserFilep extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	//get model name
+	public function getModelName(){
+		return __CLASS__;
+	}
+	
+	//get oldAttributes
+	public function afterFind(){
+    	 $this->oldAttributes = $this->attributes;
+   		 return parent::afterFind();
+	}
+	
+	 //adding details to log the asset save   
+    public function afterSave()
+    {
+    	$Log = Logger::getLogger("accessLog");
+    	
+    	if($this->assetId != $this->oldAttributes['assetId'])
+	 	{$Log->info("assetId ".$this->oldAttributes['assetId']." ".$this->assetId);}
+    	if($this->uId != $this->oldAttributes['uId'])
+	 	{$Log->info("uId ".$this->oldAttributes['uId']." ".$this->uId);}
+    	if($this->fpId != $this->oldAttributes['fpId'])
+	 	{$Log->info("fpId ".$this->oldAttributes['fpId']." ".$this->fpId);}
+	 	return parent::afterSave();
+    }
 }

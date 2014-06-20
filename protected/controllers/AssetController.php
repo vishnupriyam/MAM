@@ -29,7 +29,7 @@ class AssetController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','properties','infoOptions','history','admin','versionViewUpdate','userTable','download','infoOptionsViewUpdate'),
+				'actions'=>array('index','view','properties','infoOptions','history','admin','versionViewUpdate','userTable','download','infoOptionsViewUpdate','downloadVersion'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -88,6 +88,9 @@ class AssetController extends Controller
 			$model->departmentId = $user->ouId;
 			$reviewerOustructure = ReviewerOustructure::model()->find('ouId=:ouId',array(':ouId'=>$model->departmentId));
 			$model->reviewer = $reviewerOustructure->uId;
+			$model->orgId = Yii::app()->user->getId();
+			
+			
 			
 			if(!empty($_POST['tags']))
 			{
@@ -98,23 +101,49 @@ class AssetController extends Controller
 			
 			if ($model->save()) {
 
-				
-				
 				$orgId=Yii::app()->user->getId();
 				$fileName=$model->assetId.'.dat';
 				$categoryId=$_POST['Asset']['categoryId'];
 				$old = umask(0);
-
+				$fileName1=$model->assetId.'_0'.'.dat';
 
 				if (!is_dir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/' )) {
                 //mkdir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/',0777 ,true);
                 mkdir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/',0777 ,true);
+				
 				}
 				umask($old);
 
-
+				if (!is_dir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/'.$model->assetId.'/')) {
+                //mkdir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/',0777 ,true);
+                mkdir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/'.$model->assetId.'/',0777 ,true);
+				
+				}
+				
+				
 				$model->file->saveAs(Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$fileName);
-
+				//$model->file->saveAs(Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'/'.$fileName1);
+				
+				copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'.dat' ,
+      				Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'/'.$model->assetId.'_0'.'.dat'  );
+				
+				
+				//updates the fileaccesslog
+				$command = Yii::app()->db->createCommand();
+				$command->insert('fileaccesslog', array(
+    					'action'=>'I',
+    					'assetId'=>$model->assetId,
+						'uId'=> Yii::app()->user->getState("uid"),
+					));
+					
+				//update the asset_revision	
+				$command->insert('asset_revision', array(
+    					'assetId'=>$model->assetId,
+						'modifiedBy'=> Yii::app()->user->getState("uid"),
+						'note'=>'intial commit',
+						'revision'=>0,
+						
+					));
 				
 				
 				if(!empty($_POST['tags'])){
@@ -434,12 +463,25 @@ public function actionViewer($id)
 			$filePath=$dir_path.$id.'.dat';
 			if (file_exists($filePath))
     		{
-        		// send headers to browser to initiate file download
+        		
+    			//updates the fileaccesslog
+				$command = Yii::app()->db->createCommand();
+				$command->insert('fileaccesslog', array(
+    					'action'=>'D',
+    					'assetId'=>$model->assetId,
+						'uId'=> Yii::app()->user->getState("uid"),
+					));
+				
+    			
+    			// send headers to browser to initiate file download
         		header ('Content-Type: application/octet-stream');
         		header ('Content-Disposition: attachment; filename="' . $model->file . '"');
         		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
         		header('Pragma: public');
         		readfile($filePath);
+        		
+        		
+        		
            }
    		 else
     		{
@@ -481,10 +523,15 @@ public function actionViewer($id)
         		header('Pragma: public');
         		readfile($filePath);
         		
-        		//$model->status=2;
+        		//updates the fileaccesslog
+				$command = Yii::app()->db->createCommand();
+				$command->insert('fileaccesslog', array(
+    					'action'=>'C0',
+    					'assetId'=>$model->assetId,
+						'uId'=> Yii::app()->user->getState("uid"),
+					));
+        		
 				
-        		
-        		
            }
    		 else
     		{
@@ -493,90 +540,7 @@ public function actionViewer($id)
 			
 	  }
 	  
-	  /*public function actionCheckInform($id){
-	  	
-	  	
-	  	$model=$this->loadModel($id);
-	  	
-	  	 if(isset($_POST['Asset']))
-          {
-				
-          		$model->file = $_POST['Asset']['file'];
-          		$model->file=CUploadedFile::getInstance($model,'file');
-          		
-          			
-          		$orgId=Yii::app()->user->getId();
-				$fileName=$model->assetId.'.dat';
-				$categoryId=$model->categoryId;
-				$old = umask(0);
-				
-				if (!is_dir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/'.$model->assetId.'/')) {
-                
-                mkdir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/'.$model->assetId.'/',0777 ,true);
-				}
-				
-				 
-  				$lfhandler = fopen ($fileName, "r");
-        		$lfcontent = fread($lfhandler, filesize ($fileName));
-        		
-        		fclose ($lfhandler);
-        		//write and close
-      
-          	 	$lfhandler = fopen (Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'/'.$fileName, "w");
-       		 	fwrite($lfhandler, $lfcontent);
-       		 	fclose ($lfhandler);
-          			
-	  	  		$command = Yii::app()->db->createCommand();
-        		
-	  	  		//changing the status of the asset to checked in
-	  	  		/*$command->update('asset', array(
-   				 	'status'=>3,
-						), 'assetId=:assetId', array(':assetId'=>$model->assetId));
-
-				//adding the fileaccesslog record		
-				$command->insert('fileaccesslog', array(
-    					'action'=>'CI',
-    					'assetId'=>$model->assetId,
-						'uId'=> Yii::app()->user->getState("uid"),
-					));
-						
-						
-				
-				//counting the present version and temporarily saving in $presentnum
-				$records = AssetRevision::model()->findAll('assetId=:assetId',array(':assetId'=>$model->assetId));
-				$presentnum = count($records);
-				//print_r($presentnum);die();
-				
-				
-				//updating the current version in asset_revision to the required number 
-					
-				$record1 = AssetRevision::model()->find('assetId=:assetId AND revision=:revision', array(':assetId'=>$model->assetId,':revision'=>'current'));
-				
-				$command = Yii::app()->db->createCommand();
-				
-				
-          		//print_r(' '.($presentnum-1).' ');die();
-				if(	$command->update('asset_revision', array(
-   				 	'revision'=>' '.($presentnum-1).' ',
-						),'revision=:revision', array(':revision'=>"0")))
-						{print_r("YES DONE");die();}
-						else{print_r("NO");die();}
-				
-				
-				print_r($record1);die();
-				//updating the assetrevision table
-				$modelAssetRevision = new AssetRevision;
-				$modelAssetRevision->assetId = $model->assetId;
-				$modelAssetRevision->modifiedBy = Yii::app()->user->getState("uid");
-				$modelAssetRevision->note = $_POST['note'];
-				$modelAssetRevision->revision = 'current'; 	
-				$modelAssetRevision->save();
-        	
-          }
-          
-	  	 	 $this->renderPartial('checkInform', array('model' => $model));
-	  }*/
-	  
+	  	  
 		public function actionAuthorizeOrReject($id)
 		{
     		$model=$this->loadModel($id);
@@ -636,31 +600,121 @@ public function actionViewer($id)
 		
  			//on submit button the file is saved
 			if(isset($_POST['buttonSubmit'])){
-			if ($_FILES["file"]["error"] > 0) {
-  				echo "Error: " . $_FILES["file"]["error"] . "<br>";
-			}
-
-			else {
-  				echo "Upload: " . $_FILES["file"]["name"] . "<br>";
-  				echo "Type: " . $_FILES["file"]["type"] . "<br>";
-  				echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
-  				echo "Stored in: " . $_FILES["file"]["tmp_name"];
-			}
+				//if file errors are present
+				if ($_FILES["file"]["error"] > 0) {
+  					echo "Error: " . $_FILES["file"]["error"] . "<br>";
+				}
+				
+				//get the file
+				else {
+  					echo "Upload: " . $_FILES["file"]["name"] . "<br>";
+  					echo "Type: " . $_FILES["file"]["type"] . "<br>";
+  					echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
+  					echo "Stored in: " . $_FILES["file"]["tmp_name"];
+  					
+  					$command = Yii::app()->db->createCommand();
+        		
+	  	  			//changing the data of the asset checked in , in the database
+	  	  			$command->update('asset', array(
+   				 	'file'=>$_FILES["file"]["name"],
+	  	  			'size'=>$_FILES["file"]["size"],
+	  	  			'type'=>$_FILES["file"]["type"],
+	  	  			'status'=>3,
+						), 'assetId=:assetId', array(':assetId'=>$model->assetId));
+  					
+  				}
 			
-			/*if (file_exists(Yii::app()->basePath.'/../upload/'. $_FILES["file"]["name"])) {
-      			echo $_FILES["file"]["name"] . " already exists. ";
-    		} 
-    		else {*/
-      		move_uploaded_file($_FILES["file"]["tmp_name"],
-      		Yii::app()->basePath.'/../upload/' . $_FILES["file"]["name"]);
-      		echo "Stored in: " . Yii::app()->basePath.'/../upload/' . $_FILES["file"]["name"];
-    	//}
+				$file = $_FILES["file"]["tmp_name"];
+				//moves the file to required place
+				$orgId = Yii::app()->user->getId();
+				$categoryId = $model->categoryId;
+				$assetId = $model->assetId;
+
+				//counts the number of revisions alreaay present for the record and assign present number to new revision
+			    $records = AssetRevision::model()->findAll('assetId=:assetId',array(':assetId'=>$model->assetId));
+			    $presentNumber = count($records);
+			    
+				
+				if(move_uploaded_file($_FILES["file"]["tmp_name"],
+      			Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'.dat'))
+      			
+      			{
+      				copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'.dat' ,
+      				Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$assetId.'/'.$model->assetId.'_'.$presentNumber.'.dat'  );
+      				
+      			}
+
+      			
+				//updates the fileaccesslog
+				$command = Yii::app()->db->createCommand();
+				$command->insert('fileaccesslog', array(
+    					'action'=>'CI',
+    					'assetId'=>$model->assetId,
+						'uId'=> Yii::app()->user->getState("uid"),
+					));
+
+				//inserting new record to asset revision
+				$command->insert('asset_revision', array(
+    					'assetId'=>$model->assetId,
+						'modifiedBy'=> Yii::app()->user->getState("uid"),
+						'note'=>$_POST['note'],
+						'revision'=>$presentNumber,
+						
+					));
+					
+					
+				
+			    
+      	//redirect back to the checkIn page of the user    
         $this->redirect(array("/users/checkIn/".Yii::app()->user->getState("uid")));
   	}
 
-	$this->render('checkInform2',array());				
+  	//renders the checkInform2 for the user
+	$this->render('checkInform2',array('model'=>$model));				
 					
-	}	
+	}
+
+	/*
+	 * Download according to the version
+	 */
+	
+	public function actionDownloadVersion($id,$version){
+	
+		$model = $this->loadModel($id);
+		//print_r(	Yii::app()->user->getId());die();
+		if (isset($_SERVER['HTTP_RANGE'])) 
+			$range = $_SERVER['HTTP_RANGE'];
+			$dir_path = Yii::getPathOfAlias('webroot') .'/upload/'.$model->orgId.'/'.$model->categoryId.'/'.$model->assetId.'/';
+		
+			$filePath=$dir_path.$id.'_'.$version.'.dat';
+			if (file_exists($filePath))
+    		{
+    			
+    			//updates the fileaccesslog
+				$command = Yii::app()->db->createCommand();
+				$command->insert('fileaccesslog', array(
+    					'action'=>'D',
+    					'assetId'=>$model->assetId,
+						'uId'=> Yii::app()->user->getState("uid"),
+					));
+				
+    			
+        		// send headers to browser to initiate file download
+        		header ('Content-Type: application/octet-stream');
+        		header ('Content-Disposition: attachment; filename="' . $model->file . '"');
+        		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        		header('Pragma: public');
+        		readfile($filePath);
+           }
+   		 else
+    		{
+        		echo 'File does not exist...';
+    		}
+			
+	  }
+	
+	
+	
 }	
 			
     			  

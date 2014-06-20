@@ -25,6 +25,7 @@ class Asset extends CActiveRecord
 	public $write;
 	public $file;
 	public $categoryId;
+	public $oldAttributes;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -56,7 +57,7 @@ class Asset extends CActiveRecord
 			array('createDate, description, comment, reviewerComments', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('file, assetId, assetName, createDate, description, comment, status, publication, onlineEditable, size, type, reviewer, reviewerComments', 'safe', 'on'=>'search'),
+			array('file, assetId, assetName, createDate, description, comment, status, publication, onlineEditable, size, type, reviewer, reviewerComments,orgId', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -121,7 +122,7 @@ class Asset extends CActiveRecord
 		$criteria->compare('assetName',$this->assetName,true);
 		$criteria->compare('file',$this->file,true);
 		$criteria->compare('assetId',$this->assetId);
-		
+		$criteria->compare('orgId',Yii::app()->user->getId());
 		$criteria->compare('createDate',$this->createDate,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('comment',$this->comment,true);
@@ -219,15 +220,70 @@ class Asset extends CActiveRecord
 	}
 
 	public function beforeSave(){
-			 $this->status=0;
-              $this->type=$this->file->getType();
-              $this->size=$this->file->getSize();
-              $this->createDate=new CDbExpression('NOW()');
+		 $this->status=0;
+         $this->type=$this->file->getType();
+         $this->size=$this->file->getSize();
+         $this->createDate=new CDbExpression('NOW()');
               
-              return parent::beforeSave();
-             }
+         return parent::beforeSave();
+       }
 
-public function getStatus(){      //for reviewer display all assets with status 0 ,3,
+       
+    //get model name
+	public function getModelName(){
+		return __CLASS__;
+	}
+	
+	//get oldAttributes
+	public function afterFind(){
+    	 $this->oldAttributes = $this->attributes;
+   		 return parent::afterFind();
+	}
+	
+       
+    //adding details to log the asset save   
+    public function afterSave()
+    {
+    	$Log = Logger::getLogger("accessLog");
+    	
+    	$Log->info("assetId ".$this->assetId);
+    	
+    	if($this->assetName != $this->oldAttributes['assetName'])
+	 	{$Log->info("assetName ".$this->oldAttributes['assetName']." ".$this->assetName);}
+    	if($this->file != $this->oldAttributes['file'])
+	 	{$Log->info("file ".$this->oldAttributes['file']." ".$this->file);}
+    	if($this->createDate != $this->oldAttributes['createDate'])
+	 	{$Log->info("createDate ".$this->oldAttributes['createDate']." ".$this->createDate);}
+	 	if($this->description != $this->oldAttributes['descriprion'])
+	 	{$Log->info("description ".$this->oldAttributes['description']." ".$this->description);}
+    	if($this->comment != $this->oldAttributes['comment'])
+	 	{$Log->info("comment ".$this->oldAttributes['comment']." ".$this->comment);}
+    	if($this->description != $this->oldAttributes['descriprion'])
+	 	{$Log->info("description ".$this->oldAttributes['description']." ".$this->description);}
+    	if($this->status != $this->oldAttributes['status'])
+	 	{$Log->info("status ".$this->oldAttributes['status']." ".$this->status);}
+	 	if($this->publication != $this->oldAttributes['publication'])
+	 	{$Log->info("publication ".$this->oldAttributes['publication']." ".$this->publication);}
+    	if($this->onlineEditable != $this->oldAttributes['onlineEditable'])
+	 	{$Log->info("onlineEditable ".$this->oldAttributes['onlineEditable']." ".$this->onlineEditable);}
+    	if($this->onlineEditable != $this->oldAttributes['onlineEditable'])
+	 	{$Log->info("onlineEditable ".$this->oldAttributes['onlineEditable']." ".$this->onlineEditable);}
+    	if($this->size != $this->oldAttributes['size'])
+	 	{$Log->info("size ".$this->oldAttributes['size']." ".$this->size);}
+    	if($this->type != $this->oldAttributes['type'])
+	 	{$Log->info("type ".$this->oldAttributes['type']." ".$this->type);}
+    	if($this->reviewer != $this->oldAttributes['reviewer'])
+	 	{$Log->info("reviewer ".$this->oldAttributes['reviewer']." ".$this->reviewer);}
+    	if($this->reviewerComments != $this->oldAttributes['reviewerComments'])
+	 	{$Log->info("reviewerComments ".$this->oldAttributes['reviewerComments']." ".$this->reviewerComments);}
+    	if($this->ownerId != $this->oldAttributes['ownerId'])
+	 	{$Log->info("ownerId ".$this->oldAttributes['ownerId']." ".$this->ownerId);}
+    	
+    	
+    	return parent::afterSave();
+    }   
+
+	public function getStatus(){      //for reviewer display all assets with status 0 ,3,
 									//display documents with status 1 - allowed to check out
     	if($this->status==0)       
     	 return "NOT REVIEWED";

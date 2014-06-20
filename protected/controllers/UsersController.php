@@ -33,7 +33,7 @@ class UsersController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','changePassword'),
+				'actions'=>array('create','update','changePassword','displaySavedImage'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -97,9 +97,31 @@ class UsersController extends Controller
 	}
 	
 	
+	/*
+	 * funtion to display user image
+	 */
 	
+	public function actionDisplaySavedImage(){
+		
+		$model = $this->loadModel($_GET['id']);
+		
+		//setting the headers
+		
+		header('Pragma:public');
+		header('Expires:0');
+		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+		header('Content-Transfer-Encoding : binary');
+		
+		header('content-Type : image/png',false);
+		header('content-Type : image/jpeg',false);
+		header('content-Type : image/jpg',false);
+		header('content-Type : image/gif',false);
+		
+		
+		echo $model->picture;
+	} 
 	
-	/**
+	/*
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
@@ -130,6 +152,17 @@ class UsersController extends Controller
 			
 			
 			$model->ouId = $_POST['Users']['ouId'];
+			
+			//getting the uploaded image instance
+			
+			if(!empty($_FILES['Users']['tmp_name']['picture']))
+			{
+				$file = CUploadedFile::getInstance($model,'picture');
+				$fp = fopen($file->tempName,'r');
+				$content = fread($fp,filesize($file->tempName));
+				fclose($fp);
+				$model->picture = $content;
+			}
 			
 			if($model->save()){
 
@@ -339,8 +372,8 @@ class UsersController extends Controller
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
 
-        //$this->redirect('../asset/checkInform', array('model' => $model));
-        $this->redirect(array("../asset/checkInform2",array('model' => $model)));
+		$this->renderPartial('../asset/properties', array('model' => $model));       
+        //$this->redirect(array("../asset/checkInform2",array('model' => $model)));
         //Yii::app()->end();
 	}
 

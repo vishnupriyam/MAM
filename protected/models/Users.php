@@ -24,6 +24,7 @@ class Users extends CActiveRecord
 {
 	
 	public $roles;
+	public $picture;
 	public function behaviors(){
           return array( 'CAdvancedArBehavior' => array(
             'class' => 'application.extensions.CAdvancedArBehavior'));
@@ -55,6 +56,12 @@ class Users extends CActiveRecord
 			array('name, mobile', 'length', 'max'=>45),
 			array('email, status', 'length', 'max'=>60),
 			array('logout, picture, LastUpdate,cpassword', 'safe'),
+			array('picture', 'file',                                //setting rules for picture upload
+        		'types'=>'jpg, gif, png, bmp, jpeg',
+            		'maxSize'=>1024 * 1024 * 10, // 10MB
+                	'tooLarge'=>'The file was larger than 10MB. Please upload a smaller file.',
+            		'allowEmpty' => true
+         	),
 			array('password','compare','compareAttribute'=>'cpassword'), 
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -144,6 +151,9 @@ class Users extends CActiveRecord
 		$criteria->compare('orgId',Yii::app()->user->getId());
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'pagination' => array(
+            'pageSize' => 5
+        ),
 		));
 	}
 	
@@ -194,10 +204,12 @@ class Users extends CActiveRecord
 	public function beforeSave(){
 	
 	
-	$this->DateCreated=new CDbExpression('NOW()');
-	return parent::beforeSave();
+		$this->DateCreated=new CDbExpression('NOW()');
+		return parent::beforeSave();
 	
 	}
+	
+	
 	
 	
 }

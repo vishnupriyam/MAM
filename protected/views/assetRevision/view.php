@@ -51,11 +51,19 @@ $this->menu=array(
                 'class'=>'submit'
                 
             )); ?>
-		<?php  echo TbHtml::button('Download',array(
+		<?php  /*echo TbHtml::button('Download',array(
                 'color' => TbHtml::BUTTON_COLOR_PRIMARY,
 				'submit' => Yii::app()->baseUrl,
                 //'confirm'=>"Please confirm to cancle transaction",
                 'class'=>'submit'
                 
-            )); ?>
+            ));*/ ?>
+            
+          <?php  echo CHtml::link(
+    		'Download',
+    		 Yii::app()->createUrl('Asset/DownloadVersion' , array('id' => $model->assetId,'version'=>$model->revision)),
+     		 array('class'=>'btnPrint btn btn-primary','target'=>'_blank'));
+
+?>
+            
 		

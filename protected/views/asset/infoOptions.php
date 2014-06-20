@@ -44,7 +44,14 @@
      Yii::app()->createUrl('Asset/CheckOut' , array('id' => $model->assetId)),
      array('class'=>'btnPrint btn btn-primary','target'=>'_blank'));
  ?>
-<?php  echo TbHtml::button('History', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
+<?php  echo TbHtml::button('History',array(
+                'color' => TbHtml::BUTTON_COLOR_PRIMARY,
+				'submit' => Yii::app()->baseUrl.'/asset/history/'.$model->assetId,
+                //'confirm'=>"Please confirm to cancle transaction",
+                'class'=>'submit'
+                
+            )); ?>
+
 <?php  echo TbHtml::button('Manage', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
 <?php  /*echo TbHtml::button('Download', array('color' => TbHtml::BUTTON_COLOR_PRIMARY,
 		'submit' => Yii::app()->baseUrl.'/asset/download/'.$model->assetId,)); */

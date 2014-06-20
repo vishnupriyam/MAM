@@ -12,6 +12,7 @@
  */
 class Fileaccesslog extends CActiveRecord
 {
+	public $oldAttributes;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -107,7 +108,39 @@ class Fileaccesslog extends CActiveRecord
 	  if($this->action == 'V')
 	   return "View";
 	  elseif($this->action=='CI')
+	   return "Checkin";
+	 elseif($this->action=='CO')
 	   return "Checkout";
+	  elseif($this->action=='I')
+	   return "initial";
+	 elseif($this->action=='D')
+	   return "Download";
 	
+		
 	}
+	//get model name
+	public function getModelName(){
+		return __CLASS__;
+	}
+	
+	//get oldAttributes
+	public function afterFind(){
+    	 $this->oldAttributes = $this->attributes;
+   		 return parent::afterFind();
+	}
+	
+	 //adding details to log the cheanges   
+    public function afterSave()
+    {
+    	$Log = Logger::getLogger("accessLog");
+    	if($this->assetId != $this->oldAttributes['assetId'])
+	 	{$Log->info("assetId ".$this->oldAttributes['assetId']." ".$this->assetId);}
+    	if($this->uId != $this->oldAttributes['uId'])
+	 	{$Log->info("userId ".$this->oldAttributes['uId']." ".$this->uId);}
+   		 if($this->action != $this->oldAttributes['action'])
+	 	{$Log->info("action ".$this->oldAttributes['action']." ".$this->action);}
+    	return parent::afterSave();
+    }	
+	
+	
 }

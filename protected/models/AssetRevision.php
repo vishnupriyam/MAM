@@ -16,6 +16,7 @@
  */
 class AssetRevision extends CActiveRecord
 {
+	public $oldAttributes;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -106,5 +107,34 @@ class AssetRevision extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	
+	//get model name
+	public function getModelName(){
+		return __CLASS__;
+	}
+	
+	//get oldAttributes
+	public function afterFind(){
+    	 $this->oldAttributes = $this->attributes;
+   		 return parent::afterFind();
+	}
+	
+	//additional code to maintain the logs with log4php 
+	public function afterSave(){
+		$Log = Logger::getLogger("accessLog");
+		
+		if($this->assetId != $this->oldAttributes['assetId'])
+	 		{$Log->info("assetId ".$this->oldAttributes['assetId']." ".$this->assetId);}
+		if($this->modifiedOn != $this->oldAttributes['modifiedOn'])
+	 		{$Log->info("modifiedOn ".$this->oldAttributes['modifiedOn']." ".$this->modifiedOn);}
+		if($this->modifiedBy != $this->oldAttributes['modifiedBy'])
+	 		{$Log->info("modifiedBy ".$this->oldAttributes['modifiedBy']." ".$this->modifiedBy);}
+		if($this->note != $this->oldAttributes['note'])
+	 		{$Log->info("note ".$this->oldAttributes['note']." ".$this->note);}		
+		if($this->revision != $this->oldAttributes['revision'])
+	 		{$Log->info("revision ".$this->oldAttributes['revision']." ".$this->revision);}	
+
+	 	return parent::afterSave();	
 	}
 }

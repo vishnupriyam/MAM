@@ -80,12 +80,15 @@
 <div class="" style="margin-left:7em;">
 <?php  echo TbHtml::button('View', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
 
- 
-<?php  
-	// passes the userId and get the assets to be checked in by the user 
 
-	echo TbHtml::button('Check Out', array('color' => TbHtml::BUTTON_COLOR_PRIMARY,
-							'submit'=>Yii::app()->baseUrl.'/users/checkOut/'.Yii::app()->user->getState("uid"))); ?>
+<?php  echo CHtml::link(
+    'Check Out',
+     Yii::app()->createUrl('Asset/CheckOut' , array('id' => $model->assetId)),
+     array('class'=>'btnPrint btn btn-primary','target'=>'_blank'));
+ ?>
+
+
+ 
 <?php  echo TbHtml::button('History',array(
                 'color' => TbHtml::BUTTON_COLOR_PRIMARY,
 				'submit' => Yii::app()->baseUrl.'/asset/history/'.$model->assetId,

@@ -3,6 +3,17 @@
 /* @var $model Users */
 ?>
 
+
+<style type="text/css">
+
+	img{
+	    width:25em;
+	    height:30em;}
+
+</style>
+
+
+
 <?php
 $this->breadcrumbs=array(
 	'Users'=>array('index'),
@@ -32,11 +43,21 @@ $this->menu=array(
 		'email',
 		//'status',
 		array('name'=>'Status','value'=>$model->getStatus()),
-		'picture',
+		//'picture',
 		'mobile',
 		'quota',
 		'DateCreated',
 		'LastUpdate',
 		'orgId',
+		array(
+                'name'=>'Picture',
+				'type'=>'raw',
+                'value'=>html_entity_decode(CHtml::image($this->createUrl('Users/DisplaySavedImage', array('id'=>$model->uid))
+																				,'alt'
+																				
+																				)),
+                ),
 	),
 )); ?>
+
+
