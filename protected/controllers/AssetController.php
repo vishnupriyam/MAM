@@ -102,7 +102,7 @@ class AssetController extends Controller
 			if ($model->save()) {
 
 				$orgId=Yii::app()->user->getId();
-				$fileName=$model->assetId.'.dat';
+				$fileName=$model->assetId;
 				$categoryId=$_POST['Asset']['categoryId'];
 				$old = umask(0);
 				$fileName1=$model->assetId.'_0'.'.dat';
@@ -121,12 +121,12 @@ class AssetController extends Controller
 				}
 				
 				
-				$model->file->saveAs(Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$fileName);
+				$model->file->saveAs(Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId);
 				//$model->file->saveAs(Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'/'.$fileName1);
 				
-				copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'.dat' ,
+				/*copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'.dat' ,
       				Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'/'.$model->assetId.'_0'.'.dat'  );
-				
+				*/
 				
 				//updates the fileaccesslog
 				$command = Yii::app()->db->createCommand();

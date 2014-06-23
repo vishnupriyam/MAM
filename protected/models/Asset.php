@@ -237,6 +237,7 @@ class Asset extends CActiveRecord
 	//get oldAttributes
 	public function afterFind(){
     	 $this->oldAttributes = $this->attributes;
+    	 
    		 return parent::afterFind();
 	}
 	
@@ -245,7 +246,7 @@ class Asset extends CActiveRecord
     public function afterSave()
     {
     	$Log = Logger::getLogger("accessLog");
-    	
+  
     	$Log->info("assetId ".$this->assetId);
     	
     	if($this->assetName != $this->oldAttributes['assetName'])

@@ -54,8 +54,7 @@ $this->menu=array(
 				'type'=>'raw',
                 'value'=>html_entity_decode(CHtml::image($this->createUrl('Users/DisplaySavedImage', array('id'=>$model->uid))
 																				,'alt'
-																				
-																				)),
+					)),
                 ),
 	),
 )); ?>

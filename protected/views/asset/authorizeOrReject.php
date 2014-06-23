@@ -53,7 +53,7 @@
 	<div class="row buttons">
 		<?php echo TbHtml::submitButton('Authorize',array('name'=>'buttonAuthorize','color'=>TbHtml::BUTTON_COLOR_PRIMARY)); ?>
 		<?php echo TbHtml::submitButton('Reject',array('name'=>'buttonReject','color'=>TbHtml::BUTTON_COLOR_PRIMARY)); ?>
-		<?php echo TbHtml::Button('Cancel', array('submit' => CHttpRequest::getUrlReferrer(),'color'=>TbHtml::BUTTON_COLOR_PRIMARY)); ?>
+		<?php //echo TbHtml::Button('Cancel', array('submit' =>,'color'=>TbHtml::BUTTON_COLOR_PRIMARY)); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
