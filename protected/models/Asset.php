@@ -41,6 +41,7 @@ class Asset extends CActiveRecord
 	public $owner_name;
 	public $view;
 	public $view_online;
+	public $edit_online;
 	public $tagsUser;
 	public $gview;
 	public function rules()
@@ -334,6 +335,20 @@ class Asset extends CActiveRecord
 		
 	    return $ret;
 		}
-    
+		public function getUrl()
+		{
+			return Yii::app()->createUrl('', array(
+		
+			));
+		}
+		
+		public function getTagLinks()
+		{
+			$links=array();
+			foreach(Asset::string2array($this->file) as $tag)
+				$links[]=CHtml::link(CHtml::encode($tag), array(''));
+			return $links;
+		}
+		
                
 }

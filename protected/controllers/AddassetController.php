@@ -12,10 +12,10 @@ class AddassetController extends Controller
 		$this->render('onlineviewer');
 	}
 	
-	public function actionOnlineeditor()
+	/*public function actionOnlineeditor()
 	{
 		$this->render('onlineeditor');
-	}
+	}*/
 	
 
 	// Uncomment the following methods and override them if needed

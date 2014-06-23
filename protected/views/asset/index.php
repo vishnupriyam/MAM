@@ -58,7 +58,7 @@ $('.search-form form').submit(function(){
 		//'reviewer',
 		//array('name'=>'view','type'=>'raw','value'=>$this->renderPartial('viewer', true, true)),
 		array('name'=>'view_online','type'=>'raw','value'=>'CHtml::link("view", array("asset/","viewer"=>$data->assetId))'),
-		
+		array('name'=>'edit_online','type'=>'raw','value'=>'CHtml::link("edit", array("asset/","editor"=>$data->assetId))'),
 	),
 )); ?>
 

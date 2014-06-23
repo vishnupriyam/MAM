@@ -16,13 +16,56 @@
  
  $b = "http://localhost/final/Viewer.js/#../upload/".Yii::app()->user->getId()."/".$model->categoryId."/".$model->file;
  
-
+ $orgId = Yii::app()->user->getId();
+ $categoryId = $model->categoryId;
+ $file = $model->file;
  ?> 
- <iframe id="viewer" src = "<?php echo $b;?>"
-  width='800' height='500' allowfullscreen webkitallowfullscreen></iframe>
+ 
+ 
+ 
 <?php  
  //echo $a;
 ?>
+  <?php 
+  $a = "http://localhost/final/upload/".$orgId.'/'.$categoryId.'/'.$file;
+  
+  if(($pos=strrpos($file,'.'))!==false)
+  $ext=substr($file,$pos+1);
+  ?>
+  <?php 	
+  if ($ext == 'jpg' || $ext == 'gif' || $ext == 'png' || $ext == 'bmp'): 
+  ?>  <?php 
+  $a = "http://localhost/final/upload/".$orgId.'/'.$categoryId.'/'.$file;
+   
+  
+  ?>
+  <img id = "image" src = "<?php echo $a;?>"> 
+  
+  <?php elseif ($ext == 'mp4' || $ext == 'flv' || $ext == 'ogg' || $ext == 'webm' || $ext == 'mp3' || $ext == 'wav'):
+?>
+   <?php 
+  //$a = "http://localhost/final/upload/".$orgId.'/'.$categoryId.'/'.$file;
+  
+  ?><?php   
+ 
+   $this->widget ( 'ext.mediaElement.MediaElementPortlet',
+    array ( 
+    'url' => $a,   
+     'mimeType' =>'video/mp4',
+    ));
+    ?><?php 
+   elseif ($ext == 'pdf' || $ext == 'odt' || $ext == 'odp'): ?>
+  <iframe id="viewer" src = "<?php echo $b;?>"
+  width='800' height='500' allowfullscreen webkitallowfullscreen></iframe>
+  
+  <?php else:?>
+  
+  <?php endif;?>
+ 
+ 
+ 
+ 
+ 
 <?php /* 
 if ($a == "odpp.odp") {?>	
     <iframe id="viewer" src = "http://localhost/final/Viewer.js/#../odpp.odp" 

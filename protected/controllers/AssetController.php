@@ -33,7 +33,7 @@ class AssetController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update',  'viewer','checkOut','checkOutAsset','checkIn','checkInform','reviewAssetDetails','authorizeOrReject','checkInform2'),
+				'actions'=>array('create','update',  'viewer','editor','checkOut','checkOutAsset','checkIn','checkInform','reviewAssetDetails','authorizeOrReject','checkInform2'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -102,7 +102,7 @@ class AssetController extends Controller
 			if ($model->save()) {
 
 				$orgId=Yii::app()->user->getId();
-				$fileName=$model->assetId;
+				$fileName=$model->assetId.'.dat';
 				$categoryId=$_POST['Asset']['categoryId'];
 				$old = umask(0);
 				$fileName1=$model->assetId.'_0'.'.dat';
@@ -121,12 +121,17 @@ class AssetController extends Controller
 				}
 				
 				
-				$model->file->saveAs(Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId);
-				//$model->file->saveAs(Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'/'.$fileName1);
+				$model->file->saveAs(Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$fileName);
+				$model->file->saveAs(Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->file);
 				
-				/*copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'.dat' ,
+				copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'.dat' ,
       				Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'/'.$model->assetId.'_0'.'.dat'  );
-				*/
+				
+				
+				copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'.dat' ,
+				Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->file);
+				
+				
 				
 				//updates the fileaccesslog
 				$command = Yii::app()->db->createCommand();
@@ -367,9 +372,176 @@ public function actionViewer($id)
 		
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('viewer', array('model'=>$model));
+		 $this->render('viewer', array('model'=>$model));
+		//$this->render('viewer', array('a'=>$id));
 	}
 
+	//editor for image manipulation 
+//image editor
+public function actionEditor($id)
+	{
+		$model= $this->loadModel($id);
+		$count = 0;
+		$name = $model->file;
+		$catid = $model->categoryId;
+		$orgId = Yii::app()->user->getId();
+		
+	//	$image=Yii::app()->image->load('upload/'.$orgId.'/'.$catid.'/'.'6.jpg');
+		$image=Yii::app()->image->load('upload/'.'6.jpg');
+		
+		if(isset($_POST['flip']))
+        {
+		  $a = $_POST['side'];
+		  
+		  if ($a == 1)
+		  $b = 5;
+		  else if ($a == 2)
+		  $b = 6;
+		  
+		  $image->flip($b);
+		  $image->save('upload/'.'6_1.jpg'); 
+		  $count = 1;
+        }
+      
+        
+        if(isset($_POST['convert']))
+        {
+        	$handle = new upload('upload/6.jpg');
+	 		if ($handle->uploaded) {
+	 			$a = $_POST['format'];
+	 			if ($a == 1)
+	 			$handle->image_convert = 'png';
+	 			else if ($a == 2)
+	 			$handle->image_convert = 'jpg';
+	 			else if ($a == 3)
+	 			$handle->image_convert = 'gif';
+	 			else if ($a == 4)
+	 			$handle->image_convert = 'bmp';
+	 			$handle->process('upload/');
+	 			//echo 'converted';
+	 		}
+        }
+        
+		if(isset($_POST['negative']))
+        {
+        	$handle = new upload('upload/6_1.jpg');
+	 		if ($handle->uploaded) {//$handle->image_convert = 'gif';
+	 			$handle->image_negative = true;
+	 			$handle->process('upload/');
+	 		}
+        }
+        
+		if(isset($_POST['brightness']))
+        {
+        	$a = $_POST['Attribute']['brightness'];
+		 	 $b = (int)$a;
+        	$handle = new upload('upload/6_1.jpg');
+	 		if ($handle->uploaded) {//$handle->image_convert = 'gif';
+	 			$handle->image_brightness = $a;
+	 			$handle->process('upload/');
+	 		}
+	 		
+        }
+        
+	if(isset($_POST['contrast']))
+        {
+        	$a = $_POST['Attribute']['contrast'];
+		  	$b = (int)$a;
+        	$handle = new upload('upload/6_1.jpg');
+	 		if ($handle->uploaded) {//$handle->image_convert = 'gif';
+	 			$handle->image_brightness = $a;
+	 			$handle->process('upload/');
+	 		}
+        }
+       if(isset($_POST['text']))
+        {
+        	$a = $_POST['Attribute']['text'];
+		   $b = $_POST['Attribute']['text_color'];
+		   $c = $_POST['Attribute']['text_x'];
+		   $d = $_POST['Attribute']['text_y'];
+        	$handle = new upload('upload/6_1.jpg');
+	 		if ($handle->uploaded) {//$handle->image_convert = 'gif';
+	 			$handle->image_text = $a;
+	 		    $handle->image_text_color = $b;
+	 			$handle->image_text_x = (int)$c;
+	 			$handle->image_text_y = (int)$d; 
+	 			$handle->process('upload/');
+	 		}
+        }
+       
+        
+		if(isset($_POST['crop']))
+        {
+        	 $a = $_POST['Attribute']['crop_x'];
+		  $b = (int)$a;
+		  
+		   $c = $_POST['Attribute']['crop_y'];
+		  $d = (int)$c;
+         $image->crop($b, $d);
+        $image->save('upload/'.'6_1.jpg'); 
+        $count = 1;
+        }
+      	
+        if(isset($_POST['resize']))
+        {
+        	 $a = $_POST['Attribute']['resize_x'];
+		  $b = (int)$a;
+		  
+		   $c = $_POST['Attribute']['resize_y'];
+		  $d = (int)$c;
+      	 
+        	
+        	$image->resize($b, $d);
+      	 $image->save('upload/'.'6_1.jpg'); 
+      	 $count = 1;
+        }
+        
+        if(isset($_POST['rotate']))
+        {
+        	 $a = $_POST['Attribute']['rotate'];
+		  $b = (int)$a;
+      	 $image->rotate($b);
+      	  $image->save('upload/'.'6_1.jpg'); 
+      	  $count = 1;
+        }
+        
+        if(isset($_POST['sharpen']))
+        {
+        	 $a = $_POST['Attribute']['sharpen'];
+		  $b = (int)$a;
+      	 $image->sharpen($b);
+      	  $image->save('upload/'.'6_1.jpg'); 
+      	  $count = 1;
+        }
+        
+        if(isset($_POST['quality']))
+        {
+        	 $a = $_POST['Attribute']['quality'];
+		  $b = (int)$a;
+      	 $image->quality($b);
+      	  $image->save('upload/'.'6_1.jpg'); 
+      		
+      	  $count = 1;
+        }
+      	
+	if(isset($_POST['save']))
+        {
+      	
+      		$count = 1;
+        }
+        if ($count == 0)
+			$image->save('upload/'.'6_1.jpg'); 
+			
+		if(isset($_POST['buttonCancel']))
+        {
+         	unlink(Yii::app()->basePath.'/../upload/'. '6_1.jpg');
+        	$this->redirect(Yii::app()->homeUrl);
+        }
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		$this->render('editor', array('a'=>$id, 'model'=>$model,));
+	}
+	
 	/**
 	 * Performs the AJAX validation.
 	 * @param Asset $model the model to be validated
@@ -526,7 +698,7 @@ public function actionViewer($id)
         		//updates the fileaccesslog
 				$command = Yii::app()->db->createCommand();
 				$command->insert('fileaccesslog', array(
-    					'action'=>'C0',
+    					'action'=>'CO',
     					'assetId'=>$model->assetId,
 						'uId'=> Yii::app()->user->getState("uid"),
 					));

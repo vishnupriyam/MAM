@@ -40,6 +40,23 @@ class Tags extends CActiveRecord
 	/**
 	 * @return array relational rules.
 	 */
+	
+	public function getUrl()
+	{
+		return Yii::app()->createUrl('organisation/view', array(
+				'tagId'=>$this->tagId,
+				'tagName'=>$this->tagName,
+		));
+	}
+	
+	public function getTagLinks()
+	{
+		$links=array();
+		foreach(Tag::string2array($this->tagName) as $tag)
+			$links[]=CHtml::link(CHtml::encode($tag), array('organisation/index', 'tag'=>$img));
+		return $links;
+	}
+	
 	public function relations()
 	{
 		// NOTE: you may need to adjust the relation name and the related

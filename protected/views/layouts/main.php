@@ -87,6 +87,11 @@
 	<?php echo $record['orgName'];?>
 </div>
 
+	<br>
+	<br>
+	<?php
+      	$this->widget('SearchBlock', array(
+      	)); ?>
 	
 
 <?php /*if(isset($this->breadcrumbs)):?>

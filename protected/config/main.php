@@ -23,15 +23,16 @@ return array(
 		'application.models.*',
 		'application.components.*',
 		'application.vendors.*',
+		//bootstrap widgets
 		'bootstrap.helpers.TbHtml',
 		'bootstrap.helpers.TbArray',
 		'bootstrap.behaviors.TbWidget',
 		'bootstrap.widgets.TbDataColumn',
 		'bootstrap.widgets.TbActiveForm',
-		/*'yiiwheels.widgets.fileupload.WhFileUpload',*/
-	    'yiiwheels.widgets.datepicker.WhDatePicker',
+		'yiiwheels.widgets.datepicker.WhDatePicker',
 		'bootstrap.widgets.TbGridView',
 		'bootstrap.widgets.TbGridView1',
+		//log4php widgets
 		'application.extensions.log4php.*',
 		'application.extensions.log4php.renderers.*',
 		'application.extensions.log4php.appenders.*',
@@ -39,7 +40,11 @@ return array(
 		'application.extensions.log4php.filters.*',
 		'application.extensions.log4php.helpers.*',
 		'application.extensions.log4php.layouts.*',
-		'ext.combobox.EJuiComboBox',
+		//image magic components
+		'application.helpers.*',
+		'application.extensions.ImageMagick.*',
+		'application.extensions.imagemodifier.CImageModifier.*',
+		'application.extensions.imagemodifier.*',
 		
 	),
 
@@ -51,7 +56,7 @@ return array(
     ),
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'gii',
+			'password'=>'gii',  //password for gii
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 			
@@ -66,28 +71,45 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
-		
+
+		//image magic application components
+		'image'=>array(
+				'class'=>'application.extensions.image.CImageComponent',
+				// GD or ImageMagick
+				'driver'=>'GD2+',
+				'driver'=>'ImageMagick',
+				// ImageMagick setup path
+				'params'=>array('directory'=>'C:/ImageMagick'),
+		),
+		//image magic extension directory	
+		'imagemod' => array(
+				//alias to dir, where you unpacked extension
+				'class' => 'application.extensions.imagemodifier.CImageModifier',
+		),
+		//aes256 encryption extension
 		'aes256'=>array(
             'class' => 'application.extensions.aes256.Aes256',
             'privatekey_32bits_hexadecimal'=> '0123456789012345678901234567890123456789012345678901234567890123', // be sure that this parameter uses EXACTLY 64 chars of hexa (a-f, 0-9)
         ),
 		
-		// Handling Session
-	//	'session' => array (
-		//'sessionName' => 'Site Session',
-		//'class'=>'CDbHttpSession',
-		//'useTransparentSessionID'   =>($_POST['PHPSESSID']) ? true : false,
-		//'autoStart' => false,
-		//'cookieMode' => 'only',
-		//'timeout' => 300,
-		//'autoCreateSessionTable'=> false,
-		//'connectionID' => 'db', 
-		//'sessionTableName' => 'Session', 
-		//),
+		/* Handling Session
+		'session' => array (
+		'sessionName' => 'Site Session',
+		'class'=>'CDbHttpSession',
+		'useTransparentSessionID'   =>($_POST['PHPSESSID']) ? true : false,
+		'autoStart' => false,
+		'cookieMode' => 'only',
+		'timeout' => 300,
+		'autoCreateSessionTable'=> false,
+		'connectionID' => 'db', 
+		'sessionTableName' => 'Session', 
+		),*/
+        
 		 // yiistrap configuration
         'bootstrap' => array(
             'class' => 'bootstrap.components.TbApi',
         ),
+        
         // yiiwheels configuration
         'yiiwheels' => array(
             'class' => 'yiiwheels.YiiWheels',   
@@ -108,9 +130,6 @@ return array(
         ),
 		
 		
-		
-		
-		
 		// uncomment the following to enable URLs in path-format
 		
 		'urlManager'=>array(
@@ -121,11 +140,13 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
+		
 		/*
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),
 		*/
+		
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
@@ -147,6 +168,7 @@ return array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning',
 				),
+				
 				// uncomment the following to show log messages on web pages
 				/*
 				array(
