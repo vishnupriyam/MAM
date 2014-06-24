@@ -33,6 +33,9 @@ class Category extends CActiveRecord
 			array('name', 'required'),
 			array('name', 'length', 'max'=>60),
 			array('orgId', 'length', 'max'=>11),
+			array('name', 'unique' ,'className' => 'Category'),//name must be unique
+			array('name', 'match', 'pattern' => '/^[A-Za-z0-9_]+$/u'),//name must contain only the specified characters
+			
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('name,orgName, DName', 'safe', 'on'=>'search'),
@@ -51,7 +54,8 @@ class Category extends CActiveRecord
 		  'organisation'=>array(self::BELONGS_TO,'Organisation','orgId'),
 		  // ou_stucture and category relationship
 		  'ou_structure' => array(self::MANY_MANY, 'Ou_structure', 'category_has_ou_structure(cat_id,id)'),		
-		  'asset' => array(self::HAS_MANY,'Asset','cat_id'),	
+		  'asset' => array(self::HAS_MANY,'Asset','cat_id'),
+		  'tags' => array(self::MANY_MANY, 'Tags', 'tags_category(id,tagId)'),		
 		);
 	}
 
@@ -116,7 +120,8 @@ class Category extends CActiveRecord
 	public function afterSave(){
 	 	$Log = Logger::getLogger("accessLog");
 	 	
-	 	if($oldAttributes==NULL)
+	 	
+	 	if($this->oldAttributes==NULL)
     		$action="create";
     	else 	
     		$action="update";

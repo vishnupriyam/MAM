@@ -32,7 +32,7 @@ class AssetRevisionController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','view_revisions'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -57,6 +57,19 @@ class AssetRevisionController extends Controller
 	}
 
 	/**
+	 * 
+	 * View the particular version
+	 * @param integer $id, the ID of the model to be loaded
+	 */
+	
+	public function actionView_revisions($id)
+	{
+		$this->render('view_revisions',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
+	
+	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
@@ -65,7 +78,7 @@ class AssetRevisionController extends Controller
 		$model=new AssetRevision;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
 		if (isset($_POST['AssetRevision'])) {
 			$model->attributes=$_POST['AssetRevision'];
@@ -89,7 +102,7 @@ class AssetRevisionController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if (isset($_POST['AssetRevision'])) {
 			$model->attributes=$_POST['AssetRevision'];

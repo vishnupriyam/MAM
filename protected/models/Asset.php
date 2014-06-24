@@ -59,6 +59,9 @@ class Asset extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('file, assetId, assetName, createDate, description, comment, status, publication, onlineEditable, size, type, reviewer, reviewerComments,orgId', 'safe', 'on'=>'search'),
+			array('file', 'unique' ,'className' => 'asset'),//name must be unique
+			//array('file', 'match', 'pattern' => '/^[A-Za-z0-9_]+$/u'),//name must contain only the specified characters
+			
 		);
 	}
 
@@ -249,7 +252,7 @@ class Asset extends CActiveRecord
     	    	
     	$Log = Logger::getLogger("accessLog");
 	  	
-    	if($oldAttributes==NULL)
+    	if($this->oldAttributes==NULL)
     		$action="create";
     	else 	
     		$action="update";

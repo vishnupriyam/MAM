@@ -113,7 +113,7 @@ class RoleController extends Controller
 		$model=new Role;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
 		if(isset($_POST['buttonCancel']))
         {
@@ -187,7 +187,7 @@ class RoleController extends Controller
 		$model=	$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if (isset($_POST['Role'])) {
 			$model->attributes=$_POST['Role'];

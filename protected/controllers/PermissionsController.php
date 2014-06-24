@@ -71,7 +71,7 @@ class PermissionsController extends Controller
 		
 		
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+	    $this->performAjaxValidation($model);
 
 		if (isset($_POST['Permissions'])) {
 			$model->attributes=$_POST['Permissions'];
@@ -101,7 +101,7 @@ class PermissionsController extends Controller
 		
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
 		if (isset($_POST['Permissions'])) {
 			$model->attributes=$_POST['Permissions'];

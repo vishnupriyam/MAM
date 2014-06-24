@@ -13,33 +13,35 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
+    'enableClientValidation'=>true,
+    
 )); ?>
 
     <p class="help-block">Fields with <span class="required">*</span> are required.</p>
 
     <?php echo $form->errorSummary($model); ?>
             
-            <?php 
+        <!-- display the categories related to logged in users department -->    
+    	<?php 
 			 $orgId= Yii::app()->user->getId();
-			 $connection = Yii::app()->db;
-			 $sql3 = "select id from ou_structure where orgId = :orgId";
-			 $command = $connection->createCommand($sql3);
-			 $command->bindParam(":orgId",$orgId,PDO::PARAM_INT);
-			 $dataReader = $command->query();
-	         $row = $dataReader->read();
-	         $dataReader->close();
-	         $ans = $row['id'];
-	         
-	  	
-	         
-			 $criteria=new CDbCriteria();
-			 $criteria->compare('root', $ans, true);
-			 echo  TbHtml::dropDownListControlGroup('dept_id','',
-			 CHtml::listData(ou_structure::model()->findAll($criteria), 'id', 'name'), 
+			 $userId = Yii::app()->user->getState("uid");
+			 $userRecord = Users::model()->find('uid=:uid',array(':uid'=>$userId));
+			 $ouId = $userRecord->ouId;
+			 
+			 $connection=Yii::app()->db;
+			 $sql="SELECT category.cat_id, name
+				FROM category
+				JOIN category_has_ou_structure ON category.cat_id = category_has_ou_structure.cat_id
+				WHERE category_has_ou_structure.id =:ouId;";
+			 $command = $connection->createCommand($sql);
+			 $command->bindParam(":ouId",$ouId,PDO::PARAM_INT);
+			 $dataReader = $command->queryAll();
+			    		
+			 echo  TbHtml::dropDownListControlGroup('cat_id','',
+			 CHtml::listData($dataReader, 'cat_id', 'name'), 
 			 array('span'=>3,'label'=>'Add tag for','multiple'=>true), array('label'=>'child')); ?>
 			
-            
 			<?php echo $form->textfieldControlGroup($model,'tagName',
 			array('span'=>2,'rows'=>1,'label'=>'Tag Name','help'=>'Add multiple tags with commas(,)')); ?>
 			

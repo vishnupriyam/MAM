@@ -20,7 +20,9 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
+    'enableClientValidation'=>true,
+
 )); ?>
 
 
@@ -33,10 +35,10 @@
 		
 		<?php echo $form->textFieldControlGroup($model, 'orgName',array('label'=>'Organisation Name','Placeholder'=>'Name of your organisation')); ?>
 		
-		<?php echo $form->numberFieldControlGroup($model,'noEmp',array('label'=>'Number of employess','min'=>0,'placeholder'=>0));?>
+		<?php echo $form->textFieldControlGroup($model,'noEmp',array('label'=>'Number of employess','min'=>0,'placeholder'=>0));?>
 		
 		<?php echo $form->textFieldcontrolGroup($model,'phone',
-	        		array('maxlength'=>'12','minlength'=>'10','label'=>'Phone Number','placeholder' => 'Phone Number','prepend'=>'+91')); ?>
+	        		array('maxlength'=>'10','minlength'=>'10','label'=>'Phone Number','placeholder' => 'Phone Number','prepend'=>'+91')); ?>
 		
 		<?php echo $form->emailFieldControlGroup($model, 'email',array('label'=>'Email','Placeholder'=>'Mail id of your organisation')); ?>
 		
@@ -80,7 +82,7 @@
 	
 
 		<div class="row buttons">
-		<?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('color'=>TbHtml::BUTTON_COLOR_PRIMARY)); ?>
 		<?php echo TbHtml::submitButton(Yii::t('Yii','Cancel'),array(
  			'name'=>'buttonCancel',
 			'color'=>TbHtml::BUTTON_COLOR_DANGER,

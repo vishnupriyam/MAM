@@ -54,7 +54,8 @@ class Users extends CActiveRecord
 			array('name, password, email,cpassword', 'required'),
 			array('quota', 'numerical', 'integerOnly'=>true),
 			array('name, mobile', 'length', 'max'=>45),
-			array('email, status', 'length', 'max'=>60),
+			array('status', 'length', 'max'=>60),
+			array('mobile', 'length', 'max'=>10,'min'=>10),
 			array('logout, picture, LastUpdate,cpassword', 'safe'),
 			array('picture', 'file',                                //setting rules for picture upload
         		'types'=>'jpg, gif, png, bmp, jpeg',
@@ -64,8 +65,8 @@ class Users extends CActiveRecord
          	),
 			array('password','compare','compareAttribute'=>'cpassword','on'=>'update, create'),
 			array('email','unique', 'className' => 'Users','attributeName' => 'email'),//email must be unique
-			array('email','length','min'=>3,'max'=>32),//email length must be between 3 and 32
-			array('name', 'unique' ,'className' => 'Users'),array('name', 'length', 'max'=>20, 'min' => 3),//name must be unique
+			array('name', 'unique' ,'className' => 'Users'),
+			array('name', 'length', 'max'=>20, 'min' => 3),//name must be unique
 			array('name', 'match', 'pattern' => '/^[A-Za-z0-9_]+$/u'),//name must contain only the specified characters
 			 
 			// The following rule is used by search().

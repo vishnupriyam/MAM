@@ -35,6 +35,8 @@ class Tags extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('tagId, tagName, orgId', 'safe', 'on'=>'search'),
+			array('tagName', 'unique' ,'className' => 'Tags'),//name must be unique
+			array('tagName', 'match', 'pattern' => '/^[A-Za-z0-9_]+$/u'),//name must contain only the specified characters
 		);
 	}
 
@@ -65,7 +67,7 @@ class Tags extends CActiveRecord
 		return array(
 		'organisation'=>array(self::BELONGS_TO,'Organisation','orgId'),
 		//many to many relationship departments and tags , first param in relationship must be that of the active class,i.e of the Tag
-		'ou_structure' => array(self::MANY_MANY, 'Ou_structure', 'tags_has_ou_structure(tagId,id)'),
+		'category' => array(self::MANY_MANY, 'Category', 'tags_category(tagId,id)'),
 		'asset' => array(self::MANY_MANY, 'Asset', 'asset_tags(tagId,assetId)'),
 		
 		);
@@ -128,7 +130,7 @@ class Tags extends CActiveRecord
     		$ret = "";
     		$first = true;
     		
-    		foreach ($this->ou_structure as $record) {
+    		foreach ($this->category as $record) {
 
         	if ($first === true) {
             	$first = false;
@@ -153,7 +155,7 @@ class Tags extends CActiveRecord
 	public function afterSave(){
 		$Log = Logger::getLogger("accessLog");
 
-		if($oldAttributes==NULL)
+		if($this->oldAttributes==NULL)
     		$action="create";
     	else 	
     		$action="update";

@@ -77,7 +77,9 @@
 </style>
 
 <div class="" style="margin-left:7em;">
-<?php  echo TbHtml::button('View', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
+<?php  echo CHtml::link('View', Yii::app()->createUrl('Asset/Viewer' , array('id' => $model->assetId)),
+     array('class'=>'btnPrint btn btn-primary','target'=>'_blank'));
+      ?>
 
 
 <?php  echo CHtml::link(

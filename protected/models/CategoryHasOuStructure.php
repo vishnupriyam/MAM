@@ -101,10 +101,6 @@ class CategoryHasOuStructure extends CActiveRecord
 		return parent::model($className);
 	}
 	
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
 	
 	//get model name
 	public function getModelName(){
@@ -122,7 +118,7 @@ class CategoryHasOuStructure extends CActiveRecord
     {
     	$Log = Logger::getLogger("accessLog");
     	
-    	if($oldAttributes==NULL)
+    	if($this->oldAttributes==NULL)
     		$action="create";
     	else 	
     		$action="update";

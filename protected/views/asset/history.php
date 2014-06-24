@@ -46,7 +46,7 @@
 	//'modifiedBy',
 	 array('name'=>'modified by','value'=>'$data->users->name'),
 	 'note',
- 	 array('name'=>'view','type'=>'raw','value'=>'CHtml::link("view",array("/asset/"))'),
+ 	array('name'=>'view','type'=>'raw','value'=>'CHtml::link("view_revisions", array("AssetRevision/","View_revisions"=>$data->id))'), 
  	),
  
 	));

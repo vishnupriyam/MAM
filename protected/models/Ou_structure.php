@@ -64,7 +64,6 @@ class Ou_structure extends CActiveRecord
 		     //relation that defines each ou_structure has many categories and 2 param must start with caps
 		     //many to many realtionship
 			'category' => array(self::MANY_MANY, 'Category', 'category_has_ou_structure(cat_id,id)'),
-			'tags' => array(self::MANY_MANY, 'Tags', 'tags_has_ou_structure(id,tagId)'),
 			'assetRel'=>array(self::HAS_MANY,'Asset','id'),
 		);
 	}
@@ -160,7 +159,7 @@ class Ou_structure extends CActiveRecord
 	public function afterSave(){
 		$Log = Logger::getLogger("accessLog");
 		
-		if($oldAttributes==NULL)
+		if($this->oldAttributes==NULL)
     		$action="create";
     	else 	
     		$action="update";

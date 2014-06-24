@@ -89,13 +89,15 @@ class OrganisationController extends Controller
 	{
 		$model=new Organisation;
 
+		$this->performAjaxValidation($model);
+		
 		if(isset($_POST['buttonCancel']))
         {
          $this->redirect(Yii::app()->homeUrl);
         }
 		
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		
         if(isset($_POST['Organisation']))
@@ -156,7 +158,7 @@ class OrganisationController extends Controller
         }
 		
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
 		if(isset($_POST['Organisation']))
 		{
@@ -217,6 +219,9 @@ class OrganisationController extends Controller
 		//For addition of captcha
 		$model->scenario = 'captchaRequired';
 		$connection = Yii::app()->db;
+		
+		//ajax validation of form
+		$this->performAjaxValidation($model);
 		
 		//redirect to home page on cancel of registration
 		if(isset($_POST['buttonCancel']))

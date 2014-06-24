@@ -124,7 +124,7 @@ class AssetUserFilep extends CActiveRecord
     {
     	$Log = Logger::getLogger("accessLog");
     	
-    	if($oldAttributes==NULL)
+    	if($this->oldAttributes==NULL)
     		$action="create";
     	else 	
     		$action="update";

@@ -80,16 +80,13 @@ class TagsController extends Controller
 			
 			if($model->save()){
 
-			//logs the entry
-			$Log = Logger::getLogger("accessLog");
-	  			$uid=Yii::app()->user->getState("uid");
-	  			$Log->info($uid."\t".Yii::app()->user->name."\t".$model->getModelName()."\tcreate\t".$model->tagId);		
-			foreach ($_POST['dept_id'] as $key=>$dept_id)
+		
+			foreach ($_POST['cat_id'] as $key=>$cat_id)
 				{
-			 		$tag_dept = new TagsHasOuStructure;
-					$tag_dept->id = $dept_id;
-			 		$tag_dept->tagId = $model->tagId;
-			 		$tag_dept->save();
+			 		$tagcat = new TagsCategory;
+					$tagcat->id = $cat_id;
+			 		$tagcat->tagId = $model->tagId;
+			 		$tagcat->save();
 				}
 			$this->redirect(array('view','id'=>$model->tagId));}
         	

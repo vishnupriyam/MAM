@@ -6,3 +6,153 @@
 2014-06-24T04:20:43+02:00 INFO  accessLog type  text/html
 2014-06-24T04:20:43+02:00 INFO  accessLog reviewer  10
 2014-06-24T04:20:43+02:00 INFO  accessLog ownerId  8
+2014-06-24T08:18:10+02:00 INFO  accessLog 8	IITB1	Asset	create	35
+2014-06-24T08:18:10+02:00 INFO  accessLog assetName  view check
+2014-06-24T08:18:10+02:00 INFO  accessLog file  logo.png
+2014-06-24T08:18:10+02:00 INFO  accessLog createDate  NOW()
+2014-06-24T08:18:10+02:00 INFO  accessLog publication  0
+2014-06-24T08:18:10+02:00 INFO  accessLog onlineEditable  0
+2014-06-24T08:18:10+02:00 INFO  accessLog onlineEditable  0
+2014-06-24T08:18:10+02:00 INFO  accessLog size  29596
+2014-06-24T08:18:10+02:00 INFO  accessLog type  image/png
+2014-06-24T08:18:10+02:00 INFO  accessLog reviewer  10
+2014-06-24T08:18:10+02:00 INFO  accessLog ownerId  8
+2014-06-24T08:18:10+02:00 INFO  accessLog 8	IITB1	AssetOuFilep	create	5
+2014-06-24T08:18:10+02:00 INFO  accessLog assetId  35
+2014-06-24T08:18:10+02:00 INFO  accessLog ouId  6
+2014-06-24T09:58:55+02:00 INFO  accessLog name  vishnu123
+2014-06-24T09:58:55+02:00 INFO  accessLog email asd@fafs.com 
+2014-06-24T09:58:55+02:00 INFO  accessLog passwordsaEZ6MlWYV9nQ 
+2014-06-24T09:58:55+02:00 INFO  accessLog mobile 0000000000 
+2014-06-24T09:58:55+02:00 INFO  accessLog status 0 
+2014-06-24T09:58:55+02:00 INFO  accessLog orgId  
+2014-06-24T09:58:55+02:00 INFO  accessLog ouId 6 
+2014-06-24T09:58:55+02:00 INFO  accessLog 8	IITB1	Users	create	18
+2014-06-24T10:00:18+02:00 INFO  accessLog name  vishnu1234
+2014-06-24T10:00:18+02:00 INFO  accessLog email vishnu@gma.com 
+2014-06-24T10:00:18+02:00 INFO  accessLog passwordsaEZ6MlWYV9nQ 
+2014-06-24T10:00:18+02:00 INFO  accessLog mobile 0000000000 
+2014-06-24T10:00:18+02:00 INFO  accessLog status 0 
+2014-06-24T10:00:18+02:00 INFO  accessLog orgId  
+2014-06-24T10:00:18+02:00 INFO  accessLog ouId 6 
+2014-06-24T10:00:18+02:00 INFO  accessLog 8	IITB1	Users	create	19
+2014-06-24T10:08:58+02:00 INFO  accessLog 8	IITB1	Category	create	8
+2014-06-24T10:08:58+02:00 INFO  accessLog name  cat2
+2014-06-24T10:08:58+02:00 INFO  accessLog 8	IITB1	Category	create	8
+2014-06-24T10:09:18+02:00 INFO  accessLog 8	IITB1	Category	create	9
+2014-06-24T10:09:18+02:00 INFO  accessLog name  cat3
+2014-06-24T10:09:18+02:00 INFO  accessLog 8	IITB1	Category	create	9
+2014-06-24T10:11:44+02:00 INFO  accessLog 8	IITB1	Category	create	10
+2014-06-24T10:11:44+02:00 INFO  accessLog name  category111
+2014-06-24T10:11:44+02:00 INFO  accessLog 8	IITB1	Category	create	10
+2014-06-24T10:11:44+02:00 INFO  accessLog 8	IITB1	CategoryHasOuStructure	create	 categoryHasOuStructure
+2014-06-24T10:11:44+02:00 INFO  accessLog categoryId  10
+2014-06-24T10:11:44+02:00 INFO  accessLog ou structureId  6
+2014-06-24T10:12:52+02:00 INFO  accessLog 8	IITB1	Category	create	11
+2014-06-24T10:12:52+02:00 INFO  accessLog name  category112
+2014-06-24T10:12:52+02:00 INFO  accessLog 8	IITB1	Category	create	11
+2014-06-24T10:12:52+02:00 INFO  accessLog 8	IITB1	CategoryHasOuStructure	create	 categoryHasOuStructure
+2014-06-24T10:12:52+02:00 INFO  accessLog categoryId  11
+2014-06-24T10:12:52+02:00 INFO  accessLog ou structureId  6
+2014-06-24T11:11:29+02:00 INFO  accessLog 8	IITB1	Tags	create	9
+2014-06-24T11:11:29+02:00 INFO  accessLog tagName  tagABC1
+2014-06-24T11:11:29+02:00 INFO  accessLog orgId  4
+2014-06-24T11:15:00+02:00 INFO  accessLog 8	IITB1	Tags	create	10
+2014-06-24T11:15:00+02:00 INFO  accessLog tagName  koding
+2014-06-24T11:15:00+02:00 INFO  accessLog orgId  4
+2014-06-24T11:15:23+02:00 INFO  accessLog 8	IITB1	Tags	create	11
+2014-06-24T11:15:23+02:00 INFO  accessLog tagName  koding1
+2014-06-24T11:15:23+02:00 INFO  accessLog orgId  4
+2014-06-24T11:19:02+02:00 INFO  accessLog 8	IITB1	Tags	create	12
+2014-06-24T11:19:02+02:00 INFO  accessLog tagName  tattata
+2014-06-24T11:19:02+02:00 INFO  accessLog orgId  4
+2014-06-24T11:20:52+02:00 INFO  accessLog 8	IITB1	Tags	create	13
+2014-06-24T11:20:52+02:00 INFO  accessLog tagName  tags12214efd
+2014-06-24T11:20:52+02:00 INFO  accessLog orgId  4
+2014-06-24T11:23:37+02:00 INFO  accessLog 8	IITB1	Tags	create	14
+2014-06-24T11:23:37+02:00 INFO  accessLog tagName  tag223
+2014-06-24T11:23:37+02:00 INFO  accessLog orgId  4
+2014-06-24T12:18:25+02:00 INFO  accessLog 	Guest	Organisation	create	6
+2014-06-24T12:18:25+02:00 INFO  accessLog orgName  IIT Bombay Powai
+2014-06-24T12:18:25+02:00 INFO  accessLog noEmp  12
+2014-06-24T12:18:25+02:00 INFO  accessLog phone  7736217996
+2014-06-24T12:18:25+02:00 INFO  accessLog email  vishnu@gmail.com
+2014-06-24T12:18:25+02:00 INFO  accessLog addr1  street1
+2014-06-24T12:18:25+02:00 INFO  accessLog addr2  street2
+2014-06-24T12:18:25+02:00 INFO  accessLog state  Kerala
+2014-06-24T12:18:25+02:00 INFO  accessLog country  India
+2014-06-24T12:18:25+02:00 INFO  accessLog orgType  1
+2014-06-24T12:18:25+02:00 INFO  accessLog description  description of organisation
+2014-06-24T12:18:25+02:00 INFO  accessLog fax  123422422331
+2014-06-24T12:18:25+02:00 INFO  accessLog validity  1
+2014-06-24T12:24:14+02:00 INFO  accessLog 20	IIT Bombay Powai	Ou_structure	create	12
+2014-06-24T12:24:14+02:00 INFO  accessLog root  11
+2014-06-24T12:24:14+02:00 INFO  accessLog lft  2
+2014-06-24T12:24:14+02:00 INFO  accessLog rgt  3
+2014-06-24T12:24:14+02:00 INFO  accessLog level  2
+2014-06-24T12:24:14+02:00 INFO  accessLog name  Computer science
+2014-06-24T12:24:14+02:00 INFO  accessLog description  Computers
+2014-06-24T12:24:14+02:00 INFO  accessLog dept_code  CSE
+2014-06-24T12:24:45+02:00 INFO  accessLog 20	IIT Bombay Powai	Ou_structure	create	13
+2014-06-24T12:24:45+02:00 INFO  accessLog root  11
+2014-06-24T12:24:45+02:00 INFO  accessLog lft  4
+2014-06-24T12:24:45+02:00 INFO  accessLog rgt  5
+2014-06-24T12:24:45+02:00 INFO  accessLog level  2
+2014-06-24T12:24:45+02:00 INFO  accessLog name  Electrical
+2014-06-24T12:24:45+02:00 INFO  accessLog description  description
+2014-06-24T12:24:45+02:00 INFO  accessLog dept_code  EE
+2014-06-24T12:25:23+02:00 INFO  accessLog 20	IIT Bombay Powai	ReviewerOustructure	create	6
+2014-06-24T12:25:23+02:00 INFO  accessLog uId  20
+2014-06-24T12:25:23+02:00 INFO  accessLog ou structureId  11
+2014-06-24T12:50:21+02:00 INFO  accessLog 20	IIT Bombay Powai	Category	create	12
+2014-06-24T12:50:21+02:00 INFO  accessLog name  Engineering
+2014-06-24T12:50:21+02:00 INFO  accessLog 20	IIT Bombay Powai	Category	create	12
+2014-06-24T12:50:21+02:00 INFO  accessLog 20	IIT Bombay Powai	CategoryHasOuStructure	create	 categoryHasOuStructure
+2014-06-24T12:50:21+02:00 INFO  accessLog categoryId  12
+2014-06-24T12:50:21+02:00 INFO  accessLog ou structureId  11
+2014-06-24T12:50:22+02:00 INFO  accessLog 20	IIT Bombay Powai	CategoryHasOuStructure	create	 categoryHasOuStructure
+2014-06-24T12:50:22+02:00 INFO  accessLog categoryId  12
+2014-06-24T12:50:22+02:00 INFO  accessLog ou structureId  12
+2014-06-24T12:50:36+02:00 INFO  accessLog 20	IIT Bombay Powai	Category	create	13
+2014-06-24T12:50:36+02:00 INFO  accessLog name  category1
+2014-06-24T12:50:36+02:00 INFO  accessLog 20	IIT Bombay Powai	Category	create	13
+2014-06-24T12:50:37+02:00 INFO  accessLog 20	IIT Bombay Powai	CategoryHasOuStructure	create	 categoryHasOuStructure
+2014-06-24T12:50:37+02:00 INFO  accessLog categoryId  13
+2014-06-24T12:50:37+02:00 INFO  accessLog ou structureId  12
+2014-06-24T12:50:51+02:00 INFO  accessLog 20	IIT Bombay Powai	Category	create	14
+2014-06-24T12:50:51+02:00 INFO  accessLog name  Coding
+2014-06-24T12:50:51+02:00 INFO  accessLog 20	IIT Bombay Powai	Category	create	14
+2014-06-24T12:50:51+02:00 INFO  accessLog 20	IIT Bombay Powai	CategoryHasOuStructure	create	 categoryHasOuStructure
+2014-06-24T12:50:51+02:00 INFO  accessLog categoryId  14
+2014-06-24T12:50:51+02:00 INFO  accessLog ou structureId  12
+2014-06-24T12:51:16+02:00 INFO  accessLog 20	IIT Bombay Powai	Category	create	15
+2014-06-24T12:51:16+02:00 INFO  accessLog name  Current
+2014-06-24T12:51:16+02:00 INFO  accessLog 20	IIT Bombay Powai	Category	create	15
+2014-06-24T12:51:16+02:00 INFO  accessLog 20	IIT Bombay Powai	CategoryHasOuStructure	create	 categoryHasOuStructure
+2014-06-24T12:51:16+02:00 INFO  accessLog categoryId  15
+2014-06-24T12:51:16+02:00 INFO  accessLog ou structureId  13
+2014-06-24T12:51:52+02:00 INFO  accessLog 20	IIT Bombay Powai	Tags	create	15
+2014-06-24T12:51:52+02:00 INFO  accessLog tagName  tagEngin
+2014-06-24T12:51:52+02:00 INFO  accessLog orgId  6
+2014-06-24T13:04:19+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	36
+2014-06-24T13:04:19+02:00 INFO  accessLog assetName  abcd
+2014-06-24T13:04:19+02:00 INFO  accessLog file  Android Components.pdf
+2014-06-24T13:04:19+02:00 INFO  accessLog createDate  NOW()
+2014-06-24T13:04:19+02:00 INFO  accessLog size  1002886
+2014-06-24T13:04:19+02:00 INFO  accessLog type  application/pdf
+2014-06-24T13:04:19+02:00 INFO  accessLog reviewer  20
+2014-06-24T13:04:19+02:00 INFO  accessLog ownerId  20
+2014-06-24T13:10:35+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	37
+2014-06-24T13:10:35+02:00 INFO  accessLog file  Androidmedia.pdf
+2014-06-24T13:10:35+02:00 INFO  accessLog createDate  NOW()
+2014-06-24T13:10:35+02:00 INFO  accessLog size  1325133
+2014-06-24T13:10:35+02:00 INFO  accessLog type  application/pdf
+2014-06-24T13:10:35+02:00 INFO  accessLog reviewer  20
+2014-06-24T13:10:35+02:00 INFO  accessLog ownerId  20
+2014-06-24T13:16:35+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	38
+2014-06-24T13:16:35+02:00 INFO  accessLog file  version-control.pdf
+2014-06-24T13:16:35+02:00 INFO  accessLog createDate  NOW()
+2014-06-24T13:16:35+02:00 INFO  accessLog size  507208
+2014-06-24T13:16:35+02:00 INFO  accessLog type  application/pdf
+2014-06-24T13:16:35+02:00 INFO  accessLog reviewer  20
+2014-06-24T13:16:35+02:00 INFO  accessLog ownerId  20

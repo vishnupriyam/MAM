@@ -50,10 +50,19 @@ class Organisation extends CActiveRecord
 			array('email', 'length', 'max'=>26),
 			array('addr1, addr2', 'length', 'max'=>255),
 			array('state', 'length', 'max'=>50),
+			array('phone', 'length', 'max'=>10,'min'=>10),
 			array('country, orgType', 'length', 'max'=>30),
 			array('description', 'safe'),
+			
 			// verifyCode needs to be entered correctly
 			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
+			
+			array('orgName', 'unique' ,'className' => 'Organisation'),array('orgName', 'length', 'max'=>20, 'min' => 3),//name must be unique
+			array('email','unique', 'className' => 'Organisation','attributeName'=>'email'),//email must be unique
+			array('email','length','min'=>3,'max'=>32),//email length must be between 3 and 32
+			array('noEmp', 'numerical'),//name must contain only the specified characters
+			array('fax', 'numerical'),//fax must contain only the specified numbers
+			
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('orgName, noEmp, phone, email, addr1, addr2, state, country, orgType, description, fax, orgId, validity', 'safe', 'on'=>'search'),
@@ -160,7 +169,7 @@ class Organisation extends CActiveRecord
 	public function afterSave(){
 		$Log = Logger::getLogger("accessLog");
 
-		if($oldAttributes==NULL)
+		if($this->oldAttributes==NULL)
     		$action="create";
     	else 	
     		$action="update";

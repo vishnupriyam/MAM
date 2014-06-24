@@ -36,8 +36,7 @@
 	
 	<?php echo $form->textFieldControlGroup($model, 'name',array('label'=>'Username','Placeholder'=>'Username','help'=>'Name cannot contain spaces')); ?>
 	
-	<?php echo $form->emailFieldControlGroup($model, 'email',array('label'=>'Email','Placeholder'=>'Valid email id',
-		'help'=>'Please enter a freuently used email id')); ?>
+	<?php echo $form->emailFieldControlGroup($model, 'email',array('label'=>'Email','Placeholder'=>'Valid email id','onError'=>'red')); ?>
 	
 	
 	<?php 

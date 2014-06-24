@@ -117,7 +117,7 @@ class Role extends CActiveRecord
 	public function afterSave(){
 		$Log = Logger::getLogger("accessLog");
 
-		if($oldAttributes==NULL)
+		if($this->oldAttributes==NULL)
     		$action="create";
     	else 	
     		$action="update";
