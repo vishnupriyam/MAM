@@ -73,11 +73,12 @@ class CategoryController extends Controller
 			
 			if($model->save()){
 				
+				//logs the details
 				$Log = Logger::getLogger("accessLog");
 	  			$uid=Yii::app()->user->getState("uid");
 	  			$Log->info($uid."\t".Yii::app()->user->name."\t".$model->getModelName()."\tcreate\t".$model->cat_id);	
 	  
-				
+				//updates the category has ou_structure table
 				foreach ($_POST['dept_id'] as $key=>$dept_id)
 				{
 			 		$cat_dept = new CategoryHasOuStructure;
@@ -111,6 +112,7 @@ class CategoryController extends Controller
 			$model->attributes=$_POST['Category'];
 			if ($model->save()) {
 				
+				//records the logs
 				$Log = Logger::getLogger("accessLog");
 	  			$uid=Yii::app()->user->getState("uid");
 	  			$Log->info($uid."\t".Yii::app()->user->name."\t".$model->getModelName()."\tupdate\t".$model->cat_id);	

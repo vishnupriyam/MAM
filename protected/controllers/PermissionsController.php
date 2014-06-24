@@ -78,53 +78,7 @@ class PermissionsController extends Controller
 			if ($model->save()) {	
 				$this->redirect(array('view','id'=>$model->pid));
 			}
-			//$connection = Yii::app()->db;
-			//$module_mid=$model->mid;
-			//$role_rid=$model->role_rid;
-			//$name = $model->name;
-			//$description = $model->description;
-			//print_r($role_rid);
-			//die();
-			/*$orgId = Yii::app()->user->getId();
-			
-			$sql = "select name from module where orgId= :orgId and mid = :module_mid";
-			$command = $connection->createCommand($sql);
-			$command->bindParam(":orgId",$orgId,PDO::PARAM_INT);
-			$command->bindParam(":module_mid",$module_mid,PDO::PARAM_STR);
-			$dataReader = $command->query();
-        	$row = $dataReader->read();
-        	$dataReader->close();
-        	$module_name = $row['name'];
-        	
-        	$sql = "select name from role where orgId= :orgId and rid = :role_rid";
-        	$command = $connection->createCommand($sql);
-        	$command->bindParam(":orgId",$orgId,PDO::PARAM_INT);
-        	$command->bindParam(":role_rid",$role_rid,PDO::PARAM_STR);
-			$dataReader = $command->query();
-        	$row = $dataReader->read();
-        	$dataReader->close();
-        	$role_name = $row['name'];
-			
-			$sql = "insert into permissions(name, description, module_mid, role_rid)
-			values('create', :description, :module_mid, :role_rid)";
-			
-			$command = $connection->createCommand($sql);
-			
-			$command->bindParam(":description",$description,PDO::PARAM_STR);
-			$command->bindParam(":module_mid",$module_mid,PDO::PARAM_INT);
-			$command->bindParam(":role_rid",$role_rid,PDO::PARAM_INT);
-            $command->execute(); 
-            $idd = Yii::app()->db->getLastInsertId();
-            $sql = "insert into role_has_permissions(role_rid, permissions_pid, mid)
-			values(:role_rid, :idd, :module_mid)";
-			
-			$command = $connection->createCommand($sql);
-			$command->bindParam(":role_rid",$role_rid,PDO::PARAM_INT);
-			$command->bindParam(":idd",$idd,PDO::PARAM_INT);
-			$command->bindParam(":module_mid",$module_mid,PDO::PARAM_INT);
-            $command->execute(); 
-				
-    		$this->redirect('/final/Permissions/Index');        */
+
 		}
 
 		$this->render('create',array(
@@ -190,12 +144,6 @@ class PermissionsController extends Controller
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
-		/*$orgId = Yii::app()->user->getId();
-		$dataProvider=new CActiveDataProvider('Permissions', array('criteria'=>array('condition'=>  'orgId = :orgId', 'params'=>array(':orgId'=>$orgId),
-		),));
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));*/
 	}
 
 	/**

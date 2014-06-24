@@ -21,7 +21,6 @@ $this->pageTitle=Yii::app()->name;
 
 
 <div class="span12" style="margin-top:4em;">
-	
 </div>
 
 

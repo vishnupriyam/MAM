@@ -117,6 +117,16 @@ class ReviewerOustructure extends CActiveRecord
     public function afterSave()
     {
     	$Log = Logger::getLogger("accessLog");
+    	
+    	if($oldAttributes==NULL)
+    		$action="create";
+    	else 	
+    		$action="update";
+    	
+    	$uid=Yii::app()->user->getState("uid");
+	 	$Log->info($uid."\t".Yii::app()->user->name."\t".$this->getModelName()."\t".$action."\t".$this->id);	
+    	
+    	
     	if($this->uId != $this->oldAttributes['uId'])
 	 	{$Log->info("uId ".$this->oldAttributes['uId']." ".$this->uId);}
     	if($this->ouId != $this->oldAttributes['ouId'])

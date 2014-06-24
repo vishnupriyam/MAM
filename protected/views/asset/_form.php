@@ -10,11 +10,7 @@
 	width:10%;
 	padding-left:4em;}
 	.radio.inline, .checkbox.inline{width:34%; margin-left:20px !important;}
-	#Users_table{
 	
-	}
-
-
 </style>
 <div class="form" style="margin-top:3em;">
 
@@ -34,7 +30,9 @@
     <?php echo $form->errorSummary($model); ?>
 	
 	<div class="span12" style="margin-left:0;">
-	<div class="span5" style="margin-left:0;">
+		
+		<div class="span5" style="margin-left:0;">
+		
 			<?php echo $form->fileFieldControlGroup($model,'file'); ?>
 			
 		    <?php echo $form->textFieldControlGroup($model,'assetName',array('span'=>3,'maxlength'=>70,'label'=>'File Name')); ?>
@@ -52,29 +50,14 @@
             
             $root = Ou_structure::model()->find('orgId=:orgId',array(':orgId'=>$orgId));
             $root = $root->id;
-            /*echo $form->dropDownListControlGroup($model,'departmentId',CHtml::listData(Ou_structure::model()->findAll('root=:root',array(':root'=>$root)), 'id', 'name'),
-            
-            	array(
-    			//'prompt'=>'Select Category',
-    			'label'=>'Department',
-    			'ajax' => array(
-    			'type'=>'POST', 
-    			'url'=>Yii::app()->createUrl('Asset/loadCategoryId'), //or $this->createUrl('loadcities') if '$this' extends CController
-    			'update'=>'#categoryId', //or 'success' => 'function(data){...handle the data in the way you want...}',
-  				'data'=>array('departmentId'=>'js:this.value'),
- 			 ))
-            );*/ ?>
+            ?>
             
          	<?php
 			echo $form->dropDownListControlGroup($model,'categoryId',
 			CHtml::listData(Category::model()->findAll('orgId=:orgId',array(':orgId'=>$orgId)), 'cat_id', 'name'),
 			array('label'=>'Category')); ?>
             
-			<?php // echo TbHtml::inlinecheckBoxListControlGroup('tags','',CHtml::listData(Tags::model()->findAll(), 'tagId', 'tagName'), array('span'=>3,'label'=>'Tags','help' => '<strong>Note:</strong> Add multiple tags with commas.')); ?>	 
-	 
-         	<?php //echo $form->textFieldControlGroup($model,'tagsUser',array('span'=>3,'maxlength'=>70,'label'=>'Add Tags')); ?>
-         	
-
+			
 		</div><!-- end of span 7 -->
 
 			<div class="span5" style="margin-top:3.5em;">
@@ -88,65 +71,37 @@
 
 		</div><!-- end of span12 -->
 		
-		<!--  -->
 				
-				
-			<?php echo $form->radioButtonListControlGroup($model, 'publication', array(
-        		'yes',
-        		'no',
- 			   )); ?>
- 			<?php echo $form->radioButtonListControlGroup($model, 'onlineEditable', array(
-        		'yes',
-        		'no',
- 		   )); ?>
+		<?php echo $form->radioButtonListControlGroup($model, 'publication', array('yes','no',)); ?>
+ 			
+		<?php echo $form->radioButtonListControlGroup($model, 'onlineEditable', array('yes','no',)); ?>
  
-			
-            <?php echo $form->textAreaControlGroup($model,'description',array('rows'=>4,'span'=>8)); ?>
+        <?php echo $form->textAreaControlGroup($model,'description',array('rows'=>4,'span'=>8)); ?>
 
-            <?php echo $form->textAreaControlGroup($model,'comment',array('rows'=>1,'span'=>8)); ?>
+        <?php echo $form->textAreaControlGroup($model,'comment',array('rows'=>1,'span'=>8)); ?>
 
 		
 
 	<div class="span9 offset1">
 	
-	<script type="text/javascript">
-    /*function updateUsersTable(grid_id) {
- 
-        var keyId = $.fn.yiiGridView.getSelection(grid_id);
-        keyId  = keyId[0]; //above function returns an array with single item, so get the value of the first item
- 
-        $.ajax({
-            url: '<?php //echo $this->createUrl('UserTable'); ?>',
-            data: {id: keyId},
-            type: 'GET',
-            success: function(data) {
-                $('#Users_table').html(data);
-            }
-        });
-    }*/
-	</script>	        
-		        
-		        
 		<?php
 			
+			//load the departments of the logged in organisation
 			$dataProvider = new CActiveDataProvider('Ou_structure',array('criteria'=>array(
                         'condition'=>'root=:root',
                         'params'=>array(':root'=>$root),
     
                     ),
-					
-                    ));
-			
-			//$dataProvider = Ou_structure::model()->findAll('orgId=:orgId',array('orgId'=>$orgId));
-			$number = 0;
+            ));
+
+           $number = 0;
 				$this->widget('bootstrap.widgets.TbGridView', array(
-				//'selectionChanged' => 'updateUsersTable',
 				'selectableRows' => 1,
 				'id'=>'gview',
 				'dataProvider'=>$dataProvider,
 				'rowHtmlOptionsExpression' => 'array("id"=>$data->id)',
 				'columns'=>array(
-    			array('name'=>'name','header'=>'Departments'),    /*in header give the role name while passing*/
+    			array('name'=>'name','header'=>'Departments'),   
 	 			array('header'=>'Read','value'=>'','id'=>'headerA'),
 	    		array(
 	    		    
@@ -191,27 +146,23 @@
 		<hr />
 		<div id='Users_table'>
 			
+		<!-- register for search  -->	
+		<?php
+			Yii::app()->clientScript->registerScript('search2', "
+				$('.search-button').click(function(){
+				$('.search-form').toggle();
+				return false;
+			});
+			$('.search-form form').submit(function(){
+				$('#Agview').yiiGridView('update', {
+				data: $(modelUsers).serialize()
+			});
+			return false;
+		  });
+			" );
+		 ?>
 			
-<?php
-/* @var $this AssetController */
-/* @var $model Asset */
-
-
-Yii::app()->clientScript->registerScript('search2', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#Agview').yiiGridView('update', {
-		data: $(modelUsers).serialize()
-	});
-	return false;
-});
-");
-?>
-			
-			
+			<!-- Users grid view -->
 			<?php 
 			
 				$this->widget('bootstrap.widgets.TbGridView', array(
@@ -256,16 +207,9 @@ $('.search-form form').submit(function(){
    		)
 		);
 
+	?>
 			
-			
-			
-			
-			?>
-			
-			
-			
-			
-		</div>
+	</div>
 		
 		<div class="">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(

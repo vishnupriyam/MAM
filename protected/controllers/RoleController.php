@@ -55,30 +55,33 @@ class RoleController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
-	
-	public function actionRfu($id)
-	{
-		$this->render('rfu');
-	}
-	
+
+	/**
+	 * 
+	 * Enter description here ...
+	 * @param integer $id the ID to load model
+	 */
 	public function actionView_Permission($id)
 	{
 		//$dataProvider=new CActiveDataProvider('Permissions');
 		
 		$model= $this->loadModel($id);
 		
+		//redirection to hoe page on cancel
 		if(isset($_POST['buttonCancel']))
         {
          $this->redirect(Yii::app()->homeUrl);
         }
        
-
+		//update model
         if (isset($_POST['buttonUpdate'])) {
         	
         	$module=ModuleOrganisation::model()->findAll('orgId=:orgId',array(':orgId'=>Yii::app()->user->getId()));
         	$data = count($module);
+        	
         	RoleHasPermissions::model()->deleteAll('rid=:rid',array(':rid'=>$model->rid));
-        	//print_r($data);die();
+        	
+        	//update RoleHasPermissions table
         	$number = 0;
         	while($number<$data){
         		if(!empty($_POST['CB'.$number])){
@@ -101,13 +104,6 @@ class RoleController extends Controller
 	}
 	
 	
-	/*public function actionPermission_change($id)
-	{
-		$this->render('permission_change',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}*/
-
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -129,12 +125,16 @@ class RoleController extends Controller
 			$model->attributes=$_POST['Role'];
 			
 			$weight = $model->weight;
-			
+
+			//select weight 
 			$sq = "select weight from role where orgId = :orgId";
+			
+			//select roles of the logged in organisation
 			$command = Yii::app()->db->createCommand($sq);
 			$command->bindParam(":orgId",$orgId,PDO::PARAM_INT);
 			$dataReader = $command->query();
 			
+			//change the weight of the present roles if the entered weight is already present in the list
 			while (1) {
 				$flag = 0;
 				while (($model1 = $dataReader->read())!== false)
@@ -153,6 +153,7 @@ class RoleController extends Controller
 				}
 			}
 			
+			//insert new record into role table
 			$connection = Yii::app()->db;
 			$id = Yii::app()->user->getId();
 			$name = $model->name;
@@ -198,6 +199,7 @@ class RoleController extends Controller
 			$command->bindParam(":orgId",$orgId,PDO::PARAM_INT);
 			$dataReader = $command->query();
 			
+			//change the weight of existing role if updated role weight is already present in the table
 			while (1) {
 				$flag = 0;
 				while (($model1 = $dataReader->read())!== false)
@@ -251,8 +253,12 @@ class RoleController extends Controller
 	{
 		$model=new Role;
 		$orgId = Yii::app()->user->getId();
-		$dataProvider=new CActiveDataProvider('Role', array('criteria'=>array('condition'=>  'orgId = :orgId', 'params'=>array(':orgId'=>$orgId),
-		//$dataProvider = new CActiveDataProvider('Role');
+		
+		//display the roles of logged in organisation
+		$dataProvider=new CActiveDataProvider('Role', array('criteria'=>array(
+			'condition'=>  'orgId = :orgId', 
+			'params'=>array(':orgId'=>$orgId),
+		
 		),));
 		
 		
@@ -262,6 +268,7 @@ class RoleController extends Controller
 			
 			$weight = $model->weight;
 			
+			//arrange the roles according to the weight of the roles
 			$sq = "select weight from role where orgId = :orgId";
 			$command = Yii::app()->db->createCommand($sq);
 			$command->bindParam(":orgId",$orgId,PDO::PARAM_INT);
@@ -282,50 +289,6 @@ class RoleController extends Controller
 				}
 				
 				
-			/*while (1) {
-				$flag = 0;
-				while (($model1 = $dataReader->read())!== false)
-				{
-					$a = $model1['weight'];
-					
-					if ($a == $weight) {
-						
-						$abc = $weight + 1;
-						
-						$connection = Yii::app()->db;
-						$sql = "update role set weight = :new where weight = :weight";
-						$command = $connection->createCommand($sql);
-						$command->bindParam(":weight",$a,PDO::PARAM_INT);
-						$command->bindParam(":new",$abc,PDO::PARAM_INT);
-						
-						$command->execute();
-						$flag = 1;
-					}		
-				}
-				$weight = $weight + 1;
-				if ($flag == 0) {
-					break;
-				}
-			}
-			
-			*/
-			
-			/*
-			$connection = Yii::app()->db;
-			$id = Yii::app()->user->getId();
-			$name = $model->name;
-			$weight = $model->weight;
-			$orgId = Yii::app()->user->getId();
-			$description = $model->description;
-			$sql = "insert into role (name, weight, description, orgId) values (:name, :weight, :description, :orgId)";
-			$command = $connection->createCommand($sql);
-			$command->bindParam(":name",$name,PDO::PARAM_STR);
-			$command->bindParam(":description",$description,PDO::PARAM_STR);
-			$command->bindParam(":orgId",$orgId,PDO::PARAM_STR);
-			$command->bindParam(":weight",$weight,PDO::PARAM_STR);
-			
-			$command->execute(); 
-			*/
 				$model->orgId =  Yii::app()->user->getId();
 				if ($model->save())
 				$this->redirect(array('index'));
@@ -333,18 +296,6 @@ class RoleController extends Controller
 		}
 		
 		$this->render('index',array(
-			'model'=>$model,
-		));
-	}
-	
-	public function actionPermission()
-	{
-		$model = new Role;
-		//$orgId = Yii::app()->user->getId();
-		//$dataProvider=new CActiveDataProvider('Role', array('criteria'=>array('condition'=>  'orgId = :orgId', 'params'=>array(':orgId'=>$orgId),
-		//$dataProvider = new CActiveDataProvider('Role');
-		//),));
-		$this->render('permission',array(
 			'model'=>$model,
 		));
 	}
@@ -366,6 +317,12 @@ class RoleController extends Controller
 		));
 	}
 	
+	/**
+	 * 
+	 * Find the role and its related permission
+	 * @param integer $id1, the ID of model role 
+	 * @param integer $id2, the ID of the permission
+	 */
 	public function isChecked($id1, $id2){
 		
 		$connection = Yii::app()->db;
@@ -385,9 +342,13 @@ class RoleController extends Controller
 
 	}
 
+	/**
+	 * 
+	 * Change permissions assigned for a role
+	 * @param integer $id ,the ID of the model to be loaded
+	 */
 	public function actionPermission_change($id)
 	{
-		//$dataProvider=new CActiveDataProvider('Permissions');
 		
 		$model= $this->loadModel($id);
 		
@@ -396,14 +357,14 @@ class RoleController extends Controller
          $this->redirect(Yii::app()->homeUrl);
         }
        
-
         if (isset($_POST['buttonUpdate'])) {
-        	
-        	$module=ModuleOrganisation::model()->findAll('orgId=:orgId',array(':orgId'=>Yii::app()->user->getId()));
+        
+        	$module=ModuleOrganisation::model()->findAll('orgId=:orgId',
+        		array(':orgId'=>Yii::app()->user->getId()));
         	$data = count($module);
         	RoleHasPermissions::model()->deleteAll('rid=:rid',array(':rid'=>$model->rid));
-        	//print_r($data);die();
         	$number = 0;
+        	//changes the permisssions assigned to the role
         	while($number<$data){
         		if(!empty($_POST['CB'.$number])){
         		foreach($_POST['CB'.$number] as $rec)

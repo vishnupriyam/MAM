@@ -246,10 +246,18 @@ class Asset extends CActiveRecord
     //adding details to log the asset save   
     public function afterSave()
     {
+    	    	
     	$Log = Logger::getLogger("accessLog");
-  
-    	$Log->info("assetId ".$this->assetId);
+	  	
+    	if($oldAttributes==NULL)
+    		$action="create";
+    	else 	
+    		$action="update";
     	
+    	$uid=Yii::app()->user->getState("uid");
+	 	$Log->info($uid."\t".Yii::app()->user->name."\t".$this->getModelName()."\t".$action."\t".$this->assetId);	
+	  
+	 	
     	if($this->assetName != $this->oldAttributes['assetName'])
 	 	{$Log->info("assetName ".$this->oldAttributes['assetName']." ".$this->assetName);}
     	if($this->file != $this->oldAttributes['file'])

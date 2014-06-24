@@ -2,6 +2,7 @@
 
 class TagsController extends Controller
 {
+	private $userLog;
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -77,19 +78,9 @@ class TagsController extends Controller
 			$orgId = Yii::app()->user->getId();
 			$model->orgId = $orgId;
 			
-			
-			//print_r($_POST['Tags']['tagName']);die();
-			
 			if($model->save()){
-			//print_r( json_encode($_POST['dept_id']));die();
-			
-				/*if(!empty($_POST['Tags']['tagName'])){
-					$tags = explode(",",$_POST['Tags']['tagName']);
-					foreach($tag as $tagRow)
-					
-				}*/
-				
-				
+
+			//logs the entry
 			$Log = Logger::getLogger("accessLog");
 	  			$uid=Yii::app()->user->getState("uid");
 	  			$Log->info($uid."\t".Yii::app()->user->name."\t".$model->getModelName()."\tcreate\t".$model->tagId);		
@@ -131,6 +122,7 @@ class TagsController extends Controller
 			$model->attributes=$_POST['Tags'];
 			if ($model->save()) {
 				
+				//logs the record 
 				$Log = Logger::getLogger("accessLog");
 	  			$uid=Yii::app()->user->getState("uid");
 	  			$Log->info($uid."\t".Yii::app()->user->name."\t".$model->getModelName()."\tupdate\t".$model->uid);	
@@ -168,9 +160,12 @@ class TagsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		//$dataProvider=new CActiveDataProvider('Tags');
+		
 		$orgId = Yii::app()->user->getId();
-		$dataProvider=new CActiveDataProvider('Tags', array('criteria'=>array('condition'=>  'orgId = :orgId', 'params'=>array(':orgId'=>$orgId),
+		//load only the tags that are related to the organisation
+		$dataProvider=new CActiveDataProvider('Tags', array('criteria'=>array(
+			'condition'=>  'orgId = :orgId',
+			'params'=>array(':orgId'=>$orgId),
 		),));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
@@ -202,9 +197,7 @@ class TagsController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		//$model=Tags::model()->findByPk($id);
-		//$model = Yii::app()->db->createCommand()->select('*')->from('tags')->where('tagId=:tagId',array(':tagId'=>$id));
-		//$model = Tags::model()->findByPk($id);
+		//loads the model with the given tagId
 		$model=Tags::model()->find('tagId=:tagId', array(':tagId'=>$id));
 		
 		

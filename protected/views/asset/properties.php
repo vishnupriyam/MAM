@@ -2,6 +2,8 @@
 <?php echo $model->file;?>
 </h2>
 
+
+<!-- variable defnitions for wigets to apply in grid view -->
 <?php
 	$properties =$this->widget('zii.widgets.CDetailView',array(
     		'htmlOptions' => array(
@@ -38,9 +40,6 @@
  $accessLogView = $this->widget('bootstrap.widgets.TbGridView',array(
 	'dataProvider'=>$accesslog,
 	'columns'=>array(
- 	 //'assetId',
- 	 //'uId',
- 	 //add the version also
  	 array('name'=>'filename','value'=>'$data->asset->file'),
  	 array('name'=>'Username','value'=>'$data->users->name'),
  	 array('name'=>'act','value'=>'$data->getAction()')
@@ -50,7 +49,7 @@
 
 ?>
 
-
+<!-- grid view -->
 <?php echo TbHtml::tabbableTabs(array(
 
     array('label' => 'Properties', 'active' => true, 'content' =>$properties),

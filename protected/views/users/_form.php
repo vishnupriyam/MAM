@@ -22,7 +22,9 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+
+	'enableAjaxValidation'=>true,
+    'enableClientValidation'=>true,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 
 )); ?>
@@ -32,7 +34,7 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	
-	<?php echo $form->textFieldControlGroup($model, 'name',array('label'=>'Username','Placeholder'=>'Username')); ?>
+	<?php echo $form->textFieldControlGroup($model, 'name',array('label'=>'Username','Placeholder'=>'Username','help'=>'Name cannot contain spaces')); ?>
 	
 	<?php echo $form->emailFieldControlGroup($model, 'email',array('label'=>'Email','Placeholder'=>'Valid email id',
 		'help'=>'Please enter a freuently used email id')); ?>

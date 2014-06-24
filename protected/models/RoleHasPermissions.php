@@ -9,6 +9,7 @@
  */
 class RoleHasPermissions extends CActiveRecord
 {
+	public $oldAttributes;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -98,43 +99,34 @@ class RoleHasPermissions extends CActiveRecord
 		return parent::model($className);
 	}
 	
-public function searchIncludingPermissions($parentID)
-    {
-        /* This function creates a dataprovider with RolePermission
-        models, based on the parameters received in the filtering-model.
-        It also includes related Permission models, obtained via the
-        relPermission relation. */
-        $criteria=new CDbCriteria;
-        $criteria->with=array('relPermission');
-        $criteria->together = true;
- 
- 
-        /* filter on role-grid PK ($parentID) received from the 
-        controller*/
-        $criteria->compare('t.rid',$parentID,false); 
- 
-        /* Filter on default Model's column if user entered parameter*/
-        $criteria->compare('t.pid',$this->pid,true);
- 
-        /* Filter on related Model's column if user entered parameter*/
-        /*$criteria->compare('relPermission.desc',
-            $this->desc,true);
- 		*/
-        
-        /* Sort on related Model's columns */
-        $sort = new CSort;
-        $sort->attributes = array(
-            'desc_param' => array(
-            'asc' => 'desc',
-            'desc' => 'desc DESC',
-            ), '*', /* Treat all other columns normally */
-        );
-        /* End: Sort on related Model's columns */
- 
-        return new CActiveDataProvider($this, array(
-            'criteria'=>$criteria,
-            'sort'=>$sort, /* Needed for sort */
-        ));
-    }
+	//get model name
+	public function getModelName(){
+		return __CLASS__;
+	}
+	
+	//get oldAttributes
+	public function afterFind(){
+    	 $this->oldAttributes = $this->attributes;
+   		 return parent::afterFind();
+	}
+	
+	//additional code to maintain the logs with log4php 
+	public function afterSave(){
+		$Log = Logger::getLogger("accessLog");
 
+		if($oldAttributes==NULL)
+    		$action="create";
+    	else 	
+    		$action="update";
+    	
+		$uid=Yii::app()->user->getState("uid");
+	 	$Log->info($uid."\t".Yii::app()->user->name."\t".$this->getModelName()."\t".$action."\t"."roleHasPermmissions");	
+	  
+		if($this->rid != $this->oldAttributes['rid'])
+	 		{$Log->info("rid ".$this->oldAttributes['rid']." ".$this->rid);}
+		if($this->pid != $this->oldAttributes['pid'])
+	 		{$Log->info("pid ".$this->oldAttributes['pid']." ".$this->pid);}
+		
+	 	return parent::afterSave();	
+	}
 }

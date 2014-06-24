@@ -66,6 +66,7 @@ class AssetRevision extends CActiveRecord
 			'modifiedBy' => 'Modified By',
 			'note' => 'Note',
 			'revision' => 'Revision',
+			'id'=>'Id',
 		);
 	}
 
@@ -123,6 +124,15 @@ class AssetRevision extends CActiveRecord
 	//additional code to maintain the logs with log4php 
 	public function afterSave(){
 		$Log = Logger::getLogger("accessLog");
+		
+		if($oldAttributes==NULL)
+    		$action="create";
+    	else 	
+    		$action="update";
+    	
+		$uid=Yii::app()->user->getState("uid");
+	 	$Log->info($uid."\t".Yii::app()->user->name."\t".$this->getModelName()."\t".$action."\t".$this->id);	
+	  
 		
 		if($this->assetId != $this->oldAttributes['assetId'])
 	 		{$Log->info("assetId ".$this->oldAttributes['assetId']." ".$this->assetId);}

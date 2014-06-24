@@ -9,6 +9,7 @@
  */
 class ModuleOrganisation extends CActiveRecord
 {
+	public $oldAttributes;//for logs
 	/**
 	 * @return string the associated database table name
 	 */
@@ -91,4 +92,38 @@ class ModuleOrganisation extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	//get model name
+	public function getModelName(){
+		return __CLASS__;
+	}
+	
+	//get oldAttributes
+	public function afterFind(){
+    	 $this->oldAttributes = $this->attributes;
+   		 return parent::afterFind();
+	}
+	
+	//additional code to maintain the logs with log4php 
+	public function afterSave(){
+		$Log = Logger::getLogger("accessLog");
+
+		if($oldAttributes==NULL)
+    		$action="create";
+    	else 	
+    		$action="update";
+    	
+		$uid=Yii::app()->user->getState("uid");
+	 	$Log->info($uid."\t".Yii::app()->user->name."\t".$this->getModelName()."\t".$action."\t"."module");	
+		
+	 	if($this->mid != $this->oldAttributes['mid'])
+	 		{$Log->info("mid ".$this->oldAttributes['mid']." ".$this->mid);}
+		if($this->orgId != $this->oldAttributes['orgId'])
+	 		{$Log->info("orgId ".$this->oldAttributes['orgId']." ".$this->orgId);}
+		
+	 		
+	 	return parent::afterSave();	
+	}
+	 	
+	
 }

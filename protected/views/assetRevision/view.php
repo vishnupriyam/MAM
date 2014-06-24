@@ -26,20 +26,18 @@ $this->menu=array(
     ),
     'data'=>$model,
     'attributes'=>array(
-		//'assetId',
+
 		array('name'=>'filename','value'=>$model->asset->file),
 		array('name'=>'Department','value'=>$model->asset->OwnerDept->name),
 		array('name'=>'Category','value'=>$model->asset->category->name),
 		array('name'=>'Size','value'=>$model->asset->size),
 		array('name'=>'Date Created','value'=>$model->asset->createDate),
 		array('name'=>'Description','value'=>$model->asset->description),
-		//'modifiedBy',
 		array('name'=>'modified by','value'=>$model->users->name),
 		'modifiedOn',
 		array('name'=>'comment','value'=>$model->asset->comment),
     	'note',
 		'revision',
-		//'id',
 		array('name'=>'tags','type'=>'raw','value'=>$model->asset->getTags()),
 	),
 )); ?>
@@ -47,23 +45,14 @@ $this->menu=array(
 		<?php  echo TbHtml::button('view',array(
                 'color' => TbHtml::BUTTON_COLOR_PRIMARY,
 				'submit' => Yii::app()->baseUrl,
-                //'confirm'=>"Please confirm to cancle transaction",
                 'class'=>'submit'
                 
             )); ?>
-		<?php  /*echo TbHtml::button('Download',array(
-                'color' => TbHtml::BUTTON_COLOR_PRIMARY,
-				'submit' => Yii::app()->baseUrl,
-                //'confirm'=>"Please confirm to cancle transaction",
-                'class'=>'submit'
-                
-            ));*/ ?>
-            
-          <?php  echo CHtml::link(
+       <?php  echo CHtml::link(
     		'Download',
     		 Yii::app()->createUrl('Asset/DownloadVersion' , array('id' => $model->assetId,'version'=>$model->revision)),
      		 array('class'=>'btnPrint btn btn-primary','target'=>'_blank'));
 
-?>
+		?>
             
 		

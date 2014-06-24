@@ -14,6 +14,7 @@ class AssetOuFilep extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+	public $oldAttributes;//for logs
 	public function tableName()
 	{
 		return 'asset_ou_filep';
@@ -97,4 +98,41 @@ class AssetOuFilep extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	 //get model name
+	public function getModelName(){
+		return __CLASS__;
+	}
+	
+	//get oldAttributes
+	public function afterFind(){
+    	 $this->oldAttributes = $this->attributes;
+    	 
+   		 return parent::afterFind();
+	}
+	
+       
+    //adding details to log the asset save   
+    public function afterSave()
+    {
+    	$Log = Logger::getLogger("accessLog");
+  
+    	if($oldAttributes==NULL)
+    		$action="create";
+    	else 	
+    		$action="update";
+    	
+      	$uid=Yii::app()->user->getState("uid");
+	 	$Log->info($uid."\t".Yii::app()->user->name."\t".$this->getModelName()."\t".$action."\t".$this->Id);	
+	
+    	if($this->assetId != $this->oldAttributes['assetId'])
+	 		{$Log->info("assetId ".$this->oldAttributes['assetId']." ".$this->assetId);}
+	 	if($this->ouId != $this->oldAttributes['ouId'])
+	 		{$Log->info("ouId ".$this->oldAttributes['ouId']." ".$this->ouId);}
+	 	if($this->fpId != $this->oldAttributes['fpId'])
+	 		{$Log->info("fpId ".$this->oldAttributes['fpId']." ".$this->fpId);}
+	 	
+    	return parent::afterSave();
+    }   
+    	
+	
 }

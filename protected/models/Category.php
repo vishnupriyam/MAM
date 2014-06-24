@@ -114,10 +114,19 @@ class Category extends CActiveRecord
 	}
 	
 	public function afterSave(){
-	  $Log = Logger::getLogger("accessLog");
+	 	$Log = Logger::getLogger("accessLog");
+	 	
+	 	if($oldAttributes==NULL)
+    		$action="create";
+    	else 	
+    		$action="update";
+    	
+	  	$uid=Yii::app()->user->getState("uid");
+	 	$Log->info($uid."\t".Yii::app()->user->name."\t".$this->getModelName()."\t".$action."\t".$this->cat_id);	
+	   
 	
-	if($this->name != $this->oldAttributes['name'])
-	 	{$Log->info("name ".$this->oldAttributes['name']." ".$this->name);}
+		if($this->name != $this->oldAttributes['name'])
+	 		{$Log->info("name ".$this->oldAttributes['name']." ".$this->name);}
 	}
 	
 	public function getDepartments()

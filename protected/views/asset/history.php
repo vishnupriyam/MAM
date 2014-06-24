@@ -33,11 +33,9 @@
 </script>
 
 
-
+<!-- grid view -->
 <?php
-	//$modifiedBy = "1";
-
-
+	
 	$this->widget('zii.widgets.grid.CGridView',array(
 	'dataProvider'=>$dataProvider,
 	'selectionChanged' => 'updateUsersBlocks',

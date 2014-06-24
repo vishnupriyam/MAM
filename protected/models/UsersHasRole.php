@@ -9,6 +9,7 @@
  */
 class UsersHasRole extends CActiveRecord
 {
+	public $oldAttributes;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -92,4 +93,38 @@ class UsersHasRole extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+		//get model name
+	public function getModelName(){
+		return __CLASS__;
+	}
+	
+	//get oldAttributes
+	public function afterFind(){
+    	 $this->oldAttributes = $this->attributes;
+   		 return parent::afterFind();
+	}
+	
+	//additional code to maintain the logs with log4php 
+	public function afterSave(){
+		$Log = Logger::getLogger("accessLog");
+
+		if($oldAttributes==NULL)
+    		$action="create";
+    	else 	
+    		$action="update";
+    	
+		$uid=Yii::app()->user->getState("uid");
+	 	$Log->info($uid."\t".Yii::app()->user->name."\t".$this->getModelName()."\t".$action."\t");	
+	  
+		
+		if($this->users_uid != $this->oldAttributes['users_uid'])
+	 		{$Log->info("users_uid ".$this->oldAttributes['users_uid']." ".$this->users_uid);}
+	 	if($this->role_rid != $this->oldAttributes['role_rid'])
+	 		{$Log->info("role_rid ".$this->oldAttributes['role_rid']." ".$this->role_rid);}
+	 	
+	 	return parent::afterSave();	
+	}
+	 		
+	
 }

@@ -38,7 +38,7 @@ $('.search-form form').submit(function(){
 
 
 
-
+<!-- grid view of assets -->
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'asset-grid',
 	'dataProvider'=>$model->search(),
@@ -55,8 +55,6 @@ $('.search-form form').submit(function(){
 		'size',	
 		array('name'=>'owner_name','value'=>'$data->users->name'),
 		'type',
-		//'reviewer',
-		//array('name'=>'view','type'=>'raw','value'=>$this->renderPartial('viewer', true, true)),
 		array('name'=>'view_online','type'=>'raw','value'=>'CHtml::link("view", array("asset/","viewer"=>$data->assetId))'),
 		array('name'=>'edit_online','type'=>'raw','value'=>'CHtml::link("edit", array("asset/","editor"=>$data->assetId))'),
 	),

@@ -42,7 +42,8 @@ class Ou_structureController extends BaseController
             Yii::app()->end();
         }
     }
-	// Uncomment the following methods and override them if needed
+	
+    // Uncomment the following methods and override them if needed
 	/*
 	public function filters()
 	{
@@ -69,10 +70,16 @@ class Ou_structureController extends BaseController
 	}
 	*/
 	
+    /**
+     * 
+     * Assign reviewer to the department
+     * @param $id
+     */
 	public function actionReviewerFind($id)
 		{
     		$model=new ReviewerOustructure('reviewerFind');
     		$model->ouId = $id;
+
     		// uncomment the following code to enable ajax-based validation
    			 /*
     		if(isset($_POST['ajax']) && $_POST['ajax']==='reviewer-oustructure-reviewerFind-form')
@@ -87,13 +94,11 @@ class Ou_structureController extends BaseController
         		$model->attributes=$_POST['ReviewerOustructure'];
         		if($model->validate())
        			 {
-            		// form inputs are valid, do something here
             		$model->save();
             		return;
        	 	}
     	}
     		$this->render('reviewerFind',array('model'=>$model));
 	}
-
 	
 }

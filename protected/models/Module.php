@@ -111,13 +111,21 @@ class Module extends CActiveRecord
    		 return parent::afterFind();
 	}
 	public function afterSave(){
-	  $Log = Logger::getLogger("accessLog");
-	if($this->name != $this->oldAttributes['name'])
+		
+		$Log = Logger::getLogger("accessLog");
+		if($oldAttributes==NULL)
+    		$action="create";
+    	else 	
+    		$action="update";
+
+    	$uid=Yii::app()->user->getState("uid");
+	 	$Log->info($uid."\t".Yii::app()->user->name."\t".$this->getModelName()."\t".$action."\t".$this->mid);	
+		
+	  
+		if($this->name != $this->oldAttributes['name'])
 	 	{$Log->info("name ".$this->oldAttributes['name']." ".$this->name);}
-	if($this->description != $this->oldAttributes['description'])
+		if($this->description != $this->oldAttributes['description'])
 	 	{$Log->info("description ".$this->oldAttributes['description']." ".$this->description);}
-	//if($this->orgId != $this->oldAttributes['orgId'])
-	 //	{$Log->info("orgId ".$this->oldAttributes['orgId']." ".$this->orgId);}
 	 		
 	
 	}

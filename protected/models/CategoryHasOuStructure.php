@@ -121,6 +121,15 @@ class CategoryHasOuStructure extends CActiveRecord
     public function afterSave()
     {
     	$Log = Logger::getLogger("accessLog");
+    	
+    	if($oldAttributes==NULL)
+    		$action="create";
+    	else 	
+    		$action="update";
+    	
+		$uid=Yii::app()->user->getState("uid");
+	 	$Log->info($uid."\t".Yii::app()->user->name."\t".$this->getModelName()."\t".$action."\t"." categoryHasOuStructure");	
+    	
     	if($this->cat_id != $this->oldAttributes['cat_id'])
 	 	{$Log->info("categoryId ".$this->oldAttributes['cat_id']." ".$this->cat_id);}
     	if($this->id != $this->oldAttributes['id'])

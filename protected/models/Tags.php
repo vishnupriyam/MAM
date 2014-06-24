@@ -10,6 +10,7 @@
  */
 class Tags extends CActiveRecord
 {
+	public $oldAttributes;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -139,8 +140,38 @@ class Tags extends CActiveRecord
     	}
 		
 	    return $ret;
-		}
+	}
 	
+	
+	//get oldAttributes
+	public function afterFind(){
+    	 $this->oldAttributes = $this->attributes;
+   		 return parent::afterFind();
+	}
+	
+	//additional code to maintain the logs with log4php 
+	public function afterSave(){
+		$Log = Logger::getLogger("accessLog");
+
+		if($oldAttributes==NULL)
+    		$action="create";
+    	else 	
+    		$action="update";
+    	
+		$uid=Yii::app()->user->getState("uid");
+	 	$Log->info($uid."\t".Yii::app()->user->name."\t".$this->getModelName()."\t".$action."\t".$this->tagId);	
+	
+	 	if($this->tagName != $this->oldAttributes['tagName'])
+	 	{$Log->info("tagName ".$this->oldAttributes['tagName']." ".$this->tagName);}	
+		if($this->orgId != $this->oldAttributes['orgId'])
+	 	{$Log->info("orgId ".$this->oldAttributes['orgId']." ".$this->orgId);}	
+	 	
+	 	
+	 	return parent::afterSave();	
+	}
+	 	
+		
+		
 }
 
 

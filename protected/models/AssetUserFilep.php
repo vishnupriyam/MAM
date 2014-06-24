@@ -124,6 +124,14 @@ class AssetUserFilep extends CActiveRecord
     {
     	$Log = Logger::getLogger("accessLog");
     	
+    	if($oldAttributes==NULL)
+    		$action="create";
+    	else 	
+    		$action="update";
+    	
+		$uid=Yii::app()->user->getState("uid");
+	 	$Log->info($uid."\t".Yii::app()->user->name."\t".$this->getModelName()."\t".$action."\t".$this->id);	
+    	
     	if($this->assetId != $this->oldAttributes['assetId'])
 	 	{$Log->info("assetId ".$this->oldAttributes['assetId']." ".$this->assetId);}
     	if($this->uId != $this->oldAttributes['uId'])

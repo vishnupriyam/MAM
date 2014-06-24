@@ -62,7 +62,12 @@ class Users extends CActiveRecord
                 	'tooLarge'=>'The file was larger than 10MB. Please upload a smaller file.',
             		'allowEmpty' => true
          	),
-			array('password','compare','compareAttribute'=>'cpassword'), 
+			array('password','compare','compareAttribute'=>'cpassword','on'=>'update, create'),
+			array('email','unique', 'className' => 'Users','attributeName' => 'email'),//email must be unique
+			array('email','length','min'=>3,'max'=>32),//email length must be between 3 and 32
+			array('name', 'unique' ,'className' => 'Users'),array('name', 'length', 'max'=>20, 'min' => 3),//name must be unique
+			array('name', 'match', 'pattern' => '/^[A-Za-z0-9_]+$/u'),//name must contain only the specified characters
+			 
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('uid, name, password, email, login, logout, status, picture, mobile, quota, DateCreated, LastUpdate', 'safe', 'on'=>'search'),
@@ -192,7 +197,13 @@ class Users extends CActiveRecord
 	 	$Log->info("mobile ".$this->mobile." ".$this->oldAttributes['mobile']);}
 	  if($this->status != $this->oldAttributes['status']){
 	 	$Log->info("status ".$this->status." ".$this->oldAttributes['status']);}
-	  
+	  if($this->quota != $this->oldAttributes['quota']){
+	 	$Log->info("quota ".$this->quota." ".$this->oldAttributes['quota']);}	
+	  if($this->orgId != $this->oldAttributes['orgId']){
+	 	$Log->info("orgId ".$this->quota." ".$this->oldAttributes['orgId']);}	
+	  if($this->ouId != $this->oldAttributes['ouId']){
+	 	$Log->info("ouId ".$this->ouId." ".$this->oldAttributes['ouId']);}	
+	 
 	}
 	public function getstatus(){
 	 if($this->status==0)

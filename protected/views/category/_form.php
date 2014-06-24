@@ -27,6 +27,7 @@
 
     <?php echo $form->errorSummary($model); ?>
 
+	<!-- dropdown for the departments of the logged in organisation -->
 		<?php 
 			 $orgId= Yii::app()->user->getId();
 			 $connection = Yii::app()->db;
@@ -47,10 +48,6 @@
 
 	<?php echo $form->textfieldControlGroup($model,'name',array('label'=>'Category Name','Placeholder'=>'Category')); ?>
 	
-	
-			 
-			 
-            
         <div class="form-actions">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,

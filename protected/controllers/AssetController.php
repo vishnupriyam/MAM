@@ -1,4 +1,6 @@
 <?php
+
+//for error reports of asset views
 error_reporting(E_ALL ^ ~E_NOTICE  ^ ~E_WARNING);
 
 class AssetController extends Controller
@@ -62,8 +64,10 @@ class AssetController extends Controller
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 	public function actionCreate()
-	{	if(!Yii::app()->user->checkAccess('create'))
- // Yii::app()->end();
+	{	
+		//RBAC - check whether the logged in user has access rights to create asset
+		if(!Yii::app()->user->checkAccess('create'))
+ 
 		$model=new Asset;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -71,67 +75,69 @@ class AssetController extends Controller
 
 		$modelUsers = new Users('search');
 		
+		//get the attributes of Users model for access permissions read, write etc
+		//unsetting modelUsers attributes 
 		$modelUsers->unsetAttributes();
+		
+		//get attributes from the asset form
 		if (isset($_GET['Users'])) {
 			$modelUsers->attributes=$_GET['Users'];
 		}
 		
-		
+		//get the asset attributes from asset create form
 		if (isset($_POST['Asset'])) {
-			$model->attributes=$_POST['Asset'];
+			
+			$model->attributes=$_POST['Asset'];  //setting the attributes
 
-			$model->file=CUploadedFile::getInstance($model,'file');
+			$model->file=CUploadedFile::getInstance($model,'file'); //getting the uploaded file instance 
 						
+			//variables defnitions to place the file at the path baseUrl/upload/orgId/categoryId/assetId.dat
 			$uid = Yii::app()->user->getState("uid"); 
 			$user = Users::model()->find('uid=:uid',array(':uid'=>$uid));
 			$model->categoryId = $_POST['Asset']['categoryId'];
 			$model->departmentId = $user->ouId;
+			
+			//reviewer assignment for the asset from table ReviewerOuStructure
 			$reviewerOustructure = ReviewerOustructure::model()->find('ouId=:ouId',array(':ouId'=>$model->departmentId));
 			$model->reviewer = $reviewerOustructure->uId;
-			$model->orgId = Yii::app()->user->getId();
 			
-			
+			$model->orgId = Yii::app()->user->getId();  //asset organisation Id assignment
 			
 			if(!empty($_POST['tags']))
 			{
-				$tags = $_POST['tags'];
+				$tags = $_POST['tags'];  //assigning tags checked by user to variable "$tags" 
 			}
-			
-			
 			
 			if ($model->save()) {
 
 				$orgId=Yii::app()->user->getId();
-				$fileName=$model->assetId.'.dat';
+				$fileName=$model->assetId.'.dat';    //naming the entered file as assetId.dat 
 				$categoryId=$_POST['Asset']['categoryId'];
 				$old = umask(0);
-				$fileName1=$model->assetId.'_0'.'.dat';
-
-				if (!is_dir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/' )) {
-                //mkdir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/',0777 ,true);
-                mkdir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/',0777 ,true);
 				
+				$fileName1=$model->assetId.'_0'.'.dat'; //fileName for version maintenance 
+
+				//make directory at required path if not exists for current version save (Directory - baseUrl/upload/organisationId/categoryId)
+				if (!is_dir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/' )) {
+                	mkdir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/',0777 ,true);
 				}
 				umask($old);
 
+				//make directory at required path if not exists for saving various versions (Direcory - baseUrl/upload/organisationId/categoryId/assetId)
 				if (!is_dir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/'.$model->assetId.'/')) {
-                //mkdir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/',0777 ,true);
-                mkdir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/'.$model->assetId.'/',0777 ,true);
-				
+                	mkdir(Yii::app()->basePath . '/../upload/' . $orgId . '/'.$categoryId.'/'.$model->assetId.'/',0777 ,true);
 				}
 				
-				
+				//file saveAs at current position, 
 				$model->file->saveAs(Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$fileName);
-				$model->file->saveAs(Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->file);
 				
+				//maintenece of original file for versioning
 				copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'.dat' ,
       				Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'/'.$model->assetId.'_0'.'.dat'  );
 				
-				
+				//maintenece of original file for search and viewer
 				copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'.dat' ,
 				Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->file);
-				
-				
 				
 				//updates the fileaccesslog
 				$command = Yii::app()->db->createCommand();
@@ -150,7 +156,7 @@ class AssetController extends Controller
 						
 					));
 				
-				
+				//update assetTags table
 				if(!empty($_POST['tags'])){
 				$tag = $_POST['tags'];
 				foreach($tag as $tagRow){
@@ -160,6 +166,7 @@ class AssetController extends Controller
                 	$AssetTag->save();
        			}}
 				
+       			//Addition of the users defined tags in tags table
        			if(!empty($_POST['Asset']['tagsUser'])){
        			$tagsUser=explode(",",$_POST['Asset']['tagsUser']);
        			foreach($tagsUser as $tagsRow){
@@ -175,6 +182,7 @@ class AssetController extends Controller
        			}
        			}
 				
+       			//applying the read permissions to all checked departments from asset form,AssetOuFilep table
 				if(!empty($_POST['read'])){
 				$read = $_POST['read'];
 				foreach($read as $readRow){
@@ -185,7 +193,7 @@ class AssetController extends Controller
                 	$AssetOuFilep->save();
        			}}
 
-       			
+       			//applying the write permissions to all checked departments from asset form
        			if(!empty($_POST['write'])){
 				$write = $_POST['write'];
        			foreach($write as $writeRow){
@@ -196,7 +204,7 @@ class AssetController extends Controller
                 	$AssetOuFilep->save();
        			}}
        			
-
+				//applying the edit permissions to all checked departments from asset form
 				if(!empty($_POST['edit'])){
 				$edit = $_POST['edit'];
 				foreach($edit as $editRow){
@@ -207,7 +215,7 @@ class AssetController extends Controller
                 	$AssetOuFilep->save();
        			}}
 
-       			
+       			//applying the edit permissions to all checked departments from asset form,Data:AssetOuFilep
 				if(!empty($_POST['delete'])){
 				$delete = $_POST['delete'];
 				foreach($delete as $deleteRow){
@@ -218,7 +226,8 @@ class AssetController extends Controller
                 	$AssetOuFilep->save();
        			}}
        			
-       			if(!empty($_POST['Aread'])){
+       			//applying the read permissions to all checked users from asset form,Data:AssetUserfilep
+				if(!empty($_POST['Aread'])){
 				$read = $_POST['Aread'];
 				foreach($read as $readRow){
 					$AssetUserFilep = new AssetUserFilep;
@@ -228,7 +237,7 @@ class AssetController extends Controller
                 	$AssetUserFilep->save();
        			}}
 
-       			
+       			//applying the write permissions to all checked users from asset form,Data:AssetUserfilep
        			if(!empty($_POST['Awrite'])){
 				$write = $_POST['Awrite'];
        			foreach($write as $writeRow){
@@ -239,7 +248,7 @@ class AssetController extends Controller
                 	$AssetUserFilep->save();
        			}}
        			
-
+				//applying the edit permissions to all checked users from asset form,Data:AssetUserfilep
 				if(!empty($_POST['Aedit'])){
 				$edit = $_POST['Aedit'];
 				foreach($edit as $editRow){
@@ -250,7 +259,7 @@ class AssetController extends Controller
                 	$AssetUserFilep->save();
        			}}
 
-       			
+       			//applying the delete permissions to all checked users from asset form,Data:AssetUserfilep
 				if(!empty($_POST['Adelete'])){
 				$delete = $_POST['Adelete'];
 				foreach($delete as $deleteRow){
@@ -265,9 +274,11 @@ class AssetController extends Controller
        			
 			}
 
+			//redirect to users to view asset after asset submission form
 			$this->redirect(array('view','id'=>$model->assetId));
 		}
-
+		
+		//renders create form
 		$this->render('create',array(
 			'model'=>$model,'modelUsers'=>$modelUsers,
 		));
@@ -366,19 +377,22 @@ class AssetController extends Controller
 		return $model;
 	}
 	
-public function actionViewer($id)
+	/**
+	 * view the asset on online viewer 
+	 */
+	public function actionViewer($id)
 	{
 		$model= $this->loadModel($id);
 		
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
 		 $this->render('viewer', array('model'=>$model));
 		//$this->render('viewer', array('a'=>$id));
 	}
 
-	//editor for image manipulation 
-//image editor
-public function actionEditor($id)
+	
+	/*
+	 * editor for image manipulation 
+	 */
+	public function actionEditor($id)
 	{
 		$model= $this->loadModel($id);
 		$count = 0;
@@ -386,7 +400,7 @@ public function actionEditor($id)
 		$catid = $model->categoryId;
 		$orgId = Yii::app()->user->getId();
 		
-	//	$image=Yii::app()->image->load('upload/'.$orgId.'/'.$catid.'/'.'6.jpg');
+		//$image=Yii::app()->image->load('upload/'.$orgId.'/'.$catid.'/'.'6.jpg');
 		$image=Yii::app()->image->load('upload/'.'6.jpg');
 		
 		if(isset($_POST['flip']))
@@ -554,6 +568,11 @@ public function actionEditor($id)
 		}
 	}
 
+	/**
+	 * 
+	 * Renders the page with all properties of the asset
+	 * @param integer $id the ID of the model to be loaded
+	 */
 	public function actionProperties($id){
 		
 		$model=$this->loadModel($id);
@@ -562,6 +581,12 @@ public function actionEditor($id)
 		 array('model'=>$model)
 		);
 	}
+	
+	/**
+	 * 
+	 * List all information about the model
+	 * @param integer $id the ID of the model to be loaded
+	 */
 	public function actionInfoOptions($id){
 		
 		$model=$this->loadModel($id);
@@ -571,8 +596,10 @@ public function actionEditor($id)
 		);
 	}
 	
-	/*
-	 * view of asset for reviewer to authorize/reject
+	/**
+	 * 
+	 * Delivers the view with all information of the asset to be reviewed
+	 * @param integer $id the Id of the model to be loaded
 	 */
 	
 	public function actionReviewAssetDetails($id){
@@ -584,6 +611,11 @@ public function actionEditor($id)
 			);
 	}
 	
+	/**
+	 * 
+	 * History ie versions and its details of the asset
+	 * @param integer $id the ID of the model to be loaded
+	 */
 	public function actionHistory($id){
 		$model=$this->loadModel($id);
 		
@@ -593,15 +625,26 @@ public function actionEditor($id)
 		
 	}
 	
+	/**
+	 * 
+	 * Function to redirect to required view according to the ajax call from the history.php
+	 * @param integer $id the ID of the model to be loaded here assetId
+	 */
 	public function actionVersionViewUpdate($id = null) {
-		$model = AssetRevision::model()->findByPk($id);
+		$model = AssetRevision::model()->findByPk($id); //load the model  
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
  
+        //render the assetRevision view    
         $this->renderPartial('../AssetRevision/view', array('model' => $model));
         Yii::app()->end();
 	}
 
+	/**
+	 * 
+	 * Function called after the ajax call from asset index page to view information of that particular asset
+	 * @param integer $id the Id of the model to be loaded
+	 */
 	public function actionInfoOptionsViewUpdate($id = null) {
 		$model = Asset::model()->findByPk($id);
         if ($model === null)
@@ -612,9 +655,7 @@ public function actionEditor($id)
 	}
 	
 	
-	
-	
-	
+	/*
 	public function actionUserTable($id = null) {
         $model = Ou_structure::model()->findByPk($id);
         if ($model === null)
@@ -622,16 +663,26 @@ public function actionEditor($id)
  
         $this->renderPartial('usersPermission', array('model' => $model));
         Yii::app()->end();
-	}
+	}*/
 	
+	
+	/**
+	 * 
+	 * Download the required asset
+	 * @param integer $id the ID of model to be loaded
+	 */
 	public function actionDownload($id){
 	
 		$model = $this->loadModel($id);
-		//print_r(	Yii::app()->user->getId());die();
+	
+		
 		if (isset($_SERVER['HTTP_RANGE'])) 
 			$range = $_SERVER['HTTP_RANGE'];
+			
+			//get the directory path
 			$dir_path = Yii::getPathOfAlias('webroot') .'/upload/'.Yii::app()->user->getId().'/'.$model->categoryId.'/';
 		
+			//set filePath
 			$filePath=$dir_path.$id.'.dat';
 			if (file_exists($filePath))
     		{
@@ -652,31 +703,40 @@ public function actionEditor($id)
         		header('Pragma: public');
         		readfile($filePath);
         		
-        		
-        		
            }
    		 else
     		{
-        		echo 'File does not exist...';
+        		echo 'File does not exist...'; //if file doesn't exist
     		}
 			
 	  }
 
+	  /**
+	   * 
+	   * View for asset to be checked out
+	   * @param integer $id the ID od model to be loaded
+	   */
 	  public function actionCheckOut($id){
 			$model=$this->loadModel($id);
-		
 			
 			$this->render('checkOut',
 		 	array('model'=>$model)
 		);  	
 	  }
 	  
+	  /**
+	   * 
+	   * Download the file and changes the status of the file
+	   * @param integer $id the ID of the model to be loaded
+	   */
+	  
 	  public function actionCheckOutAsset($id){
 	
 		$model = $this->loadModel($id);
-		//print_r(	Yii::app()->user->getId());die();
 		if (isset($_SERVER['HTTP_RANGE'])) 
 			$range = $_SERVER['HTTP_RANGE'];
+			
+			//get the directory path
 			$dir_path = Yii::getPathOfAlias('webroot') .'/upload/'.Yii::app()->user->getId().'/'.$model->categoryId.'/';
 		
 			$filePath=$dir_path.$id.'.dat';
@@ -706,14 +766,18 @@ public function actionEditor($id)
 				
            }
    		 else
-    		{
+    		{	//if file does not exist
         		echo 'File does not exist...';
     		}
 			
 	  }
 	  
-	  	  
-		public function actionAuthorizeOrReject($id)
+		/**
+		 * 
+		 * Authorize or reject the asset 
+		 * @param integer $id the ID of the model to be loaded
+		 */
+	  public function actionAuthorizeOrReject($id)
 		{
     		$model=$this->loadModel($id);
 
@@ -727,14 +791,11 @@ public function actionEditor($id)
     		*/
     		
     		
-
+			//change asset status to authorised on authorise 
     		if(isset($_POST['buttonAuthorize']))
     		{
-       			 //$model->attributes=$_POST['Asset'];
-       			 
-        		 
+   
         		{
-            		// form inputs are valid, do something here
             		$command = Yii::app()->db->createCommand();
 					$command->update('asset', array(
    				 	'status'=>1,
@@ -742,10 +803,10 @@ public function actionEditor($id)
         			$this->redirect(array("/users/review/".Yii::app()->user->getState("uid")));
         		}
     		}
-			if(isset($_POST['buttonReject']))
+    		
+    		//change asset status to rejected on reject 
+    		if(isset($_POST['buttonReject']))
     		{
-       			 //$model->attributes=$_POST['Asset'];
-       			 
         		 
         		{
             		// form inputs are valid, do something here
@@ -761,9 +822,9 @@ public function actionEditor($id)
 		}
 		
 		
-		
-	/*
-	 * function for checkIn of a particular asset
+	/**
+	 * renders the checkInform
+	 * @param integer $id the ID to load the model
 	 */	
 	public function actionCheckInform2($id)
 		{
@@ -797,6 +858,7 @@ public function actionEditor($id)
   				}
 			
 				$file = $_FILES["file"]["tmp_name"];
+				
 				//moves the file to required place
 				$orgId = Yii::app()->user->getId();
 				$categoryId = $model->categoryId;
@@ -806,7 +868,7 @@ public function actionEditor($id)
 			    $records = AssetRevision::model()->findAll('assetId=:assetId',array(':assetId'=>$model->assetId));
 			    $presentNumber = count($records);
 			    
-				
+				//file save and version maintenance
 				if(move_uploaded_file($_FILES["file"]["tmp_name"],
       			Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'.dat'))
       			
@@ -815,7 +877,6 @@ public function actionEditor($id)
       				Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$assetId.'/'.$model->assetId.'_'.$presentNumber.'.dat'  );
       				
       			}
-
       			
 				//updates the fileaccesslog
 				$command = Yii::app()->db->createCommand();
@@ -834,9 +895,6 @@ public function actionEditor($id)
 						
 					));
 					
-					
-				
-			    
       	//redirect back to the checkIn page of the user    
         $this->redirect(array("/users/checkIn/".Yii::app()->user->getState("uid")));
   	}
@@ -846,14 +904,16 @@ public function actionEditor($id)
 					
 	}
 
-	/*
+	/**
+	 * 
 	 * Download according to the version
+	 * @param $id the ID of the model to be loaded
+	 * @param $version the version ID of the model to be loaded
 	 */
 	
 	public function actionDownloadVersion($id,$version){
 	
 		$model = $this->loadModel($id);
-		//print_r(	Yii::app()->user->getId());die();
 		if (isset($_SERVER['HTTP_RANGE'])) 
 			$range = $_SERVER['HTTP_RANGE'];
 			$dir_path = Yii::getPathOfAlias('webroot') .'/upload/'.$model->orgId.'/'.$model->categoryId.'/'.$model->assetId.'/';
@@ -870,8 +930,7 @@ public function actionEditor($id)
 						'uId'=> Yii::app()->user->getState("uid"),
 					));
 				
-    			
-        		// send headers to browser to initiate file download
+    			// send headers to browser to initiate file download
         		header ('Content-Type: application/octet-stream');
         		header ('Content-Disposition: attachment; filename="' . $model->file . '"');
         		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
@@ -884,8 +943,6 @@ public function actionEditor($id)
     		}
 			
 	  }
-	
-	
 	
 }	
 			

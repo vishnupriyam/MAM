@@ -21,6 +21,7 @@
 class Organisation extends CActiveRecord
 {
 	public $verifyCode;
+	public $oldAttributes;
 	
 	public function behaviors(){
           return array( 'CAdvancedArBehavior' => array(
@@ -143,4 +144,57 @@ class Organisation extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	//get model name
+	public function getModelName(){
+		return __CLASS__;
+	}
+	
+	//get oldAttributes
+	public function afterFind(){
+    	 $this->oldAttributes = $this->attributes;
+   		 return parent::afterFind();
+	}
+	
+	//additional code to maintain the logs with log4php 
+	public function afterSave(){
+		$Log = Logger::getLogger("accessLog");
+
+		if($oldAttributes==NULL)
+    		$action="create";
+    	else 	
+    		$action="update";
+    	
+		$uid=Yii::app()->user->getState("uid");
+	 	$Log->info($uid."\t".Yii::app()->user->name."\t".$this->getModelName()."\t".$action."\t".$this->orgId);	
+	  
+	 	if($this->orgName != $this->oldAttributes['orgName'])
+	 		{$Log->info("orgName ".$this->oldAttributes['orgName']." ".$this->orgName);}
+	 	if($this->noEmp != $this->oldAttributes['noEmp'])
+	 		{$Log->info("noEmp ".$this->oldAttributes['noEmp']." ".$this->noEmp);}
+		if($this->phone != $this->oldAttributes['phone'])
+	 		{$Log->info("phone ".$this->oldAttributes['phone']." ".$this->phone);}
+		if($this->email != $this->oldAttributes['email'])
+	 		{$Log->info("email ".$this->oldAttributes['email']." ".$this->email);}
+		if($this->addr1 != $this->oldAttributes['addr1'])
+	 		{$Log->info("addr1 ".$this->oldAttributes['addr1']." ".$this->addr1);}
+		if($this->addr2 != $this->oldAttributes['addr2'])
+	 		{$Log->info("addr2 ".$this->oldAttributes['addr2']." ".$this->addr2);}
+		if($this->state != $this->oldAttributes['state'])
+	 		{$Log->info("state ".$this->oldAttributes['state']." ".$this->state);}
+		if($this->country != $this->oldAttributes['country'])
+	 		{$Log->info("country ".$this->oldAttributes['country']." ".$this->country);}
+		if($this->orgType != $this->oldAttributes['orgType'])
+	 		{$Log->info("orgType ".$this->oldAttributes['orgType']." ".$this->orgType);}
+		if($this->description != $this->oldAttributes['description'])
+	 		{$Log->info("description ".$this->oldAttributes['description']." ".$this->description);}
+		if($this->fax != $this->oldAttributes['fax'])
+	 		{$Log->info("fax ".$this->oldAttributes['fax']." ".$this->fax);}
+		if($this->validity != $this->oldAttributes['validity'])
+	 		{$Log->info("validity ".$this->oldAttributes['validity']." ".$this->validity);}								
+	return parent::afterSave();	
+	}
+	
+	
+	
 }

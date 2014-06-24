@@ -14,6 +14,7 @@
  */
 class Permissions extends CActiveRecord
 {
+    public $oldAttributes;//for logs
 	/**
 	 * @return string the associated database table name
 	 */
@@ -104,4 +105,39 @@ class Permissions extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	//get model name
+	public function getModelName(){
+		return __CLASS__;
+	}
+	
+	//get oldAttributes
+	public function afterFind(){
+    	 $this->oldAttributes = $this->attributes;
+   		 return parent::afterFind();
+	}
+	
+	//additional code to maintain the logs with log4php 
+	public function afterSave(){
+		$Log = Logger::getLogger("accessLog");
+		
+		if($oldAttributes==NULL)
+    		$action="create";
+    	else 	
+    		$action="update";
+    	
+		$uid=Yii::app()->user->getState("uid");
+	 	$Log->info($uid."\t".Yii::app()->user->name."\t".$this->getModelName()."\t".$action."\t".$this->pid);	
+	  
+		if($this->name != $this->oldAttributes['name'])
+	 		{$Log->info("name ".$this->oldAttributes['name']." ".$this->name);}
+		if($this->desc != $this->oldAttributes['desc'])
+	 		{$Log->info("desc ".$this->oldAttributes['desc']." ".$this->desc);}	
+		if($this->mid != $this->oldAttributes['mid'])
+	 		{$Log->info("mid ".$this->oldAttributes['mid']." ".$this->mid);}	
+		
+	 	return parent::afterSave();	
+	}
+	 	
+	
 }

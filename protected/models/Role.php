@@ -9,6 +9,7 @@
  */
 class Role extends CActiveRecord
 {
+	public $oldAttributes;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -100,4 +101,42 @@ class Role extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+		//get model name
+	public function getModelName(){
+		return __CLASS__;
+	}
+	
+	//get oldAttributes
+	public function afterFind(){
+    	 $this->oldAttributes = $this->attributes;
+   		 return parent::afterFind();
+	}
+	
+	//additional code to maintain the logs with log4php 
+	public function afterSave(){
+		$Log = Logger::getLogger("accessLog");
+
+		if($oldAttributes==NULL)
+    		$action="create";
+    	else 	
+    		$action="update";
+    	
+		$uid=Yii::app()->user->getState("uid");
+	 	$Log->info($uid."\t".Yii::app()->user->name."\t".$this->getModelName()."\t".$action."\t".$this->rid);	
+	  
+		if($this->name != $this->oldAttributes['name'])
+	 		{$Log->info("name ".$this->oldAttributes['name']." ".$this->name);}
+	 	if($this->weight != $this->oldAttributes['weight'])
+	 		{$Log->info("weight ".$this->oldAttributes['weight']." ".$this->weight);}
+	 	if($this->orgId != $this->oldAttributes['orgId'])
+	 		{$Log->info("orgId ".$this->oldAttributes['orgId']." ".$this->orgId);}
+	 	if($this->description != $this->oldAttributes['description'])
+	 		{$Log->info("description ".$this->oldAttributes['description']." ".$this->description);}
+	 	
+	 		
+	 	return parent::afterSave();	
+	}
+	 		
+	
 }

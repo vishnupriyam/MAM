@@ -2,7 +2,9 @@
 
 class UsersController extends Controller
 {
+	//variable for recording the logs
 	private $userLog;
+	
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -57,16 +59,23 @@ class UsersController extends Controller
 		));
 	}
 
-	/*
-	 * ChangePassword controller
+	/**
+	 * 
+	 * Change the password
+	 * @param integer $id , the ID the model to be loaded
 	 */
-	
 	public function actionChangePassword($id){
 		$model=$this->loadModel($id);
+		
+		//setting the scenario as changePassword
 		$model->scenario='changePassword';
+
+		//on cancel redirect to home page
 		if(isset($_POST['buttonCancel'])){
 		$this->redirect(Yii::app()->homeUrl);
 		}
+		
+		//password check of the old password
 		if(isset($_POST['Users'])) 
 			{	
 			if(crypt($_POST['Users']['oldpassword'],'salt')!=$model->password){
@@ -75,6 +84,7 @@ class UsersController extends Controller
 				die();
 			}
 		
+			//updating the password of user
 			if($model->save())
 			{
 				
@@ -96,9 +106,9 @@ class UsersController extends Controller
 		));
 	}
 	
-	
-	/*
-	 * funtion to display user image
+	/**
+	 * Display the profile picture of the user
+	 * 
 	 */
 	
 	public function actionDisplaySavedImage(){
@@ -106,7 +116,6 @@ class UsersController extends Controller
 		$model = $this->loadModel($_GET['id']);
 		
 		//setting the headers
-		
 		header('Pragma:public');
 		header('Expires:0');
 		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
@@ -117,11 +126,10 @@ class UsersController extends Controller
 		header('content-Type : image/jpg',false);
 		header('content-Type : image/gif',false);
 		
-		
 		echo $model->picture;
 	} 
 	
-	/*
+	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
@@ -137,7 +145,7 @@ class UsersController extends Controller
 		
 		
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
 		if(isset($_POST['Users']))
 		{
@@ -166,17 +174,12 @@ class UsersController extends Controller
 			
 			if($model->save()){
 
+				//record the logs
 				$Log = Logger::getLogger("accessLog");
 	  			$uid=Yii::app()->user->getState("uid");
 	 		    $Log->info($uid."\t".Yii::app()->user->name."\t".$model->getModelName()."\tcreate\t".$model->uid);	
 	  
-	 		    //$dept_id = $_POST['dept_id'];
-				//$user_department = new UsersDepartment;
-				//$user_department->uid = $model->uid;
-				//$user_department->id  = $dept_id;
-				//$user_department->save();
-	 		    
-				
+	 		   //update the UserHasRole
 				if(!empty($_POST['Users']['roles'])){
 				$roid = $_POST['Users']['roles'];
 				foreach($roid as $categoryId){
@@ -210,7 +213,7 @@ class UsersController extends Controller
 		
 		
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
 		if(isset($_POST['Users']))
 		{
@@ -320,12 +323,15 @@ class UsersController extends Controller
 		print_r($model1);die();
 		
 	}
-	/*
-	 * function to obtain the view Checkin for that particular user
+	/**
+	 * 
+	 * View the documents to be checkedIn by user
+	 * @param integer $id , the ID of the model to be loaded
 	 */
 	public function actionCheckIn($id){
 			$model=$this->loadModel($id);
 			
+			//to obtain the search for asset
 			$model1=new Asset('search'); 
 			
 			$model1->unsetAttributes();  // clear any default values
@@ -340,8 +346,13 @@ class UsersController extends Controller
 			
 	}
 
-	/*
-	 * function to obtain the view of documents pending to be reviewed
+	/**
+	 * 
+	 * View the assets to be reviewed by the user
+	 * @param integer $id, the ID of the model to be loaded
+	 * Onclick of asset the information of the asset is display
+	 * Onclick of checkIn redirected to checkInpage
+	 * 
 	 */
 	public function actionReview($id){
 			$model=$this->loadModel($id);
@@ -357,34 +368,33 @@ class UsersController extends Controller
 			'model'=>$model,'model1'=>$model1,
 		));
 			
-			
 	}
 	
-	
-	
-	
-	/*
-	 * to update the checkIn when row selected to input details and upload again
+	/**
+	 * 
+	 * Onclick of asset row on checkIn page, display the properties of the asset below gridview
+	 * @param integer $id, the ID of the asset model to be loaded
 	 */
-
 	public function actionUpdateFileCheckIn($id = null) {
         $model = Asset::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
 
 		$this->renderPartial('../asset/properties', array('model' => $model));       
-        //$this->redirect(array("../asset/checkInform2",array('model' => $model)));
-        //Yii::app()->end();
-	}
+    }
 
+	/**
+	 * 
+	 * Onclick of asset row on review page, display the details of asset to be reviewed of the asset below gridview
+	 * @param integer $id, the ID of the asset model to be loaded
+	 */
+	
 	public function actionUpdateReviewDocs($id = null) {
         $model = Asset::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
 
         $this->renderPartial('../asset/reviewAssetDetails', array('model' => $model));
-        //Yii::app()->end();
 	}
-	
 	
 }

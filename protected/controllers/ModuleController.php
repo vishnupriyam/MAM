@@ -70,7 +70,8 @@ class ModuleController extends Controller
 		if (isset($_POST['Module'])) {
 			$model->attributes=$_POST['Module'];
 			if ($model->save()) {
-				
+
+				//records the logs
 				$Log = Logger::getLogger("accessLog");
 	  			$uid=Yii::app()->user->getState("uid");
 	  			$Log->info($uid."\t".Yii::app()->user->name."\t".$model->getModelName()."\tcreate\t".$model->mid);	

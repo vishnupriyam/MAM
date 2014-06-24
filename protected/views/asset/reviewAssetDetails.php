@@ -1,7 +1,7 @@
 
 <h2><?php echo $model->file; ?></h2>
 
-
+<!-- details of asset -->
 
 <?php $this->widget('zii.widgets.CDetailView',array(
     'htmlOptions' => array(
@@ -15,17 +15,13 @@
 		'createDate',
 		'description',
 		'comment',
-		//'status',
 		array('name'=>'Status','value'=>$model->getStatus()),
-		//'publication',
 		array('name'=>'Publication','value'=>$model->getPublication()),
-		//'onlineEditable',
 		array('name'=>'Online Editable','value'=>$model->getOnlineEditable()),
 		'size',
 		'type',
 		'reviewer',
 		'reviewerComments',
-		//'ownerId',
 		array('name'=>'Owner Name','value'=>$model->users->name),
 		
 	),
@@ -43,8 +39,6 @@ echo CHtml::link(
     'Authorize/Reject',
      Yii::app()->createUrl('Asset/AuthorizeOrReject' , array('id' => $model->assetId)),
      array('class'=>'btnPrint btn btn-primary'));
-
-
 
 ?>
 

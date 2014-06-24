@@ -44,18 +44,17 @@
      Yii::app()->createUrl('Asset/CheckOut' , array('id' => $model->assetId)),
      array('class'=>'btnPrint btn btn-primary','target'=>'_blank'));
  ?>
-<?php  echo TbHtml::button('History',array(
-                'color' => TbHtml::BUTTON_COLOR_PRIMARY,
-				'submit' => Yii::app()->baseUrl.'/asset/history/'.$model->assetId,
-                //'confirm'=>"Please confirm to cancle transaction",
-                'class'=>'submit'
-                
-            )); ?>
+<?php 
+	echo CHtml::link(
+    'Properties',
+     Yii::app()->createUrl('Asset/history' , array('id' => $model->assetId)),
+     array('class'=>'btnPrint btn btn-primary'));
+
+?>
+
 
 <?php  echo TbHtml::button('Manage', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
-<?php  /*echo TbHtml::button('Download', array('color' => TbHtml::BUTTON_COLOR_PRIMARY,
-		'submit' => Yii::app()->baseUrl.'/asset/download/'.$model->assetId,)); */
-
+<?php 
 echo CHtml::link(
     'Download',
      Yii::app()->createUrl('Asset/Download' , array('id' => $model->assetId)),
@@ -68,8 +67,6 @@ echo CHtml::link(
     'Properties',
      Yii::app()->createUrl('Asset/properties' , array('id' => $model->assetId)),
      array('class'=>'btnPrint btn btn-primary','target'=>'_blank'));
-
-
 
 ?>
 
