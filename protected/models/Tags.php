@@ -36,13 +36,10 @@ class Tags extends CActiveRecord
 			// @todo Please remove those attributes that should not be searched.
 			array('tagId, tagName, orgId', 'safe', 'on'=>'search'),
 			array('tagName', 'unique' ,'className' => 'Tags'),//name must be unique
-			array('tagName', 'match', 'pattern' => '/^[A-Za-z0-9_]+$/u'),//name must contain only the specified characters
+			
 		);
 	}
 
-	/**
-	 * @return array relational rules.
-	 */
 	
 	public function getUrl()
 	{
@@ -59,6 +56,10 @@ class Tags extends CActiveRecord
 			$links[]=CHtml::link(CHtml::encode($tag), array('organisation/index', 'tag'=>$img));
 		return $links;
 	}
+	
+	/**
+	 * @return array relational rules.
+	 */
 	
 	public function relations()
 	{
@@ -125,6 +126,11 @@ class Tags extends CActiveRecord
 	public function getModelName(){
 		return __CLASS__;
 	}
+	
+	/**
+	 * @return string $ret with list of categories to which tags belong to
+	 * 
+	 */
 	public function getDepartments()
 		{
     		$ret = "";
@@ -171,8 +177,6 @@ class Tags extends CActiveRecord
 	 	
 	 	return parent::afterSave();	
 	}
-	 	
-		
 		
 }
 

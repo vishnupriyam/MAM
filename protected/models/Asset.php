@@ -21,11 +21,11 @@
  */
 class Asset extends CActiveRecord
 {
-	public $checkIn;
-	public $write;
-	public $file;
-	public $categoryId;
-	public $oldAttributes;
+	public $checkIn;    	 //variable for checkIn
+	public $write;      
+	public $file;		 	//for file upload
+	public $categoryId;  	//for maintainence of category
+	public $oldAttributes;  //to record logs
 	/**
 	 * @return string the associated database table name
 	 */
@@ -38,12 +38,12 @@ class Asset extends CActiveRecord
 	 * @return array validation rules for model attributes.
 	 */
 
-	public $owner_name;
-	public $view;
-	public $view_online;
-	public $edit_online;
-	public $tagsUser;
-	public $gview;
+	public $owner_name;  //obtain owner name for ownerId
+	public $view;        //for view
+	public $view_online; //used for online view
+	public $edit_online; //used for online edit
+	public $tagsUser;    //asset create form - add tags by user
+	public $gview;       //for gridview
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
@@ -52,6 +52,10 @@ class Asset extends CActiveRecord
 			//array('file, assetId, assetName, publication, onlineEditable, ownerId', 'required'),
 			//array('file,assetId,assetName,ownerId', 'required'),
 			array('file', 'required'),
+			//array('file','file','types'=>'swf','flv','mp3','mp4'),
+			//array('file', 'file', 'allowEmpty'=>true, 'types'=>'swf,flv,mp3,mp4'),
+			//array('file', 'file', 'types' => 'jpg, gif, png, pdf, doc, docx, avi, mpg, flv, mov, mpeg, mp4, 3gp, wmv', 'maxSize' => 150 * 1024 * 1024, 'on' => 'create'),
+			
 			array('assetId, status, publication, onlineEditable, size, ownerId', 'numerical', 'integerOnly'=>true),
 			array('assetName, reviewer', 'length', 'max'=>45),
 			array('type', 'length', 'max'=>10),
@@ -73,9 +77,14 @@ class Asset extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		 'users'=>array(self::BELONGS_TO,'Users','ownerId'),
+		
+		//users - asset relation , owner of asset
+		'users'=>array(self::BELONGS_TO,'Users','ownerId'),
+		//category - asset relation , asset belong to a category
 		'category'=>array(self::BELONGS_TO,'Category','categoryId'),
+		//tags - asset asset is related to many tags
 		'tags' => array(self::MANY_MANY, 'Tags', 'asset_tags(assetId,tagId)'),
+		//asset - ouStructure , asset belong to a department
 		'OwnerDept'=>array(self::BELONGS_TO,'Ou_structure','departmentId'),
 
 		);
@@ -223,6 +232,11 @@ class Asset extends CActiveRecord
 		return parent::model($className);
 	}
 
+	/**
+	 * Before asset creation status of asset set to not reviewed
+	 * obtain file type, file size, date created
+	 * 
+	 */
 	public function beforeSave(){
 		 $this->status=0;
          $this->type=$this->file->getType();
@@ -233,12 +247,16 @@ class Asset extends CActiveRecord
        }
 
        
-    //get model name
+    /**
+     * get model name
+     */
 	public function getModelName(){
 		return __CLASS__;
 	}
 	
-	//get oldAttributes
+	/**
+	 * get oldAttributes
+	 */
 	public function afterFind(){
     	 $this->oldAttributes = $this->attributes;
     	 
@@ -246,7 +264,9 @@ class Asset extends CActiveRecord
 	}
 	
        
-    //adding details to log the asset save   
+    /**
+     * adding details to log the asset save 
+     */  
     public function afterSave()
     {
     	    	
@@ -296,8 +316,18 @@ class Asset extends CActiveRecord
     	return parent::afterSave();
     }   
 
-	public function getStatus(){      //for reviewer display all assets with status 0 ,3,
-									//display documents with status 1 - allowed to check out
+    /**
+     * Status
+     * @return
+     * NOT REVIEWED - 0
+     * REVIEWED     - 1
+     * CHECK OUT    - 2
+     * CHECKED IN   - 3
+     * BLOCKED      - 4 
+     * REJECTED     - 5
+     */
+	public function getStatus(){     
+									
     	if($this->status==0)       
     	 return "NOT REVIEWED";
     	elseif($this->status==1)
@@ -313,6 +343,13 @@ class Asset extends CActiveRecord
     	 
     	 
     }
+    
+    /**
+     * returns the publication status
+     * @return Yes - 0
+     *         No  - 0
+     * 
+     */
     public function getPublication(){
      if($this->publication==0)
       return "Yes";
@@ -320,6 +357,12 @@ class Asset extends CActiveRecord
       return "No";
     
     }
+    
+    /**
+     * returns the online edit permission
+     * @return Yes - 0
+     * No - 1 
+     */
 	public function getOnlineEditable(){
      if($this->onlineEditable==0)
       return "Yes";
@@ -328,6 +371,14 @@ class Asset extends CActiveRecord
     
     }
     
+    /**
+     * obtain tagsName related to asset
+     * this model - assetId
+     * related tagId from asset_tags model
+     * tagName from Tags table
+     * relation Name -  tags
+     * @return list of asset related tags
+     */
     public function getTags()
 		{
     		$ret = "";
@@ -346,14 +397,23 @@ class Asset extends CActiveRecord
 		
 	    return $ret;
 		}
-		public function getUrl()
+	
+	/**
+	 * getUrl function
+	 * 
+	 */
+	public function getUrl()
 		{
 			return Yii::app()->createUrl('', array(
 		
 			));
 		}
 		
-		public function getTagLinks()
+	/**
+	 * Obtain array of tags as links
+	 * 
+	 */
+	public function getTagLinks()
 		{
 			$links=array();
 			foreach(Asset::string2array($this->file) as $tag)

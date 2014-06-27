@@ -247,3 +247,23 @@
 2014-06-25T08:15:06+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
 2014-06-25T08:15:06+02:00 INFO  accessLog rid  4
 2014-06-25T08:15:06+02:00 INFO  accessLog pid  3
+2014-06-27T07:43:56+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	47
+2014-06-27T07:43:56+02:00 INFO  accessLog file  award winning funny commercial.flv
+2014-06-27T07:43:56+02:00 INFO  accessLog createDate  NOW()
+2014-06-27T07:43:56+02:00 INFO  accessLog reviewer  20
+2014-06-27T07:43:56+02:00 INFO  accessLog ownerId  20
+2014-06-27T08:15:08+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	48
+2014-06-27T08:15:08+02:00 INFO  accessLog file  wingie.docx
+2014-06-27T08:15:08+02:00 INFO  accessLog createDate  NOW()
+2014-06-27T08:15:08+02:00 INFO  accessLog size  11538
+2014-06-27T08:15:08+02:00 INFO  accessLog type  application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2014-06-27T08:15:08+02:00 INFO  accessLog reviewer  20
+2014-06-27T08:15:08+02:00 INFO  accessLog ownerId  20
+2014-06-27T08:46:03+02:00 INFO  accessLog 20	IIT Bombay Powai	Role	create	5
+2014-06-27T08:46:03+02:00 INFO  accessLog name  writer
+2014-06-27T08:46:03+02:00 INFO  accessLog weight  2
+2014-06-27T08:46:03+02:00 INFO  accessLog orgId  6
+2014-06-27T08:46:03+02:00 INFO  accessLog description  write articles
+2014-06-27T13:12:18+02:00 INFO  accessLog 20	IIT Bombay Powai	Tags	create	16
+2014-06-27T13:12:18+02:00 INFO  accessLog tagName  tags1,tag2
+2014-06-27T13:12:18+02:00 INFO  accessLog orgId  6

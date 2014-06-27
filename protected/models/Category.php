@@ -34,6 +34,7 @@ class Category extends CActiveRecord
 			array('name', 'length', 'max'=>60),
 			array('orgId', 'length', 'max'=>11),
 			array('name', 'unique' ,'className' => 'Category'),//name must be unique
+			//name regular expression , spaces not allowed , 
 			array('name', 'match', 'pattern' => '/^[A-Za-z0-9_]+$/u'),//name must contain only the specified characters
 			
 			// The following rule is used by search().

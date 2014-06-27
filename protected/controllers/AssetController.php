@@ -417,22 +417,25 @@ class AssetController extends Controller
   		$file=$model->assetId;
   		
   		//maintenece of original file for versioning
-  		copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext,
+  		/*copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext,
   		Yii::app()->basePath.'/../upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
+  		*/
   		
   		$image=Yii::app()->image->load('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
 		$handle=new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
-		 if(isset($_POST['flip']))
+
+		if(isset($_POST['flip']))
         {
 		  $a = $_POST['side'];
-		  
+		  $handle=new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
 		  if ($a == 1)
-		  $b = 5;
+		  $handle->image_filp='h';
 		  else if ($a == 2)
-		  $b = 6;
+		$handle->image_flip='v';
 		  
-		  $image->flip($b);
-		  $image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext); 
+		  $handle->process('upload/'.$orgId.'/'.$catid.'/');
+		 // $image->flip($b);
+		  //$image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext); 
 		  $count = 1;
         }
       
@@ -503,6 +506,7 @@ class AssetController extends Controller
         }
        
        
+	
 		if(isset($_POST['crop']))
         {
         	 $a = $_POST['Attribute']['crop_x'];
@@ -510,34 +514,57 @@ class AssetController extends Controller
 		  
 		   $c = $_POST['Attribute']['crop_y'];
 		  $d = (int)$c;
-         $image->crop($b, $d);
-        $image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext); 
+		  $handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+		  $handle->image_crop =true;
+		  $hanle->image_x=$b;
+		  $hanlde->image_y=$d;
+     
+		  $handle->process('upload/'.$orgId.'/'.$catid.'/');
         $count = 1;
         }
-      	
         if(isset($_POST['resize']))
         {
-        	 $a = $_POST['Attribute']['resize_x'];
-		  $b = (int)$a;
-		  
-		   $c = $_POST['Attribute']['resize_y'];
-		  $d = (int)$c;
-      	 
-        	
-        	$image->resize($b, $d);
-      	 $image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext); 
-      	 $count = 1;
+        	$a = $_POST['Attribute']['resize_x'];
+        	$b = (int)$a;
+        
+        	$c = $_POST['Attribute']['resize_y'];
+        	$d = (int)$c;
+        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+        
+        	$handle->image_resize         = true;
+        	$handle->image_x              = $b;
+        
+        	$handle->image_y              = $d;
+        	 
+        	$handle->process('upload/'.$orgId.'/'.$catid.'/');
+        
+        	$count = 1;
         }
         
         if(isset($_POST['rotate']))
         {
-        	 $a = $_POST['Attribute']['rotate'];
-		  $b = (int)$a;
-      	 $image->rotate($b);
-      	  $image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext); 
-      	  $count = 1;
+        	$a = $_POST['Attribute']['rotate'];
+        	$b = (int)$a;
+        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+        	$handle->image_rotate = $b;
+        	$handle->process('upload/'.$orgId.'/'.$catid.'/');
+        	$count = 1;
         }
         
+         
+        
+        if(isset($_POST['quality']))
+        {
+        	$a = $_POST['Attribute']['quality'];
+        	$b = (int)$a;
+        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+        	$handle->jpeg_quality = $b;
+        	$handle->process('upload/'.$orgId.'/'.$catid.'/');
+        	 
+        
+        	$count = 1;
+        }
+      /*  
         if(isset($_POST['sharpen']))
         {
         	 $a = $_POST['Attribute']['sharpen'];
@@ -555,15 +582,16 @@ class AssetController extends Controller
       	  $image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext); 
       		
       	  $count = 1;
-        }
-      	
+        }*/
+      	      	
 	if(isset($_POST['save']))
         {
       	
       		$count = 1;
         }
-        if ($count == 1){
-			$image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
+        if ($count == 1 || count==0){
+
+        	$image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
         	$image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
         	$image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'.dat');
         	
@@ -741,7 +769,68 @@ class AssetController extends Controller
     			
     			// send headers to browser to initiate file download
         		header ('Content-Type: application/octet-stream');
-        		header ('Content-Disposition: attachment; filename="' . $model->file . '"');
+        		header("Content-Type: text/plain",false);
+			    header("Content-Type: image/png",false);
+			    header("Content-Type: image/jpg",false);
+			    header("Content-Type: image/jpg",false);
+			    header("Content-Type: application/pdf",false);
+			    header("Content-Type: application/octet-stream",false);
+			    header("Content-Type: application/zip",false);
+			    header("Content-Type: application/msword",false);
+			    header("Content-Type: application/vnd.ms-excel",false);
+			    header("Content-Type: application/vnd.ms-powerpoint",false);
+			    header("Content-Type: application/force-download",false);
+			    header("Content-Type: video/mp4");
+			    header("Content-Type: audio/mpeg");
+			    header("Content-Type: video/x-msvideo");
+			    header("Content-Type: video/3g2");
+			    header("Content-Type: video/avi");
+  				header("Content-Type: video/mp4");
+  				header("Content-Type: video/asf");
+			    header("Content-Type: video/quicktime");
+                header("Content-Type: video/3gpp");
+    		    header("Content-Type:text/html");
+                header("Content-Type: video/asf");
+                header("Content-Type: text/plain");
+                header("Content-Type: image/pdf");
+		        header("Content-Type: application/x-pdf");
+		        header("Content-Type: application/msword");
+		        header("Content-Type: image/pjpeg");
+		        header("Content-Type: application/msexcel");
+		        header("Content-Type: application/msaccess");
+		        header("Content-Type: text/richtxt");
+		        header("Content-Type: application/mspowerpoint");
+		        header("Content-Type: application/x-zip-compressed");
+		        header("Content-Type: application/zip");
+		        header("Content-Type:  image/tiff");
+		        header("Content-Type: image/tif");
+		        header("Content-Type: application/vnd.ms-powerpoint");
+		        header("Content-Type: application/vnd.ms-excel");
+		        header("Content-Type: application/vnd.openxmlformats-officedocument.presentationml.presentation");
+		        header("Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document");
+		        header("Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document");
+				header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+		        header("Content-Type: application/vnd.oasis.opendocument.chart");
+		        header("Content-Type:  application/vnd.oasis.opendocument.chart-template");
+		  		header("Content-Type: application/vnd.oasis.opendocument.formula");
+		        header("Content-Type: application/vnd.oasis.opendocument.formula-template");
+		        header("Content-Type: application/vnd.oasis.opendocument.graphics");
+		        header("Content-Type: application/vnd.oasis.opendocument.graphics-template");
+		        header("Content-Type: application/vnd.oasis.opendocument.image");
+		        header("Content-Type: application/vnd.oasis.opendocument.image-template");
+		        header("Content-Type: application/vnd.oasis.opendocument.presentation");
+		        header("Content-Type: application/vnd.oasis.opendocument.presentation-template");
+		        header("Content-Type: application/vnd.oasis.opendocument.spreadsheet");
+		        header("Content-Type: application/vnd.oasis.opendocument.spreadsheet-template");
+		        header("Content-Type: application/vnd.oasis.opendocument.text");
+		        header("Content-Type: application/vnd.oasis.opendocument.text-master");
+		        header("Content-Type: application/vnd.oasis.opendocument.text-template");
+		        header("Content-Type: application/vnd.oasis.opendocument.text-web");
+		        header("Content-Type: text/csv");
+	            header("Content-Type: image/x-dwg");
+	            header("Content-Type: image/x-dfx");
+	            header("Content-Type: drawing/x-dwf");
+	            header ('Content-Disposition: attachment; filename="' . $model->file . '"');
         		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
         		header('Pragma: public');
         		readfile($filePath);

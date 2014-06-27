@@ -50,7 +50,7 @@
  ?>
 <?php 
 	echo CHtml::link(
-    'Properties',
+    'History',
      Yii::app()->createUrl('Asset/history' , array('id' => $model->assetId)),
      array('class'=>'btnPrint btn btn-primary'));
 
