@@ -46,6 +46,6 @@
 	<?php echo CHtml::encode($data->orgId); ?>
 	<br />
 
-	*/ ?>
+	
 
 </div>

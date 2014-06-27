@@ -115,6 +115,11 @@ class AssetController extends Controller
 				$categoryId=$_POST['Asset']['categoryId'];
 				$old = umask(0);
 				
+				$file = $model->file;
+				if(($pos=strrpos($file,'.'))!==false)
+  					$ext=substr($file,$pos+1);
+				
+				
 				$fileName1=$model->assetId.'_0'.'.dat'; //fileName for version maintenance 
 
 				//make directory at required path if not exists for current version save (Directory - baseUrl/upload/organisationId/categoryId)
@@ -136,8 +141,16 @@ class AssetController extends Controller
       				Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'/'.$model->assetId.'_0'.'.dat'  );
 				
 				//maintenece of original file for search and viewer
-				copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'.dat' ,
+				/*copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'.dat' ,
 				Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->file);
+				*/
+      				
+      			copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'.dat' ,
+				Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'.'.$ext);
+				
+				copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'.dat' ,
+				Yii::app()->basePath.'/../upload/'.$orgId.'/'.$categoryId.'/'.$model->assetId.'/'.$model->assetId.'_0'.'.'.$ext);	
+				
 				
 				//updates the fileaccesslog
 				$command = Yii::app()->db->createCommand();
@@ -388,22 +401,28 @@ class AssetController extends Controller
 		//$this->render('viewer', array('a'=>$id));
 	}
 
-	
-	/*
-	 * editor for image manipulation 
-	 */
 	public function actionEditor($id)
 	{
 		$model= $this->loadModel($id);
 		$count = 0;
 		$name = $model->file;
 		$catid = $model->categoryId;
+	
 		$orgId = Yii::app()->user->getId();
-		
-		//$image=Yii::app()->image->load('upload/'.$orgId.'/'.$catid.'/'.'6.jpg');
-		$image=Yii::app()->image->load('upload/'.'6.jpg');
-		
-		if(isset($_POST['flip']))
+ 		$catid = $model->categoryId;
+ 		$file = $model->file;
+		if(($pos=strrpos($file,'.'))!==false)
+  			$ext=substr($file,$pos+1);
+  			
+  		$file=$model->assetId;
+  		
+  		//maintenece of original file for versioning
+  		copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext,
+  		Yii::app()->basePath.'/../upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
+  		
+  		$image=Yii::app()->image->load('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+		$handle=new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+		 if(isset($_POST['flip']))
         {
 		  $a = $_POST['side'];
 		  
@@ -413,14 +432,14 @@ class AssetController extends Controller
 		  $b = 6;
 		  
 		  $image->flip($b);
-		  $image->save('upload/'.'6_1.jpg'); 
+		  $image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext); 
 		  $count = 1;
         }
       
         
         if(isset($_POST['convert']))
         {
-        	$handle = new upload('upload/6.jpg');
+        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
 	 		if ($handle->uploaded) {
 	 			$a = $_POST['format'];
 	 			if ($a == 1)
@@ -431,17 +450,17 @@ class AssetController extends Controller
 	 			$handle->image_convert = 'gif';
 	 			else if ($a == 4)
 	 			$handle->image_convert = 'bmp';
-	 			$handle->process('upload/');
+	 			$handle->process('upload/'.$orgId.'/'.$catid.'/');
 	 			//echo 'converted';
 	 		}
         }
         
 		if(isset($_POST['negative']))
         {
-        	$handle = new upload('upload/6_1.jpg');
-	 		if ($handle->uploaded) {//$handle->image_convert = 'gif';
+        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+	 		if ($handle->uploaded) { 
 	 			$handle->image_negative = true;
-	 			$handle->process('upload/');
+	 			$handle->process('upload/'.$orgId.'/'.$catid.'/');
 	 		}
         }
         
@@ -449,10 +468,10 @@ class AssetController extends Controller
         {
         	$a = $_POST['Attribute']['brightness'];
 		 	 $b = (int)$a;
-        	$handle = new upload('upload/6_1.jpg');
-	 		if ($handle->uploaded) {//$handle->image_convert = 'gif';
+        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+	 		if ($handle->uploaded) {
 	 			$handle->image_brightness = $a;
-	 			$handle->process('upload/');
+	 			$handle->process('upload/'.$orgId.'/'.$catid.'/');
 	 		}
 	 		
         }
@@ -461,10 +480,10 @@ class AssetController extends Controller
         {
         	$a = $_POST['Attribute']['contrast'];
 		  	$b = (int)$a;
-        	$handle = new upload('upload/6_1.jpg');
-	 		if ($handle->uploaded) {//$handle->image_convert = 'gif';
+        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+	 		if ($handle->uploaded) {
 	 			$handle->image_brightness = $a;
-	 			$handle->process('upload/');
+	 			$handle->process('upload/'.$orgId.'/'.$catid.'/');
 	 		}
         }
        if(isset($_POST['text']))
@@ -473,17 +492,17 @@ class AssetController extends Controller
 		   $b = $_POST['Attribute']['text_color'];
 		   $c = $_POST['Attribute']['text_x'];
 		   $d = $_POST['Attribute']['text_y'];
-        	$handle = new upload('upload/6_1.jpg');
-	 		if ($handle->uploaded) {//$handle->image_convert = 'gif';
+        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+	 		if ($handle->uploaded) {
 	 			$handle->image_text = $a;
 	 		    $handle->image_text_color = $b;
 	 			$handle->image_text_x = (int)$c;
 	 			$handle->image_text_y = (int)$d; 
-	 			$handle->process('upload/');
+	 			$handle->process('upload/'.$orgId.'/'.$catid.'/');
 	 		}
         }
        
-        
+       
 		if(isset($_POST['crop']))
         {
         	 $a = $_POST['Attribute']['crop_x'];
@@ -492,7 +511,7 @@ class AssetController extends Controller
 		   $c = $_POST['Attribute']['crop_y'];
 		  $d = (int)$c;
          $image->crop($b, $d);
-        $image->save('upload/'.'6_1.jpg'); 
+        $image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext); 
         $count = 1;
         }
       	
@@ -506,7 +525,7 @@ class AssetController extends Controller
       	 
         	
         	$image->resize($b, $d);
-      	 $image->save('upload/'.'6_1.jpg'); 
+      	 $image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext); 
       	 $count = 1;
         }
         
@@ -515,7 +534,7 @@ class AssetController extends Controller
         	 $a = $_POST['Attribute']['rotate'];
 		  $b = (int)$a;
       	 $image->rotate($b);
-      	  $image->save('upload/'.'6_1.jpg'); 
+      	  $image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext); 
       	  $count = 1;
         }
         
@@ -524,7 +543,7 @@ class AssetController extends Controller
         	 $a = $_POST['Attribute']['sharpen'];
 		  $b = (int)$a;
       	 $image->sharpen($b);
-      	  $image->save('upload/'.'6_1.jpg'); 
+      	  $image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext); 
       	  $count = 1;
         }
         
@@ -533,7 +552,7 @@ class AssetController extends Controller
         	 $a = $_POST['Attribute']['quality'];
 		  $b = (int)$a;
       	 $image->quality($b);
-      	  $image->save('upload/'.'6_1.jpg'); 
+      	  $image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext); 
       		
       	  $count = 1;
         }
@@ -543,18 +562,53 @@ class AssetController extends Controller
       	
       		$count = 1;
         }
-        if ($count == 0)
-			$image->save('upload/'.'6_1.jpg'); 
+        if ($count == 1){
+			$image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
+        	$image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+        	$image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'.dat');
+        	
+        	//versioning of the file
+        	$records = AssetRevision::model()->findAll('assetId=:assetId',array('assetId'=>$file));
+        	$presentNumber = count($records);
+        	$image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'/'.$file.'_'.$presentNumber.'.'.$ext);
+        	$image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'/'.$file.'_'.$presentNumber.'.dat');
+        	
+        	//changing the status of the asset to not reviewed
+        	$command = Yii::app()->db->createCommand();
+        		$command->update('asset', array(
+   				 'status'=>0,
+				), 'assetId=:assetId', array(':assetId'=>$file));
+        		
+        	
+        	//inserting new record to asset revision
+				$command->insert('asset_revision', array(
+    					'assetId'=>$file,
+						'modifiedBy'=> Yii::app()->user->getState("uid"),
+						'note'=>'image editor',
+						'revision'=>$presentNumber,
+						
+					));
+				
+        	//updates the fileaccesslog
+				$command = Yii::app()->db->createCommand();
+				$command->insert('fileaccesslog', array(
+    					'action'=>'CO_IE',
+    					'assetId'=>$file,
+						'uId'=> Yii::app()->user->getState("uid"),
+					));
+				
+        } 
 			
 		if(isset($_POST['buttonCancel']))
         {
-         	unlink(Yii::app()->basePath.'/../upload/'. '6_1.jpg');
+         	unlink(Yii::app()->basePath.'/../upload/');
         	$this->redirect(Yii::app()->homeUrl);
         }
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('editor', array('a'=>$id, 'model'=>$model,));
 	}
+		
 	
 	/**
 	 * Performs the AJAX validation.
@@ -653,17 +707,6 @@ class AssetController extends Controller
         $this->renderPartial('infoOptions', array('model' => $model));
         Yii::app()->end();
 	}
-	
-	
-	/*
-	public function actionUserTable($id = null) {
-        $model = Ou_structure::model()->findByPk($id);
-        if ($model === null)
-            throw new CHttpException(404, 'The requested page does not exist.');
- 
-        $this->renderPartial('usersPermission', array('model' => $model));
-        Yii::app()->end();
-	}*/
 	
 	
 	/**

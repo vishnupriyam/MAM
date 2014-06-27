@@ -97,10 +97,18 @@ echo "Edit your image online"
 	
 		?>
 </div>
+<?php 
+$orgId = Yii::app()->user->getId();
+$catid = $model->categoryId;
+$file = $model->assetId;
+if(($pos=strrpos($model->file,'.'))!==false)
+  		$ext=substr($model->file,$pos+1);
+$path = "http://localhost/final/upload/".$orgId.'/'.$catid.'/'.$file.'.'.$ext;
 
+?>
 <div class="span12" style="width: 430px; float: right;padding-top: 130px;">
 <div>
-<img id = "image" src = "http://localhost/final/upload/6_1.jpg"> 
+<img id = "image" src = "<?php echo $path;?>"> 
 </div>
 <div>
 <?php
