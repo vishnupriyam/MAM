@@ -31,6 +31,8 @@
 			
 			<?php echo $form->textFieldControlGroup($model,'name',array('maxlength'=>65,'label'=>'Permission Name')); ?>
 
+			<?php echo $form->textFieldControlGroup($model,'action',array('maxlength'=>65,'label'=>'Action'));?>
+			
             <?php echo $form->textAreaControlGroup($model,'desc',array('rows'=>6,'span'=>8)); ?>
 
             

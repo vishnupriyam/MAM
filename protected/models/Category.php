@@ -93,7 +93,7 @@ class Category extends CActiveRecord
 
 		$criteria->compare('cat_id',$this->cat_id);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('orgId',$this->orgId,true);
+		$criteria->compare('orgId',Yii::app()->user->getId(),true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

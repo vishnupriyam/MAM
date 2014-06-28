@@ -42,10 +42,18 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('bootstrap.widgets.TbGridView',array(
+<?php echo $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'tags-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
-		
-	)
-); ?>
+	'columns'=>array(
+		'tagId',
+		'tagName',
+		array(
+		'class'=>'CButtonColumn', 
+		'viewButtonUrl'=>'array("tags/view","id"=>$data->tagId)', 
+		'updateButtonUrl'=>'array("tags/update","id"=>$data->tagId)', 
+		'deleteButtonUrl'=>'array("tags/delete","id"=>$data->tagId)',
+		),
+	),
+	),true); ?>

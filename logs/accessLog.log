@@ -267,3 +267,31 @@
 2014-06-27T13:12:18+02:00 INFO  accessLog 20	IIT Bombay Powai	Tags	create	16
 2014-06-27T13:12:18+02:00 INFO  accessLog tagName  tags1,tag2
 2014-06-27T13:12:18+02:00 INFO  accessLog orgId  6
+2014-06-27T13:23:18+02:00 INFO  accessLog 20	IIT Bombay Powai	Tags	create	17
+2014-06-27T13:23:18+02:00 INFO  accessLog tagName  tagFirst,tagSecond
+2014-06-27T13:23:18+02:00 INFO  accessLog orgId  6
+2014-06-27T13:23:18+02:00 INFO  accessLog 20	IIT Bombay Powai	Tags	create	18
+2014-06-27T13:23:18+02:00 INFO  accessLog tagName  tagFirst
+2014-06-27T13:23:18+02:00 INFO  accessLog orgId  6
+2014-06-27T13:23:18+02:00 INFO  accessLog 20	IIT Bombay Powai	Tags	create	19
+2014-06-27T13:23:18+02:00 INFO  accessLog tagName  tagSecond
+2014-06-27T13:23:18+02:00 INFO  accessLog orgId  6
+2014-06-27T13:23:18+02:00 INFO  accessLog 20	IIT Bombay Powai	Tags	create	20
+2014-06-27T13:23:18+02:00 INFO  accessLog tagName  tagFirst,tagSecond
+2014-06-27T13:23:18+02:00 INFO  accessLog orgId  6
+2014-06-27T13:25:44+02:00 INFO  accessLog 20	IIT Bombay Powai	Tags	create	21
+2014-06-27T13:25:44+02:00 INFO  accessLog tagName  tagC1
+2014-06-27T13:25:44+02:00 INFO  accessLog orgId  6
+2014-06-27T13:25:44+02:00 INFO  accessLog 20	IIT Bombay Powai	Tags	create	22
+2014-06-27T13:25:44+02:00 INFO  accessLog tagName  tagC2
+2014-06-27T13:25:44+02:00 INFO  accessLog orgId  6
+2014-06-27T13:29:29+02:00 INFO  accessLog 20	IIT Bombay Powai	Tags	create	23
+2014-06-27T13:29:29+02:00 INFO  accessLog tagName  tagB1
+2014-06-27T13:29:29+02:00 INFO  accessLog orgId  6
+2014-06-28T06:59:55+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	49
+2014-06-28T06:59:55+02:00 INFO  accessLog file  incresed cellular capacity.pdf
+2014-06-28T06:59:55+02:00 INFO  accessLog createDate  NOW()
+2014-06-28T06:59:55+02:00 INFO  accessLog size  1438423
+2014-06-28T06:59:55+02:00 INFO  accessLog type  application/pdf
+2014-06-28T06:59:55+02:00 INFO  accessLog reviewer  20
+2014-06-28T06:59:55+02:00 INFO  accessLog ownerId  20

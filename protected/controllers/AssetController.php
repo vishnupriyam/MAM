@@ -401,6 +401,13 @@ class AssetController extends Controller
 		//$this->render('viewer', array('a'=>$id));
 	}
 
+	/** 
+	 * actioneditor is for image manipulation
+	 * crop,resize,rotate,convert format,quality,brightness,contreast,add text on image  
+	 * Using imagemagick software 
+	 * Image magick path defined in main.php
+	 */
+
 	public function actionEditor($id)
 	{
 		$model= $this->loadModel($id);
@@ -422,8 +429,9 @@ class AssetController extends Controller
   		*/
   		
   		$image=Yii::app()->image->load('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
-		$handle=new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+		//$handle=new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
 
+		//flip image horizontally or vertically
 		if(isset($_POST['flip']))
         {
 		  $a = $_POST['side'];
@@ -431,15 +439,14 @@ class AssetController extends Controller
 		  if ($a == 1)
 		  $handle->image_filp='h';
 		  else if ($a == 2)
-		$handle->image_flip='v';
-		  
+		  $handle->image_flip='v';
+		  //save into category id folder
 		  $handle->process('upload/'.$orgId.'/'.$catid.'/');
-		 // $image->flip($b);
-		  //$image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext); 
+		 
 		  $count = 1;
         }
       
-        
+		//convert the image format from one type to another
         if(isset($_POST['convert']))
         {
         	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
@@ -458,6 +465,7 @@ class AssetController extends Controller
 	 		}
         }
         
+		//convert the image into negative
 		if(isset($_POST['negative']))
         {
         	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
@@ -466,7 +474,7 @@ class AssetController extends Controller
 	 			$handle->process('upload/'.$orgId.'/'.$catid.'/');
 	 		}
         }
-        
+        //set the image brightness
 		if(isset($_POST['brightness']))
         {
         	$a = $_POST['Attribute']['brightness'];
@@ -479,7 +487,8 @@ class AssetController extends Controller
 	 		
         }
         
-	if(isset($_POST['contrast']))
+		//set the image contrast
+		if(isset($_POST['contrast']))
         {
         	$a = $_POST['Attribute']['contrast'];
 		  	$b = (int)$a;
@@ -489,7 +498,9 @@ class AssetController extends Controller
 	 			$handle->process('upload/'.$orgId.'/'.$catid.'/');
 	 		}
         }
-       if(isset($_POST['text']))
+        
+		//add text on image ,set text color,text position
+        if(isset($_POST['text']))
         {
         	$a = $_POST['Attribute']['text'];
 		   $b = $_POST['Attribute']['text_color'];
@@ -506,7 +517,7 @@ class AssetController extends Controller
         }
        
        
-	
+		//crop image by giving the value of x and y axis
 		if(isset($_POST['crop']))
         {
         	 $a = $_POST['Attribute']['crop_x'];
@@ -522,6 +533,8 @@ class AssetController extends Controller
 		  $handle->process('upload/'.$orgId.'/'.$catid.'/');
         $count = 1;
         }
+        
+		//resize the image
         if(isset($_POST['resize']))
         {
         	$a = $_POST['Attribute']['resize_x'];
@@ -541,6 +554,7 @@ class AssetController extends Controller
         	$count = 1;
         }
         
+		//rotate image in clockwise or anticlockwise direction
         if(isset($_POST['rotate']))
         {
         	$a = $_POST['Attribute']['rotate'];
@@ -552,7 +566,7 @@ class AssetController extends Controller
         }
         
          
-        
+        //set the quality for image
         if(isset($_POST['quality']))
         {
         	$a = $_POST['Attribute']['quality'];
@@ -564,32 +578,15 @@ class AssetController extends Controller
         
         	$count = 1;
         }
-      /*  
-        if(isset($_POST['sharpen']))
-        {
-        	 $a = $_POST['Attribute']['sharpen'];
-		  $b = (int)$a;
-      	 $image->sharpen($b);
-      	  $image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext); 
-      	  $count = 1;
-        }
-        
-        if(isset($_POST['quality']))
-        {
-        	 $a = $_POST['Attribute']['quality'];
-		  $b = (int)$a;
-      	 $image->quality($b);
-      	  $image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext); 
-      		
-      	  $count = 1;
-        }*/
+		
+		//save all the changes and create version of the images and save it in assetid 
       	      	
-	if(isset($_POST['save']))
+	    if(isset($_POST['save']))
         {
       	
       		$count = 1;
-        }
-        if ($count == 1 || count==0){
+        
+			if ($count == 1){
 
         	$image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
         	$image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
@@ -625,8 +622,8 @@ class AssetController extends Controller
 						'uId'=> Yii::app()->user->getState("uid"),
 					));
 				
-        } 
-			
+			} 
+		}		
 		if(isset($_POST['buttonCancel']))
         {
          	unlink(Yii::app()->basePath.'/../upload/');
@@ -636,7 +633,7 @@ class AssetController extends Controller
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('editor', array('a'=>$id, 'model'=>$model,));
 	}
-		
+			
 	
 	/**
 	 * Performs the AJAX validation.

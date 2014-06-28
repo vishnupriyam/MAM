@@ -46,15 +46,17 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'Name',
 		array('name'=>'orgName',
 		      'value'=>'$data->organisation->orgName'),
-		//'unitCode',
 		array('name'=>'name',
-		       
 			 //to be changed according to many to many
-		     //'value'=>'$data->ou_structure->name'
+		     'value'=>'$data->getDepartments()'
 		     ),
 		
 		array(
-			'class'=>'bootstrap.widgets.TbButtonColumn',
+			'class'=>'CButtonColumn', 
+		'viewButtonUrl'=>'array("category/view","id"=>$data->tagId)', 
+		'updateButtonUrl'=>'array("category/update","id"=>$data->tagId)', 
+		'deleteButtonUrl'=>'array("category/delete","id"=>$data->tagId)',
+	
 		),
 	),
 )); 

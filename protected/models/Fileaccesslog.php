@@ -104,6 +104,14 @@ class Fileaccesslog extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	/**
+	 * get actions recorded corresponding to the code
+	 * @return view - V
+	 * @return chekin - CI
+	 * @return chekcout - CO
+	 * @return initial - I
+	 * @return download - D
+	 */
 	public function getAction(){
 	  if($this->action == 'V')
 	   return "View";
@@ -115,6 +123,8 @@ class Fileaccesslog extends CActiveRecord
 	   return "initial";
 	 elseif($this->action=='D')
 	   return "Download";
+	 elseif($this->action=='CI_OE')
+	   return "Image edit";
 	
 		
 	}

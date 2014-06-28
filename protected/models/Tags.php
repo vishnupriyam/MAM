@@ -106,13 +106,15 @@ class Tags extends CActiveRecord
 
 		$criteria->compare('tagId',$this->tagId);
 		$criteria->compare('tagName',$this->tagName,true);
-		$criteria->compare('orgId',$this->orgId,true);
+		$criteria->compare('orgId',Yii::app()->user->getId(),true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
 
+
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

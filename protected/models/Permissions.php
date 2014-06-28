@@ -26,6 +26,7 @@ class Permissions extends CActiveRecord
 	/**
 	 * @return array validation rules for model attributes.
 	 */
+	public $action; //variable for action
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that

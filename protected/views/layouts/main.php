@@ -107,26 +107,50 @@
 
 	if(!Yii::app()->user->isGuest){
 	$id =  Yii::app()->user->getId();
+	
 	echo TbHtml::tabs(array(
-	
-	
-	
-    array('label' => 'Add Asset', 'url' => '/final/asset/create'),
-    //array('label' => 'Media Browser', 'url' => '/final/index.php/media'),
-    array('label' => 'Viewer', 'url' => '/final/site/viewer'),
+	array('label' => 'Add Asset', 'url' => '/final/asset/create'),
     array('label' => 'Check In', 'url' => array('/users/checkIn','id'=>Yii::app()->user->getState("uid"))),
     array('label' => 'Review', 'url' => array('/users/review','id'=>Yii::app()->user->getState("uid"))),
-    array('label' => 'Check Out', 'url' => '/final/addasset/onlineeditor'),
-    array('label' => 'Admin', 'items' => array(
+    array('label' => 'Advanced Search', 'url' => array('')),
+    array('label' => 'Parameters', 'items' => array(
         array('label' => 'Manage OU', 'url' => array('/ou_structure/tree')),
-        array('label' => 'Add tags', 'url' => array('/tags/create')),
-        array('label' => 'Add category', 'url' => array('/category/create')),
-        array('label' => 'users', 'items'=>array(array('label'=>'Add user','url'=>array('/users/create')),array('label'=>'Manage user','url'=>array('/users/admin')))),
-        array('label' => 'Role', 'items'=>array(array('label'=>'Add role','url'=>array('/role/index')))),
-        array('label' => 'Module', 'items'=>array(array('label'=>'Add module','url'=>array('/module/create')))),
-        array('label' => 'Permissions', 'items'=>array(array('label'=>'Add permission','url'=>array('/permissions/create')),array('label'=>'Manage permissions','url'=>array('/permissions/admin')))),
+        array('label' => 'Category', 'items' => array(
+        	array('label' => 'Add Category', 'url' => array('/category/create')),
+        	array('label' => 'Manage Category', 'url' => array('/category/admin')),
+        	array('label' => 'View Category', 'url' => array('/category/index')),
+       	)),
+        array('label' => 'Tags', 'items' => array(
+        	array('label' => 'Add Tags', 'url' => array('/tags/create')),
+        	array('label' => 'Manage Tags', 'url' => array('/tags/admin')),
+        	array('label' => 'View Tags', 'url' => array('/tags/index')),
+       	)),
+       	array('label' => 'Role', 'items' => array(
+        	array('label' => 'Add Role', 'url' => array('/role/create')),
+        	array('label' => 'Manage Role', 'url' => array('/role/admin')),
+        	array('label' => 'View Role', 'url' => array('/role/index')),
+       	)),
+       	array('label' => 'Users', 'items' => array(
+        	array('label' => 'Add Users', 'url' => array('/users/create')),
+        	array('label' => 'Manage Users', 'url' => array('/usres/admin')),
+        	array('label' => 'View Users', 'url' => array('/users/index')),
+       	)),
+       	array('label' => 'Module', 'items' => array(
+        	array('label' => 'Add Modules', 'url' => array('/module/create')),
+        	array('label' => 'Manage Modules', 'url' => array('/module/admin')),
+        	array('label' => 'View Modules', 'url' => array('/module/index')),
+       	)),
+       	array('label' => 'Permissions', 'items' => array(
+        	array('label' => 'Add Permissions', 'url' => array('/permissions/create')),
+        	array('label' => 'Manage Permissions', 'url' => array('/permissions/admin')),
+        	array('label' => 'View Permissions', 'url' => array('/permissions/index')),
+       	)),
+        
     )),
-	)); 
+	));
+	
+	
+	
 	}
 ?>
 </div>

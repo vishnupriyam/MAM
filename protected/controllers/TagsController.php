@@ -77,17 +77,31 @@ class TagsController extends Controller
 			$model->attributes=$_POST['Tags'];
 			$orgId = Yii::app()->user->getId();
 			$model->orgId = $orgId;
+			$categories = $_POST['cat_id'];
 			
-			if($model->save()){
+			if($model->validate()){
 
-		
-			foreach ($_POST['cat_id'] as $key=>$cat_id)
-				{
-			 		$tagcat = new TagsCategory;
-					$tagcat->id = $cat_id;
-			 		$tagcat->tagId = $model->tagId;
-			 		$tagcat->save();
-				}
+			  //explode tags	
+			  $tags = explode(",",$model->tagName);
+			  
+			  //for each tag
+			  foreach($tags as $tag){
+		         $TagRow = new Tags;
+		         $TagRow->tagName = $tag;
+		         $TagRow->orgId = Yii::app()->user->getId();
+		         $TagRow->save();
+				
+				 foreach ($categories as $key=>$cat_id)
+					{
+			 			$tagcat = new TagsCategory;
+						$tagcat->id = $cat_id;
+			 			$tagcat->tagId = $TagRow->tagId;
+			 			$tagcat->save();
+					}
+					
+			  }		
+			//if only one tag redirected to list page due to list of tags
+			  
 			$this->redirect(array('view','id'=>$model->tagId));}
         	
 		}

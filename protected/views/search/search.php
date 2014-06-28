@@ -9,30 +9,9 @@ $this->breadcrumbs=array(
 <h3>Search Results for: "<?php echo CHtml::encode($term); ?>"</h3>
 <div>
  <?php 
-  /*
- echo CHtml::link('DOCUMENT',array('search/search',
- 		'q'=>$term
- 		 ));
- echo  str_repeat('&nbsp;',5);
-echo CHtml::link('IMAGES',array('search/search1',
-		'param'=>$term
-));
- echo  str_repeat('&nbsp;',5);
-echo CHtml::link('VIDEO',array('search/search2',
-		'param'=>$term
-));
-echo  str_repeat('&nbsp;',5);
-echo CHtml::link('AUDIO',array('search/search3',
-		'param'=>$term
-));*/
+  
 echo TbHtml::tabs(array(
-        //'display' => null, // default is static to top
-      //  'color' => TbHtml::NAVBAR_COLOR_INVERSE,
-       // 'collapse' => true,
-       // 'items' => array(
-        //	array(
-        	//	'class' => 'bootstrap.widgets.TbNav',
-        		//'items'=>array(
+        
 				array('label'=>'Documents', 'url'=>array('search/search', 'q'=>$term)),
 				array('label'=>'Images', 'url'=>array('/search/search1', 'param'=>$term)),
 				array('label'=>'Videos', 'url'=>array('/search/search2', 'param'=>$term)),
@@ -48,7 +27,7 @@ echo TbHtml::tabs(array(
 </div> 
 <br>
 <br>
-
+<?php // LOADING PAGE FOR  IMAGE SEARCH RESULT ?>
 <?php if ($flag=='1'): ?>
            
               <h4>Image:</h4>
@@ -65,40 +44,33 @@ echo TbHtml::tabs(array(
                        if($ext=='jpg' || $ext=='gif' || $ext=='png'):
                        ?>
     			         <p>Title: <?php echo $query->highlightMatches(CHtml::encode($result->title)); ?></p>
-                        <p>Link: <?php  //echo CHtml::link("View",array("asset/"."viewer"=>$result->name)); 
-                        	echo CHtml::link("view", array("asset/","viewer"=>$result->name));
+                        <p>Link: <?php echo CHtml::link("view", array("asset/","viewer"=>$result->name));
                         ?></p>
-                          <?php 
-                       $ext1=substr($result->content,0,200);
-                      
-                        ?>
-                       <p>Content: <?php   echo $query->highlightMatches(CHtml::encode($ext1)); ?></p> 
-                      
-                <?php        
-                      $orgId = Yii::app()->user->getId();
+                           
+                   <?php        
+                     
+                       $orgId = $result->link;
 					  $categoryId = $result->content;
-					 // $file = $result->file;
-					  $a = "http://localhost/final/upload/".$orgId.'/'.$categoryId.'/'.$result->title; 
-					  //print_r($a);
-					  //die();
+					  
+					  $a = "http://localhost/final/upload/".$orgId.'/'.$categoryId.'/'.$result->name.'.'.$ext; 
+					   
 					  ?>
                        <img id = "image" src = "<?php echo $a;?>" height=100 width = 100 alt=""> 
                        <?php endif; ?>
-                    <hr/>
+                      <hr/>
                 <?php endforeach; ?>
  
-            <?php else: ?>
+             <?php else: ?>
                 <p class="error">No results matched your search terms.</p>
-            <?php endif; ?>
-    
- <?php elseif ($flag=='3'):  ?>   
+              <?php endif; ?>
+            
+        <?php // LOADING PAGE FOR  AUDIO SEARCH RESULT ?>
+  <?php elseif ($flag=='3'):  ?>   
   <h4>AUDIO:</h4>
           <?php if (!empty($results)): ?>
                 <?php foreach($results as $result): 
                 ?>  
-           
-                   
-                    <?php
+                  <?php
                     if(($pos=strrpos($result->title,'.'))!==false)
     			    $ext=substr($result->title,$pos+1);
                     ?>
@@ -106,8 +78,7 @@ echo TbHtml::tabs(array(
                        if($ext==='mp3'):
                        ?>
     			         <p>Title: <?php echo $query->highlightMatches(CHtml::encode($result->title)); ?></p>
-                        <p>Link: <?php // echo CHtml::link($query->highlightMatches(CHtml::encode($result->link)),array('asset/'.$result->name)); 
-                       	echo CHtml::link("view", array("asset/","viewer"=>$result->name));
+                        <p>Link: <?php echo CHtml::link("view", array("asset/","viewer"=>$result->name));
                        ?></p>
                           <?php 
                        $ext1=substr($result->content,0,200);
@@ -123,7 +94,7 @@ echo TbHtml::tabs(array(
     
  
  
- 
+                    <?php // ....................LOADING PAGE FOR  VIDEO SEARCH RESULT....................... ?>
  <?php elseif  ($flag=='2'):  ?> 
       <h4>VIDEO:</h4>
           <?php if (!empty($results)): ?>
@@ -139,8 +110,7 @@ echo TbHtml::tabs(array(
                        if($ext==='mp4'||$ext==='3gp'||$ext==='avi'):
                        ?>
     			         <p>Title: <?php echo $query->highlightMatches(CHtml::encode($result->title)); ?></p>
-                        <p>Link: <?php // echo CHtml::link($query->highlightMatches(CHtml::encode($result->link)),array('asset/'.$result->name));
-							echo CHtml::link("view", array("asset/","viewer"=>$result->name));
+                        <p>Link: <?php echo CHtml::link("view", array("asset/","viewer"=>$result->name));
                        ?></p>
                           <?php 
                        $ext1=substr($result->content,0,200);
@@ -155,7 +125,7 @@ echo TbHtml::tabs(array(
             <?php endif; ?>
     
   
-    
+   <?php // ....................LOADING PAGE FOR  DOCUMENT SEARCH RESULT......................... ?> 
   <?php else : ?>   
  
  <h4>DOCUMENT:</h4>
@@ -167,26 +137,34 @@ echo TbHtml::tabs(array(
                     if(($pos=strrpos($result->title,'.'))!==false)
     			    $ext=substr($result->title,$pos+1);
                     ?>
+                    
+                    <?php // LOADING PAGE FOR  DOCUMENT SEARCH RESULT ?>
                        <?php
                        if($ext=='xlsx' || $ext=='docx' || $ext=='pptx' || $ext == 'doc' || $ext == 'odt'
-                       || $ext == 'ppt'):
+                       || $ext == 'ppt'||$ext == 'pdf'):
                        ?>
     			         <p>Title: <?php echo $query->highlightMatches(CHtml::encode($result->title)); ?></p>
-                        <p>Link: <?php // echo CHtml::link($query->highlightMatches(CHtml::encode($result->link)),array('asset/'.$result->name)); 
-                       echo CHtml::link("view", array("asset/","viewer"=>$result->name));
+                        <p>Link: <?php  echo CHtml::link("view", array("asset/","viewer"=>$result->name));
                        ?></p>
                           <?php 
-                       $ext1=substr($result->content,0,200);
+                        $ext1=substr($result->content,0,250);
+                        ?>
+                       <p>Content: <?php echo $query->highlightMatches(CHtml::encode($ext1)) ; ?></p>
+                        
+                       
+                        <?php elseif ( $ext == 'odp'): ?>
+                        <p>Title:  <?php echo $query->highlightMatches(CHtml::encode($result->title));?></p>
+                           <p>Link: <?php  echo CHtml::link("view", array("asset/","viewer"=>$result->name)); ?></p>
+                         <?php 
+                         $ext1=substr($result->content,0,200);
                         ?>
                        <p>Content: <?php   echo $query->highlightMatches(CHtml::encode($ext1)); ?></p>
                        
-                        <?php elseif ($ext == 'pdf' || $ext == 'odp'): ?>
-                        <p>Title:  <?php echo $query->highlightMatches(CHtml::encode($result->title));?></p>
-                           <p>Link: <?php  echo CHtml::link("view", array("asset/","viewer"=>$result->name)); ?></p>
-                       
-                        
+                        <?php // ........................LOADING PAGE FOR  TAGS SEARCH RESULT....................... ?>
                        <?php else: ?>
                        <?php 
+                       //here getting a database connection for accesing asset from tag
+                       
                         $tagId = $result->name;
                       
                         $connection = Yii::app()->db;
@@ -204,13 +182,13 @@ echo TbHtml::tabs(array(
 			    			$dataReader2 = $command->query();
         					$row = $dataReader2->read();
         					$dataReader2->close();
-        
-        					$ans = $row['file'];
+                            $ans = $row['file'];
                        		?>
+                       		
                            <p>Title: <?php echo $ans; ?></p>
                            <p>Link: <?php  echo CHtml::link("view", array("asset/","viewer"=>$a)); ?></p>
                            <p> <?php  // echo$query->highlightMatches(CHtml::encode($result->name)); ?></p> 
-                           <?php  }?>
+                           <?php  } ?>
                         <?php endif; ?>
                     
                 <?php endforeach; ?>

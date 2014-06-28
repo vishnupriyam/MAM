@@ -1,20 +1,27 @@
 <?php 
 ?>
 <?php
- $b = "http://localhost/final/Viewer.js/#../upload/".Yii::app()->user->getId()."/".$model->categoryId."/".$model->file;
  
- $orgId = Yii::app()->user->getId();
- $categoryId = $model->categoryId;
- $assetid = $model->assetId;
- $file = $model->file;
- $version = 0;
- $file1 = $assetid.'_'.$version;
-  if(($pos=strrpos($file,'.'))!==false)
-  $ext=substr($file,$pos+1);
- ?> 
- <?php 
-  $a = "http://localhost/final/upload/".$orgId.'/'.$categoryId.'/'.$file;
+$orgId = $model->orgId;
+$categoryId = $model->categoryId;
+$file = $model->file;
+$assetid=$model->assetId;
+
+// here we are getting an extention of file so that we can categorise  file for dispay.
+
+if(($pos=strrpos($file,'.'))!==false)
+	$ext=substr($file,$pos+1);
+ $b = "http://localhost/final/Viewer.js/#../upload/".$orgId."/".$model->categoryId."/".$assetid.".".$ext;
+?> 
+
+<?php  
+ //echo $a;
+?>
+
+<?php 
+  $a = "http://localhost/final/upload/".$orgId.'/'.$categoryId.'/'.$assetid.'.'.$ext;
   
+  // here we are getting an extention of file for inspecting image formate
   if(($pos=strrpos($file,'.'))!==false)
   $ext=substr($file,$pos+1);
  ?>
@@ -22,90 +29,36 @@
   if ($ext == 'jpg' || $ext == 'gif' || $ext == 'png' || $ext == 'bmp'): 
  ?>  
  <?php 
-  
-  $a = "http://localhost/final/upload/".$orgId.'/'.$categoryId.'/'.$file;
+  $a = "http://localhost/final/upload/".$orgId.'/'.$categoryId.'/'.$assetid.'.'.$ext;
+   
   
   ?>
   <img id = "image" src = "<?php echo $a;?>"> 
   
   <?php elseif ($ext == 'mp4' || $ext == 'flv' || $ext == 'ogg' || $ext == 'webm' || $ext == 'mp3' || $ext == 'wav'):
-  ?>
+	?>
+   <?php 
+  //$a = "http://localhost/final/upload/".$orgId.'/'.$categoryId.'/'.$file;
   
-  <?php 
-  $a = "http://localhost/final/upload/".$orgId.'/'.$categoryId.'/'.$file;
-  //print_r($a);
-  //die();
-  if(($pos=strrpos($file,'.'))!==false)
-  	$ext=substr($file,$pos+1);
-  ?>
-  <?php   
-  if ($ext == mp4) {
-  $a = video;
-  $b = mp4;
-  $this->widget ( 'ext.mediaElement.MediaElementPortlet',
+  ?><?php   
+ 
+   $this->widget ( 'ext.mediaElement.MediaElementPortlet',
     array ( 
     'url' => $a,   
-    
      'mimeType' =>'video/mp4',
     ));
-  } else if ($ext == flv) {
-  	//print_r("here".$a);
-   // die();
-  $this->widget ( 'ext.mediaElement.MediaElementPortlet',
-    array ( 
-    'url' => $a,   
-     'mimeType' =>'video/flv',
-    ));
-  } else if ($ext == ogg) {
-  	//print_r("here".$a);
-   // die();
-  $this->widget ( 'ext.mediaElement.MediaElementPortlet',
-    array ( 
-    'url' => $a,   
-     'mimeType' =>'video/ogg',
-    ));
-  }else if ($ext == webm) {
-  	//print_r("here".$a);
-   // die();
-  $this->widget ( 'ext.mediaElement.MediaElementPortlet',
-    array ( 
-    'url' => $a,   
-     'mimeType' =>'video/webm',
-    ));
-  }else if ($ext == mp3) {
-  	//print_r("here".$a);
-   // die();
-  $this->widget ( 'ext.mediaElement.MediaElementPortlet',
-    array ( 
-    'url' => $a,   
-     'mimeType' =>'audio/mp3',
-    ));
-  }else if ($ext == mp3) {
-  	//print_r("here".$a);
-   // die();
-  $this->widget ( 'ext.mediaElement.MediaElementPortlet',
-    array ( 
-    'url' => $a,   
-     'mimeType' =>'audio/wav',
-    ));
-  }else if ($ext == wav) {
-  	//print_r("here".$a);
-   // die();
-  $this->widget ( 'ext.mediaElement.MediaElementPortlet',
-    array ( 
-    'url' => $a,   
-     'mimeType' =>'audio/mp3',
-    ));
-  }
-  ?>
-  <?php 
-   elseif ($ext == 'pdf' || $ext == 'odt' || $ext == 'odp'): 
-   $b = "http://localhost/final/Viewer.js/#../upload/".$orgId.'/'.$categoryId.'/'.$file;
-  ?>
-  
+    ?><?php 
+   elseif ($ext == 'pdf' || $ext == 'odt' || $ext == 'odp'): ?>
   <iframe id="viewer" src = "<?php echo $b;?>"
   width='800' height='500' allowfullscreen webkitallowfullscreen></iframe>
   
   <?php else:?>
   
   <?php endif;?>
+ 
+ 
+ 
+ 
+ 
+<?php  
+  ?>
