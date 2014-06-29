@@ -406,3 +406,155 @@
 2014-06-29T05:30:19+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
 2014-06-29T05:30:19+02:00 INFO  accessLog rid  4
 2014-06-29T05:30:19+02:00 INFO  accessLog pid  14
+2014-06-29T06:49:12+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-06-29T06:49:12+02:00 INFO  accessLog rid  4
+2014-06-29T06:49:12+02:00 INFO  accessLog pid  3
+2014-06-29T06:49:12+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-06-29T06:49:12+02:00 INFO  accessLog rid  4
+2014-06-29T06:49:12+02:00 INFO  accessLog pid  13
+2014-06-29T06:49:12+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-06-29T06:49:12+02:00 INFO  accessLog rid  4
+2014-06-29T06:49:12+02:00 INFO  accessLog pid  14
+2014-06-29T06:49:29+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-06-29T06:49:29+02:00 INFO  accessLog rid  4
+2014-06-29T06:49:29+02:00 INFO  accessLog pid  3
+2014-06-29T06:49:29+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-06-29T06:49:29+02:00 INFO  accessLog rid  4
+2014-06-29T06:49:29+02:00 INFO  accessLog pid  8
+2014-06-29T06:49:29+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-06-29T06:49:29+02:00 INFO  accessLog rid  4
+2014-06-29T06:49:29+02:00 INFO  accessLog pid  13
+2014-06-29T06:49:29+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-06-29T06:49:29+02:00 INFO  accessLog rid  4
+2014-06-29T06:49:29+02:00 INFO  accessLog pid  14
+2014-06-29T07:24:07+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	54
+2014-06-29T07:24:07+02:00 INFO  accessLog file  robot  article.docx
+2014-06-29T07:24:07+02:00 INFO  accessLog createDate  NOW()
+2014-06-29T07:24:07+02:00 INFO  accessLog size  19187
+2014-06-29T07:24:07+02:00 INFO  accessLog type  application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2014-06-29T07:24:07+02:00 INFO  accessLog reviewer  20
+2014-06-29T07:24:07+02:00 INFO  accessLog ownerId  20
+2014-06-29T07:24:08+02:00 INFO  accessLog 20	IIT Bombay Powai	AssetOuFilep	create	1
+2014-06-29T07:24:08+02:00 INFO  accessLog assetId  54
+2014-06-29T07:24:08+02:00 INFO  accessLog ouId  13
+2014-06-29T07:24:08+02:00 INFO  accessLog 20	IIT Bombay Powai	AssetOuFilep	create	2
+2014-06-29T07:24:08+02:00 INFO  accessLog assetId  54
+2014-06-29T07:24:08+02:00 INFO  accessLog ouId  14
+2014-06-29T07:24:08+02:00 INFO  accessLog fpId  1
+2014-06-29T07:24:08+02:00 INFO  accessLog 20	IIT Bombay Powai	AssetOuFilep	create	3
+2014-06-29T07:24:08+02:00 INFO  accessLog assetId  54
+2014-06-29T07:24:08+02:00 INFO  accessLog ouId  12
+2014-06-29T07:24:08+02:00 INFO  accessLog fpId  2
+2014-06-29T07:27:04+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	55
+2014-06-29T07:27:04+02:00 INFO  accessLog file  Cover Letter- Mrigank.doc
+2014-06-29T07:27:04+02:00 INFO  accessLog createDate  NOW()
+2014-06-29T07:27:04+02:00 INFO  accessLog size  52224
+2014-06-29T07:27:04+02:00 INFO  accessLog type  application/msword
+2014-06-29T07:27:04+02:00 INFO  accessLog reviewer  20
+2014-06-29T07:27:04+02:00 INFO  accessLog ownerId  20
+2014-06-29T07:27:04+02:00 INFO  accessLog 20	IIT Bombay Powai	AssetOuFilep	create	4
+2014-06-29T07:27:04+02:00 INFO  accessLog assetId  55
+2014-06-29T07:27:04+02:00 INFO  accessLog ouId  13
+2014-06-29T07:27:04+02:00 INFO  accessLog 20	IIT Bombay Powai	AssetOuFilep	create	5
+2014-06-29T07:27:04+02:00 INFO  accessLog assetId  55
+2014-06-29T07:27:04+02:00 INFO  accessLog ouId  14
+2014-06-29T07:27:04+02:00 INFO  accessLog fpId  1
+2014-06-29T07:27:04+02:00 INFO  accessLog 20	IIT Bombay Powai	AssetOuFilep	create	6
+2014-06-29T07:27:04+02:00 INFO  accessLog assetId  55
+2014-06-29T07:27:04+02:00 INFO  accessLog ouId  11
+2014-06-29T07:27:04+02:00 INFO  accessLog fpId  2
+2014-06-29T07:30:07+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	56
+2014-06-29T07:30:07+02:00 INFO  accessLog file  helloworld.java
+2014-06-29T07:30:07+02:00 INFO  accessLog createDate  NOW()
+2014-06-29T07:30:07+02:00 INFO  accessLog size  166
+2014-06-29T07:30:07+02:00 INFO  accessLog type  text/x-java
+2014-06-29T07:30:07+02:00 INFO  accessLog reviewer  20
+2014-06-29T07:30:07+02:00 INFO  accessLog ownerId  20
+2014-06-29T07:32:16+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	57
+2014-06-29T07:32:16+02:00 INFO  accessLog file  NON TECHNICAL EVENTS.docx
+2014-06-29T07:32:16+02:00 INFO  accessLog createDate  NOW()
+2014-06-29T07:32:16+02:00 INFO  accessLog size  10844
+2014-06-29T07:32:16+02:00 INFO  accessLog type  application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2014-06-29T07:32:16+02:00 INFO  accessLog reviewer  20
+2014-06-29T07:32:16+02:00 INFO  accessLog ownerId  20
+2014-06-29T07:32:16+02:00 INFO  accessLog 20	IIT Bombay Powai	AssetOuFilep	create	7
+2014-06-29T07:32:16+02:00 INFO  accessLog assetId  57
+2014-06-29T07:32:16+02:00 INFO  accessLog ouId  11
+2014-06-29T07:34:49+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	58
+2014-06-29T07:34:49+02:00 INFO  accessLog file  WORKSHOP REGISTER FORM ...................docx
+2014-06-29T07:34:49+02:00 INFO  accessLog createDate  NOW()
+2014-06-29T07:34:49+02:00 INFO  accessLog size  63518
+2014-06-29T07:34:49+02:00 INFO  accessLog type  application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2014-06-29T07:34:49+02:00 INFO  accessLog reviewer  20
+2014-06-29T07:34:49+02:00 INFO  accessLog ownerId  20
+2014-06-29T07:36:37+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	59
+2014-06-29T07:36:37+02:00 INFO  accessLog file  ULTRASONOGRAPHY.docx
+2014-06-29T07:36:37+02:00 INFO  accessLog createDate  NOW()
+2014-06-29T07:36:37+02:00 INFO  accessLog size  31219
+2014-06-29T07:36:37+02:00 INFO  accessLog type  application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2014-06-29T07:36:37+02:00 INFO  accessLog reviewer  20
+2014-06-29T07:36:37+02:00 INFO  accessLog ownerId  20
+2014-06-29T07:37:40+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	60
+2014-06-29T07:37:40+02:00 INFO  accessLog file  TO ALL OUR BELOVED TEACHERS.docx
+2014-06-29T07:37:40+02:00 INFO  accessLog createDate  NOW()
+2014-06-29T07:37:40+02:00 INFO  accessLog size  347952
+2014-06-29T07:37:40+02:00 INFO  accessLog type  application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2014-06-29T07:37:40+02:00 INFO  accessLog reviewer  20
+2014-06-29T07:37:40+02:00 INFO  accessLog ownerId  20
+2014-06-29T07:38:51+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	61
+2014-06-29T07:38:51+02:00 INFO  accessLog file  wireless charging of mobile gadgets using service providers-report.pdf
+2014-06-29T07:38:51+02:00 INFO  accessLog createDate  NOW()
+2014-06-29T07:38:51+02:00 INFO  accessLog size  1623329
+2014-06-29T07:38:51+02:00 INFO  accessLog type  application/pdf
+2014-06-29T07:38:51+02:00 INFO  accessLog reviewer  20
+2014-06-29T07:38:51+02:00 INFO  accessLog ownerId  20
+2014-06-29T07:46:46+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	62
+2014-06-29T07:46:46+02:00 INFO  accessLog file  ROBOTICAL TASK.doc
+2014-06-29T07:46:46+02:00 INFO  accessLog createDate  NOW()
+2014-06-29T07:46:46+02:00 INFO  accessLog size  110080
+2014-06-29T07:46:46+02:00 INFO  accessLog type  application/msword
+2014-06-29T07:46:46+02:00 INFO  accessLog reviewer  20
+2014-06-29T07:46:46+02:00 INFO  accessLog ownerId  20
+2014-06-29T07:49:40+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	63
+2014-06-29T07:49:40+02:00 INFO  accessLog file  BROCHURE ROBOTICS.pub
+2014-06-29T07:49:40+02:00 INFO  accessLog createDate  NOW()
+2014-06-29T07:49:40+02:00 INFO  accessLog size  107520
+2014-06-29T07:49:40+02:00 INFO  accessLog type  application/vnd.ms-publisher
+2014-06-29T07:49:40+02:00 INFO  accessLog reviewer  20
+2014-06-29T07:49:40+02:00 INFO  accessLog ownerId  20
+2014-06-29T07:51:09+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	64
+2014-06-29T07:51:09+02:00 INFO  accessLog file  paperman proposal.ppt
+2014-06-29T07:51:09+02:00 INFO  accessLog createDate  NOW()
+2014-06-29T07:51:09+02:00 INFO  accessLog size  702976
+2014-06-29T07:51:09+02:00 INFO  accessLog type  application/vnd.ms-powerpoint
+2014-06-29T07:51:09+02:00 INFO  accessLog reviewer  20
+2014-06-29T07:51:09+02:00 INFO  accessLog ownerId  20
+2014-06-29T07:53:16+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	65
+2014-06-29T07:53:16+02:00 INFO  accessLog file  boats.docx
+2014-06-29T07:53:16+02:00 INFO  accessLog createDate  NOW()
+2014-06-29T07:53:16+02:00 INFO  accessLog size  1906486
+2014-06-29T07:53:16+02:00 INFO  accessLog type  application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2014-06-29T07:53:16+02:00 INFO  accessLog reviewer  20
+2014-06-29T07:53:16+02:00 INFO  accessLog ownerId  20
+2014-06-29T09:50:44+02:00 INFO  accessLog 8	IITB1	RoleHasPermissions	create	roleHasPermmissions
+2014-06-29T09:50:44+02:00 INFO  accessLog rid  2
+2014-06-29T09:50:44+02:00 INFO  accessLog pid  8
+2014-06-29T09:50:44+02:00 INFO  accessLog 8	IITB1	RoleHasPermissions	create	roleHasPermmissions
+2014-06-29T09:50:44+02:00 INFO  accessLog rid  2
+2014-06-29T09:50:44+02:00 INFO  accessLog pid  13
+2014-06-29T09:50:44+02:00 INFO  accessLog 8	IITB1	RoleHasPermissions	create	roleHasPermmissions
+2014-06-29T09:50:44+02:00 INFO  accessLog rid  2
+2014-06-29T09:50:44+02:00 INFO  accessLog pid  14
+2014-06-29T09:51:03+02:00 INFO  accessLog 8	IITB1	Category	create	17
+2014-06-29T09:51:03+02:00 INFO  accessLog name  category2
+2014-06-29T09:51:03+02:00 INFO  accessLog 8	IITB1	Category	create	17
+2014-06-29T09:51:03+02:00 INFO  accessLog 8	IITB1	CategoryHasOuStructure	create	 categoryHasOuStructure
+2014-06-29T09:51:03+02:00 INFO  accessLog categoryId  17
+2014-06-29T09:51:03+02:00 INFO  accessLog ou structureId  6
+2014-06-29T09:51:35+02:00 INFO  accessLog 8	IITB1	Asset	create	68
+2014-06-29T09:51:35+02:00 INFO  accessLog file  syllabus ece.pdf
+2014-06-29T09:51:35+02:00 INFO  accessLog createDate  NOW()
+2014-06-29T09:51:35+02:00 INFO  accessLog size  575091
+2014-06-29T09:51:35+02:00 INFO  accessLog type  application/pdf
+2014-06-29T09:51:35+02:00 INFO  accessLog reviewer  8
+2014-06-29T09:51:35+02:00 INFO  accessLog ownerId  8

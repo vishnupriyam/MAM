@@ -168,25 +168,6 @@ class Role extends CActiveRecord
 	public function hasPerm($permission,$rid)
 	{ 
 		
-		 //$Rolemodel = Role::model()->find('rid=:rid',array(':rid'=>$rid));	
-		 
-		 //$Rolemodel->permissions = $Rolemodel->getRolePerms($rid);
-		
-		 /*print_r($Rolemodel->permissions);		
-		 print_r($Rolemodel->permissions[0]);
-		 print_r($Rolemodel->permissions[1]);die();
-		 */
-		 
-		 /*foreach($Rolemodel->permissions as $action){
-		 	if($action['action'] == $permission)
-			{	
-			  return true;
-			}
-		
-		}*/
-		//return false;
-		
-		
 		$role = Role::model()->find('rid=:rid',array('rid'=>$rid));
 		$id = $rid;
 		

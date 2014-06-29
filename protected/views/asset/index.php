@@ -36,6 +36,12 @@ $('.search-form form').submit(function(){
 </script>
 
 
+<?php  
+//check for view permission
+$uId = Yii::app()->user->getState("uid");
+$user = Users::model()->find('uId=:uId',array(':uId'=>$uId));
+//echo $user->hasAcessPermission(20,65,0); 
+?>
 
 
 <!-- grid view of assets -->
@@ -55,8 +61,8 @@ $('.search-form form').submit(function(){
 		'size',	
 		array('name'=>'owner_name','value'=>'$data->users->name'),
 		'type',
-		array('name'=>'view_online','type'=>'raw','value'=>'CHtml::link("view", array("asset/","viewer"=>$data->assetId))'),
-		array('name'=>'edit_online','type'=>'raw','value'=>'CHtml::link("edit", array("asset/","editor"=>$data->assetId))'),
+		//array('name'=>'view_online','type'=>'raw','value'=>'CHtml::link("view", array("asset/","viewer"=>$data->assetId))','visible'=>$user->hasAcessPermission(20,$data->assetId,0)),
+		//array('name'=>'edit_online','type'=>'raw','value'=>'CHtml::link("edit", array("asset/","editor"=>$data->assetId))'),
 	),
 )); ?>
 

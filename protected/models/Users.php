@@ -23,8 +23,9 @@
 class Users extends CActiveRecord
 {
 	
-	public $roles;
+	public $roles;   //to maintain the roles of a user
 	public $picture;
+	public $filePermissions; //when assetId is passed obtain the permissions that user has on the asset
 	public function behaviors(){
           return array( 'CAdvancedArBehavior' => array(
             'class' => 'application.extensions.CAdvancedArBehavior'));
@@ -256,4 +257,58 @@ class Users extends CActiveRecord
 	}
 	
 	
+	/**
+	 * obtain file permissions of the asset according to user
+	 */
+	
+	public function AssetPermissions($uId,$assetId){
+		
+		$sql = "select fpId from asset_user_filep as t1
+		         where t1.uId=:uId and t1.assetId=:assetId";
+		$connection=Yii::app()->db;
+		$command = $connection->createCommand($sql);
+	    $command->bindParam(":uId",$uId,PDO::PARAM_INT);
+		$command->bindParam(":assetId",$assetId,PDO::PARAM_INT);
+		$this->filePermissions = $command->queryAll();
+		return $this->filePermissions;	
+	}
+	/**
+	 * 
+	 * obtain file permissions of the asset according to department
+	 * @param integer $ouId
+	 * @param integer $assetId
+	 */
+	public function AssetDepartmentPermissions($ouId,$assetId){
+		
+		$sql = "select fpId from asset_ou_filep as t1
+		         where t1.ouId=:ouId and t1.assetId=:assetId";
+		$connection=Yii::app()->db;
+		$command = $connection->createCommand($sql);
+	    $command->bindParam(":ouId",$ouId,PDO::PARAM_INT);
+		$command->bindParam(":assetId",$assetId,PDO::PARAM_INT);
+		$this->filePermissions = $command->queryAll();
+		return $this->filePermissions;	
+	}
+	
+	
+	
+	/**
+	 * check whether the user has the accesspermission over the asset
+	 */
+	public static function hasAcessPermission($uId,$assetId,$permission){
+		$user = Users::model()->find('uid=:uid',array('uid'=>$uId));
+		$user->filePermissions = $user->AssetPermissions($uId,$assetId);
+		foreach($user->filePermissions as $userpermission)
+		{
+			if($userpermission['fpId'] == $permission) 
+			return true;
+		}
+		$user->filePermissions = $user->AssetDepartmentPermissions($user->ouId,$assetId);	
+		foreach($user->filePermissions as $userpermission)
+		{
+			if($userpermission['fpId'] == $permission) 
+			return true;
+		}
+		return false;
+	}
 }

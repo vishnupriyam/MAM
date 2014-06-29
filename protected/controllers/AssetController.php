@@ -109,7 +109,8 @@ class AssetController extends Controller
 			}
 			
 			if ($model->save()) {
-
+				
+			
 				$orgId=Yii::app()->user->getId();
 				$fileName=$model->assetId.'.dat';    //naming the entered file as assetId.dat 
 				$categoryId=$_POST['Asset']['categoryId'];
@@ -239,52 +240,60 @@ class AssetController extends Controller
                 	$AssetOuFilep->save();
        			}}
        			
+       			
+       			
        			//applying the read permissions to all checked users from asset form,Data:AssetUserfilep
 				if(!empty($_POST['Aread'])){
 				$read = $_POST['Aread'];
 				foreach($read as $readRow){
-					$AssetUserFilep = new AssetUserFilep;
-        	        $AssetUserFilep->assetId = $model->assetId;
-            	    $AssetUserFilep->uId = $readRow;
-            	    $AssetUserFilep->fpId = 0;
-                	$AssetUserFilep->save();
-       			}}
+					$command = Yii::app()->db->createCommand();
+					$command->insert('asset_user_filep', array(
+    					'assetId'=>$model->assetId,
+						'uId'=>$readRow,
+						'fpId'=>0,
+					));
+				}}
 
        			//applying the write permissions to all checked users from asset form,Data:AssetUserfilep
        			if(!empty($_POST['Awrite'])){
 				$write = $_POST['Awrite'];
        			foreach($write as $writeRow){
-					$AssetUserFilep = new AssetUserFilep;
-        	        $AssetUserFilep->assetId = $model->assetId;
-            	    $AssetUserFilep->uId = $writeRow;
-            	    $AssetUserFilep->fpId = 1;
-                	$AssetUserFilep->save();
+					$command = Yii::app()->db->createCommand();
+					$command->insert('asset_user_filep', array(
+    					'assetId'=>$model->assetId,
+						'uId'=>$writeRow,
+						'fpId'=>1,
+					));
        			}}
        			
 				//applying the edit permissions to all checked users from asset form,Data:AssetUserfilep
 				if(!empty($_POST['Aedit'])){
 				$edit = $_POST['Aedit'];
 				foreach($edit as $editRow){
-					$AssetUserFilep = new AssetUserFilep;
-        	        $AssetUserFilep->assetId = $model->assetId;
-            	    $AssetUserFilep->uId = $editRow;
-            	    $AssetUserFilep->fpId = 2;
-                	$AssetUserFilep->save();
+					$command = Yii::app()->db->createCommand();
+					$command->insert('asset_user_filep', array(
+    					'assetId'=>$model->assetId,
+						'uId'=>$editRow,
+						'fpId'=>2,
+					));
        			}}
 
        			//applying the delete permissions to all checked users from asset form,Data:AssetUserfilep
 				if(!empty($_POST['Adelete'])){
 				$delete = $_POST['Adelete'];
 				foreach($delete as $deleteRow){
-					$AssetUserFilep = new AssetUserFilep;
-        	        $AssetUserFilep->assetId = $model->assetId;
-            	    $AssetUserFilep->uId = $editRow;
-            	    $AssetUserFilep->fpId = 3;
-                	$AssetUserFilep->save();
+					$command = Yii::app()->db->createCommand();
+					$command->insert('asset_user_filep', array(
+    					'assetId'=>$model->assetId,
+						'uId'=>$editRow,
+						'fpId'=>3,
+					));
        			}}
        			
-       			
-       			
+       			/*$print_r($_POST['Adelete']);
+       			$print_r($_POST['Aread']);
+       			$print_r($_POST['Awrite']);
+       			$print_r($_POST['Aedit']);die();*/
 			}
 
 			//redirect to users to view asset after asset submission form

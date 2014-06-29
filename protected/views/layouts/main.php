@@ -120,6 +120,7 @@
 	
 	 
 	echo TbHtml::tabs(array(
+	array('label' => 'Home', 'url' => array('/asset/index')),
 	array('label' => 'Add Asset', 'url' => '/final/asset/create'),
     array('label' => 'Check In', 'url' => array('/users/checkIn','id'=>Yii::app()->user->getState("uid"))),
     array('label' => 'Review', 'url' => array('/users/review','id'=>Yii::app()->user->getState("uid"))),
