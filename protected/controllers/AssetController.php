@@ -423,19 +423,20 @@ class AssetController extends Controller
   			
   		$file=$model->assetId;
   		
+  		if(!isset($_POST['save'])){
   		//maintenece of original file for versioning
-  		/*copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext,
+  		copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext,
   		Yii::app()->basePath.'/../upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
-  		*/
+  		}
   		
-  		$image=Yii::app()->image->load('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+  		$image=Yii::app()->image->load('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
 		//$handle=new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
 
 		//flip image horizontally or vertically
 		if(isset($_POST['flip']))
         {
 		  $a = $_POST['side'];
-		  $handle=new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+		  $handle=new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
 		  if ($a == 1)
 		  $handle->image_filp='h';
 		  else if ($a == 2)
@@ -449,7 +450,7 @@ class AssetController extends Controller
 		//convert the image format from one type to another
         if(isset($_POST['convert']))
         {
-        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
 	 		if ($handle->uploaded) {
 	 			$a = $_POST['format'];
 	 			if ($a == 1)
@@ -468,7 +469,7 @@ class AssetController extends Controller
 		//convert the image into negative
 		if(isset($_POST['negative']))
         {
-        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
 	 		if ($handle->uploaded) { 
 	 			$handle->image_negative = true;
 	 			$handle->process('upload/'.$orgId.'/'.$catid.'/');
@@ -479,7 +480,7 @@ class AssetController extends Controller
         {
         	$a = $_POST['Attribute']['brightness'];
 		 	 $b = (int)$a;
-        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
 	 		if ($handle->uploaded) {
 	 			$handle->image_brightness = $a;
 	 			$handle->process('upload/'.$orgId.'/'.$catid.'/');
@@ -492,7 +493,7 @@ class AssetController extends Controller
         {
         	$a = $_POST['Attribute']['contrast'];
 		  	$b = (int)$a;
-        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
 	 		if ($handle->uploaded) {
 	 			$handle->image_brightness = $a;
 	 			$handle->process('upload/'.$orgId.'/'.$catid.'/');
@@ -506,7 +507,7 @@ class AssetController extends Controller
 		   $b = $_POST['Attribute']['text_color'];
 		   $c = $_POST['Attribute']['text_x'];
 		   $d = $_POST['Attribute']['text_y'];
-        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
 	 		if ($handle->uploaded) {
 	 			$handle->image_text = $a;
 	 		    $handle->image_text_color = $b;
@@ -525,13 +526,13 @@ class AssetController extends Controller
 		  
 		   $c = $_POST['Attribute']['crop_y'];
 		  $d = (int)$c;
-		  $handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+		  $handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
 		  $handle->image_crop =true;
 		  $hanle->image_x=$b;
 		  $hanlde->image_y=$d;
      
 		  $handle->process('upload/'.$orgId.'/'.$catid.'/');
-        $count = 1;
+          $count = 1;
         }
         
 		//resize the image
@@ -542,7 +543,7 @@ class AssetController extends Controller
         
         	$c = $_POST['Attribute']['resize_y'];
         	$d = (int)$c;
-        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
         
         	$handle->image_resize         = true;
         	$handle->image_x              = $b;
@@ -559,7 +560,7 @@ class AssetController extends Controller
         {
         	$a = $_POST['Attribute']['rotate'];
         	$b = (int)$a;
-        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
         	$handle->image_rotate = $b;
         	$handle->process('upload/'.$orgId.'/'.$catid.'/');
         	$count = 1;
@@ -571,7 +572,7 @@ class AssetController extends Controller
         {
         	$a = $_POST['Attribute']['quality'];
         	$b = (int)$a;
-        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+        	$handle = new upload('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
         	$handle->jpeg_quality = $b;
         	$handle->process('upload/'.$orgId.'/'.$catid.'/');
         	 
@@ -589,9 +590,14 @@ class AssetController extends Controller
 			if ($count == 1){
 
         	$image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext);
-        	$image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
-        	$image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'.dat');
         	
+        	copy($folder .Yii::app()->basePath.'/../upload/'.$orgId.'/'.$catid.'/'.$file.'_1.'.$ext,
+  				Yii::app()->basePath.'/../upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+  		
+        	
+        	/*$image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'.'.$ext);
+        	$image->save('upload/'.$orgId.'/'.$catid.'/'.$file.'.dat');
+        	*/
         	//versioning of the file
         	$records = AssetRevision::model()->findAll('assetId=:assetId',array('assetId'=>$file));
         	$presentNumber = count($records);

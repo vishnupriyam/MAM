@@ -105,9 +105,20 @@
 <div style="margin-top:5em;">
 	<?php
 
+	
+	
+	//maintainence of the tabs according to roles and permissions
+	
+	
+	
 	if(!Yii::app()->user->isGuest){
 	$id =  Yii::app()->user->getId();
 	
+	$uid = Yii::app()->user->getState("uid");
+	$user = Users::model()->find('uid=:uid',array('uid'=>$uid));
+	$roles=$user->Roles($uid);
+	
+	 
 	echo TbHtml::tabs(array(
 	array('label' => 'Add Asset', 'url' => '/final/asset/create'),
     array('label' => 'Check In', 'url' => array('/users/checkIn','id'=>Yii::app()->user->getState("uid"))),
@@ -116,24 +127,24 @@
     array('label' => 'Parameters', 'items' => array(
         array('label' => 'Manage OU', 'url' => array('/ou_structure/tree')),
         array('label' => 'Category', 'items' => array(
-        	array('label' => 'Add Category', 'url' => array('/category/create')),
-        	array('label' => 'Manage Category', 'url' => array('/category/admin')),
-        	array('label' => 'View Category', 'url' => array('/category/index')),
+        	array('label' => 'Add Category', 'url' => array('/category/create'),'visible'=>$user->hasPrivilege("category/create")),
+        	array('label' => 'Manage Category', 'url' => array('/category/admin'),'visible'=>$user->hasPrivilege("category/admin")),
+        	array('label' => 'View Category', 'url' => array('/category/index'),'visible'=>$user->hasPrivilege("category/index")),
        	)),
         array('label' => 'Tags', 'items' => array(
-        	array('label' => 'Add Tags', 'url' => array('/tags/create')),
-        	array('label' => 'Manage Tags', 'url' => array('/tags/admin')),
-        	array('label' => 'View Tags', 'url' => array('/tags/index')),
+        	array('label' => 'Add Tags', 'url' => array('/tags/create'),'visible'=>$user->hasPrivilege("tags/create")),
+        	array('label' => 'Manage Tags', 'url' => array('/tags/admin'),'visible'=>$user->hasPrivilege("tags/manage")),
+        	array('label' => 'View Tags', 'url' => array('/tags/index'),'visible'=>$user->hasPrivilege("tags/index")),
        	)),
        	array('label' => 'Role', 'items' => array(
-        	array('label' => 'Add Role', 'url' => array('/role/create')),
-        	array('label' => 'Manage Role', 'url' => array('/role/admin')),
-        	array('label' => 'View Role', 'url' => array('/role/index')),
+        	array('label' => 'Add Role', 'url' => array('/role/create'),/*'visible'=>$user->hasPrivilege("role/create")*/),
+        	array('label' => 'Manage Role', 'url' => array('/role/admin'),/*'visible'=>$user->hasPrivilege("role/admin")*/),
+        	array('label' => 'View Role', 'url' => array('/role/index'),/*'visible'=>$user->hasPrivilege("role/index")*/),
        	)),
        	array('label' => 'Users', 'items' => array(
-        	array('label' => 'Add Users', 'url' => array('/users/create')),
-        	array('label' => 'Manage Users', 'url' => array('/usres/admin')),
-        	array('label' => 'View Users', 'url' => array('/users/index')),
+        	array('label' => 'Add Users', 'url' => array('/users/create'),'visible'=>$user->hasPrivilege("users/create")),
+        	array('label' => 'Manage Users', 'url' => array('/usres/admin'),'visible'=>$user->hasPrivilege("users/admin")),
+        	array('label' => 'View Users', 'url' => array('/users/index'),'visible'=>$user->hasPrivilege("users/index")),
        	)),
        	array('label' => 'Module', 'items' => array(
         	array('label' => 'Add Modules', 'url' => array('/module/create')),

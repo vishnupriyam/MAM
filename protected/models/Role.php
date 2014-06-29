@@ -10,6 +10,8 @@
 class Role extends CActiveRecord
 {
 	public $oldAttributes;
+	public $permissions;   //variable for associating role with permissions
+	
 	/**
 	 * @return string the associated database table name
 	 */
@@ -137,6 +139,76 @@ class Role extends CActiveRecord
 	 		
 	 	return parent::afterSave();	
 	}
-	 		
+
+	/**
+	 * Get related permissions
+	 * @return role object with related perimssions(the action of the permisssion)
+	 */
+	public function getRolePerms($rid){
+
+		$role = Role::model()->find('rid=:rid',array('rid'=>$rid));
+		$id = $rid;
+		
+		//select the action names of the permissions related the role
+		$sql  = "SELECT t2.action FROM role_has_permissions as t1
+				JOIN permissions as t2 ON t1.pid = t2.pid
+				WHERE t1.rid =:id";
+		
+		//database connection and query
+		$connection=Yii::app()->db;
+		$command = $connection->createCommand($sql);
+	    $command->bindParam(":id",$id,PDO::PARAM_INT);
+		$role->permissions = $command->queryAll();
+		return $role->permissions;	
+	}
+	
+	/**
+	 * check if a permission is set
+	 */
+	public function hasPerm($permission,$rid)
+	{ 
+		
+		 //$Rolemodel = Role::model()->find('rid=:rid',array(':rid'=>$rid));	
+		 
+		 //$Rolemodel->permissions = $Rolemodel->getRolePerms($rid);
+		
+		 /*print_r($Rolemodel->permissions);		
+		 print_r($Rolemodel->permissions[0]);
+		 print_r($Rolemodel->permissions[1]);die();
+		 */
+		 
+		 /*foreach($Rolemodel->permissions as $action){
+		 	if($action['action'] == $permission)
+			{	
+			  return true;
+			}
+		
+		}*/
+		//return false;
+		
+		
+		$role = Role::model()->find('rid=:rid',array('rid'=>$rid));
+		$id = $rid;
+		
+		//select the action names of the permissions related the role
+		$sql  = "SELECT t2.action FROM role_has_permissions as t1
+				JOIN permissions as t2 ON t1.pid = t2.pid
+				WHERE t1.rid =:id";
+		
+		//database connection and query
+		$connection=Yii::app()->db;
+		$command = $connection->createCommand($sql);
+	    $command->bindParam(":id",$id,PDO::PARAM_INT);
+		$dataReader = $command->query();
+		while(($row=$dataReader->read())!==false) {
+			if($row['action']==$permission)
+			{
+				return true;
+			}
+		}
+		$count = count($dataReader); 
+		return false;
+		
+	}
 	
 }

@@ -63,7 +63,7 @@ class PermissionsController extends Controller
 	public function actionCreate()
 	{
 		$model=new Permissions;
-
+		
 		if(isset($_POST['buttonCancel']))
         {
          $this->redirect(Yii::app()->homeUrl);
@@ -74,6 +74,7 @@ class PermissionsController extends Controller
 	    $this->performAjaxValidation($model);
 
 		if (isset($_POST['Permissions'])) {
+			
 			$model->attributes=$_POST['Permissions'];
 			if ($model->save()) {	
 				$this->redirect(array('view','id'=>$model->pid));

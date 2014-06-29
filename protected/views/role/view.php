@@ -31,3 +31,5 @@ $this->menu=array(
 		'weight',
 	),
 )); ?>
+
+<?php //echo $model->hasPerm('category/index',$model->rid);?>

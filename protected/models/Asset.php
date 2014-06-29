@@ -51,7 +51,7 @@ class Asset extends CActiveRecord
 		return array(
 			//array('file, assetId, assetName, publication, onlineEditable, ownerId', 'required'),
 			//array('file,assetId,assetName,ownerId', 'required'),
-			array('file', 'required'),
+			//array('file', 'required'),
 			//array('file','file','types'=>'swf','flv','mp3','mp4'),
 			//array('file', 'file', 'allowEmpty'=>true, 'types'=>'swf,flv,mp3,mp4'),
 			//array('file', 'file', 'types' => 'jpg, gif, png, pdf, doc, docx, avi, mpg, flv, mov, mpeg, mp4, 3gp, wmv', 'maxSize' => 150 * 1024 * 1024, 'on' => 'create'),

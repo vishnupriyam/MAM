@@ -221,7 +221,39 @@ class Users extends CActiveRecord
 	
 	}
 	
+	//public static function getByUsername($id){}
+	//public function hasPrivilege($permission){}
 	
+	/**
+	 * function to get roles of the user and its associated permissions
+	 */
+	public function Roles($uid){
+		
+		$sql = "select t2.rid,t2.name from users_has_role as t1
+				join role as t2 on t1.role_rid = t2.rid
+				where t1.users_uid = :uid";
+		$connection=Yii::app()->db;
+		$command = $connection->createCommand($sql);
+	    $command->bindParam(":uid",$uid,PDO::PARAM_INT);
+		$this->roles = $command->queryAll();
+		$roles = $this->roles;
+	
+	}
+	
+	/**
+	 * check whether a user has a special permission
+	 */
+	public function hasPrivilege($permission){
+		
+		foreach($this->roles as $role){	
+			$rid = $role['rid'];
+			$RoleModel = Role::model()->find('rid=:rid',array('rid'=>$rid));
+			
+			if($RoleModel->hasPerm($permission,$rid)){
+			return true;}
+		}
+		return false;
+	}
 	
 	
 }

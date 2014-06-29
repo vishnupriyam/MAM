@@ -20,46 +20,34 @@ class UserIdentity extends CUserIdentity
 	private $_uid;
 	public function authenticate()
 	{
-		
-	/*
-		$users=array(
-			// username => password
-			'demo'=>'demo',
-			'admin'=>'admin',
-		);
-		if(!isset($users[$this->username]))
-			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		elseif($users[$this->username]!==$this->password)
-			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		else
-			$this->errorCode=self::ERROR_NONE;
-		return !$this->err orCode;
-	*/
-		
 		$record=Users::model()->findByAttributes(array('name'=>$this->username));
 		if($record===null)
 		$this->errorCode=self::ERROR_USERNAME_INVALID;
 		else if ($record->password!==crypt($this->password,'salt'))
 		$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		else{
-	    $this->_id=$record->orgId;
-	    $this->_uid=$record->uid;
-	    //setting the session variable uid with id of the logged in user
-	    $this->setState('uid', $record->uid,NULL);
-	    //Yii::app()->user->setState("uid","value");
-		$this->errorCode=self::ERROR_NONE;
+	    	$this->_id=$record->orgId;
+	    	$this->_uid=$record->uid;
+	    
+	    	//setting the session variable uid with id of the logged in user
+	    	$this->setState('uid', $record->uid,NULL);
+	    
+	    	//Yii::app()->user->setState("uid","value");
+			$this->errorCode=self::ERROR_NONE;
 		}
-		return !$this->errorCode;
 		
+		/*$record->Roles($record->uid);
+		if($record->hasPrivilege("tags/create"))
+			{print_r("trueasss");die();}
+		*/
+			
+		return !$this->errorCode;
 	}
 	
-	public function getId()
-	{
+	public function getId(){
 		return $this->_id;
 	}
 	public function getUid(){
 		return $this->_uid;
-	}
-
-	
+	}	
 }

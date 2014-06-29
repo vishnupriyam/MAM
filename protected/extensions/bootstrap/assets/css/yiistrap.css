@@ -37,7 +37,6 @@
 }
 .grid-view .table th > .sort-link:hover {
   text-decoration: none;
-  background-color:red !important;
 }
 .grid-view .table th > .sort-link .caret {
   border-color: transparent;

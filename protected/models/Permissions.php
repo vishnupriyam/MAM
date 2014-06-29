@@ -32,7 +32,7 @@ class Permissions extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, mid', 'required'),
+			array('name, mid,action', 'required'),
 			array('mid', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>65),
 			array('desc', 'safe'),
@@ -65,6 +65,7 @@ class Permissions extends CActiveRecord
 			'name' => 'Name',
 			'desc' => 'Description',
 			'mid' => 'Module',
+			'action'=>'Action'
 		);
 	}
 

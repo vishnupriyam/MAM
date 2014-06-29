@@ -27,7 +27,6 @@
            <?php echo $form->dropDownListControlGroup($model, 'mid',
 			CHtml::listData(Module::model()->findAll(), 'mid', 'name'), 
 			array('span'=>3,'label'=>'Modules'), array('label'=>'Module')); ?>
-		
 			
 			<?php echo $form->textFieldControlGroup($model,'name',array('maxlength'=>65,'label'=>'Permission Name')); ?>
 
