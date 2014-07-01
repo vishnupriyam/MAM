@@ -1,12 +1,12 @@
 <?php
-/* @var $this Category1Controller */
-/* @var $model Category1 */
+/* @var $this CategoryController */
+/* @var $model Category */
 
 
 
 $this->menu=array(
-	array('label'=>'List Category1', 'url'=>array('index')),
-	array('label'=>'Create Category1', 'url'=>array('create')),
+	array('label'=>'List Category', 'url'=>array('index')),
+	array('label'=>'Create Category', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -23,7 +23,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Category1s</h1>
+<h1>Manage Categorys</h1>
 
 <p>
     You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>
@@ -38,12 +38,12 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('bootstrap.widgets.TbGridView',array(
-	'id'=>'category1-grid',
+<?php  $this->widget('bootstrap.widgets.TbGridView',array(
+	'id'=>'category-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'Name',
+		'name',
 		array('name'=>'orgName',
 		      'value'=>'$data->organisation->orgName'),
 		array('name'=>'name',
@@ -53,9 +53,9 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		
 		array(
 			'class'=>'CButtonColumn', 
-		'viewButtonUrl'=>'array("category/view","id"=>$data->tagId)', 
-		'updateButtonUrl'=>'array("category/update","id"=>$data->tagId)', 
-		'deleteButtonUrl'=>'array("category/delete","id"=>$data->tagId)',
+			'viewButtonUrl'=>'array("category/view","id"=>$data->cat_id)', 
+			'updateButtonUrl'=>'array("category/update","id"=>$data->cat_id)', 
+			'deleteButtonUrl'=>'array("category/delete","id"=>$data->cat_id)',
 	
 		),
 	),

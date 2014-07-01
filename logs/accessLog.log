@@ -661,3 +661,54 @@
 2014-06-29T12:36:07+02:00 INFO  accessLog 20	IIT Bombay Powai	Users	create	30
 2014-06-29T12:36:32+02:00 INFO  accessLog password123 saEZ6MlWYV9nQ
 2014-06-29T12:36:32+02:00 INFO  accessLog 20	IIT Bombay Powai	Users	update	30
+2014-07-01T07:16:07+02:00 INFO  accessLog 20	IIT Bombay Powai	Permissions	create	15
+2014-07-01T07:16:07+02:00 INFO  accessLog name  tags/manage
+2014-07-01T07:16:07+02:00 INFO  accessLog mid  57
+2014-07-01T07:18:53+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-01T07:18:53+02:00 INFO  accessLog rid  5
+2014-07-01T07:18:53+02:00 INFO  accessLog pid  8
+2014-07-01T07:18:53+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-01T07:18:53+02:00 INFO  accessLog rid  5
+2014-07-01T07:18:53+02:00 INFO  accessLog pid  13
+2014-07-01T07:18:53+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-01T07:18:53+02:00 INFO  accessLog rid  5
+2014-07-01T07:18:53+02:00 INFO  accessLog pid  14
+2014-07-01T07:18:53+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-01T07:18:53+02:00 INFO  accessLog rid  5
+2014-07-01T07:18:53+02:00 INFO  accessLog pid  15
+2014-07-01T07:19:35+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-01T07:19:35+02:00 INFO  accessLog rid  4
+2014-07-01T07:19:35+02:00 INFO  accessLog pid  3
+2014-07-01T07:19:35+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-01T07:19:35+02:00 INFO  accessLog rid  4
+2014-07-01T07:19:35+02:00 INFO  accessLog pid  8
+2014-07-01T07:19:35+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-01T07:19:35+02:00 INFO  accessLog rid  4
+2014-07-01T07:19:35+02:00 INFO  accessLog pid  13
+2014-07-01T07:19:35+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-01T07:19:35+02:00 INFO  accessLog rid  4
+2014-07-01T07:19:35+02:00 INFO  accessLog pid  14
+2014-07-01T07:19:35+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-01T07:19:35+02:00 INFO  accessLog rid  4
+2014-07-01T07:19:35+02:00 INFO  accessLog pid  15
+2014-07-01T07:22:43+02:00 INFO  accessLog 20	IIT Bombay Powai	Permissions	create	16
+2014-07-01T07:22:43+02:00 INFO  accessLog name  category/admin
+2014-07-01T07:22:43+02:00 INFO  accessLog mid  57
+2014-07-01T07:22:58+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-01T07:22:58+02:00 INFO  accessLog rid  4
+2014-07-01T07:22:58+02:00 INFO  accessLog pid  3
+2014-07-01T07:22:58+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-01T07:22:58+02:00 INFO  accessLog rid  4
+2014-07-01T07:22:58+02:00 INFO  accessLog pid  8
+2014-07-01T07:22:58+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-01T07:22:58+02:00 INFO  accessLog rid  4
+2014-07-01T07:22:58+02:00 INFO  accessLog pid  13
+2014-07-01T07:22:58+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-01T07:22:58+02:00 INFO  accessLog rid  4
+2014-07-01T07:22:58+02:00 INFO  accessLog pid  14
+2014-07-01T07:22:58+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-01T07:22:58+02:00 INFO  accessLog rid  4
+2014-07-01T07:22:58+02:00 INFO  accessLog pid  15
+2014-07-01T07:22:58+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-01T07:22:58+02:00 INFO  accessLog rid  4
+2014-07-01T07:22:58+02:00 INFO  accessLog pid  16

@@ -13,11 +13,11 @@
 
                     <?php /*echo $form->textFieldControlGroup($model,'cat_id',array('span'=>5));*/ ?>
 
-                    <?php echo $form->textAreaControlGroup($model,'Name',array('rows'=>6,'span'=>8)); ?>
+                    <?php echo $form->textAreaControlGroup($model,'name',array('rows'=>6,'span'=>8)); ?>
 
                     <?php echo $form->textFieldControlGroup($model,'orgId',array('span'=>5)); ?>
 
-                    <?php echo $form->textFieldControlGroup($model,'unitCode',array('span'=>5)); ?>
+                    <?php echo $form->textFieldControlGroup($model,'DName',array('span'=>5)); ?>
 
         <div class="form-actions">
         <?php echo TbHtml::submitButton('Search',  array('color' => TbHtml::BUTTON_COLOR_PRIMARY,));?>

@@ -134,7 +134,7 @@
        	)),
         array('label' => 'Tags', 'items' => array(
         	array('label' => 'Add Tags', 'url' => array('/tags/create'),'visible'=>$user->hasPrivilege("tags/create")),
-        	array('label' => 'Manage Tags', 'url' => array('/tags/admin'),'visible'=>$user->hasPrivilege("tags/manage")),
+        	array('label' => 'Manage Tags', 'url' => array('/tags/admin'),'visible'=>$user->hasPrivilege("tags/admin")),
         	array('label' => 'View Tags', 'url' => array('/tags/index'),'visible'=>$user->hasPrivilege("tags/index")),
        	)),
        	array('label' => 'Role', 'items' => array(

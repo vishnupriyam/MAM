@@ -329,6 +329,8 @@ class AssetController extends Controller
 		 
 		if (isset($_POST['Asset'])) {
 			$model->attributes=$_POST['Asset'];
+			AssetOuFilep::model()->deleteAll('assetId=:assetId',array(':assetId'=>$model->assetId));
+			AssetUserFilep::model()->deleteAll('assetId=:assetId',array(':assetId'=>$model->assetId));
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->assetId));
 			}

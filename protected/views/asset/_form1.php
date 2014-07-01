@@ -1,5 +1,5 @@
 <?php
-<?php
+
 /* @var $this AssetController */
 /* @var $model Asset */
 /* @var $form TbActiveForm */
