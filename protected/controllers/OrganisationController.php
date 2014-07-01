@@ -129,16 +129,16 @@ class OrganisationController extends Controller
 	 * @param string $message the message/body/content the email 
 	 */
 	public function mailsend($to,$from,$subject,$message){
-	
+		
         $mail=Yii::app()->Smtpmail;
-        $mail->SetFrom($from, 'From Ashish:Vishnu');
+        $mail->SetFrom($from, 'From Vishnu');
         $mail->Subject    = $subject;
         $mail->MsgHTML($message);
         $mail->AddAddress($to, "");
         if(!$mail->Send()) {
-            echo "Mailer Error: " . $mail->ErrorInfo;
+             echo ("Mailer Error: " . $mail->ErrorInfo);
         }else {
-            echo "Message sent!";
+             echo ("Message sent!");
         }
     }
     
@@ -310,6 +310,14 @@ class OrganisationController extends Controller
 			    $command2->bindParam(":orgId",$ans2,PDO::PARAM_INT);
 			    $command2->execute();
 			    
+			    
+			    //send maiil on successful submission of the registration
+				$to=$model->email;
+				$from="selvarani@iitb.ac.in";
+				$subject="registration submitted";
+				$message="Your registration is succesfull, click the following 
+					  link to confirm your registration by clicking the following link";
+				$this->mailsend($to,$from,$subject,$message);
 			    
 				$this->redirect('regdone');
 			}

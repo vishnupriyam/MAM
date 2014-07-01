@@ -61,6 +61,7 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		'assetId',
 		'assetName',
+		'file',
 		'description',
 		array('name'=>'createDate','header'=>'Date Created'),
 		'size',	

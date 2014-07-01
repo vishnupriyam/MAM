@@ -20,4 +20,4 @@ $this->menu=array(
 
     <h1>Update Asset <?php echo $model->assetId; ?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model,'modelUsers'=>$modelUsers)); ?>

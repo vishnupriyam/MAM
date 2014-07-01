@@ -290,10 +290,7 @@ class AssetController extends Controller
 					));
        			}}
        			
-       			/*$print_r($_POST['Adelete']);
-       			$print_r($_POST['Aread']);
-       			$print_r($_POST['Awrite']);
-       			$print_r($_POST['Aedit']);die();*/
+       			
 			}
 
 			//redirect to users to view asset after asset submission form
@@ -318,6 +315,18 @@ class AssetController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		 $this->performAjaxValidation($model);
 
+		 $modelUsers = new Users('search');
+		
+		//get the attributes of Users model for access permissions read, write etc
+		//unsetting modelUsers attributes 
+		$modelUsers->unsetAttributes();
+		
+		//get attributes from the asset form
+		if (isset($_GET['Users'])) {
+			$modelUsers->attributes=$_GET['Users'];
+		}
+		 
+		 
 		if (isset($_POST['Asset'])) {
 			$model->attributes=$_POST['Asset'];
 			if ($model->save()) {
@@ -326,7 +335,7 @@ class AssetController extends Controller
 		}
 
 		$this->render('update',array(
-			'model'=>$model,
+			'model'=>$model,'modelUsers'=>$modelUsers,
 		));
 	}
 
@@ -939,13 +948,24 @@ class AssetController extends Controller
     		if(isset($_POST['buttonAuthorize']))
     		{
    
+    			//change status of the asset to reviewed
         		{
             		$command = Yii::app()->db->createCommand();
 					$command->update('asset', array(
    				 	'status'=>1,
 						), 'assetId=:assetId', array(':assetId'=>$model->assetId));
+						
+					//send maiil on successful authorization of the asset
+					$to="mvpno1994@gmail.com";
+					$from="selvarani@iitb.ac.in";
+					$subject="Article authorized";
+					$message="The article so and so has been authorized by the reviewer and its available for view and download";
+					$this->mailsend($to,$from,$subject,$message);
+			    	
         			$this->redirect(array("/users/review/".Yii::app()->user->getState("uid")));
         		}
+        		 
+        		
     		}
     		
     		//change asset status to rejected on reject 
@@ -959,6 +979,13 @@ class AssetController extends Controller
    				 	'status'=>5,
 						), 'assetId=:assetId', array(':assetId'=>$model->assetId));
         			
+					//send maiil on successful authorization of the asset
+					$to="mvpno1994@gmail.com";
+					$from="selvarani@iitb.ac.in";
+					$subject="Article rejected";
+					$message="The article so and so has been rejected by the reviewer and its available for view and download";
+					$this->mailsend($to,$from,$subject,$message);
+			    	
             		$this->redirect(array("/users/review/".Yii::app()->user->getState("uid")));
         		}
     		}
@@ -1087,6 +1114,28 @@ class AssetController extends Controller
     		}
 			
 	  }
+	  
+	/**
+	 * 
+	 * Function to enable the mail send on successful registration of organisation
+	 * @param email $to emailId of the addresee
+	 * @param email $from emailId of the sender
+	 * @param string $subject the subject of the email
+	 * @param string $message the message/body/content the email 
+	 */
+	public function mailsend($to,$from,$subject,$message){
+		
+        $mail=Yii::app()->Smtpmail;
+        $mail->SetFrom($from, 'From Vishnu');
+        $mail->Subject    = $subject;
+        $mail->MsgHTML($message);
+        $mail->AddAddress($to, "");
+        if(!$mail->Send()) {
+             echo ("Mailer Error: " . $mail->ErrorInfo);
+        }else {
+             echo ("Message sent!");
+        }
+    }
 	
 }	
 			

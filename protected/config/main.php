@@ -86,11 +86,7 @@ return array(
 				//alias to dir, where you unpacked extension
 				'class' => 'application.extensions.imagemodifier.CImageModifier',
 		),
-		//aes256 encryption extension
-		'aes256'=>array(
-            'class' => 'application.extensions.aes256.Aes256',
-            'privatekey_32bits_hexadecimal'=> '0123456789012345678901234567890123456789012345678901234567890123', // be sure that this parameter uses EXACTLY 64 chars of hexa (a-f, 0-9)
-        ),
+		
 		
 		/* Handling Session
 		'session' => array (
@@ -118,10 +114,9 @@ return array(
 		
 		//for mail configuration
 		'Smtpmail'=>array(
-		
 		'class'=>'application.extensions.smtpmail.PHPMailer',
 		'Host'=>"smtp-auth.iitb.ac.in",
-		'Username'=>'selvarani',
+		'Username'=>'selvarani@iitb.ac.in',
 		'Password'=>'selva!23',
 		'Mailer'=>'smtp',
 		'Port'=>25,

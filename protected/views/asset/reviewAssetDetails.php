@@ -9,8 +9,9 @@
     ),
     'data'=>$model,
     'attributes'=>array(
-		'assetId',
+		//'assetId',
 		'assetName',
+  		'file',
     	array('name'=>'Category Name','value'=>$model->category->name),
 		'createDate',
 		'description',

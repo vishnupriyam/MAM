@@ -6,6 +6,7 @@ class SearchController extends Controller
     public $keyword;
     
     public $data;
+   public  $numericalValue = '123456789';
   /**
      * @var string index dir as alias path from <b>application.</b>  , default to <b>runtime.search</b>
      */
@@ -242,10 +243,14 @@ class SearchController extends Controller
 							       {
 							    		 
 							    		  $a = $post->categoryId;
-							    		  $b =   $b=$post->orgId;;
+							    		  $b =   $b=$post->orgId;
 							    	   //creating a document for docx file
 							    	 $doc = Zend_Search_Lucene_Document_Docx::loadDocxFile(Yii::app()->basePath.'\..\upload\\'.$b.'\\'.$a.'\\'.$post->assetId.'.docx');
 
+							    	  $numericalValue = '123456789';
+
+							    	  $doc->addField(Zend_Search_Lucene_Field::Keyword('keyword', $this->numericalValue));
+							    	  
 							    	 //exttracting data for searching in docx  file content. 
 							    	 $data=read_file_docx(Yii::app()->basePath.'\..\upload\\'.$b.'\\'.$a.'\\'.$post->assetId.'.docx');
 							    	 
@@ -285,6 +290,10 @@ class SearchController extends Controller
 							    	 //here craeting an document to add pptx files into search index 
 							        $doc1 = Zend_Search_Lucene_Document_Pptx::loadPptxFile(Yii::app()->basePath.'\..\upload\\'.$b.'\\'.$a.'\\'.$post->assetId.'pptx');
 							    	
+							       $numericalValue = '123456789';
+							        
+							        $doc1->addField(Zend_Search_Lucene_Field::Keyword('keyword', $this->numericalValue));
+							        
 							        //etracting pptx file text to add it in search document
 							        $data=pptx_to_text(Yii::app()->basePath.'\..\upload\\'.$b.'\\'.$a.'\\'.$post->assetId.'.pptx');
 							    	
@@ -326,6 +335,9 @@ class SearchController extends Controller
 							       
 							    	//here creating document to load xlsx file in search document
 							    	$doc3 = Zend_Search_Lucene_Document_Xlsx::loadXlsxFile(Yii::app()->basePath.'\..\upload\\'.$b.'\\'.$a.'\\'.$post->assetId.'.xlsx');
+							    	$numericalValue = '123456789';
+							    	
+							    	$doc3->addField(Zend_Search_Lucene_Field::Keyword('keyword', $this->numericalValue));
 							    	
 							    	//here extracting text of xlsx file to search in conent 
 							    	$data=xlsx_to_text(Yii::app()->basePath.'\..\upload\\'.$b.'\\'.$a.'\\'.$post->assetId.'.xlsx');
@@ -365,6 +377,10 @@ class SearchController extends Controller
 							    	 		
 							    	 	//creating instance of document for doc file 
 							    	 	$doc = new Zend_Search_Lucene_Document();
+							    	 	
+							    	 	$numericalValue = '123456789';
+							    	 	
+							    	 	$doc->addField(Zend_Search_Lucene_Field::Keyword('keyword', $this->numericalValue));
 							    	 	
 							    	 	//extracting data from bdaoc file to add it into search document,
  										$data1 = read_doc(Yii::app()->basePath.'\..\upload\\'.$b.'\\'.$a.'\\'.$post->assetId.'doc');
@@ -410,6 +426,9 @@ class SearchController extends Controller
 							    	 	//here  text is extracted  to search  
 							    	 	$data = odt_to_text(Yii::app()->basePath.'\..\upload\\'.$b.'\\'.$a.'\\'.$post->assetId.'.odt');
 							    	 	
+							    	 	$numericalValue = '123456789';
+							    	 	
+							    	 	$doc->addField(Zend_Search_Lucene_Field::Keyword('keyword', $this->numericalValue));
 							    	 	
 							    	 	 
 							    	 	 //adding link field in search document with url
@@ -451,7 +470,10 @@ class SearchController extends Controller
 							      	//here extracting the text from pdf file for content search
 							      	$data1 = ExtractTextFromPdf (Yii::app()->basePath.'\..\upload\\'.$b.'\\'.$a.'\\'.$post->assetId.'.pdf');
 							      	 
-							      	  
+							      	 $numericalValue = '123456789';
+							      	
+							      	$doc5->addField(Zend_Search_Lucene_Field::Keyword('keyword', $this->numericalValue));
+							      	
 							      	
 							      	$data=substr($data1,0,1000);
 							      	 
@@ -495,6 +517,10 @@ class SearchController extends Controller
 							      		//here browsing a file to add the content of file  to lucene search document.
 							    	 	$data = pptx_to_text(Yii::app()->basePath.'\..\upload\\'.$b.'\\'.$a.'\\'.$post->assetId.'.ppt');
 							    	 	 
+							    	 	$numericalValue = '123456789';
+							    	 	
+							    	 	$doc->addField(Zend_Search_Lucene_Field::Keyword('keyword', $this->numericalValue));
+							    	 	
 							    	 	//adding link of file to lucene search document.
 							    	 	 $doc->addField(Zend_Search_Lucene_Field::Text('link',
 							    			CHtml::encode($post->url)
@@ -536,6 +562,11 @@ class SearchController extends Controller
 							    			CHtml::encode($post->url)
 							    			, 'utf-8')
 							    		);
+							    	 	 
+							    	 	$numericalValue = '123456789';
+							    	 	 
+							    	 	 $doc->addField(Zend_Search_Lucene_Field::Keyword('keyword', $this->numericalValue));
+							    	 	 
 							    	 	 //	adding name field to search
 							    	  $doc->addField(Zend_Search_Lucene_Field::Text('name',
 							    	 		CHtml::encode($post->assetId), 'utf-8')
@@ -577,6 +608,11 @@ class SearchController extends Controller
 					              			CHtml::encode($post->url)
 					              			, 'utf-8')
 					              	);
+					              	
+					              	$numericalValue = '123456789';
+					              	
+					              	$doc->addField(Zend_Search_Lucene_Field::Keyword('keyword', $this->numericalValue));
+					              	
 					              		//here adding content to search document with ornization id.
 					              	$doc5->addField(Zend_Search_Lucene_Field::Text('content',
 					              			CHtml::encode($post->orgId)
@@ -705,9 +741,13 @@ class SearchController extends Controller
 				    			$ext=substr($post->file,$pos+1);
 				    		 
 				    		//here we are getting the image file and adding it to search index.
-				    		if ($ext==='jpg'|| $ext==='gif'|| $ext==='png')
+				    		if ($ext==='jpg'|| $ext==='gif'|| $ext==='png'|| $ext==='ani'|| $ext==='bmp'|| $ext==='cal'|| $ext==='fax'|| $ext==='img'|| $ext==='jbg'|| $ext==='jpe'|| $ext==='mac'|| $ext==='pbm'|| $ext==='pcd'|| $ext==='pcx'|| $ext==='pct'|| $ext==='pgm'|| $ext==='ppm'|| $ext==='psd'|| $ext==='ras'|| $ext==='tga'|| $ext==='tiff'|| $ext==='wma')
 				    		{
 				    			$doc = new Zend_Search_Lucene_Document();  //here the index of zend lucene search is created
+				    			
+				    		    $numericalValue = '123456789';
+				    			
+				    			$doc->addField(Zend_Search_Lucene_Field::Keyword('keyword', $this->numericalValue));
 				    			
 				    			
 				    			//fields of zend search index is initialized here for searching.
@@ -814,6 +854,10 @@ class SearchController extends Controller
 					    		{
 					    			//here creating search document.
 					    			$doc = new Zend_Search_Lucene_Document();
+					    			$numericalValue = '123456789';
+					    			
+					    			$doc->addField(Zend_Search_Lucene_Field::Keyword('keyword', $this->numericalValue));
+					    			
 					    
 					    			//here adding a title to search document with file name. 
 					    			$doc->addField(Zend_Search_Lucene_Field::Text('title',
@@ -923,6 +967,10 @@ class SearchController extends Controller
 				    			$doc->addField(Zend_Search_Lucene_Field::Text('title',
 				    					CHtml::encode($post->file), 'utf-8')
 				    			);
+				    			$numericalValue = '123456789';
+				    			
+				    			$doc->addField(Zend_Search_Lucene_Field::Keyword('keyword', $this->numericalValue));
+				    			
 				    			
 				    			//here adding name field to search document with asset id
 				    			$doc->addField(Zend_Search_Lucene_Field::Text('name',
