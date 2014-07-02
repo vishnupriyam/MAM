@@ -1,13 +1,16 @@
 <?php
 /* @var $this CategoryController */
-
-$this->breadcrumbs=array(
-	'Ou_structure',
-);
 ?>
 <h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
 
-<p>
-	You may change the content of this page by modifying
-	the file <tt><?php echo __FILE__; ?></tt>.
-</p>
+
+<?php $this->widget('bootstrap.widgets.TbGridView',array(
+	'dataProvider'=>$dataProvider,
+	'columns'=>array(
+	 'name',
+	 'dept_code',
+	 'description',
+	 array('name'=>'Add reviewer','type'=>'raw','value'=>'CHtml::link("Add reviewer", array("ou_structure/reviewerFind","id"=>$data->id))'),
+  ),
+)); ?>	
+

@@ -190,4 +190,5 @@ class Ou_structure extends CActiveRecord
 	}
 	
 	
+	
 }

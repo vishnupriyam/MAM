@@ -59,10 +59,4 @@ $this->menu=array(
 	),
 )); ?>
 
-<?php  
-//check for view permission
-/*$uId = Yii::app()->user->getState("uid");
-$user = Users::model()->find('uId=:uId',array(':uId'=>$uId));
-echo Users::hasAcessPermission(20,65,0); */
-?>
 

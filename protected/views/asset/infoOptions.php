@@ -68,7 +68,10 @@
 	
     //manage button
     if($uid==$model->ownerId){  
-	echo TbHtml::button('Manage', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); 
+	  echo CHtml::link(
+    'Manage',
+     Yii::app()->createUrl('Asset/update' , array('id' => $model->assetId)),
+     array('class'=>'btnPrint btn btn-primary'));
 	}
 
 	//download button

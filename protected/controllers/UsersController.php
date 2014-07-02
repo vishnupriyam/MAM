@@ -35,11 +35,11 @@ class UsersController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','changePassword','displaySavedImage'),
+				'actions'=>array('create','update','changePassword','displaySavedImage','admin','confirm','confirmUser'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('delete'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -264,16 +264,64 @@ class UsersController extends Controller
 	}
 
 	/**
+	 * Confirms a particular model.
+	 * If confirm is successful, the browser will be redirected to the 'confirm' page.
+	 * @param integer $id the ID of the model to be deleted
+	 */
+	public function actionConfirmUser($id)
+	{
+		$model = $this->loadModel($id);
+		
+		$command = Yii::app()->db->createCommand();
+        		$command->update('users', array(
+   				 'validity'=>1,
+				), 'uid=:uid', array(':uid'=>$id));
+        	
+
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('confirm'));
+	}
+	
+
+	
+	/**
 	 * Lists all models.
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Users');
+		$orgId = Yii::app()->user->getId();
+		$dataProvider=new CActiveDataProvider('Users',array('criteria'=>array(
+                        'condition'=>'orgId=:orgId',
+                        'params'=>array(':orgId'=>$orgId),
+    
+                    ),    )
+				);
+	
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
 	}
 
+	
+	/**
+	 * Lists all models to be confirmed
+	 */
+	public function actionConfirm()
+	{
+		$orgId = Yii::app()->user->getId();
+		$dataProvider=new CActiveDataProvider('Users',array('criteria'=>array(
+                        'condition'=>'orgId=:orgId and validity=:validity',
+                        'params'=>array(':orgId'=>$orgId,':validity'=>0),
+    
+                    ),    )
+				);
+	
+		$this->render('confirm',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+	
 	/**
 	 * Manages all models.
 	 */

@@ -106,10 +106,7 @@
 	<?php
 
 	
-	
 	//maintainence of the tabs according to roles and permissions
-	
-	
 	
 	if(!Yii::app()->user->isGuest){
 	$id =  Yii::app()->user->getId();
@@ -125,18 +122,25 @@
     array('label' => 'Check In', 'url' => array('/users/checkIn','id'=>Yii::app()->user->getState("uid"))),
     array('label' => 'Review', 'url' => array('/users/review','id'=>Yii::app()->user->getState("uid"))),
     array('label' => 'Advanced Search', 'url' => array('')),
-    array('label' => 'Parameters', 'items' => array(
-        array('label' => 'Manage OU', 'url' => array('/ou_structure/tree')),
-        array('label' => 'Category', 'items' => array(
-        	array('label' => 'Add Category', 'url' => array('/category/create'),'visible'=>$user->hasPrivilege("category/create")),
-        	array('label' => 'Manage Category', 'url' => array('/category/admin'),'visible'=>$user->hasPrivilege("category/admin")),
-        	array('label' => 'View Category', 'url' => array('/category/index'),'visible'=>$user->hasPrivilege("category/index")),
-       	)),
-        array('label' => 'Tags', 'items' => array(
-        	array('label' => 'Add Tags', 'url' => array('/tags/create'),'visible'=>$user->hasPrivilege("tags/create")),
-        	array('label' => 'Manage Tags', 'url' => array('/tags/admin'),'visible'=>$user->hasPrivilege("tags/admin")),
-        	array('label' => 'View Tags', 'url' => array('/tags/index'),'visible'=>$user->hasPrivilege("tags/index")),
-       	)),
+    array('label' => 'Admin', 'items' => array(
+        array('label'=>'Manage OU','items'=>array(	
+    		array('label' => 'Manage Structure', 'url' => array('/ou_structure/tree'),'visible'=>$user->hasPrivilege("ou_structure/create")),
+    		array('label' => 'Reviewer', 'items'=>array(
+    		    array('label'=>'Add Reviewer','url'=>array('/ou_structure/index'),'visible'=>$user->hasPrivilege("ou_structure/reviewerFind")),
+    		)),
+        )),
+        array('label'=>'Parameters' , 'items'=>array(
+	        array('label' => 'Category', 'items' => array(
+	        	array('label' => 'Add Category', 'url' => array('/category/create'),'visible'=>$user->hasPrivilege("category/create")),
+	        	array('label' => 'Manage Category', 'url' => array('/category/admin'),'visible'=>$user->hasPrivilege("category/admin")),
+	        	array('label' => 'View Category', 'url' => array('/category/index'),'visible'=>$user->hasPrivilege("category/index")),
+	       	)),
+	        array('label' => 'Tags', 'items' => array(
+	        	array('label' => 'Add Tags', 'url' => array('/tags/create'),'visible'=>$user->hasPrivilege("tags/create")),
+	        	array('label' => 'Manage Tags', 'url' => array('/tags/admin'),'visible'=>$user->hasPrivilege("tags/admin")),
+	        	array('label' => 'View Tags', 'url' => array('/tags/index'),'visible'=>$user->hasPrivilege("tags/index")),
+	       	)),
+	    )),   	
        	array('label' => 'Role', 'items' => array(
         	array('label' => 'Add Role', 'url' => array('/role/create'),/*'visible'=>$user->hasPrivilege("role/create")*/),
         	array('label' => 'Manage Role', 'url' => array('/role/admin'),/*'visible'=>$user->hasPrivilege("role/admin")*/),
@@ -144,8 +148,9 @@
        	)),
        	array('label' => 'Users', 'items' => array(
         	array('label' => 'Add Users', 'url' => array('/users/create'),'visible'=>$user->hasPrivilege("users/create")),
-        	array('label' => 'Manage Users', 'url' => array('/usres/admin'),'visible'=>$user->hasPrivilege("users/admin")),
+        	array('label' => 'Manage Users', 'url' => array('/users/admin'),'visible'=>$user->hasPrivilege("users/admin")),
         	array('label' => 'View Users', 'url' => array('/users/index'),'visible'=>$user->hasPrivilege("users/index")),
+        	array('label' => 'Confirm Users', 'url' => array('/users/confirm'),'visible'=>$user->hasPrivilege("users/confirm")),
        	)),
        	array('label' => 'Module', 'items' => array(
         	array('label' => 'Add Modules', 'url' => array('/module/create')),
@@ -160,10 +165,7 @@
         
     )),
 	));
-	
-	
-	
-	}
+}
 ?>
 </div>
 

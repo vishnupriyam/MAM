@@ -27,6 +27,7 @@
     'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
+	<?php $assetId=$model->assetId;?>
     <p class="help-block">Fields with <span class="required">*</span> are required.</p>
 
     <?php echo $form->errorSummary($model); ?>
@@ -85,7 +86,7 @@
 	<div class="span9 offset1">
 	
 		<?php
-			
+			$this->assetId = $model->assetId;
 			//load the departments of the logged in organisation
 			$dataProvider = new CActiveDataProvider('Ou_structure',array('criteria'=>array(
                         'condition'=>'root=:root',
@@ -109,6 +110,7 @@
 	        		'id'=>'read',
 	        		'selectableRows'=>2,
 	    			'header'=>'Read',
+	    			'checked'=> 'Yii::app()->controller->isChecked($data->id,$this->grid->controller->assetId,0)' ,
 	    		
 	    		),    	
 	    		array('header'=>'Write','value'=>'','id'=>'headerA'),
@@ -117,6 +119,7 @@
 	        		'id'=>'write',
 	        		'selectableRows'=>2,
 	    			'header'=>'Write',
+	    			'checked'=> 'Yii::app()->controller->isChecked($data->id,$this->grid->controller->assetId,1)' ,
 	    		),
 	    		array('header'=>'Edit','value'=>'','id'=>'headerA'),
 	    		array(
@@ -124,6 +127,7 @@
 	        		'id'=>'edit',
 	        		'header'=>'Edit',
 	    			'selectableRows'=>2,
+	    			'checked'=> 'Yii::app()->controller->isChecked($data->id,$this->grid->controller->assetId,2)' ,
 	    		),
 	    		array('header'=>'Delete','value'=>'','id'=>'headerA'),
 	    		array(
@@ -131,6 +135,7 @@
 	        		'id'=>'delete',
 	        		'selectableRows'=>2,
 	    			'header'=>'Delete',
+	    			'checked'=> 'Yii::app()->controller->isChecked($data->id,$this->grid->controller->assetId,3)' ,
 	    		)    	
 	      ),
    		)
@@ -180,7 +185,7 @@
 	        		'id'=>'Aread',
 	        		'selectableRows'=>2,
 	    			'header'=>'Read',
-	    		
+	    			'checked'=> 'Yii::app()->controller->isCheckedUser($data->uid,$this->grid->controller->assetId,0)' ,
 	    		),    	
 	    		array('header'=>'Write','value'=>'','id'=>'headerA'),
 	    		array(
@@ -188,6 +193,7 @@
 	        		'id'=>'Awrite',
 	        		'selectableRows'=>2,
 	    			'header'=>'Write',
+	    			'checked'=> 'Yii::app()->controller->isCheckedUser($data->uid,$this->grid->controller->assetId,1)' ,
 	    		),
 	    		array('header'=>'Edit','value'=>'','id'=>'headerA'),
 	    		array(
@@ -195,6 +201,7 @@
 	        		'id'=>'Aedit',
 	        		'header'=>'Edit',
 	    			'selectableRows'=>2,
+	    			'checked'=> 'Yii::app()->controller->isCheckedUser($data->uid,$this->grid->controller->assetId,2)' ,
 	    		),
 	    		array('header'=>'Delete','value'=>'','id'=>'headerA'),
 	    		array(
@@ -202,6 +209,7 @@
 	        		'id'=>'Adelete',
 	        		'selectableRows'=>2,
 	    			'header'=>'Delete',
+	    			'checked'=> 'Yii::app()->controller->isCheckedUser($data->uid,$this->grid->controller->assetId,3)' ,
 	    		)    	
 	      ),
    		)
@@ -224,6 +232,9 @@
 		
 	    </div>
 
-    <?php $this->endWidget(); ?>
+	<?php 
+	//print_r(Yii::app()->controller->isChecked(11,57,0));?>
+    
+	<?php $this->endWidget(); ?>
 
 </div><!-- form -->

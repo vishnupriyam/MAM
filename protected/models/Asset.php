@@ -58,7 +58,7 @@ class Asset extends CActiveRecord
 			
 			array('assetId, status, publication, onlineEditable, size, ownerId', 'numerical', 'integerOnly'=>true),
 			array('assetName, reviewer', 'length', 'max'=>45),
-			array('type', 'length', 'max'=>10),
+			array('type', 'length', 'max'=>20),
 			array('createDate, description, comment, reviewerComments', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -238,11 +238,13 @@ class Asset extends CActiveRecord
 	 * 
 	 */
 	public function beforeSave(){
+
 		 $this->status=0;
-         $this->type=$this->file->getType();
+		if(!($this->scenario=='update')){
+		 $this->type=$this->file->getType();
          $this->size=$this->file->getSize();
          $this->createDate=new CDbExpression('NOW()');
-              
+		}
          return parent::beforeSave();
        }
 

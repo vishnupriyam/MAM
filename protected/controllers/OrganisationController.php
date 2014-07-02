@@ -312,7 +312,7 @@ class OrganisationController extends Controller
 			    
 			    
 			    //send maiil on successful submission of the registration
-				$to=$model->email;
+				$to="mvpnov1994@gmail.com";
 				$from="selvarani@iitb.ac.in";
 				$subject="registration submitted";
 				$message="Your registration is succesfull, click the following 

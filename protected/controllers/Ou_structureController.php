@@ -15,7 +15,19 @@ class Ou_structureController extends BaseController
 
 	public function actionIndex()
 	{
-		$this->render('index');
+		$orgId = Yii::app()->user->getId();
+		$record = Ou_structure::model()->find('orgId=:orgId',array('orgId'=>$orgId));
+		$root = $record->root;
+		$dataProvider=new CActiveDataProvider('Ou_structure',array('criteria'=>array(
+                        'condition'=>'root=:root',
+                        'params'=>array(':root'=>$root),
+    
+                    ),    )
+				);
+	
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
 	}
 	
 	public function behaviors()

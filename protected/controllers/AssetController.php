@@ -5,6 +5,7 @@ error_reporting(E_ALL ^ ~E_NOTICE  ^ ~E_WARNING);
 
 class AssetController extends Controller
 {
+	public $assetId;
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -326,13 +327,140 @@ class AssetController extends Controller
 			$modelUsers->attributes=$_GET['Users'];
 		}
 		 
-		 
+		
 		if (isset($_POST['Asset'])) {
 			$model->attributes=$_POST['Asset'];
+			
+			//delete the existing records
 			AssetOuFilep::model()->deleteAll('assetId=:assetId',array(':assetId'=>$model->assetId));
 			AssetUserFilep::model()->deleteAll('assetId=:assetId',array(':assetId'=>$model->assetId));
+			AssetTags::model()->deleteAll('assetId=:assetId',array(':assetId'=>$model->assetId));
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->assetId));
+				
+				
+				//update assetTags table
+				if(!empty($_POST['tags'])){
+				$tag = $_POST['tags'];
+				foreach($tag as $tagRow){
+					$AssetTag = new AssetTags;
+            	    $AssetTag->assetId = $model->assetId;
+            	    $AssetTag->tagId = $tagRow ;
+                	$AssetTag->save();
+       			}}
+				
+       			//Addition of the users defined tags in tags table
+       			if(!empty($_POST['Asset']['tagsUser'])){
+       			$tagsUser=explode(",",$_POST['Asset']['tagsUser']);
+       			foreach($tagsUser as $tagsRow){
+					$Tags = new Tags;
+            	    $Tags->tagName = $tagsRow;
+            	    $Tags->orgId  = Yii::app()->user->getId();
+                	$Tags->save();
+                	$AssetTag1 = new AssetTags;
+                	$AssetTag1->assetId = $model->assetId;
+                	$AssetTag1->tagId = $Tags->tagId;
+                	$AssetTag1->save();
+                	
+       			}
+       			}
+				
+				//applying the read permissions to all checked departments from asset form,AssetOuFilep table
+				if(!empty($_POST['read'])){
+				$read = $_POST['read'];
+				foreach($read as $readRow){
+					$AssetOuFilep = new AssetOuFilep;
+        	        $AssetOuFilep->assetId = $model->assetId;
+            	    $AssetOuFilep->ouId = $readRow;
+            	    $AssetOuFilep->fpId = 0;
+                	$AssetOuFilep->save();
+       			}}
+
+       			//applying the write permissions to all checked departments from asset form
+       			if(!empty($_POST['write'])){
+				$write = $_POST['write'];
+       			foreach($write as $writeRow){
+					$AssetOuFilep = new AssetOuFilep;
+        	        $AssetOuFilep->assetId = $model->assetId;
+            	    $AssetOuFilep->ouId = $writeRow;
+            	    $AssetOuFilep->fpId = 1;
+                	$AssetOuFilep->save();
+       			}}
+       			
+				//applying the edit permissions to all checked departments from asset form
+				if(!empty($_POST['edit'])){
+				$edit = $_POST['edit'];
+				foreach($edit as $editRow){
+					$AssetOuFilep = new AssetOuFilep;
+        	        $AssetOuFilep->assetId = $model->assetId;
+            	    $AssetOuFilep->ouId = $editRow;
+            	    $AssetOuFilep->fpId = 2;
+                	$AssetOuFilep->save();
+       			}}
+
+       			//applying the edit permissions to all checked departments from asset form,Data:AssetOuFilep
+				if(!empty($_POST['delete'])){
+				$delete = $_POST['delete'];
+				foreach($delete as $deleteRow){
+					$AssetOuFilep = new AssetOuFilep;
+        	        $AssetOuFilep->assetId = $model->assetId;
+            	    $AssetOuFilep->ouId = $editRow;
+            	    $AssetOuFilep->fpId = 3;
+                	$AssetOuFilep->save();
+       			}}
+       			
+       			
+       			
+       			//applying the read permissions to all checked users from asset form,Data:AssetUserfilep
+				if(!empty($_POST['Aread'])){
+				$read = $_POST['Aread'];
+				foreach($read as $readRow){
+					$command = Yii::app()->db->createCommand();
+					$command->insert('asset_user_filep', array(
+    					'assetId'=>$model->assetId,
+						'uId'=>$readRow,
+						'fpId'=>0,
+					));
+				}}
+
+       			//applying the write permissions to all checked users from asset form,Data:AssetUserfilep
+       			if(!empty($_POST['Awrite'])){
+				$write = $_POST['Awrite'];
+       			foreach($write as $writeRow){
+					$command = Yii::app()->db->createCommand();
+					$command->insert('asset_user_filep', array(
+    					'assetId'=>$model->assetId,
+						'uId'=>$writeRow,
+						'fpId'=>1,
+					));
+       			}}
+       			
+				//applying the edit permissions to all checked users from asset form,Data:AssetUserfilep
+				if(!empty($_POST['Aedit'])){
+				$edit = $_POST['Aedit'];
+				foreach($edit as $editRow){
+					$command = Yii::app()->db->createCommand();
+					$command->insert('asset_user_filep', array(
+    					'assetId'=>$model->assetId,
+						'uId'=>$editRow,
+						'fpId'=>2,
+					));
+       			}}
+
+       			//applying the delete permissions to all checked users from asset form,Data:AssetUserfilep
+				if(!empty($_POST['Adelete'])){
+				$delete = $_POST['Adelete'];
+				foreach($delete as $deleteRow){
+					$command = Yii::app()->db->createCommand();
+					$command->insert('asset_user_filep', array(
+    					'assetId'=>$model->assetId,
+						'uId'=>$editRow,
+						'fpId'=>3,
+					));
+       			}}
+       			
+			$this->redirect(array('view','id'=>$model->assetId));
+						
+				
 			}
 		}
 
@@ -1138,6 +1266,58 @@ class AssetController extends Controller
              echo ("Message sent!");
         }
     }
+    
+    /**
+     * 
+     * For manage asset. Obtain the filepermissions of the department
+     * @param integer $id1 , the ouId
+     * @param integer $id2 , the assetId
+     * @param integer $id3 , the filepermissionId
+     * @return true if the department/ou has the filepermissions
+     */
+    public function isChecked($id1, $id2, $id3){
+		
+		$connection = Yii::app()->db;
+		$sql = "select ouId from asset_ou_filep where assetId = :assetId and fpId=:fpId";
+		$command = $connection->createCommand($sql);
+		$command->bindParam(":assetId",$id2,PDO::PARAM_INT);
+		$command->bindParam(":fpId",$id3,PDO::PARAM_INT);
+		$dataReader = $command->query();
+		while (($model1 = $dataReader->read())!== false)
+		{
+			if ($model1['ouId'] == $id1) {
+				return true;
+			}
+		}
+		
+		return false;
+
+	}
+    
+	/**
+     * 
+     * For manage asset. Obtain the filepermissions of the user
+     * @param integer $id1 , the ouId
+     * @param integer $id2 , the assetId
+     * @param integer $id3 , the filepermissionId
+     * @return true if the user has the filepermissions
+     */
+    public function isCheckedUSer($id1, $id2, $id3){
+		
+		$connection = Yii::app()->db;
+		$sql = "select uId from asset_user_filep where assetId = :assetId and fpId=:fpId";
+		$command = $connection->createCommand($sql);
+		$command->bindParam(":assetId",$id2,PDO::PARAM_INT);
+		$command->bindParam(":fpId",$id3,PDO::PARAM_INT);
+		$dataReader = $command->query();
+		while (($model1 = $dataReader->read())!== false)
+		{
+			if ($model1['uId'] == $id1) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 }	
 			

@@ -141,7 +141,8 @@ class Users extends CActiveRecord
 		$criteria->compare('quota',$this->quota);
 		$criteria->compare('DateCreated',$this->DateCreated,true);
 		$criteria->compare('LastUpdate',$this->LastUpdate,true);
-
+		$criteria->compare('orgId',Yii::app()->user->getId(),true);
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
