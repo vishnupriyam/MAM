@@ -125,9 +125,11 @@ $path = "http://localhost/final/upload/".$orgId.'/'.$catid.'/'.$file.'_1.'.$ext;
 
 ?>
 <div class="span6" style="float: right;">
-<div style="height:20em;padding-top:7em;">
+<div style="padding-top:7em;">
 <?php ?>
-<img id = "image" src = "<?php echo $path;?>"> 
+<div class="thumbnail">
+<img id = "image" src = "<?php echo $path;?>">
+</div> 
 </div>
 <div>
 <?php

@@ -1082,3 +1082,12 @@
 2014-07-02T14:30:56+02:00 INFO  accessLog type  application/x-php
 2014-07-02T14:30:56+02:00 INFO  accessLog reviewer  20
 2014-07-02T14:30:56+02:00 INFO  accessLog ownerId  20
+2014-07-02T15:36:51+02:00 INFO  accessLog 20	IIT Bombay Powai	Category	create	18
+2014-07-02T15:36:51+02:00 INFO  accessLog name  help
+2014-07-02T15:36:51+02:00 INFO  accessLog 20	IIT Bombay Powai	Category	create	18
+2014-07-02T15:36:52+02:00 INFO  accessLog 20	IIT Bombay Powai	CategoryHasOuStructure	create	 categoryHasOuStructure
+2014-07-02T15:36:52+02:00 INFO  accessLog categoryId  18
+2014-07-02T15:36:52+02:00 INFO  accessLog ou structureId  12
+2014-07-02T15:36:52+02:00 INFO  accessLog 20	IIT Bombay Powai	CategoryHasOuStructure	create	 categoryHasOuStructure
+2014-07-02T15:36:52+02:00 INFO  accessLog categoryId  18
+2014-07-02T15:36:52+02:00 INFO  accessLog ou structureId  13

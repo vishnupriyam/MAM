@@ -61,31 +61,7 @@
 	?>
 	
 	 
-       <?php $this->widget('bootstrap.widgets.TbNavbar', array(
-        'brandLabel' => 'MAM',
-        //'display' => null, // default is static to top
-        'color' => TbHtml::NAVBAR_COLOR_INVERSE,
-        //'htmlOptions'=>array('class'=>'container'),
-        'collapse' => true,
-        'items' => array(
-        	array(
-        		'class' => 'bootstrap.widgets.TbNav',
-        		//'options' =>('class'='nav navbar-nav navbar-right'),
-        		'items'=>array(
-					array('label'=>'Home', 'url'=>array('site/index')),
-					array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-					array('label'=>'Contact', 'url'=>array('/site/contact')),
-					array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-					array('label'=>'Register(organisation)', 'url'=>array('/organisation/register1'),'visible'=>Yii::app()->user->isGuest),
-					array('label'=>'Organisations','url'=>array('/organisation/index'),'visible'=>!Yii::app()->user->isGuest),
-					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest,'id'=>'Logindetail','htmlOptions'=>array('class'=>'pull-right')),
-					
-			),
-        		
-        		),
-        	),
-        )); ?>
-
+       
 <div class="span3 pull-right" style="margin-top:3em;text-transform:uppercase;font-weight:900;font-size:2em;color:maroon;">
 	<?php echo $record['orgName'];?>
 </div>
@@ -106,7 +82,37 @@
 	?>
  
 <div style="margin-top:5em;">
+	
 	<?php
+
+	 $this->widget('bootstrap.widgets.TbNavbar', array(
+	    'type'=>'inverse', // null or 'inverse'
+	    'brand'=>'MAM',
+	    
+	    'collapse'=>true, // requires bootstrap-responsive.css
+	    'items'=>array(
+	        array(
+	            'class'=>'bootstrap.widgets.TbMenu',
+	            'items'=>array(
+	                array('label'=>'Home', 'url'=>array('site/index')),
+						array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
+						array('label'=>'Contact', 'url'=>array('/site/contact')),
+						array('label'=>'Register(organisation)', 'url'=>array('/organisation/register1'),'visible'=>Yii::app()->user->isGuest),
+						array('label'=>'Organisations','url'=>array('/organisation/index'),'visible'=>!Yii::app()->user->isGuest),
+					  ),
+	        ),
+	       
+	        array(
+	            'class'=>'bootstrap.widgets.TbMenu',
+	            'htmlOptions'=>array('class'=>'pull-right'),
+	            'items'=>array(
+	                array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+					array('label'=>Yii::app()->user->name.' | Logout', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest,'id'=>'Logindetail','htmlOptions'=>array('class'=>'pull-right')),
+							
+	            ),
+	        ),
+	    ),
+	)); 
 
 	
 	//maintainence of the tabs according to roles and permissions
@@ -171,46 +177,6 @@
 }
 ?>
 </div>
-
-<?php $this->widget('bootstrap.widgets.TbNavbar', array(
-    //'type'=>'inverse', // null or 'inverse'
-    //'brand'=>'Project name',
-    'brandUrl'=>'#',
-    'collapse'=>true, // requires bootstrap-responsive.css
-    'items'=>array(
-        array(
-            'class'=>'bootstrap.widgets.TbMenu',
-            'items'=>array(
-                array('label'=>'Home', 'url'=>'#', 'active'=>true),
-                array('label'=>'Link', 'url'=>'#'),
-                array('label'=>'Dropdown', 'url'=>'#', 'items'=>array(
-                    array('label'=>'Action', 'url'=>'#'),
-                    array('label'=>'Another action', 'url'=>'#'),
-                    array('label'=>'Something else here', 'url'=>'#'),
-                    '---',
-                    array('label'=>'NAV HEADER'),
-                    array('label'=>'Separated link', 'url'=>'#'),
-                    array('label'=>'One more separated link', 'url'=>'#'),
-                )),
-            ),
-        ),
-        '<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>',
-        array(
-            'class'=>'bootstrap.widgets.TbMenu',
-            'htmlOptions'=>array('class'=>'pull-right'),
-            'items'=>array(
-                array('label'=>'Link', 'url'=>'#'),
-                array('label'=>'Dropdown', 'url'=>'#', 'items'=>array(
-                    array('label'=>'Action', 'url'=>'#'),
-                    array('label'=>'Another action', 'url'=>'#'),
-                    array('label'=>'Something else here', 'url'=>'#'),
-                    '---',
-                    array('label'=>'Separated link', 'url'=>'#'),
-                )),
-            ),
-        ),
-    ),
-)); ?>
 
 
 <?php echo $content; ?>	    
