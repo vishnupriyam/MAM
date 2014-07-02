@@ -45,7 +45,7 @@
 	$assetId = $model->assetId;
 
 	//view button
-	if(($uid==$model->ownerId)||Users::hasAcessPermission($uid,$assetId,0) || Users::hasAcessPermission($uid,$assetId,1) ||Users::hasAcessPermission($uid,$assetId,2) ||Users::hasAcessPermission($uid,$assetId,3)){
+	if(($uid==$model->ownerId)||Users::hasAcessPermission($uid,$assetId,0) || Users::hasAcessPermission($uid,$assetId,1) ||Users::hasAcessPermission($uid,$assetId,2) ||Users::hasAcessPermission($uid,$assetId,3)||Users::hasAcessPermission($uid,$assetId,4)){
 		echo CHtml::link('View', Yii::app()->createUrl('Asset/Viewer' , array('id' => $model->assetId)),
       	array('class'=>'btnPrint btn btn-primary','target'=>'_blank'));
 	}    
@@ -75,7 +75,7 @@
 	}
 
 	//download button
-	if(($uid==$model->ownerId)||Users::hasAcessPermission($uid,$assetId,0) || Users::hasAcessPermission($uid,$assetId,1) ||Users::hasAcessPermission($uid,$assetId,2) ||Users::hasAcessPermission($uid,$assetId,3)){
+	if(($uid==$model->ownerId)||Users::hasAcessPermission($uid,$assetId,4) || Users::hasAcessPermission($uid,$assetId,1) ||Users::hasAcessPermission($uid,$assetId,2) ||Users::hasAcessPermission($uid,$assetId,3)){
 	echo CHtml::link(
     'Download',
      Yii::app()->createUrl('Asset/Download' , array('id' => $model->assetId)),

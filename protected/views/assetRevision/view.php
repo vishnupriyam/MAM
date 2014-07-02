@@ -42,17 +42,25 @@ $this->menu=array(
 	),
 )); ?>
 
-		<?php  echo TbHtml::button('view',array(
+		<?php  
+		   $uid = Yii::app()->user->getState("uid");
+		   $assetId = $model->assetId;
+			if(($uid==$model->asset->ownerId)||Users::hasAcessPermission($uid,$assetId,0) || Users::hasAcessPermission($uid,$assetId,1) ||Users::hasAcessPermission($uid,$assetId,2) ||Users::hasAcessPermission($uid,$assetId,3)){ 
+			echo TbHtml::button('view',array(
                 'color' => TbHtml::BUTTON_COLOR_PRIMARY,
 				'submit' => Yii::app()->baseUrl,
                 'class'=>'submit'
                 
-            )); ?>
-       <?php  echo CHtml::link(
+            )); 
+			}
+            ?>
+       <?php 
+       		if(($uid==$model->asset->ownerId)||Users::hasAcessPermission($uid,$assetId,4) || Users::hasAcessPermission($uid,$assetId,1) ||Users::hasAcessPermission($uid,$assetId,2) ||Users::hasAcessPermission($uid,$assetId,3)){ 
+			echo CHtml::link(
     		'Download',
     		 Yii::app()->createUrl('Asset/DownloadVersion' , array('id' => $model->assetId,'version'=>$model->revision)),
      		 array('class'=>'btnPrint btn btn-primary','target'=>'_blank'));
-
+       		}
 		?>
             
 		

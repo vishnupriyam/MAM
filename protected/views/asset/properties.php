@@ -27,7 +27,7 @@
 	),
 ),true) ;
 ?>
-
+<!--  file access log data -->
 <?php 
 
  $accesslog = new CActiveDataProvider('Fileaccesslog',array('criteria'=>array(
@@ -41,8 +41,9 @@
 	'dataProvider'=>$accesslog,
 	'columns'=>array(
  	 array('name'=>'filename','value'=>'$data->asset->file'),
+ 	 array('name'=>'Time','value'=>'$data->timeStamp'),
  	 array('name'=>'Username','value'=>'$data->users->name'),
- 	 array('name'=>'act','value'=>'$data->getAction()')
+ 	 array('name'=>'Action','value'=>'$data->getAction()')
  	),
  
 ),true);
@@ -54,15 +55,11 @@
 
     array('label' => 'Properties', 'active' => true, 'content' =>$properties),
     
+    array('label' => 'Description', 'content' =>$model->description),
     
     array('label' => 'Notes', 'content' => TbHtml::textArea('Notes','',array('label'=>'Notes:','span'=>6,'rows'=>4))),
     
-    
     array('label' => 'AccessLog', 'content' => $accessLogView),
-    
-    
-    array('label' => 'Description', 'content' =>$model->description),
-    
     
     array('label' => 'Tags', 'content' => $model->getTags() ),
     
@@ -84,7 +81,7 @@
 	$assetId = $model->assetId;
 
 	//view button
-	if(($uid==$model->ownerId)||Users::hasAcessPermission($uid,$assetId,0) || Users::hasAcessPermission($uid,$assetId,1) ||Users::hasAcessPermission($uid,$assetId,2) ||Users::hasAcessPermission($uid,$assetId,3)){
+	if(($uid==$model->ownerId)||Users::hasAcessPermission($uid,$assetId,0) || Users::hasAcessPermission($uid,$assetId,1) ||Users::hasAcessPermission($uid,$assetId,2) ||Users::hasAcessPermission($uid,$assetId,3)||Users::hasAcessPermission($uid,$assetId,4)){
 		echo CHtml::link('View', Yii::app()->createUrl('Asset/Viewer' , array('id' => $model->assetId)),
       	array('class'=>'btnPrint btn btn-primary','target'=>'_blank'));
 	}    
@@ -109,6 +106,14 @@
     if($uid==$model->ownerId){  
 	 echo CHtml::link(
     'Manage',
+     Yii::app()->createUrl('Asset/update' , array('id' => $model->assetId)),
+     array('class'=>'btnPrint btn btn-primary')); 
+	}
+	
+	//download button
+	if(($uid==$model->ownerId)||Users::hasAcessPermission($uid,$assetId,4) || Users::hasAcessPermission($uid,$assetId,1) ||Users::hasAcessPermission($uid,$assetId,2) ||Users::hasAcessPermission($uid,$assetId,3)){ 
+	 echo CHtml::link(
+    'Download',
      Yii::app()->createUrl('Asset/update' , array('id' => $model->assetId)),
      array('class'=>'btnPrint btn btn-primary')); 
 	}

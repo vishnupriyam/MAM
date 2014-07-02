@@ -103,8 +103,17 @@
 				'rowHtmlOptionsExpression' => 'array("id"=>$data->id)',
 				'columns'=>array(
     			array('name'=>'name','header'=>'Departments'),   
-	 			array('header'=>'Read','value'=>'','id'=>'headerA'),
+	 			array('header'=>'None','value'=>'','id'=>'headerA'),
 	    		array(
+	    		    
+	        		'class'=>'CCheckBoxColumn',
+	        		'id'=>'None',
+	        		'selectableRows'=>2,
+	    			'header'=>'None',
+	    		
+	    		),
+	 			array('header'=>'View','value'=>'','id'=>'headerA'),
+	 			array(
 	    		    
 	        		'class'=>'CCheckBoxColumn',
 	        		'id'=>'read',
@@ -112,14 +121,21 @@
 	    			'header'=>'Read',
 	    		
 	    		),    	
-	    		array('header'=>'Write','value'=>'','id'=>'headerA'),
+	    		array('header'=>'Modify','value'=>'','id'=>'headerA'),
 	    		array(
 	        		'class'=>'CCheckBoxColumn',
 	        		'id'=>'write',
 	        		'selectableRows'=>2,
 	    			'header'=>'Write',
 	    		),
-	    		array('header'=>'Edit','value'=>'','id'=>'headerA'),
+	    		array('header'=>'Download','value'=>'','id'=>'headerA'),
+	    		array(
+	        		'class'=>'CCheckBoxColumn',
+	        		'id'=>'download',
+	        		'selectableRows'=>2,
+	    			'header'=>'Download',
+	    		),
+	    		array('header'=>'Online Edit','value'=>'','id'=>'headerA'),
 	    		array(
 	        		'class'=>'CCheckBoxColumn',
 	        		'id'=>'edit',
@@ -174,7 +190,17 @@
 				'rowHtmlOptionsExpression' => 'array("uid"=>$data->uid)',
 				'columns'=>array(
     			array('name'=>'name','header'=>'Users'),    /*in header give the role name while passing*/
-	 			array('header'=>'Read','value'=>'','id'=>'headerA'),
+	 			array('header'=>'None','value'=>'','id'=>'headerA'),
+	    		array(
+	    		    
+	        		'class'=>'CCheckBoxColumn',
+	        		'id'=>'None',
+	        		'selectableRows'=>2,
+	    			'header'=>'None',
+	    		
+	    		),
+    			
+    			array('header'=>'View','value'=>'','id'=>'headerA'),
 	    		array(
 	    		    
 	        		'class'=>'CCheckBoxColumn',
@@ -183,14 +209,21 @@
 	    			'header'=>'Read',
 	    		
 	    		),    	
-	    		array('header'=>'Write','value'=>'','id'=>'headerA'),
+	    		array('header'=>'Modify','value'=>'','id'=>'headerA'),
 	    		array(
 	        		'class'=>'CCheckBoxColumn',
 	        		'id'=>'Awrite',
 	        		'selectableRows'=>2,
 	    			'header'=>'Write',
 	    		),
-	    		array('header'=>'Edit','value'=>'','id'=>'headerA'),
+	    		array('header'=>'Download','value'=>'','id'=>'headerA'),
+	    		array(
+	        		'class'=>'CCheckBoxColumn',
+	        		'id'=>'Adownload',
+	        		'selectableRows'=>2,
+	    			'header'=>'Download',
+	    		),
+	    		array('header'=>'Online Edit','value'=>'','id'=>'headerA'),
 	    		array(
 	        		'class'=>'CCheckBoxColumn',
 	        		'id'=>'Aedit',

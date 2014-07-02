@@ -33,10 +33,11 @@
 	@media (min-width: 1200px)
 	{
 	.container{
-	 width :1100px;
+	/* width :1100px;*/
 	}
 		
 	};
+	
 	</style>
 	
 	
@@ -64,19 +65,21 @@
         'brandLabel' => 'MAM',
         //'display' => null, // default is static to top
         'color' => TbHtml::NAVBAR_COLOR_INVERSE,
+        //'htmlOptions'=>array('class'=>'container'),
         'collapse' => true,
         'items' => array(
         	array(
         		'class' => 'bootstrap.widgets.TbNav',
+        		//'options' =>('class'='nav navbar-nav navbar-right'),
         		'items'=>array(
-				array('label'=>'Home', 'url'=>array('site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Register(organisation)', 'url'=>array('/organisation/register1'),'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Organisations','url'=>array('/organisation/index'),'visible'=>!Yii::app()->user->isGuest),
-				//array('label'=>$record['orgName'], 'url'=>array('site/index')),
+					array('label'=>'Home', 'url'=>array('site/index')),
+					array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
+					array('label'=>'Contact', 'url'=>array('/site/contact')),
+					array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+					array('label'=>'Register(organisation)', 'url'=>array('/organisation/register1'),'visible'=>Yii::app()->user->isGuest),
+					array('label'=>'Organisations','url'=>array('/organisation/index'),'visible'=>!Yii::app()->user->isGuest),
+					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest,'id'=>'Logindetail','htmlOptions'=>array('class'=>'pull-right')),
+					
 			),
         		
         		),
@@ -87,8 +90,8 @@
 	<?php echo $record['orgName'];?>
 </div>
 
-	<br>
-	<br>
+	<br/>
+	<br/>
 	<?php
       	$this->widget('SearchBlock', array(
       	)); ?>
@@ -124,7 +127,7 @@
     array('label' => 'Advanced Search', 'url' => array('')),
     array('label' => 'Admin', 'items' => array(
         array('label'=>'Manage OU','items'=>array(	
-    		array('label' => 'Manage Structure', 'url' => array('/ou_structure/tree'),'visible'=>$user->hasPrivilege("ou_structure/create")),
+    		array('label' => 'Manage Structure', 'url' => array('/ou_structure/tree'),'visible'=>$user->hasPrivilege("ou_structure/manage")),
     		array('label' => 'Reviewer', 'items'=>array(
     		    array('label'=>'Add Reviewer','url'=>array('/ou_structure/index'),'visible'=>$user->hasPrivilege("ou_structure/reviewerFind")),
     		)),
@@ -168,6 +171,47 @@
 }
 ?>
 </div>
+
+<?php $this->widget('bootstrap.widgets.TbNavbar', array(
+    //'type'=>'inverse', // null or 'inverse'
+    //'brand'=>'Project name',
+    'brandUrl'=>'#',
+    'collapse'=>true, // requires bootstrap-responsive.css
+    'items'=>array(
+        array(
+            'class'=>'bootstrap.widgets.TbMenu',
+            'items'=>array(
+                array('label'=>'Home', 'url'=>'#', 'active'=>true),
+                array('label'=>'Link', 'url'=>'#'),
+                array('label'=>'Dropdown', 'url'=>'#', 'items'=>array(
+                    array('label'=>'Action', 'url'=>'#'),
+                    array('label'=>'Another action', 'url'=>'#'),
+                    array('label'=>'Something else here', 'url'=>'#'),
+                    '---',
+                    array('label'=>'NAV HEADER'),
+                    array('label'=>'Separated link', 'url'=>'#'),
+                    array('label'=>'One more separated link', 'url'=>'#'),
+                )),
+            ),
+        ),
+        '<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>',
+        array(
+            'class'=>'bootstrap.widgets.TbMenu',
+            'htmlOptions'=>array('class'=>'pull-right'),
+            'items'=>array(
+                array('label'=>'Link', 'url'=>'#'),
+                array('label'=>'Dropdown', 'url'=>'#', 'items'=>array(
+                    array('label'=>'Action', 'url'=>'#'),
+                    array('label'=>'Another action', 'url'=>'#'),
+                    array('label'=>'Something else here', 'url'=>'#'),
+                    '---',
+                    array('label'=>'Separated link', 'url'=>'#'),
+                )),
+            ),
+        ),
+    ),
+)); ?>
+
 
 <?php echo $content; ?>	    
 </div><!-- page -->

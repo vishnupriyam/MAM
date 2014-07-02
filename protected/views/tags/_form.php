@@ -40,7 +40,7 @@
 			    		
 			 echo  TbHtml::dropDownListControlGroup('cat_id','',
 			 CHtml::listData($dataReader, 'cat_id', 'name'), 
-			 array('span'=>3,'label'=>'Add tag for','multiple'=>true), array('label'=>'child')); ?>
+			 array('span'=>3,'label'=>'Add tag for category','multiple'=>true), array('label'=>'child')); ?>
 			
 			<?php echo $form->textfieldControlGroup($model,'tagName',
 			array('span'=>2,'rows'=>1,'label'=>'Tag Name','help'=>'Add multiple tags with commas(,)')); ?>

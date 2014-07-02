@@ -39,6 +39,7 @@ $this->breadcrumbs=array(
 
 	<div class="row buttons">
 		<?php echo TbHtml::submitButton('Login',array('color'=>TbHtml::BUTTON_COLOR_PRIMARY)); ?>
+		<?php echo TbHtml::submitButton('Forgot Password',array('color'=>TbHtml::BUTTON_COLOR_PRIMARY,'name'=>'BtnForgotPassword')); ?>
 		<?php echo TbHtml::submitButton(Yii::t('Yii','Cancel'),array(
  			'name'=>'buttonCancel',
 			'color'=>TbHtml::BUTTON_COLOR_DANGER,

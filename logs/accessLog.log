@@ -884,3 +884,201 @@
 2014-07-02T03:36:54+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
 2014-07-02T03:36:54+02:00 INFO  accessLog rid  4
 2014-07-02T03:36:54+02:00 INFO  accessLog pid  20
+2014-07-02T07:05:08+02:00 INFO  accessLog 	Guest	Organisation	create	19
+2014-07-02T07:05:08+02:00 INFO  accessLog orgName  vishnu
+2014-07-02T07:05:08+02:00 INFO  accessLog noEmp  23
+2014-07-02T07:05:08+02:00 INFO  accessLog phone  7736217996
+2014-07-02T07:05:08+02:00 INFO  accessLog email  mvpnov1994@gmail.com
+2014-07-02T07:05:08+02:00 INFO  accessLog addr1  d-5/a staff quarters,nit
+2014-07-02T07:05:08+02:00 INFO  accessLog addr2  sss
+2014-07-02T07:05:08+02:00 INFO  accessLog state  Kerala
+2014-07-02T07:05:08+02:00 INFO  accessLog country  india
+2014-07-02T07:05:08+02:00 INFO  accessLog orgType  0
+2014-07-02T07:05:08+02:00 INFO  accessLog description  educational institution
+2014-07-02T07:05:08+02:00 INFO  accessLog validity  1
+2014-07-02T07:09:02+02:00 INFO  accessLog 	Guest	Organisation	create	20
+2014-07-02T07:09:02+02:00 INFO  accessLog orgName  vishnu123
+2014-07-02T07:09:02+02:00 INFO  accessLog noEmp  23
+2014-07-02T07:09:02+02:00 INFO  accessLog phone  7736217996
+2014-07-02T07:09:02+02:00 INFO  accessLog email  mvpnov1994@gmail.com
+2014-07-02T07:09:02+02:00 INFO  accessLog addr1  d-5/a staff quarters,nit
+2014-07-02T07:09:02+02:00 INFO  accessLog state  Kerala
+2014-07-02T07:09:02+02:00 INFO  accessLog orgType  0
+2014-07-02T07:09:02+02:00 INFO  accessLog validity  1
+2014-07-02T07:54:34+02:00 INFO  accessLog 20	IIT Bombay Powai	Module	create	59
+2014-07-02T07:54:34+02:00 INFO  accessLog name  User
+2014-07-02T07:54:34+02:00 INFO  accessLog 20	IIT Bombay Powai	Module	create	59
+2014-07-02T07:55:02+02:00 INFO  accessLog 20	IIT Bombay Powai	Permissions	create	21
+2014-07-02T07:55:02+02:00 INFO  accessLog name  add user
+2014-07-02T07:55:02+02:00 INFO  accessLog mid  59
+2014-07-02T08:06:23+02:00 INFO  accessLog 	Guest	Organisation	create	21
+2014-07-02T08:06:23+02:00 INFO  accessLog orgName  new organisation
+2014-07-02T08:06:23+02:00 INFO  accessLog phone  7736217996
+2014-07-02T08:06:23+02:00 INFO  accessLog email  asd@sf.evr
+2014-07-02T08:06:23+02:00 INFO  accessLog addr1  fdsd
+2014-07-02T08:06:23+02:00 INFO  accessLog orgType  0
+2014-07-02T08:06:23+02:00 INFO  accessLog validity  1
+2014-07-02T08:23:28+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T08:23:28+02:00 INFO  accessLog rid  4
+2014-07-02T08:23:28+02:00 INFO  accessLog pid  3
+2014-07-02T08:23:28+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T08:23:28+02:00 INFO  accessLog rid  4
+2014-07-02T08:23:28+02:00 INFO  accessLog pid  8
+2014-07-02T08:23:28+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T08:23:28+02:00 INFO  accessLog rid  4
+2014-07-02T08:23:28+02:00 INFO  accessLog pid  13
+2014-07-02T08:23:29+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T08:23:29+02:00 INFO  accessLog rid  4
+2014-07-02T08:23:29+02:00 INFO  accessLog pid  14
+2014-07-02T08:23:29+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T08:23:29+02:00 INFO  accessLog rid  4
+2014-07-02T08:23:29+02:00 INFO  accessLog pid  15
+2014-07-02T08:23:29+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T08:23:29+02:00 INFO  accessLog rid  4
+2014-07-02T08:23:29+02:00 INFO  accessLog pid  16
+2014-07-02T08:23:29+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T08:23:29+02:00 INFO  accessLog rid  4
+2014-07-02T08:23:29+02:00 INFO  accessLog pid  17
+2014-07-02T08:23:29+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T08:23:29+02:00 INFO  accessLog rid  4
+2014-07-02T08:23:29+02:00 INFO  accessLog pid  19
+2014-07-02T08:23:29+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T08:23:29+02:00 INFO  accessLog rid  4
+2014-07-02T08:23:29+02:00 INFO  accessLog pid  20
+2014-07-02T08:23:29+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T08:23:29+02:00 INFO  accessLog rid  4
+2014-07-02T08:23:29+02:00 INFO  accessLog pid  21
+2014-07-02T09:15:33+02:00 INFO  accessLog 	Guest	Organisation	create	22
+2014-07-02T09:15:33+02:00 INFO  accessLog orgName  sdffsd
+2014-07-02T09:15:33+02:00 INFO  accessLog phone  2423423423
+2014-07-02T09:15:33+02:00 INFO  accessLog email  fsfd@weffwe.c
+2014-07-02T09:15:33+02:00 INFO  accessLog addr1  fwefwe
+2014-07-02T09:15:33+02:00 INFO  accessLog orgType  0
+2014-07-02T09:15:33+02:00 INFO  accessLog validity  1
+2014-07-02T09:25:40+02:00 INFO  accessLog name  kiran
+2014-07-02T09:25:40+02:00 INFO  accessLog email kiran.nale@iitb.ac.in 
+2014-07-02T09:25:40+02:00 INFO  accessLog passwordsaPPmoXIbs91M 
+2014-07-02T09:25:40+02:00 INFO  accessLog mobile 9594731117 
+2014-07-02T09:25:40+02:00 INFO  accessLog status 1 
+2014-07-02T09:25:40+02:00 INFO  accessLog orgId  
+2014-07-02T09:25:40+02:00 INFO  accessLog ouId 11 
+2014-07-02T09:25:40+02:00 INFO  accessLog 20	IIT Bombay Powai	Users	create	39
+2014-07-02T09:25:40+02:00 INFO  accessLog 20	IIT Bombay Powai	UsersHasRole	create	
+2014-07-02T09:25:40+02:00 INFO  accessLog users_uid  39
+2014-07-02T09:25:40+02:00 INFO  accessLog role_rid  5
+2014-07-02T10:44:45+02:00 INFO  accessLog 	Guest	Organisation	create	23
+2014-07-02T10:44:45+02:00 INFO  accessLog orgName  ash88
+2014-07-02T10:44:45+02:00 INFO  accessLog phone  7736217996
+2014-07-02T10:44:45+02:00 INFO  accessLog email  asas@sdsd.c
+2014-07-02T10:44:45+02:00 INFO  accessLog addr1  nit calicut
+2014-07-02T10:44:46+02:00 INFO  accessLog state  Kerala
+2014-07-02T10:44:46+02:00 INFO  accessLog country  India
+2014-07-02T10:44:46+02:00 INFO  accessLog orgType  0
+2014-07-02T10:44:46+02:00 INFO  accessLog validity  1
+2014-07-02T10:47:17+02:00 INFO  accessLog 	Guest	Organisation	create	24
+2014-07-02T10:47:17+02:00 INFO  accessLog orgName  saasasasa
+2014-07-02T10:47:17+02:00 INFO  accessLog phone  7736217996
+2014-07-02T10:47:17+02:00 INFO  accessLog email  mvpnov1994@gmail.coms
+2014-07-02T10:47:17+02:00 INFO  accessLog addr1  d-5/a staff quarters,nit calicut
+2014-07-02T10:47:17+02:00 INFO  accessLog addr2  nitc po
+2014-07-02T10:47:17+02:00 INFO  accessLog state  - None -
+2014-07-02T10:47:17+02:00 INFO  accessLog country  India
+2014-07-02T10:47:17+02:00 INFO  accessLog orgType  0
+2014-07-02T10:47:17+02:00 INFO  accessLog validity  1
+2014-07-02T11:19:21+02:00 INFO  accessLog 20	IIT Bombay Powai	Permissions	create	22
+2014-07-02T11:19:21+02:00 INFO  accessLog name  manage structure
+2014-07-02T11:19:21+02:00 INFO  accessLog desc  manage ou_structure
+2014-07-02T11:19:21+02:00 INFO  accessLog mid  55
+2014-07-02T11:19:36+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:19:36+02:00 INFO  accessLog rid  4
+2014-07-02T11:19:36+02:00 INFO  accessLog pid  3
+2014-07-02T11:19:36+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:19:36+02:00 INFO  accessLog rid  4
+2014-07-02T11:19:36+02:00 INFO  accessLog pid  22
+2014-07-02T11:19:36+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:19:36+02:00 INFO  accessLog rid  4
+2014-07-02T11:19:36+02:00 INFO  accessLog pid  8
+2014-07-02T11:19:36+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:19:36+02:00 INFO  accessLog rid  4
+2014-07-02T11:19:36+02:00 INFO  accessLog pid  13
+2014-07-02T11:19:36+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:19:36+02:00 INFO  accessLog rid  4
+2014-07-02T11:19:36+02:00 INFO  accessLog pid  14
+2014-07-02T11:19:36+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:19:36+02:00 INFO  accessLog rid  4
+2014-07-02T11:19:36+02:00 INFO  accessLog pid  15
+2014-07-02T11:19:36+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:19:36+02:00 INFO  accessLog rid  4
+2014-07-02T11:19:36+02:00 INFO  accessLog pid  16
+2014-07-02T11:19:36+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:19:36+02:00 INFO  accessLog rid  4
+2014-07-02T11:19:36+02:00 INFO  accessLog pid  17
+2014-07-02T11:19:36+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:19:36+02:00 INFO  accessLog rid  4
+2014-07-02T11:19:36+02:00 INFO  accessLog pid  19
+2014-07-02T11:19:36+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:19:36+02:00 INFO  accessLog rid  4
+2014-07-02T11:19:36+02:00 INFO  accessLog pid  20
+2014-07-02T11:19:36+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:19:36+02:00 INFO  accessLog rid  4
+2014-07-02T11:19:36+02:00 INFO  accessLog pid  21
+2014-07-02T11:20:42+02:00 INFO  accessLog 20	IIT Bombay Powai	Permissions	create	23
+2014-07-02T11:20:42+02:00 INFO  accessLog name  add reviewer
+2014-07-02T11:20:42+02:00 INFO  accessLog desc  add the reviewer for the department
+2014-07-02T11:20:42+02:00 INFO  accessLog mid  55
+2014-07-02T11:21:03+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:21:03+02:00 INFO  accessLog rid  4
+2014-07-02T11:21:03+02:00 INFO  accessLog pid  3
+2014-07-02T11:21:03+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:21:03+02:00 INFO  accessLog rid  4
+2014-07-02T11:21:03+02:00 INFO  accessLog pid  22
+2014-07-02T11:21:03+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:21:03+02:00 INFO  accessLog rid  4
+2014-07-02T11:21:03+02:00 INFO  accessLog pid  23
+2014-07-02T11:21:03+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:21:03+02:00 INFO  accessLog rid  4
+2014-07-02T11:21:03+02:00 INFO  accessLog pid  8
+2014-07-02T11:21:03+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:21:03+02:00 INFO  accessLog rid  4
+2014-07-02T11:21:03+02:00 INFO  accessLog pid  13
+2014-07-02T11:21:03+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:21:03+02:00 INFO  accessLog rid  4
+2014-07-02T11:21:03+02:00 INFO  accessLog pid  14
+2014-07-02T11:21:03+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:21:03+02:00 INFO  accessLog rid  4
+2014-07-02T11:21:03+02:00 INFO  accessLog pid  15
+2014-07-02T11:21:03+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:21:03+02:00 INFO  accessLog rid  4
+2014-07-02T11:21:03+02:00 INFO  accessLog pid  16
+2014-07-02T11:21:03+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:21:03+02:00 INFO  accessLog rid  4
+2014-07-02T11:21:03+02:00 INFO  accessLog pid  17
+2014-07-02T11:21:03+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:21:03+02:00 INFO  accessLog rid  4
+2014-07-02T11:21:03+02:00 INFO  accessLog pid  19
+2014-07-02T11:21:03+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:21:03+02:00 INFO  accessLog rid  4
+2014-07-02T11:21:03+02:00 INFO  accessLog pid  20
+2014-07-02T11:21:03+02:00 INFO  accessLog 20	IIT Bombay Powai	RoleHasPermissions	create	roleHasPermmissions
+2014-07-02T11:21:03+02:00 INFO  accessLog rid  4
+2014-07-02T11:21:03+02:00 INFO  accessLog pid  21
+2014-07-02T11:21:51+02:00 INFO  accessLog 20	IIT Bombay Powai	Ou_structure	update	12
+2014-07-02T12:19:36+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	69
+2014-07-02T12:19:36+02:00 INFO  accessLog assetName  loginscripp
+2014-07-02T12:19:36+02:00 INFO  accessLog file  login-script.php
+2014-07-02T12:19:36+02:00 INFO  accessLog createDate  NOW()
+2014-07-02T12:19:36+02:00 INFO  accessLog type  application/x-php
+2014-07-02T12:19:36+02:00 INFO  accessLog reviewer  20
+2014-07-02T12:19:36+02:00 INFO  accessLog ownerId  20
+2014-07-02T12:19:36+02:00 INFO  accessLog 20	IIT Bombay Powai	AssetOuFilep	create	18
+2014-07-02T12:19:36+02:00 INFO  accessLog assetId  69
+2014-07-02T12:19:36+02:00 INFO  accessLog ouId  12
+2014-07-02T12:19:36+02:00 INFO  accessLog fpId  4
+2014-07-02T14:30:56+02:00 INFO  accessLog 20	IIT Bombay Powai	Asset	create	70
+2014-07-02T14:30:56+02:00 INFO  accessLog assetName  check download
+2014-07-02T14:30:56+02:00 INFO  accessLog file  test.php
+2014-07-02T14:30:56+02:00 INFO  accessLog createDate  NOW()
+2014-07-02T14:30:56+02:00 INFO  accessLog size  674
+2014-07-02T14:30:56+02:00 INFO  accessLog type  application/x-php
+2014-07-02T14:30:56+02:00 INFO  accessLog reviewer  20
+2014-07-02T14:30:56+02:00 INFO  accessLog ownerId  20

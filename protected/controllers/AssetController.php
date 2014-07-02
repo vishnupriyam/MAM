@@ -219,6 +219,18 @@ class AssetController extends Controller
                 	$AssetOuFilep->save();
        			}}
        			
+       			
+       			//applying the download permissions to all checked departments from asset form
+       			if(!empty($_POST['download'])){
+				$write = $_POST['download'];
+       			foreach($write as $writeRow){
+					$AssetOuFilep = new AssetOuFilep;
+        	        $AssetOuFilep->assetId = $model->assetId;
+            	    $AssetOuFilep->ouId = $writeRow;
+            	    $AssetOuFilep->fpId = 4;
+                	$AssetOuFilep->save();
+       			}}
+       			
 				//applying the edit permissions to all checked departments from asset form
 				if(!empty($_POST['edit'])){
 				$edit = $_POST['edit'];
@@ -279,6 +291,18 @@ class AssetController extends Controller
 					));
        			}}
 
+       			//applying the edit permissions to all checked users from asset form,Data:AssetUserfilep
+				if(!empty($_POST['Adownload'])){
+				$edit = $_POST['Adownload'];
+				foreach($edit as $editRow){
+					$command = Yii::app()->db->createCommand();
+					$command->insert('asset_user_filep', array(
+    					'assetId'=>$model->assetId,
+						'uId'=>$editRow,
+						'fpId'=>4,
+					));
+       			}}
+       			
        			//applying the delete permissions to all checked users from asset form,Data:AssetUserfilep
 				if(!empty($_POST['Adelete'])){
 				$delete = $_POST['Adelete'];
@@ -386,6 +410,17 @@ class AssetController extends Controller
                 	$AssetOuFilep->save();
        			}}
        			
+       			//applying the download permissions to all checked departments from asset form
+       			if(!empty($_POST['download'])){
+				$write = $_POST['download'];
+       			foreach($write as $writeRow){
+					$AssetOuFilep = new AssetOuFilep;
+        	        $AssetOuFilep->assetId = $model->assetId;
+            	    $AssetOuFilep->ouId = $writeRow;
+            	    $AssetOuFilep->fpId = 4;
+                	$AssetOuFilep->save();
+       			}}
+       			
 				//applying the edit permissions to all checked departments from asset form
 				if(!empty($_POST['edit'])){
 				$edit = $_POST['edit'];
@@ -433,6 +468,19 @@ class AssetController extends Controller
 						'fpId'=>1,
 					));
        			}}
+       			
+       			//applying the download permissions to all checked users from asset form,Data:AssetUserfilep
+				if(!empty($_POST['Adownload'])){
+				$edit = $_POST['Adownload'];
+				foreach($edit as $editRow){
+					$command = Yii::app()->db->createCommand();
+					$command->insert('asset_user_filep', array(
+    					'assetId'=>$model->assetId,
+						'uId'=>$editRow,
+						'fpId'=>4,
+					));
+       			}}
+       			
        			
 				//applying the edit permissions to all checked users from asset form,Data:AssetUserfilep
 				if(!empty($_POST['Aedit'])){

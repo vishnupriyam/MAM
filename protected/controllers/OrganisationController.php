@@ -285,38 +285,65 @@ class OrganisationController extends Controller
 				
 				$command2->execute();
 				
+				$orgId = $ans2;
 				$connection = Yii::app()->db;
+				
 				
 				//default assignment of global modules 
 				//addition of default modules 
 				//update module_organisation table
-				$sqlcom = "insert into module_organisation(mid, orgId) values(54, :orgId)";
-			    $command2 = $connection->createCommand($sqlcom);
-			    $command2->bindParam(":orgId",$ans2,PDO::PARAM_INT);
-			    $command2->execute();
+				
+				$dataReaderModules = Module::model()->findAll();
+				foreach($dataReaderModules as $module)
+				{
+				  $command = Yii::app()->db->createCommand();
+				  $command->insert('module_organisation', array(
+    					'mid'=>$module['mid'],
+						'orgId'=>$orgId,
+					));
+				
+				}
 			    
-			    $sqlcom = "insert into module_organisation(mid, orgId) values(55, :orgId)";
-			    $command2 = $connection->createCommand($sqlcom);
-			    $command2->bindParam(":orgId",$ans2,PDO::PARAM_INT);
-			    $command2->execute();
-			    
-			    $sqlcom = "insert into module_organisation(mid, orgId) values(56, :orgId)";
-			    $command2 = $connection->createCommand($sqlcom);
-			    $command2->bindParam(":orgId",$ans2,PDO::PARAM_INT);
-			    $command2->execute();
-			    
-			    $sqlcom = "insert into module_organisation(mid, orgId) values(57, :orgId)";
-			    $command2 = $connection->createCommand($sqlcom);
-			    $command2->bindParam(":orgId",$ans2,PDO::PARAM_INT);
-			    $command2->execute();
-			    
-			    
+			    //generation of a random number for mail confirmation
+			    $code = rand(1000,9999);
+			
+			    //update confirmation code 
+			    $command = Yii::app()->db->createCommand();
+        		$command->update('organisation', array(
+   				 'confirmationCode'=>$code,
+				), 'orgId=:orgId', array(':orgId'=>$model->orgId));
+        	
+				
 			    //send maiil on successful submission of the registration
+			    $webroot = Yii::getPathOfAlias('webroot');
 				$to="mvpnov1994@gmail.com";
 				$from="selvarani@iitb.ac.in";
 				$subject="registration submitted";
-				$message="Your registration is succesfull, click the following 
-					  link to confirm your registration by clicking the following link";
+				/*$message="Your registration is succesfull, click the following 
+					  link to confirm your registration by clicking the following link
+					  .. <br/> Hi <br/> We need to make sure you are human. Please verify your
+					   email and get started using your  account. <br/> <br/>
+<a href="Yii::app()->baseUrl.'/users/mailconfirmation?orgId='.$model->orgId.'&verficationCode='.$code"></a>";
+	
+				*/
+				
+				$message = "
+					<html>
+						<head>
+						  <title>Test Mail</title>
+						</head>
+						<body>
+							<p>Your registration is successful please click the below link to confirm your registration</p>
+						    <p><a href='http://localhost/final/users/confirm/orgId='.$model->orgId.'&verificationCode='.$code>Open Link</a></p>
+						    its not showing the link..
+						</body>
+					</html>
+						";
+
+				$headers  = 'MIME-Version: 1.0' . "\r\n";
+				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+				$headers .= 'From: Noreply <noreply@example.com>' . "\r\n";
+				
 				$this->mailsend($to,$from,$subject,$message);
 			    
 				$this->redirect('regdone');

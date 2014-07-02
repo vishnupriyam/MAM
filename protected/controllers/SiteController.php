@@ -75,9 +75,9 @@ public function actionAsset()
 			$model->attributes=$_POST['ContactForm'];
 
 		if(isset($_POST['buttonCancel']))
-        		{
+        	{
          		$this->redirect(Yii::app()->homeUrl);
-        		}
+        	}
 			if($model->validate())
 			{
 				
@@ -112,15 +112,16 @@ public function actionAsset()
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+		if(isset($_POST['buttonCancel']))
+        	{
+         		$this->redirect(Yii::app()->user->returnUrl);
+        	}
+		
 		if(isset($_POST['LoginForm']))
 		{
 			$model->attributes=$_POST['LoginForm'];
 			if($model->validate() && $model->login()) {
 				$model1 = Users::model()->find('name=:username',array(':username'=>$model->username));
-				//$session=new CDbHttpSession;
-				//$session->open();
-				//$orgId = "hello";
-				//$session['orgId'] = $orgId;
 				$Log = Logger::getLogger("systemLog");
 				$Log->info($model1->uid ."\t".$model->username."  LOGGED IN ");
 				$this->redirect(Yii::app()->user->returnUrl);
@@ -135,11 +136,8 @@ public function actionAsset()
 	{
 		$Log = Logger::getLogger("systemLog");
 		if(Yii::app()->user->isGuest){
-		//$user = Users::model()->find('name=:name',array(':name'=>Yii::app()->user->name));
 		$Log->info(Yii::app()->user->getState("uid")."\t".Yii::app()->user->name."\tLOGGED OUT");}
 		Yii::app()->user->logout();
-		//	$session->close();
-		//$session->destroy();
 		$this->redirect(Yii::app()->homeUrl);
 	}
 }

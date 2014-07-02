@@ -6,7 +6,7 @@
  $a = $model->assetId;
  $connection = Yii::app()->db;
  $sql3 = "select * from asset where assetId=:assetId";
- 
+ $orgId = Yii::app()->user->getId();
  $command = $connection->createCommand($sql3);
  $command->bindParam(":assetId",$a,PDO::PARAM_INT);
  $dataReader = $command->query();

@@ -266,7 +266,7 @@ class UsersController extends Controller
 	/**
 	 * Confirms a particular model.
 	 * If confirm is successful, the browser will be redirected to the 'confirm' page.
-	 * @param integer $id the ID of the model to be deleted
+	 * @param integer $id the ID of the model to be confirmed
 	 */
 	public function actionConfirmUser($id)
 	{
